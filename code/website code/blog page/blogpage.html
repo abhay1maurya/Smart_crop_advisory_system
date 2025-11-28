@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Smart Crop Advisory System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo">
+                    <i class="fas fa-seedling"></i>
+                    Smart Crop Advisory
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#" class="active"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="#"><i class="fas fa-robot"></i> Advisory</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="user-actions">
+                    <button class="btn-login"><i class="fas fa-user"></i> Login</button>
+                    <button class="btn-signup">Sign Up</button>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Top Interactive Section -->
+    <section class="top-interactive">
+        <div class="container">
+            <div class="hero-search">
+                <h1>Smart Farming Insights</h1>
+                <p>Discover AI-powered agricultural knowledge for Indian farmers</p>
+                <div class="search-container">
+                    <div class="search-box-wrapper">
+                        <input type="text" class="search-box" id="searchInput" placeholder="Search articles, crops, techniques...">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="search-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="crop">Crops</button>
+                        <button class="filter-btn" data-filter="pest">Pests</button>
+                        <button class="filter-btn" data-filter="weather">Weather</button>
+                        <button class="filter-btn" data-filter="tech">Technology</button>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <h3>50K+</h3>
+                        <p>Farmers Helped</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="stat-info">
+                        <h3>35%</h3>
+                        <p>Yield Increase</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-tint"></i>
+                    <div class="stat-info">
+                        <h3>40%</h3>
+                        <p>Water Saved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container main-container">
+        <!-- Hero/Featured Post -->
+        <section class="hero-post">
+            <div class="hero-content">
+                <div class="author-info">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Dr. Rajesh Kumar" class="author-avatar">
+                    <div class="author-details">
+                        <h4>Dr. Rajesh Kumar</h4>
+                        <p>Agricultural Scientist</p>
+                    </div>
+                    <button class="follow-btn"><i class="fas fa-plus"></i> Follow</button>
+                </div>
+                <span class="category-tag">AI in Agriculture</span>
+                <h1 class="hero-title">How AI is Revolutionizing Small-Scale Farming in India</h1>
+                <p class="hero-excerpt">Discover how our Smart Crop Advisory System uses artificial intelligence to help small and marginal farmers increase yields, reduce costs, and make data-driven decisions for sustainable agriculture.</p>
+                <div class="hero-actions">
+                    <a href="#" class="read-more-btn">Read Full Article</a>
+                    <div class="engagement-stats">
+                        <span><i class="far fa-eye"></i> 2.4K views</span>
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="AI in Agriculture">
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="posts-container">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <div class="view-options">
+                    <button class="view-option active" data-view="grid"><i class="fas fa-th"></i></button>
+                    <button class="view-option" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            <div class="posts-grid" id="postsGrid">
+                <!-- Blog posts will be dynamically inserted here by JavaScript -->
+            </div>
+            <div class="no-posts" id="noPostsMessage" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h2>No posts found</h2>
+                <p>Try adjusting your search or filter to find what you're looking for.</p>
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Trending Topics -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-fire"></i>
+                    Trending Topics
+                </h3>
+                <div class="widget-content">
+                    <div class="trending-topics">
+                        <a href="#" class="trending-topic">#OrganicFarming</a>
+                        <a href="#" class="trending-topic">#Monsoon2023</a>
+                        <a href="#" class="trending-topic">#SoilHealth</a>
+                        <a href="#" class="trending-topic">#CropRotation</a>
+                        <a href="#" class="trending-topic">#WaterConservation</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-folder"></i>
+                    Categories
+                    <button class="widget-toggle" id="categoriesToggle">−</button>
+                </h3>
+                <div class="widget-content" id="categoriesContent">
+                    <ul class="category-list" id="categoryList">
+                        <!-- Categories will be dynamically inserted here by JavaScript -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Popular Posts -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-chart-line"></i>
+                    Popular Posts
+                    <button class="widget-toggle" id="popularPostsToggle">−</button>
+                </h3>
+                <div class="widget-content" id="popularPostsContent">
+                    <div class="popular-posts" id="popularPosts">
+                        <!-- Popular posts will be dynamically inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="sidebar-widget newsletter-widget">
+                <h3 class="widget-title">
+                    <i class="fas fa-newspaper"></i>
+                    Get Farming Tips
+                </h3>
+                <div class="widget-content">
+                    <p>Subscribe to get weekly agricultural insights and updates</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button class="subscribe-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Smart Crop Advisory</h3>
+                </div>
+                <p>Empowering Indian farmers with AI-driven agricultural insights for sustainable and profitable farming.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Blog</a>
+                <a href="#">Advisory</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#">Crop Recommendations</a>
+                <a href="#">Fertilizer Optimization</a>
+                <a href="#">Pest & Disease Detection</a>
+                <a href="#">Weather Alerts</a>
+                <a href="#">Multilingual Chatbot</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@scas.org</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-map-marker-alt"></i> Agricultural Tech Park, New Delhi, India</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Smart Crop Advisory System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

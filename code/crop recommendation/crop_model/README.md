@@ -122,4 +122,3 @@ raw_input = [80, 40, 40, 25, 80, 7, 200]
 
 This project is licensed under the MIT License.
 
-````

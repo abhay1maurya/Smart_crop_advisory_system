@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Crop Advisory System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .card { border: none; shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header-bg { background: linear-gradient(135deg, #28a745 0%, #218838 100%); color: white; }
+        .result-box { display: none; transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="py-5">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg">
+                <div class="card-header header-bg text-center py-4">
+                    <h2 class="mb-0">🌾 Smart Crop Advisor</h2>
+                    <p class="mb-0 opacity-75">AI-Powered Precision Agriculture</p>
+                </div>
+                <div class="card-body p-4">
+                    <form id="cropForm">
+                        <h5 class="mb-3 text-success">Soil Conditions</h5>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <label class="form-label">Nitrogen (N)</label>
+                                <input type="number" class="form-control" id="N" required placeholder="e.g. 90">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Phosphorus (P)</label>
+                                <input type="number" class="form-control" id="P" required placeholder="e.g. 40">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Potassium (K)</label>
+                                <input type="number" class="form-control" id="K" required placeholder="e.g. 40">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Soil pH</label>
+                                <input type="number" step="0.1" class="form-control" id="ph" required placeholder="e.g. 6.5">
+                            </div>
+                        </div>
+
+                        <h5 class="mb-3 text-primary">Weather Conditions</h5>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <label class="form-label">Temperature (°C)</label>
+                                <input type="number" step="0.1" class="form-control" id="temperature" required placeholder="e.g. 25">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Humidity (%)</label>
+                                <input type="number" step="0.1" class="form-control" id="humidity" required placeholder="e.g. 80">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Rainfall (mm)</label>
+                                <input type="number" step="1" class="form-control" id="rainfall" required placeholder="e.g. 200">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2 fw-bold" id="btnPredict">
+                            🌱 Get Recommendation
+                        </button>
+                    </form>
+
+                    <div id="loading" class="text-center mt-4" style="display: none;">
+                        <div class="spinner-border text-success" role="status"></div>
+                        <p class="mt-2 text-muted">Analyzing soil parameters...</p>
+                    </div>
+
+                    <div id="result" class="result-box alert alert-success mt-4 text-center">
+                        <h4 class="alert-heading">Recommended Crop:</h4>
+                        <h1 class="display-4 fw-bold" id="cropName">--</h1>
+                        <hr>
+                        <p class="mb-0">Confidence Score: <strong id="confidenceScore">--</strong>%</p>
+                    </div>
+                    
+                    <div id="error" class="alert alert-danger mt-4 text-center" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('cropForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // UI Handling
+        const btn = document.getElementById('btnPredict');
+        const loading = document.getElementById('loading');
+        const resultBox = document.getElementById('result');
+        const errorBox = document.getElementById('error');
+        
+        btn.disabled = true;
+        loading.style.display = 'block';
+        resultBox.style.display = 'none';
+        errorBox.style.display = 'none';
+
+        // 1. Gather Data
+        const formData = {
+            N: parseFloat(document.getElementById('N').value),
+            P: parseFloat(document.getElementById('P').value),
+            K: parseFloat(document.getElementById('K').value),
+            temperature: parseFloat(document.getElementById('temperature').value),
+            humidity: parseFloat(document.getElementById('humidity').value),
+            ph: parseFloat(document.getElementById('ph').value),
+            rainfall: parseFloat(document.getElementById('rainfall').value)
+        };
+
+        try {
+            // 2. Call API
+            // CURRENT: Points directly to Python (for testing)
+            // FUTURE: Change this URL to your Java Endpoint (e.g., '/api/recommend')
+            const response = await fetch('http://127.0.0.1:8000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (!response.ok) throw new Error("API Connection Failed");
+
+            const data = await response.json();
+
+            // 3. Show Result
+            document.getElementById('cropName').innerText = data.prediction.toUpperCase();
+            document.getElementById('confidenceScore').innerText = data.confidence.toFixed(2);
+            resultBox.style.display = 'block';
+
+        } catch (err) {
+            errorBox.innerText = "⚠️ Error: " + err.message + ". Is the backend running?";
+            errorBox.style.display = 'block';
+        } finally {
+            btn.disabled = false;
+            loading.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

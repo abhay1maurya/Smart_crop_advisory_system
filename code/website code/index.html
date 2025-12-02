@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiSahayak - Smart Farming</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg p-0">
+                <a class="navbar-brand" href="#home">
+                    Krishi<span>Sahayak</span> <i class="fas fa-leaf text-success ms-2"></i>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                        <li class="nav-item">
+                            <a href="#contact" class="btn btn-quote">Get A Quote</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">Smart Tech for <span>Better Farming</span></h1>
+                    <p class="mt-3 mb-4 fs-5">Empowering farmers with AI-driven insights, weather data, and expert recommendations.</p>
+                    <a href="#about" class="btn btn-hero">LEARN MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="services-slider-container" id="services">
+        <div class="container">
+            <div class="slider-wrapper">
+                <button class="slider-btn prev-btn" onclick="slideLeft()"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn" onclick="slideRight()"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="services-track" id="sliderTrack">
+                    <div class="service-card">
+                        <div>
+                            <i class="fas fa-seedling service-icon"></i>
+                            <h4>Crop Recommendation</h4>
+                            <p>Get AI-powered advice on the best crops to grow based on soil health and season.</p>
+                        </div>
+                        <a href="#" class="btn-read-more">Read More</a>
+                    </div>
+                    <div class="service-card">
+                        <div>
+                            <i class="fas fa-flask service-icon"></i>
+                            <h4>Fertilizer Recommendation</h4>
+                            <p>Optimize yield with precise fertilizer dosage and nutrient management plans.</p>
+                        </div>
+                        <a href="#" class="btn-read-more">Read More</a>
+                    </div>
+                    <div class="service-card">
+                        <div>
+                            <i class="fas fa-bug service-icon"></i>
+                            <h4>Disease Detection</h4>
+                            <p>Upload leaf photos to instantly identify plant diseases and get cure suggestions.</p>
+                        </div>
+                        <a href="#" class="btn-read-more">Read More</a>
+                    </div>
+                    <div class="service-card">
+                        <div>
+                            <i class="fas fa-cloud-sun-rain service-icon"></i>
+                            <h4>Weather Forecasting</h4>
+                            <p>Real-time weather updates and alerts to plan your farming activities better.</p>
+                        </div>
+                        <a href="#" class="btn-read-more">Read More</a>
+                    </div>
+                    <div class="service-card">
+                        <div>
+                            <i class="fas fa-robot service-icon"></i>
+                            <h4>Multilingual Chatbot</h4>
+                            <p>Chat with our AI assistant in your local language to solve farming queries instantly.</p>
+                        </div>
+                        <a href="#" class="btn-read-more">Read More</a>
+                    </div>
+                    <div class="service-card">
+                        <div>
+                            <i class="fas fa-users service-icon"></i>
+                            <h4>Blog Community</h4>
+                            <p>Connect with other farmers, share success stories, and learn from experts.</p>
+                        </div>
+                        <a href="#" class="btn-read-more">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="slider-dots" id="sliderDots">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="welcome-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop" alt="Golden Crop Field" class="welcome-img shadow">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 class="section-title">Welcome To KrishiSahayak</h2>
+                    <div class="section-title-underline"></div>
+                    <p class="text-muted">We bridge the gap between technology and traditional farming. Our platform provides comprehensive tools to help farmers increase productivity and sustainability.</p>
+                    <p class="text-muted mb-4">From soil testing to market insights, we are your digital partner in agriculture.</p>
+                    <a href="#contact" class="btn btn-orange">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Latest Post</h2>
+                    <div class="section-title-underline mx-auto"></div>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-start">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card-new" data-id="post-1">
+                        <div class="blog-thumb-wrapper">
+                            <span class="card-badge badge-organic"><i class="fas fa-leaf"></i> Organic</span>
+                            <span class="card-badge-right"><i class="fas fa-star"></i> Featured</span>
+                            <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=1000" alt="Irrigation">
+                        </div>
+                        <div class="blog-content">
+                            <h5 class="blog-title-new">Revolutionary Smart Irrigation System Saves 60% Water</h5>
+                            <p class="blog-excerpt">Discover how AI-powered irrigation systems are transforming water management in agriculture, helping farmers reduce usage.</p>
+                            
+                            <div class="blog-tags">
+                                <span class="blog-tag green">Irrigation</span>
+                                <span class="blog-tag green">Water Conservation</span>
+                                <span class="blog-tag green">AI Tech</span>
+                            </div>
+
+                            <div class="blog-author-row">
+                                <div class="author-info">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="author-avatar">
+                                    <div class="author-text">
+                                        <h6>Rajesh Kumar</h6>
+                                        <span>Agricultural Engineer</span>
+                                    </div>
+                                </div>
+                                <button class="btn-follow">Follow</button>
+                            </div>
+
+                            <div class="blog-footer">
+                                <div class="action-icon like-btn"><i class="far fa-heart"></i> <span class="count">42</span></div>
+                                <div class="action-icon comment-btn"><i class="far fa-comment"></i> <span class="comment-count">24</span></div>
+                                <div class="action-icon ms-auto share-btn"><i class="fas fa-share-alt"></i></div>
+                            </div>
+
+                            <div class="comment-section">
+                                <div class="comments-list">
+                                    </div>
+                                <div class="comment-input-wrapper">
+                                    <input type="text" class="comment-input" placeholder="Write a comment...">
+                                    <button class="btn-post-comment">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card-new" data-id="post-2">
+                        <div class="blog-thumb-wrapper">
+                            <span class="card-badge badge-sustainable"><i class="fas fa-seedling"></i> Sustainable</span>
+                            <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=1000" alt="Organic Farming">
+                        </div>
+                        <div class="blog-content">
+                            <h5 class="blog-title-new">Organic Farming Practices for Maximum Yield</h5>
+                            <p class="blog-excerpt">Learn proven organic farming techniques that boost productivity while maintaining soil health and biodiversity.</p>
+                            
+                            <div class="blog-tags">
+                                <span class="blog-tag green">Organic</span>
+                                <span class="blog-tag green">Sustainability</span>
+                                <span class="blog-tag green">Soil Health</span>
+                            </div>
+
+                            <div class="blog-author-row">
+                                <div class="author-info">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author" class="author-avatar">
+                                    <div class="author-text">
+                                        <h6>Priya Sharma</h6>
+                                        <span>Organic Expert</span>
+                                    </div>
+                                </div>
+                                <button class="btn-follow">Follow</button>
+                            </div>
+
+                            <div class="blog-footer">
+                                <div class="action-icon like-btn"><i class="far fa-heart"></i> <span class="count">31</span></div>
+                                <div class="action-icon comment-btn"><i class="far fa-comment"></i> <span class="comment-count">18</span></div>
+                                <div class="action-icon ms-auto share-btn"><i class="fas fa-share-alt"></i></div>
+                            </div>
+
+                            <div class="comment-section">
+                                <div class="comments-list"></div>
+                                <div class="comment-input-wrapper">
+                                    <input type="text" class="comment-input" placeholder="Write a comment...">
+                                    <button class="btn-post-comment">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card-new" data-id="post-3">
+                        <div class="blog-thumb-wrapper">
+                            <span class="card-badge badge-ai"><i class="fas fa-robot"></i> AI Powered</span>
+                            <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1000" alt="Soil Analysis">
+                        </div>
+                        <div class="blog-content">
+                            <h5 class="blog-title-new">AI-Powered Soil Analysis for Precision Agriculture</h5>
+                            <p class="blog-excerpt">How machine learning algorithms are revolutionizing soil testing and providing farmers with precise recommendations.</p>
+                            
+                            <div class="blog-tags">
+                                <span class="blog-tag green">AI</span>
+                                <span class="blog-tag green">Soil Analysis</span>
+                                <span class="blog-tag green">Precision</span>
+                            </div>
+
+                            <div class="blog-author-row">
+                                <div class="author-info">
+                                    <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Author" class="author-avatar">
+                                    <div class="author-text">
+                                        <h6>Dr. Amit Patel</h6>
+                                        <span>AI Scientist</span>
+                                    </div>
+                                </div>
+                                <button class="btn-follow">Follow</button>
+                            </div>
+
+                            <div class="blog-footer">
+                                <div class="action-icon like-btn"><i class="far fa-heart"></i> <span class="count">56</span></div>
+                                <div class="action-icon comment-btn"><i class="far fa-comment"></i> <span class="comment-count">32</span></div>
+                                <div class="action-icon ms-auto share-btn"><i class="fas fa-share-alt"></i></div>
+                            </div>
+
+                            <div class="comment-section">
+                                <div class="comments-list"></div>
+                                <div class="comment-input-wrapper">
+                                    <input type="text" class="comment-input" placeholder="Write a comment...">
+                                    <button class="btn-post-comment">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-see-more-container">
+                <a href="#" class="btn-see-more">See More Posts <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-title-underline"></div>
+                    <p class="text-muted mb-5">Have questions about our services or need farming advice? Contact us today!</p>
+                    <div class="contact-icon-box">
+                        <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h6 class="mb-1 text-dark fw-bold">Our Location</h6>
+                            <p class="mb-0 text-muted">123 Farm Road, Agro City</p>
+                        </div>
+                    </div>
+                    <div class="contact-icon-box">
+                        <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h6 class="mb-1 text-dark fw-bold">Phone Number</h6>
+                            <p class="mb-0 text-muted">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-icon-box">
+                        <div class="icon-circle"><i class="far fa-envelope"></i></div>
+                        <div>
+                            <h6 class="mb-1 text-dark fw-bold">Email Address</h6>
+                            <p class="mb-0 text-muted">support@krishisahayak.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                        <input type="text" class="form-control" placeholder="Subject">
+                        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-orange">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a href="#home" class="footer-brand-wrap mb-3">
+                        <span class="footer-brand-name">KrishiSahayak</span>
+                    </a>
+                    <p class="text-white-50 small pe-lg-5">
+                        Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.
+                    </p>
+                    <div class="social-links mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-white mb-3">Our Services</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Crop Recommendation</a></li>
+                        <li><a href="#">Fertilizer Guide</a></li>
+                        <li><a href="#">Disease Detection</a></li>
+                        <li><a href="#">Weather Forecast</a></li>
+                        <li><a href="#">Farming Chatbot</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="text-white mb-3">Newsletter</h5>
+                    <p class="text-white-50 small">Subscribe to get the latest farming news and updates directly to your inbox.</p>
+                    
+                    <form class="newsletter-form mt-3" onsubmit="event.preventDefault(); subscribeNewsletter(this);">
+                        <input type="email" class="form-control newsletter-input" placeholder="Your Email" required>
+                        <button class="btn newsletter-btn" type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0 text-white-50 small">© 2025 KrishiSahayak. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
+                        <a href="#" class="text-white-50 small text-decoration-none">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

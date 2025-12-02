@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Fertilizer Advisor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .main-card { border: none; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .header-bg { background: linear-gradient(135deg, #198754 0%, #20c997 100%); color: white; border-radius: 15px 15px 0 0; }
+        .form-label { font-weight: 600; color: #495057; font-size: 0.9rem; }
+        .form-control:focus, .form-select:focus { border-color: #198754; box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25); }
+        .result-box { display: none; border-left: 5px solid #198754; background: #fff; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="py-5">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card main-card">
+                <div class="card-header header-bg text-center py-4">
+                    <h2 class="mb-1"><i class="fas fa-seedling me-2"></i>Smart Fertilizer Advisor</h2>
+                    <p class="mb-0 opacity-75">AI-Powered Nutrient Management System</p>
+                </div>
+                <div class="card-body p-5">
+                    <form id="fertForm">
+                        
+                        <h5 class="text-success mb-3 border-bottom pb-2">🌱 Crop & Soil Profile</h5>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Crop Type</label>
+                                <select class="form-select" id="Crop_Type" required>
+                                    <option value="" selected disabled>Select Crop...</option>
+                                    <option value="Rice">Rice</option>
+                                    <option value="Maize">Maize</option>
+                                    <option value="Sugarcane">Sugarcane</option>
+                                    <option value="Cotton">Cotton</option>
+                                    <option value="Wheat">Wheat</option>
+                                    <option value="Tobacco">Tobacco</option>
+                                    <option value="Barley">Barley</option>
+                                    <option value="Pigeon Peas">Pigeon Peas</option>
+                                    <option value="Chickpea">Chickpea</option>
+                                    <option value="Lentil">Lentil</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Soil Type</label>
+                                <select class="form-select" id="Soil_Type" required>
+                                    <option value="" selected disabled>Select Soil...</option>
+                                    <option value="Acidic Soil">Acidic Soil</option>
+                                    <option value="Alkaline Soil">Alkaline Soil</option>
+                                    <option value="Loamy Soil">Loamy Soil</option>
+                                    <option value="Neutral Soil">Neutral Soil</option>
+                                    <option value="Peaty Soil">Peaty Soil</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <h5 class="text-danger mb-3 border-bottom pb-2">🧪 Soil Nutrients (NPK)</h5>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-3">
+                                <label class="form-label">Nitrogen (N)</label>
+                                <input type="number" class="form-control" id="Nitrogen" required placeholder="e.g. 40">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Phosphorus (P)</label>
+                                <input type="number" class="form-control" id="Phosphorous" required placeholder="e.g. 30">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Potassium (K)</label>
+                                <input type="number" class="form-control" id="Potassium" required placeholder="e.g. 20">
+                            </div>
+                             <div class="col-md-3">
+                                <label class="form-label">Carbon (C)</label>
+                                <input type="number" step="0.1" class="form-control" id="Carbon" required placeholder="e.g. 1.2">
+                            </div>
+                        </div>
+
+                        <h5 class="text-info mb-3 border-bottom pb-2">🌦️ Environmental Data</h5>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <label class="form-label">Temperature (°C)</label>
+                                <input type="number" step="0.1" class="form-control" id="Temperature" required placeholder="26">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Humidity (%)</label>
+                                <input type="number" class="form-control" id="Humidity" required placeholder="50">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Moisture</label>
+                                <input type="number" class="form-control" id="Moisture" required placeholder="40">
+                            </div>
+                             <div class="col-md-4">
+                                <label class="form-label">Rainfall (mm)</label>
+                                <input type="number" class="form-control" id="Rainfall" required placeholder="100">
+                            </div>
+                             <div class="col-md-4">
+                                <label class="form-label">pH Level</label>
+                                <input type="number" step="0.1" class="form-control" id="PH" required placeholder="6.5">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-3 fw-bold shadow-sm" id="btnPredict">
+                            <i class="fas fa-search me-2"></i>Get Recommendation
+                        </button>
+                    </form>
+
+                    <div id="loading" class="text-center mt-4" style="display: none;">
+                        <div class="spinner-border text-success" role="status"></div>
+                        <p class="mt-2 text-muted">Analyzing soil chemistry...</p>
+                    </div>
+
+                    <div id="result" class="result-box alert mt-4 p-4 shadow-sm">
+                        <h6 class="text-uppercase text-muted mb-2" style="font-size: 0.85rem; letter-spacing: 1px;">Recommended Fertilizer</h6>
+                        <h2 class="display-6 fw-bold text-success" id="recName">--</h2>
+                        <p class="lead text-dark mb-2" id="recReason">--</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">AI Confidence Score:</small>
+                            <span class="badge bg-success rounded-pill fs-6" id="confScore">--%</span>
+                        </div>
+                    </div>
+                    
+                    <div id="error" class="alert alert-danger mt-4 text-center shadow-sm" style="display: none;">
+                        <i class="fas fa-exclamation-triangle me-2"></i><span id="errorMsg"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.getElementById('fertForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // UI Elements
+        const btn = document.getElementById('btnPredict');
+        const loading = document.getElementById('loading');
+        const resultBox = document.getElementById('result');
+        const errorBox = document.getElementById('error');
+        const errorMsg = document.getElementById('errorMsg');
+        
+        // Reset UI
+        btn.disabled = true;
+        loading.style.display = 'block';
+        resultBox.style.display = 'none';
+        errorBox.style.display = 'none';
+
+        // Collect Data (Matches FastAPI Input Schema)
+        const formData = {
+            Temperature: parseFloat(document.getElementById('Temperature').value),
+            Humidity: parseFloat(document.getElementById('Humidity').value),
+            Moisture: parseFloat(document.getElementById('Moisture').value),
+            Rainfall: parseFloat(document.getElementById('Rainfall').value),
+            PH: parseFloat(document.getElementById('PH').value),
+            Soil_Type: document.getElementById('Soil_Type').value,
+            Crop_Type: document.getElementById('Crop_Type').value,
+            Nitrogen: parseFloat(document.getElementById('Nitrogen').value),
+            Potassium: parseFloat(document.getElementById('Potassium').value),
+            Phosphorous: parseFloat(document.getElementById('Phosphorous').value),
+            Carbon: parseFloat(document.getElementById('Carbon').value)
+        };
+
+        try {
+            // Call Python API (Port 8001)
+            const response = await fetch('http://127.0.0.1:8001/predict_fertilizer', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (data.error) throw new Error(data.error);
+
+            // Update UI with Result
+            document.getElementById('recName').innerText = data.recommendation;
+            document.getElementById('recReason').innerText = data.reason;
+            document.getElementById('confScore').innerText = data.confidence + '%';
+            
+            resultBox.style.display = 'block';
+
+        } catch (err) {
+            errorMsg.innerText = err.message;
+            errorBox.style.display = 'block';
+        } finally {
+            btn.disabled = false;
+            loading.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

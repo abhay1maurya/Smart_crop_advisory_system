@@ -54,6 +54,17 @@
     <section class="categories-section">
         <div class="container">
             <h2 class="section-title">Explore Our Categories</h2>
+            
+            <!-- Slider controls - will show on both desktop and mobile -->
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn" aria-label="Previous category">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next-btn" aria-label="Next category">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
             <div class="categories-container">
                 <div class="category-card">
                     <div class="category-icon">
@@ -163,72 +174,70 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Slider indicators -->
+            <div class="slider-indicators">
+                <span class="indicator active" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
+                <span class="indicator" data-index="3"></span>
+                <span class="indicator" data-index="4"></span>
+                <span class="indicator" data-index="5"></span>
+            </div>
         </div>
     </section>
-<!-- Enhanced Latest Posts Section - Square Boxes Grid -->
-<section class="latest-posts">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Featured Posts</h2>
-            <a href="#" class="btn btn-secondary">
-                <i class="fas fa-plus"></i> Create Post
-            </a>
+
+    <!-- Enhanced Latest Posts Section - Square Boxes Grid -->
+    <section class="latest-posts">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Posts</h2>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-plus"></i> Create Post
+                </a>
+            </div>
         </div>
-    </div>
-    
-    <div class="posts-grid">
-        <!-- Post 1 -->
-        <div class="post-card">
-            <div class="featured-badge">
-                <i class="fas fa-star"></i> Featured
-            </div>
-            <div class="post-badge">
-                <i class="fas fa-leaf"></i> Organic
-            </div>
-            <div class="post-image-container">
-                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
-                <div class="post-overlay">
-                    <span class="read-time">8 min read</span>
+        
+        <div class="posts-grid">
+            <!-- Post 1 -->
+            <div class="post-card">
+                <div class="featured-badge">
+                    <i class="fas fa-star"></i> Featured
                 </div>
-            </div>
-            <div class="post-content">
-                <div class="post-meta">
-                    <div class="post-date">
-                        <i class="far fa-clock"></i> 2 days ago
+                <div class="post-badge">
+                    <i class="fas fa-leaf"></i> Organic
+                </div>
+                <div class="post-image-container">
+                    <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">Revolutionary Smart Irrigation System Saves 60% Water</h3>
+                    <p class="post-excerpt">Discover how AI-powered irrigation systems are transforming water management in agriculture, helping farmers reduce water usage while increasing crop yields.</p>
+                    <div class="post-tags">
+                        <span class="post-tag">Irrigation</span>
+                        <span class="post-tag">Water Conservation</span>
+                        <span class="post-tag">AI Technology</span>
                     </div>
-                    <div class="post-stats">
-                        <span class="post-stat">
-                            <i class="far fa-eye"></i> 2.4K
-                        </span>
-                        <span class="post-stat">
-                            <i class="far fa-comment"></i> 24
-                        </span>
-                    </div>
-                </div>
-                <h3 class="post-title">Revolutionary Smart Irrigation System Saves 60% Water</h3>
-                <p class="post-excerpt">Discover how AI-powered irrigation systems are transforming water management in agriculture, helping farmers reduce water usage while increasing crop yields.</p>
-                <div class="post-tags">
-                    <span class="post-tag">Irrigation</span>
-                    <span class="post-tag">Water Conservation</span>
-                    <span class="post-tag">AI Technology</span>
-                </div>
-                <div class="post-author">
-                    <div class="author-info">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Kumar">
+                    <div class="post-author">
+                        <div class="author-info">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Kumar">
+                            </div>
+                            <div class="author-details">
+                                <h4>Rajesh Kumar</h4>
+                                <p>Agricultural Engineer</p>
+                            </div>
                         </div>
-                        <div class="author-details">
-                            <h4>Rajesh Kumar</h4>
-                            <p>Agricultural Engineer</p>
-                        </div>
+                        <button class="btn-follow">Follow</button>
                     </div>
                     <div class="post-actions">
                         <button class="action-btn like-btn" data-likes="42">
                             <i class="far fa-heart"></i>
                             <span class="action-count">42</span>
                         </button>
-                        <button class="action-btn bookmark-btn">
-                            <i class="far fa-bookmark"></i>
+                        <button class="action-btn comment-btn">
+                            <i class="far fa-comment"></i>
+                            <span class="action-count">24</span>
                         </button>
                         <button class="action-btn share-btn">
                             <i class="fas fa-share-alt"></i>
@@ -236,57 +245,43 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Post 2 -->
-        <div class="post-card">
-            <div class="post-badge">
-                <i class="fas fa-seedling"></i> Sustainable
-            </div>
-            <div class="post-image-container">
-                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1592982150982-6ba2e8cf6a83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80')"></div>
-                <div class="post-overlay">
-                    <span class="read-time">6 min read</span>
+            
+            <!-- Post 2 -->
+            <div class="post-card">
+                <div class="post-badge">
+                    <i class="fas fa-seedling"></i> Sustainable
                 </div>
-            </div>
-            <div class="post-content">
-                <div class="post-meta">
-                    <div class="post-date">
-                        <i class="far fa-clock"></i> 5 days ago
+                <div class="post-image-container">
+                    <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1592982150982-6ba2e8cf6a83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80')"></div>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">Organic Farming Practices for Maximum Yield</h3>
+                    <p class="post-excerpt">Learn proven organic farming techniques that boost productivity while maintaining soil health and biodiversity for sustainable agriculture.</p>
+                    <div class="post-tags">
+                        <span class="post-tag">Organic</span>
+                        <span class="post-tag">Sustainability</span>
+                        <span class="post-tag">Soil Health</span>
                     </div>
-                    <div class="post-stats">
-                        <span class="post-stat">
-                            <i class="far fa-eye"></i> 1.8K
-                        </span>
-                        <span class="post-stat">
-                            <i class="far fa-comment"></i> 18
-                        </span>
-                    </div>
-                </div>
-                <h3 class="post-title">Organic Farming Practices for Maximum Yield</h3>
-                <p class="post-excerpt">Learn proven organic farming techniques that boost productivity while maintaining soil health and biodiversity for sustainable agriculture.</p>
-                <div class="post-tags">
-                    <span class="post-tag">Organic</span>
-                    <span class="post-tag">Sustainability</span>
-                    <span class="post-tag">Soil Health</span>
-                </div>
-                <div class="post-author">
-                    <div class="author-info">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma">
+                    <div class="post-author">
+                        <div class="author-info">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma">
+                            </div>
+                            <div class="author-details">
+                                <h4>Priya Sharma</h4>
+                                <p>Organic Farming Expert</p>
+                            </div>
                         </div>
-                        <div class="author-details">
-                            <h4>Priya Sharma</h4>
-                            <p>Organic Farming Expert</p>
-                        </div>
+                        <button class="btn-follow">Follow</button>
                     </div>
                     <div class="post-actions">
                         <button class="action-btn like-btn" data-likes="31">
                             <i class="far fa-heart"></i>
                             <span class="action-count">31</span>
                         </button>
-                        <button class="action-btn bookmark-btn">
-                            <i class="far fa-bookmark"></i>
+                        <button class="action-btn comment-btn">
+                            <i class="far fa-comment"></i>
+                            <span class="action-count">18</span>
                         </button>
                         <button class="action-btn share-btn">
                             <i class="fas fa-share-alt"></i>
@@ -294,57 +289,43 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Post 3 -->
-        <div class="post-card">
-            <div class="post-badge">
-                <i class="fas fa-robot"></i> AI Powered
-            </div>
-            <div class="post-image-container">
-                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
-                <div class="post-overlay">
-                    <span class="read-time">10 min read</span>
+            
+            <!-- Post 3 -->
+            <div class="post-card">
+                <div class="post-badge">
+                    <i class="fas fa-robot"></i> AI Powered
                 </div>
-            </div>
-            <div class="post-content">
-                <div class="post-meta">
-                    <div class="post-date">
-                        <i class="far fa-clock"></i> 1 week ago
+                <div class="post-image-container">
+                    <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                </div>
+                <div class="post-content">
+                    <h3 class="post-title">AI-Powered Soil Analysis for Precision Agriculture</h3>
+                    <p class="post-excerpt">How machine learning algorithms are revolutionizing soil testing and providing farmers with precise recommendations for fertilizer application.</p>
+                    <div class="post-tags">
+                        <span class="post-tag">AI</span>
+                        <span class="post-tag">Soil Analysis</span>
+                        <span class="post-tag">Precision Farming</span>
                     </div>
-                    <div class="post-stats">
-                        <span class="post-stat">
-                            <i class="far fa-eye"></i> 3.2K
-                        </span>
-                        <span class="post-stat">
-                            <i class="far fa-comment"></i> 32
-                        </span>
-                    </div>
-                </div>
-                <h3 class="post-title">AI-Powered Soil Analysis for Precision Agriculture</h3>
-                <p class="post-excerpt">How machine learning algorithms are revolutionizing soil testing and providing farmers with precise recommendations for fertilizer application.</p>
-                <div class="post-tags">
-                    <span class="post-tag">AI</span>
-                    <span class="post-tag">Soil Analysis</span>
-                    <span class="post-tag">Precision Farming</span>
-                </div>
-                <div class="post-author">
-                    <div class="author-info">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Dr. Amit Patel">
+                    <div class="post-author">
+                        <div class="author-info">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Dr. Amit Patel">
+                            </div>
+                            <div class="author-details">
+                                <h4>Dr. Amit Patel</h4>
+                                <p>AI Research Scientist</p>
+                            </div>
                         </div>
-                        <div class="author-details">
-                            <h4>Dr. Amit Patel</h4>
-                            <p>AI Research Scientist</p>
-                        </div>
+                        <button class="btn-follow">Follow</button>
                     </div>
                     <div class="post-actions">
                         <button class="action-btn like-btn" data-likes="56">
                             <i class="far fa-heart"></i>
                             <span class="action-count">56</span>
                         </button>
-                        <button class="action-btn bookmark-btn">
-                            <i class="far fa-bookmark"></i>
+                        <button class="action-btn comment-btn">
+                            <i class="far fa-comment"></i>
+                            <span class="action-count">32</span>
                         </button>
                         <button class="action-btn share-btn">
                             <i class="fas fa-share-alt"></i>
@@ -354,188 +335,13 @@
             </div>
         </div>
         
-        <!-- Post 4 -->
-        <div class="post-card">
-            <div class="post-badge">
-                <i class="fas fa-recycle"></i> Crop Rotation
-            </div>
-            <div class="post-image-container">
-                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1622372738946-62e02505feb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&q=80')"></div>
-                <div class="post-overlay">
-                    <span class="read-time">7 min read</span>
-                </div>
-            </div>
-            <div class="post-content">
-                <div class="post-meta">
-                    <div class="post-date">
-                        <i class="far fa-clock"></i> 2 weeks ago
-                    </div>
-                    <div class="post-stats">
-                        <span class="post-stat">
-                            <i class="far fa-eye"></i> 2.1K
-                        </span>
-                        <span class="post-stat">
-                            <i class="far fa-comment"></i> 41
-                        </span>
-                    </div>
-                </div>
-                <h3 class="post-title">Advanced Crop Rotation Strategies for Soil Health</h3>
-                <p class="post-excerpt">Master the art of crop rotation with these advanced techniques that improve soil fertility and break pest cycles naturally.</p>
-                <div class="post-tags">
-                    <span class="post-tag">Crop Rotation</span>
-                    <span class="post-tag">Soil Health</span>
-                    <span class="post-tag">Pest Management</span>
-                </div>
-                <div class="post-author">
-                    <div class="author-info">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anita Reddy">
-                        </div>
-                        <div class="author-details">
-                            <h4>Anita Reddy</h4>
-                            <p>Agronomist</p>
-                        </div>
-                    </div>
-                    <div class="post-actions">
-                        <button class="action-btn like-btn" data-likes="38">
-                            <i class="far fa-heart"></i>
-                            <span class="action-count">38</span>
-                        </button>
-                        <button class="action-btn bookmark-btn">
-                            <i class="far fa-bookmark"></i>
-                        </button>
-                        <button class="action-btn share-btn">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <div class="view-all-posts">
+            <button class="view-all-btn">
+                <i class="fas fa-arrow-right"></i>
+                View All Posts
+            </button>
         </div>
-        
-        <!-- Post 5 -->
-        <div class="post-card">
-            <div class="post-badge">
-                <i class="fas fa-tint"></i> Hydroponics
-            </div>
-            <div class="post-image-container">
-                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1596120236173-3cde47668e47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
-                <div class="post-overlay">
-                    <span class="read-time">9 min read</span>
-                </div>
-            </div>
-            <div class="post-content">
-                <div class="post-meta">
-                    <div class="post-date">
-                        <i class="far fa-clock"></i> 3 weeks ago
-                    </div>
-                    <div class="post-stats">
-                        <span class="post-stat">
-                            <i class="far fa-eye"></i> 1.5K
-                        </span>
-                        <span class="post-stat">
-                            <i class="far fa-comment"></i> 29
-                        </span>
-                    </div>
-                </div>
-                <h3 class="post-title">Modern Hydroponic Systems for Urban Farming</h3>
-                <p class="post-excerpt">Explore innovative hydroponic techniques that enable efficient food production in urban environments with limited space.</p>
-                <div class="post-tags">
-                    <span class="post-tag">Hydroponics</span>
-                    <span class="post-tag">Urban Farming</span>
-                    <span class="post-tag">Innovation</span>
-                </div>
-                <div class="post-author">
-                    <div class="author-info">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Vikram Singh">
-                        </div>
-                        <div class="author-details">
-                            <h4>Vikram Singh</h4>
-                            <p>Urban Agriculture Specialist</p>
-                        </div>
-                    </div>
-                    <div class="post-actions">
-                        <button class="action-btn like-btn" data-likes="27">
-                            <i class="far fa-heart"></i>
-                            <span class="action-count">27</span>
-                        </button>
-                        <button class="action-btn bookmark-btn">
-                            <i class="far fa-bookmark"></i>
-                        </button>
-                        <button class="action-btn share-btn">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Post 6 -->
-        <div class="post-card">
-            <div class="post-badge">
-                <i class="fas fa-cloud-sun"></i> Climate Smart
-            </div>
-            <div class="post-image-container">
-                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80')"></div>
-                <div class="post-overlay">
-                    <span class="read-time">11 min read</span>
-                </div>
-            </div>
-            <div class="post-content">
-                <div class="post-meta">
-                    <div class="post-date">
-                        <i class="far fa-clock"></i> 1 month ago
-                    </div>
-                    <div class="post-stats">
-                        <span class="post-stat">
-                            <i class="far fa-eye"></i> 2.8K
-                        </span>
-                        <span class="post-stat">
-                            <i class="far fa-comment"></i> 35
-                        </span>
-                    </div>
-                </div>
-                <h3 class="post-title">Climate-Smart Agriculture for Sustainable Future</h3>
-                <p class="post-excerpt">Learn how climate-smart agricultural practices help farmers adapt to climate change while reducing greenhouse gas emissions.</p>
-                <div class="post-tags">
-                    <span class="post-tag">Climate Smart</span>
-                    <span class="post-tag">Sustainability</span>
-                    <span class="post-tag">Future Farming</span>
-                </div>
-                <div class="post-author">
-                    <div class="author-info">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Dr. Meera Joshi">
-                        </div>
-                        <div class="author-details">
-                            <h4>Dr. Meera Joshi</h4>
-                            <p>Climate Scientist</p>
-                        </div>
-                    </div>
-                    <div class="post-actions">
-                        <button class="action-btn like-btn" data-likes="44">
-                            <i class="far fa-heart"></i>
-                            <span class="action-count">44</span>
-                        </button>
-                        <button class="action-btn bookmark-btn">
-                            <i class="far fa-bookmark"></i>
-                        </button>
-                        <button class="action-btn share-btn">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="view-all-posts">
-        <button class="view-all-btn">
-            <i class="fas fa-arrow-right"></i>
-            View All Posts
-        </button>
-    </div>
-</section>
+    </section>
 
     <!-- Latest Articles Section -->
     <section class="latest-articles">
@@ -564,16 +370,21 @@
                             <button class="btn-follow">Follow</button>
                         </div>
                         <h3 class="article-title">Optimizing Crop Selection for Maximum Profitability</h3>
-                        <div class="article-meta">
-                            <span><i class="far fa-clock"></i> 3 days ago</span>
-                            <span><i class="far fa-eye"></i> 2.4K views</span>
-                        </div>
                         <p class="article-excerpt">Learn how to choose the right crops based on soil type, climate conditions, and market demand to maximize your farming profitability.</p>
                         <div class="article-actions">
                             <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                            <div class="engagement">
-                                <span><i class="far fa-heart"></i> 124</span>
-                                <span><i class="far fa-bookmark"></i></span>
+                            <div class="article-engagement">
+                                <button class="engagement-btn like-btn" data-likes="124">
+                                    <i class="far fa-heart"></i>
+                                    <span class="engagement-count">124</span>
+                                </button>
+                                <button class="engagement-btn comment-btn">
+                                    <i class="far fa-comment"></i>
+                                    <span class="engagement-count">24</span>
+                                </button>
+                                <button class="engagement-btn share-btn">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -596,16 +407,21 @@
                             <button class="btn-follow">Follow</button>
                         </div>
                         <h3 class="article-title">Balanced Fertilizer Application for Different Soil Types</h3>
-                        <div class="article-meta">
-                            <span><i class="far fa-clock"></i> 1 week ago</span>
-                            <span><i class="far fa-eye"></i> 1.8K views</span>
-                        </div>
                         <p class="article-excerpt">Discover the right fertilizer combinations for various soil types to ensure optimal nutrient absorption and plant growth.</p>
                         <div class="article-actions">
                             <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                            <div class="engagement">
-                                <span><i class="far fa-heart"></i> 98</span>
-                                <span><i class="far fa-bookmark"></i></span>
+                            <div class="article-engagement">
+                                <button class="engagement-btn like-btn" data-likes="98">
+                                    <i class="far fa-heart"></i>
+                                    <span class="engagement-count">98</span>
+                                </button>
+                                <button class="engagement-btn comment-btn">
+                                    <i class="far fa-comment"></i>
+                                    <span class="engagement-count">18</span>
+                                </button>
+                                <button class="engagement-btn share-btn">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -628,16 +444,21 @@
                             <button class="btn-follow">Follow</button>
                         </div>
                         <h3 class="article-title">How AI is Revolutionizing Precision Agriculture</h3>
-                        <div class="article-meta">
-                            <span><i class="far fa-clock"></i> 2 weeks ago</span>
-                            <span><i class="far fa-eye"></i> 3.2K views</span>
-                        </div>
                         <p class="article-excerpt">Explore the latest AI technologies that are transforming traditional farming methods into data-driven precision agriculture.</p>
                         <div class="article-actions">
                             <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                            <div class="engagement">
-                                <span><i class="far fa-heart"></i> 156</span>
-                                <span><i class="far fa-bookmark"></i></span>
+                            <div class="article-engagement">
+                                <button class="engagement-btn like-btn" data-likes="156">
+                                    <i class="far fa-heart"></i>
+                                    <span class="engagement-count">156</span>
+                                </button>
+                                <button class="engagement-btn comment-btn">
+                                    <i class="far fa-comment"></i>
+                                    <span class="engagement-count">32</span>
+                                </button>
+                                <button class="engagement-btn share-btn">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -645,6 +466,14 @@
             </div>
         </div>
     </section>
+
+    <!-- View More Articles Button -->
+    <div class="view-all-posts">
+        <button class="view-all-btn">
+            <i class="fas fa-arrow-right"></i>
+            View More Articles
+        </button>
+    </div>
 
     <!-- Newsletter Section -->
     <section class="newsletter">
@@ -658,62 +487,62 @@
         </div>
     </section>
 
-<!-- Footer Section - Original Design -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-about">
-            <div class="footer-logo">
-                <i class="fas fa-seedling"></i> Smart Crop Advisory
+    <!-- Footer Section - Original Design -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-seedling"></i> Smart Crop Advisory
+                </div>
+                <p>Empowering Indian farmers with AI-powered agricultural insights and advisory services for sustainable and profitable farming.</p>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-outline">Login</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
             </div>
-            <p>Empowering Indian farmers with AI-powered agricultural insights and advisory services for sustainable and profitable farming.</p>
-            <div class="auth-buttons">
-                <a href="#" class="btn btn-outline">Login</a>
-                <a href="#" class="btn btn-primary">Sign Up</a>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Advisory Services</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">Crop Planning</a></li>
+                    <li><a href="#">Soil Testing</a></li>
+                    <li><a href="#">Pest Management</a></li>
+                    <li><a href="#">Weather Advisory</a></li>
+                    <li><a href="#">Market Insights</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Farm Road, Agricultural Zone, New Delhi, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@smartcropadvisory.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
         </div>
         
-        <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Advisory Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Smart Crop Advisory. All rights reserved.</p>
         </div>
-        
-        <div class="footer-services">
-            <h3>Our Services</h3>
-            <ul>
-                <li><a href="#">Crop Planning</a></li>
-                <li><a href="#">Soil Testing</a></li>
-                <li><a href="#">Pest Management</a></li>
-                <li><a href="#">Weather Advisory</a></li>
-                <li><a href="#">Market Insights</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-contact">
-            <h3>Contact Us</h3>
-            <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> 123 Farm Road, Agricultural Zone, New Delhi, India</p>
-                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fas fa-envelope"></i> info@smartcropadvisory.com</p>
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>&copy; 2023 Smart Crop Advisory. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
 
     <script src="script.js"></script>
 </body>

@@ -176,6 +176,10 @@ nav ul li a:hover::after {
 .btn-secondary {
     background-color: var(--secondary);
     color: white;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px;
+    white-space: nowrap;
 }
 
 .btn-secondary:hover {
@@ -188,8 +192,18 @@ nav ul li a:hover::after {
     background-color: transparent;
     color: var(--accent);
     border: 1px solid var(--accent);
-    padding: 5px 15px;
+    padding: 6px 15px;
     font-size: 0.8rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    font-weight: 500;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
 }
 
 .btn-follow:hover {
@@ -207,7 +221,8 @@ nav ul li a:hover::after {
 .hero {
     background: 
         linear-gradient(135deg, rgba(39, 174, 96, 0.85), rgba(52, 152, 219, 0.75)),
-        url('blog page/rice land.jpg');
+        url('blog page/rice land.jpg'),
+        linear-gradient(135deg, var(--primary), var(--accent));
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -228,7 +243,8 @@ nav ul li a:hover::after {
     bottom: 0;
     background: 
         linear-gradient(135deg, rgba(39, 174, 96, 0.9), rgba(52, 152, 219, 0.8)),
-        url('blog page/rice land.jpg');
+        url('blog page/rice land.jpg'),
+        linear-gradient(135deg, var(--primary), var(--accent));
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -296,6 +312,7 @@ nav ul li a:hover::after {
 .categories-section {
     margin: 50px 0;
     padding: 30px 0;
+    position: relative;
 }
 
 .section-title {
@@ -307,35 +324,101 @@ nav ul li a:hover::after {
     text-align: center;
 }
 
+/* Remove the orange underline from section titles */
 .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--secondary);
+    display: none;
 }
 
-.categories-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    justify-items: center;
+/* Also remove any gradient lines from section headers */
+.section-header::after {
+    display: none;
+}
+
+.slider-controls {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    padding: 0 10px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.slider-btn {
+    display: none;
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: var(--transition);
+    pointer-events: all;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.slider-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+.slider-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.slider-btn:disabled:hover {
+    background: white;
+    color: var(--primary);
+    transform: none;
+}
+
+.slider-indicators {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--light-gray);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.indicator.active {
+    background: var(--primary);
+    transform: scale(1.2);
 }
 
 /* Desktop Slider for Categories */
 @media (min-width: 769px) {
+    .categories-section {
+        overflow: hidden;
+    }
+    
     .categories-container {
         display: flex;
         overflow-x: auto;
         gap: 25px;
-        padding: 10px 5px;
+        padding: 10px 5px 20px;
         scrollbar-width: thin;
         scrollbar-color: var(--primary) var(--light-gray);
         justify-content: flex-start;
         flex-wrap: nowrap;
+        scroll-behavior: smooth;
     }
 
     .categories-container::-webkit-scrollbar {
@@ -355,9 +438,113 @@ nav ul li a:hover::after {
     .category-card {
         min-width: 280px;
         flex-shrink: 0;
+        transform: none;
+        opacity: 1;
+    }
+    
+    .slider-controls {
+        display: flex;
+    }
+    
+    .slider-btn {
+        display: flex;
+    }
+    
+    .slider-indicators {
+        display: flex;
+    }
+
+    /* Fix Category Card Movement on Desktop */
+    .category-card {
+        transform: none !important;
+    }
+    
+    .category-card:hover {
+        transform: translateY(-8px) scale(1.02) !important;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .category-card:hover::before {
+        transform: scaleX(1);
+    }
+    
+    /* Remove the 3D rotation effects on desktop */
+    .category-card {
+        transform-style: flat;
+        perspective: none;
+    }
+    
+    .category-card:hover {
+        rotate: none;
+        transform: translateY(-8px) scale(1.02) !important;
     }
 }
 
+/* Mobile View - Categories Slider */
+@media (max-width: 768px) {
+    .categories-section {
+        overflow: hidden;
+    }
+    
+    .categories-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 0;
+        padding: 0;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .categories-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .category-card {
+        min-width: 100%;
+        flex-shrink: 0;
+        transform: scale(0.9);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        margin: 0;
+        height: 300px;
+    }
+    
+    .category-card.active {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    .slider-controls {
+        display: flex;
+    }
+    
+    .slider-btn {
+        display: flex;
+    }
+    
+    .slider-indicators {
+        display: flex;
+    }
+
+    .category-card {
+        transform: scale(0.9);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+    
+    .category-card.active {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    .category-card:hover {
+        transform: scale(1) rotateY(5deg);
+        opacity: 1;
+    }
+}
+
+/* Original Category Card Styles */
 .category-card {
     background: white;
     border-radius: 15px;
@@ -480,35 +667,7 @@ nav ul li a:hover::after {
     color: var(--gray);
 }
 
-/* Enhanced Posts Section - Square Boxes Grid */
-.latest-posts {
-    margin: 80px 0;
-    position: relative;
-    width: 100%;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    position: relative;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-}
-
-.section-header::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 20px;
-    right: 20px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--primary), transparent);
-}
-
+/* Enhanced Posts Section - Updated */
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -527,7 +686,7 @@ nav ul li a:hover::after {
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    height: 500px;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -537,26 +696,9 @@ nav ul li a:hover::after {
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
 }
 
-.post-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(52, 152, 219, 0.05));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-.post-card:hover::before {
-    opacity: 1;
-}
-
 .post-image-container {
     position: relative;
-    height: 200px;
+    height: 250px;
     overflow: hidden;
     width: 100%;
 }
@@ -566,6 +708,7 @@ nav ul li a:hover::after {
     width: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     transition: all 0.5s ease;
     position: relative;
 }
@@ -573,34 +716,6 @@ nav ul li a:hover::after {
 .post-card:hover .post-image {
     transform: scale(1.1);
     filter: brightness(1.1);
-}
-
-.post-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
-    display: flex;
-    align-items: flex-end;
-    padding: 15px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.post-card:hover .post-overlay {
-    opacity: 1;
-}
-
-.read-time {
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--dark);
-    padding: 4px 10px;
-    border-radius: 15px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
 }
 
 .post-badge {
@@ -638,51 +753,20 @@ nav ul li a:hover::after {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-}
-
-.post-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    font-size: 0.8rem;
-    color: var(--gray);
-}
-
-.post-date {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-weight: 500;
-}
-
-.post-stats {
-    display: flex;
-    gap: 12px;
-}
-
-.post-stat {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    transition: color 0.3s ease;
-}
-
-.post-stat:hover {
-    color: var(--primary);
+    gap: 15px;
 }
 
 .post-title {
     font-size: 1.3rem;
-    margin-bottom: 12px;
     color: var(--dark);
     line-height: 1.4;
-    transition: color 0.3s ease;
+    transition: var(--transition);
     font-weight: 700;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    margin: 0;
 }
 
 .post-card:hover .post-title {
@@ -692,20 +776,18 @@ nav ul li a:hover::after {
 .post-excerpt {
     font-size: 0.9rem;
     color: var(--gray);
-    margin-bottom: 15px;
     line-height: 1.5;
-    flex-grow: 1;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    margin: 0;
 }
 
 .post-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 15px;
 }
 
 .post-tag {
@@ -731,13 +813,13 @@ nav ul li a:hover::after {
     justify-content: space-between;
     padding-top: 15px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
-    margin-top: auto;
 }
 
 .author-info {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex: 1;
 }
 
 .author-avatar {
@@ -752,6 +834,7 @@ nav ul li a:hover::after {
     transition: transform 0.3s ease;
     border: 2px solid white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
 }
 
 .post-card:hover .author-avatar {
@@ -764,6 +847,10 @@ nav ul li a:hover::after {
     object-fit: cover;
 }
 
+.author-details {
+    flex: 1;
+}
+
 .author-details h4 {
     font-size: 0.9rem;
     margin-bottom: 2px;
@@ -774,18 +861,51 @@ nav ul li a:hover::after {
 .author-details p {
     font-size: 0.75rem;
     color: var(--gray);
+    margin: 0;
+}
+
+/* Update Post Section Follow Button to match Article Section */
+.post-author .btn-follow {
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 6px 15px;
+    font-size: 0.8rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    margin-left: 10px;
+    font-weight: 500;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.post-author .btn-follow:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.post-author .btn-follow.following {
+    background-color: var(--accent);
+    color: white;
 }
 
 .post-actions {
     display: flex;
     gap: 8px;
+    justify-content: flex-start;
 }
 
 .action-btn {
     background: rgba(0, 0, 0, 0.05);
     border: none;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -808,7 +928,7 @@ nav ul li a:hover::after {
     background: rgba(231, 76, 60, 0.1);
 }
 
-.action-btn.bookmarked {
+.action-btn.commented {
     color: var(--accent);
     background: rgba(52, 152, 219, 0.1);
 }
@@ -854,7 +974,7 @@ nav ul li a:hover::after {
     box-shadow: 0 8px 30px rgba(39, 174, 96, 0.4);
 }
 
-/* Mobile View - Square Boxes */
+/* Mobile View - Post Section */
 @media (max-width: 768px) {
     .posts-grid {
         grid-template-columns: 1fr;
@@ -863,15 +983,23 @@ nav ul li a:hover::after {
     }
     
     .post-card {
-        height: 450px;
+        height: auto;
+        margin: 0;
     }
     
     .post-image-container {
-        height: 180px;
+        height: 200px;
+    }
+    
+    .post-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
     
     .post-content {
         padding: 20px;
+        gap: 12px;
     }
     
     .post-title {
@@ -882,26 +1010,32 @@ nav ul li a:hover::after {
         font-size: 0.85rem;
     }
     
+    /* Mobile follow button alignment */
+    .post-author {
+        position: relative;
+        padding-right: 80px;
+    }
+    
+    .post-author .btn-follow {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        margin: 0;
+        padding: 5px 12px;
+        font-size: 0.75rem;
+        height: 30px;
+        min-width: 75px;
+    }
+    
     .author-avatar {
         width: 35px;
         height: 35px;
     }
     
     .action-btn {
-        width: 32px;
-        height: 32px;
-    }
-    
-    .section-header {
-        padding: 0 15px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .section-header::after {
-        left: 15px;
-        right: 15px;
+        width: 38px;
+        height: 38px;
     }
 }
 
@@ -910,12 +1044,8 @@ nav ul li a:hover::after {
         gap: 20px;
     }
     
-    .post-card {
-        height: 420px;
-    }
-    
     .post-image-container {
-        height: 160px;
+        height: 180px;
     }
     
     .post-content {
@@ -926,21 +1056,15 @@ nav ul li a:hover::after {
         font-size: 1.1rem;
     }
     
-    .post-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-    
     .post-author {
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
+        padding-right: 75px;
     }
     
-    .post-actions {
-        width: 100%;
-        justify-content: center;
+    .post-author .btn-follow {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+        height: 28px;
+        min-width: 70px;
     }
 }
 
@@ -952,47 +1076,11 @@ nav ul li a:hover::after {
     }
     
     .post-card {
-        height: 480px;
+        height: auto;
     }
 }
 
-/* Animation for interactive elements */
-@keyframes likeAnimation {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.3); }
-    100% { transform: scale(1); }
-}
-
-@keyframes bookmarkAnimation {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-}
-
-.like-animate {
-    animation: likeAnimation 0.6s ease;
-}
-
-.bookmark-animate {
-    animation: bookmarkAnimation 0.6s ease;
-}
-
-/* Hover effects for touch devices */
-@media (hover: none) {
-    .post-card:hover {
-        transform: none;
-    }
-    
-    .post-card:active {
-        transform: scale(0.98);
-    }
-    
-    .action-btn:active {
-        transform: scale(0.9);
-    }
-}
-
-/* Articles Section */
+/* Articles Section - Updated */
 .latest-articles {
     margin: 60px 0;
 }
@@ -1006,65 +1094,77 @@ nav ul li a:hover::after {
 
 .article-card {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
     transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .article-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .article-category {
     background-color: var(--primary);
     color: white;
-    padding: 5px 15px;
+    padding: 8px 20px;
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 600;
     display: inline-block;
-    border-radius: 0 0 8px 0;
+    border-radius: 0 0 12px 0;
     transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .article-card:hover .article-category {
     background-color: var(--accent);
+    padding-right: 25px;
 }
 
 .article-content {
-    padding: 20px;
+    padding: 25px;
 }
 
 .article-author {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     justify-content: space-between;
 }
 
 .author-info {
     display: flex;
     align-items: center;
+    flex: 1;
+}
+
+.author-details {
+    flex: 1;
 }
 
 .author-avatar {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     background-color: var(--light-gray);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px;
+    margin-right: 12px;
     color: var(--gray);
     font-weight: bold;
     overflow: hidden;
     transition: var(--transition);
+    border: 2px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .article-card:hover .author-avatar {
     transform: scale(1.1);
+    border-color: var(--primary);
 }
 
 .author-avatar img {
@@ -1075,7 +1175,9 @@ nav ul li a:hover::after {
 
 .author-details h4 {
     font-size: 1rem;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
+    font-weight: 600;
+    color: var(--dark);
 }
 
 .author-details p {
@@ -1083,79 +1185,292 @@ nav ul li a:hover::after {
     color: var(--gray);
 }
 
+/* Ensure Article Section Follow Button stays consistent */
+.article-author .btn-follow {
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 6px 15px;
+    font-size: 0.8rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    font-weight: 500;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.article-author .btn-follow:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.article-author .btn-follow.following {
+    background-color: var(--accent);
+    color: white;
+}
+
 .article-title {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
     color: var(--dark);
     line-height: 1.4;
     transition: var(--transition);
+    font-weight: 700;
 }
 
 .article-card:hover .article-title {
     color: var(--primary);
 }
 
-.article-meta {
-    display: flex;
-    justify-content: space-between;
-    color: var(--gray);
-    font-size: 0.8rem;
-    margin-bottom: 15px;
-}
-
 .article-excerpt {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--gray);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .article-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .read-more {
     color: var(--primary);
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     display: flex;
     align-items: center;
     transition: var(--transition);
+    font-size: 0.9rem;
 }
 
 .read-more:hover {
     color: var(--accent);
+    transform: translateX(3px);
 }
 
 .read-more i {
-    margin-left: 5px;
+    margin-left: 8px;
     transition: transform 0.3s;
 }
 
 .read-more:hover i {
-    transform: translateX(3px);
+    transform: translateX(5px);
 }
 
-.engagement {
+.article-engagement {
     display: flex;
-    gap: 15px;
-    color: var(--gray);
-    font-size: 0.8rem;
+    gap: 12px;
+    align-items: center;
 }
 
-.engagement span {
+.engagement-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    transition: var(--transition);
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--gray);
+    position: relative;
+    font-size: 0.9rem;
 }
 
-.article-card:hover .engagement span {
-    color: var(--dark);
+.engagement-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
 }
 
-.engagement i {
-    margin-right: 5px;
+.engagement-btn.liked {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+}
+
+.engagement-btn.commented {
+    color: var(--accent);
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.engagement-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: var(--primary);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* Mobile View - Articles */
+@media (max-width: 768px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .article-content {
+        padding: 20px;
+    }
+    
+    .article-title {
+        font-size: 1.2rem;
+    }
+    
+    .article-excerpt {
+        font-size: 0.9rem;
+    }
+    
+    .article-actions {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .article-engagement {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .engagement-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Mobile follow button alignment for articles */
+    .article-author {
+        position: relative;
+        padding-right: 100px;
+    }
+    
+    .article-author .btn-follow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 5px 12px;
+        font-size: 0.75rem;
+        height: 30px;
+        min-width: 75px;
+    }
+    
+    .author-details h4 {
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+    }
+    
+    .author-details p {
+        font-size: 0.75rem;
+    }
+
+    /* Mobile View - Section Header Alignment */
+    .section-header {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 15px !important;
+        margin-bottom: 30px !important;
+        gap: 15px !important;
+    }
+    
+    .section-title {
+        margin-bottom: 0 !important;
+        text-align: left !important;
+        flex: 1 !important;
+    }
+    
+    /* Create Post button alignment */
+    .latest-posts .section-header .btn-secondary {
+        margin: 0 !important;
+        white-space: nowrap;
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    /* Post Article button alignment */
+    .latest-articles .section-header .btn-secondary {
+        margin: 0 !important;
+        white-space: nowrap;
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    /* Ensure proper spacing for the sections */
+    .latest-posts .container,
+    .latest-articles .container {
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-card {
+        margin: 0 10px;
+    }
+    
+    .article-content {
+        padding: 15px;
+    }
+    
+    .article-author {
+        padding-right: 90px;
+    }
+    
+    .article-author .btn-follow {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+        height: 28px;
+        min-width: 70px;
+    }
+    
+    .author-avatar {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    /* For very small screens */
+    .section-header {
+        padding: 0 10px !important;
+        gap: 10px !important;
+    }
+    
+    .section-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .latest-posts .section-header .btn-secondary,
+    .latest-articles .section-header .btn-secondary {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .btn-secondary i {
+        margin-right: 4px;
+    }
 }
 
 /* Newsletter Section */
@@ -1381,6 +1696,38 @@ footer {
     }
 }
 
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes likeAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bookmarkAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.like-animate {
+    animation: likeAnimation 0.6s ease;
+}
+
+.bookmark-animate {
+    animation: bookmarkAnimation 0.6s ease;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .categories-container {
@@ -1545,12 +1892,6 @@ footer {
         border-radius: 4px;
         padding: 12px;
     }
-    
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1589,27 +1930,6 @@ footer {
     .category-card {
         max-width: 300px;
     }
-    
-    .post-image {
-        height: 180px;
-    }
-    
-    .post-content {
-        padding: 15px;
-    }
-    
-    .post-title {
-        font-size: 1.1rem;
-    }
-    
-    .post-meta {
-        font-size: 0.8rem;
-    }
-    
-    .author-mini-avatar {
-        width: 35px;
-        height: 35px;
-    }
 }
 
 /* Desktop layout improvements */
@@ -1645,17 +1965,178 @@ footer {
     }
 }
 
-/* Fallback background in case image doesn't load */
-.hero {
-    background: 
-        linear-gradient(135deg, rgba(39, 174, 96, 0.85), rgba(52, 152, 219, 0.75)),
-        url('blog page/rice land.jpg'),
-        linear-gradient(135deg, var(--primary), var(--accent));
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+/* Shift category icons downward */
+.category-icon {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    transition: var(--transition);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(39, 174, 96, 0.1);
+    margin-top: 10px; /* Add this line to shift icons downward */
 }
 
-.hero::before {
-    background: 
-        linear-gradient(135deg, rgba(39, 174, 96, 0.9), rgba(52, 152, 219, 0.8)),
-        url('blog page/rice land.jpg'),
-        linear-gradient(135deg, var(--primary), var(--accent));
+/* For mobile view */
+@media (max-width: 768px) {
+    .category-icon {
+        margin-top: 15px; /* Slightly more on mobile */
+    }
 }
+
+    /* Show slider controls on mobile */
+    .slider-controls {
+        display: flex;
+    }
+    
+    .slider-btn {
+        display: flex;
+    }
+    
+    .slider-indicators {
+        display: flex;
+    }
+    
+/* Mobile View - Categories Slider - Improved */
+@media (max-width: 768px) {
+    .categories-section {
+        overflow: hidden;
+        padding: 20px 0;
+    }
+    
+    .categories-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 0;
+        padding: 10px 15px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-snap-type: x mandatory; /* Add snap behavior */
+    }
+    
+    .categories-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .category-card {
+        min-width: 85%;
+        flex-shrink: 0;
+        transform: scale(0.9);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        margin: 0 10px;
+        height: 280px;
+        scroll-snap-align: center; /* Snap to center */
+    }
+    
+    .category-card.active {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    /* Improve slider controls visibility */
+    .slider-controls {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        justify-content: space-between;
+        padding: 0 5px;
+        z-index: 10;
+        pointer-events: none;
+    }
+    
+    .slider-btn {
+        display: flex;
+        pointer-events: all;
+        background: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: var(--transition);
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1rem;
+    }
+    
+    .slider-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+    
+    .slider-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--light-gray);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    
+    .indicator.active {
+        background: var(--primary);
+        transform: scale(1.2);
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .category-card {
+        min-width: 80%; /* Slightly wider on very small screens */
+        height: 260px; /* Slightly shorter */
+        margin: 0 8px;
+    }
+    
+    .category-icon {
+        font-size: 2.2rem;
+        width: 65px;
+        height: 65px;
+        margin-top: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .category-title {
+        font-size: 1.1rem;
+    }
+    
+    .category-desc {
+        font-size: 0.85rem;
+    }
+    
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Ensure JavaScript slider works on mobile */

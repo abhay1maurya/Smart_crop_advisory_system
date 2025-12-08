@@ -1,70 +1,88 @@
-// --- Slider Functions ---
-const track = document.getElementById('sliderTrack');
-
-function slideLeft() {
-    if(!track) return;
-    const item = track.querySelector('.service-card');
-    if(item) {
-        const itemWidth = item.offsetWidth;
-        const gap = 20;
-        track.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
-    }
-}
-
-function slideRight() {
-    if(!track) return;
-    const item = track.querySelector('.service-card');
-    if(item) {
-        const itemWidth = item.offsetWidth;
-        const gap = 20;
-        track.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
-    }
-}
-
-// --- Initialize Dots ---
-document.addEventListener('DOMContentLoaded', () => {
-    if(!track) return;
-    const cards = track.querySelectorAll('.service-card');
-    const dotsContainer = document.getElementById('sliderDots');
+// --- Location JS ---
+function requestLocation() {
+    // Select all instances of location text (Desktop & Mobile)
+    const locTexts = document.querySelectorAll('.location-text');
     
-    if (cards.length > 0 && dotsContainer) {
-        // Create dots based on card count
-        cards.forEach((card, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('slider-dot');
-            if(index === 0) dot.classList.add('active');
-            
-            // Add click listener to dot
-            dot.addEventListener('click', () => {
-                const itemWidth = card.offsetWidth;
-                const gap = 20;
-                track.scrollTo({
-                    left: index * (itemWidth + gap),
-                    behavior: 'smooth'
-                });
-            });
-            
-            dotsContainer.appendChild(dot);
-        });
-        
-        // Update active dot on scroll
-        track.addEventListener('scroll', () => {
-            const itemWidth = cards[0].offsetWidth;
-            const gap = 20;
-            const index = Math.round(track.scrollLeft / (itemWidth + gap));
-            
-            const dots = document.querySelectorAll('.slider-dot');
-            dots.forEach(d => d.classList.remove('active'));
-            if(dots[index]) dots[index].classList.add('active');
-        });
+    if (navigator.geolocation) {
+        locTexts.forEach(el => el.innerText = "Locating...");
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        alert("Geolocation is not supported by this browser.");
     }
+}
+
+function showPosition(position) {
+    const locTexts = document.querySelectorAll('.location-text');
+    const tempTexts = document.querySelectorAll('.weather-temp');
+
+    // Update all instances
+    locTexts.forEach(el => el.innerText = "GPS Active");
+    tempTexts.forEach(el => el.innerText = "28°C");
+
+    alert("Location Access Granted! \nLat: " + position.coords.latitude + "\nLong: " + position.coords.longitude);
+}
+
+function showError(error) {
+    const locTexts = document.querySelectorAll('.location-text');
+    locTexts.forEach(el => el.innerText = "Meerut");
+    alert("Location access denied.");
+}
+
+// --- Slider Logic (Generic) ---
+function setupSlider(trackId, dotsId) {
+    const track = document.getElementById(trackId);
+    const dotsContainer = document.getElementById(dotsId);
+    if(!track || !dotsContainer) return;
+
+    const items = Array.from(track.children);
+    if(items.length === 0) return;
+
+    dotsContainer.innerHTML = '';
+
+    items.forEach((item, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('slider-dot');
+        if(index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            const itemWidth = item.offsetWidth; 
+            track.scrollTo({ left: item.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    track.addEventListener('scroll', () => {
+        const scrollLeft = track.scrollLeft;
+        const itemWidth = items[0].offsetWidth; 
+        const index = Math.round(scrollLeft / itemWidth);
+        const dots = dotsContainer.querySelectorAll('.slider-dot');
+        dots.forEach(d => d.classList.remove('active'));
+        if(dots[index]) dots[index].classList.add('active');
+    });
+}
+
+// --- Initialize Sliders ---
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('sliderTrack');
+    window.slideLeft = function() {
+        if(!track) return;
+        const item = track.querySelector('.service-card');
+        if(item) track.scrollBy({ left: -(item.offsetWidth + 20), behavior: 'smooth' });
+    }
+    window.slideRight = function() {
+        if(!track) return;
+        const item = track.querySelector('.service-card');
+        if(item) track.scrollBy({ left: (item.offsetWidth + 20), behavior: 'smooth' });
+    }
+    setupSlider('sliderTrack', 'sliderDots');
+    setupSlider('benefitsTrack', 'benefitsDots');
+    setupSlider('expertsTrack', 'expertsDots');
+    setupSlider('testimonialsTrack', 'testimonialsDots');
 });
 
 // --- Mobile Menu Interaction ---
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
     const menuToggle = document.getElementById('mainNav');
-    
     if(menuToggle) {
         const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle: false});
         navLinks.forEach((l) => {
@@ -77,28 +95,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// --- Interactive Newsletter Function ---
+// --- Newsletter ---
 function subscribeNewsletter(form) {
     const btn = form.querySelector('.newsletter-btn');
     const icon = btn.querySelector('i');
     const input = form.querySelector('input');
-    
-    // Animation start
     btn.style.transform = 'scale(0.9)';
     icon.classList.remove('fa-paper-plane');
     icon.classList.add('fa-spinner', 'fa-spin');
-    
     setTimeout(() => {
-        // Success
         icon.classList.remove('fa-spinner', 'fa-spin');
         icon.classList.add('fa-check');
-        btn.style.backgroundColor = '#28a745'; // Success Green
+        btn.style.backgroundColor = '#28a745'; 
         btn.style.transform = 'scale(1)';
-        
         input.value = '';
         input.placeholder = 'Thanks for subscribing!';
-        
-        // Reset after 3 seconds
         setTimeout(() => {
             icon.classList.remove('fa-check');
             icon.classList.add('fa-paper-plane');
@@ -108,7 +119,7 @@ function subscribeNewsletter(form) {
     }, 1500);
 }
 
-// --- Follow Button Toggle ---
+// --- Follow Button ---
 document.querySelectorAll('.btn-follow').forEach(btn => {
     btn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -122,64 +133,33 @@ document.querySelectorAll('.btn-follow').forEach(btn => {
     });
 });
 
-// ==========================================================
-// --- FIXED POST INTERACTION LOGIC (Isolation Guaranteed) ---
-// ==========================================================
+// --- Post Interaction ---
 document.addEventListener('DOMContentLoaded', () => {
     const allCards = document.querySelectorAll('.blog-card-new');
-
     allCards.forEach(card => {
-        // We select elements specifically INSIDE this 'card' variable.
-        // This guarantees that clicking one card's button NEVER affects another.
-        
         const postId = card.getAttribute('data-id');
-        
-        // 1. ISOLATED LIKE BUTTON LOGIC
         const likeBtn = card.querySelector('.like-btn');
         const likeCountSpan = likeBtn.querySelector('.count'); 
-        
         likeBtn.addEventListener('click', function() {
-            // Toggle the visual class
             this.classList.toggle('liked');
             const icon = this.querySelector('i');
-            
-            // Get current number safely
             let currentCount = parseInt(likeCountSpan.innerText) || 0;
-
             if (this.classList.contains('liked')) {
-                // If liked, fill the heart and INCREASE count
-                icon.classList.remove('far');
-                icon.classList.add('fas');
-                likeCountSpan.innerText = currentCount + 1;
+                icon.classList.remove('far'); icon.classList.add('fas'); likeCountSpan.innerText = currentCount + 1;
             } else {
-                // If unliked, empty the heart and DECREASE count
-                icon.classList.remove('fas');
-                icon.classList.add('far');
-                // Prevent negative numbers just in case
-                likeCountSpan.innerText = Math.max(0, currentCount - 1);
+                icon.classList.remove('fas'); icon.classList.add('far'); likeCountSpan.innerText = Math.max(0, currentCount - 1);
             }
         });
-
-        // 2. ISOLATED COMMENT SECTION TOGGLE
         const commentToggleBtn = card.querySelector('.comment-btn');
         const commentSection = card.querySelector('.comment-section');
-        
         commentToggleBtn.addEventListener('click', function() {
             this.classList.toggle('active-comment');
-            if (commentSection.style.display === 'block') {
-                commentSection.style.display = 'none';
-            } else {
-                commentSection.style.display = 'block';
-            }
+            commentSection.style.display = (commentSection.style.display === 'block') ? 'none' : 'block';
         });
-
-        // 3. ISOLATED POST COMMENT LOGIC
         const postBtn = card.querySelector('.btn-post-comment');
         const input = card.querySelector('.comment-input');
         const list = card.querySelector('.comments-list');
         const commentCountSpan = card.querySelector('.comment-count');
-        
-        // Function to add comment to this specific card's list
         const addCommentToDOM = (text) => {
             const newComment = document.createElement('div');
             newComment.className = 'single-comment';
@@ -187,40 +167,38 @@ document.addEventListener('DOMContentLoaded', () => {
             list.appendChild(newComment);
             list.scrollTop = list.scrollHeight;
         };
-
-        // Load saved comments specifically for this postId
         const savedComments = JSON.parse(localStorage.getItem(`comments_${postId}`)) || [];
         savedComments.forEach(comment => addCommentToDOM(comment));
-        
-        // Update Count based on saved data
         let baseCount = parseInt(commentCountSpan.innerText) || 0; 
-        // Note: Logic assumes HTML static count didn't include saved ones initially.
-        // If reloading, you might want to manage base count differently, 
-        // but for now we append the saved count to the view.
         commentCountSpan.innerText = baseCount + savedComments.length;
-
         postBtn.addEventListener('click', function() {
             const text = input.value.trim();
             if (text) {
                 addCommentToDOM(text);
-                
-                // Save to LocalStorage using unique ID
                 const currentComments = JSON.parse(localStorage.getItem(`comments_${postId}`)) || [];
                 currentComments.push(text);
                 localStorage.setItem(`comments_${postId}`, JSON.stringify(currentComments));
-                
-                // Update the visual count ONLY for this card
                 let currentCount = parseInt(commentCountSpan.innerText) || 0;
                 commentCountSpan.innerText = currentCount + 1;
-
                 input.value = '';
             }
         });
-
-        // 4. ISOLATED SHARE BUTTON
         const shareBtn = card.querySelector('.share-btn');
-        shareBtn.addEventListener('click', function() {
-            alert(`Link for ${postId} copied to clipboard!`);
-        });
+        shareBtn.addEventListener('click', function() { alert(`Link for ${postId} copied to clipboard!`); });
     });
 });
+
+// --- Manual Section ---
+function showManual(featureId) {
+    const panes = document.querySelectorAll('.manual-pane');
+    panes.forEach(pane => pane.classList.remove('active'));
+    const navs = document.querySelectorAll('.manual-nav-box');
+    navs.forEach(nav => nav.classList.remove('active'));
+    const targetPane = document.getElementById('manual-' + featureId);
+    if(targetPane) targetPane.classList.add('active');
+    navs.forEach(nav => {
+        if(nav.getAttribute('onclick').includes(featureId)) {
+            nav.classList.add('active');
+        }
+    });
+}

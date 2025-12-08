@@ -13,25 +13,89 @@
 
     <header class="header-section">
         <div class="container">
-            <nav class="navbar navbar-expand-lg p-0">
-                <a class="navbar-brand" href="#home">
-                    Krishi<span>Sahayak</span> <i class="fas fa-leaf text-success ms-2"></i>
+            
+            <div class="top-bar-desktop d-none d-lg-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                <a class="navbar-brand p-0" href="#home">
+                    <div class="brand-logo-wrapper">
+                        <img src="logo3.0.png" alt="Krishi Sahayak" class="brand-logo-img">
+                    </div>
                 </a>
+
+                <div class="d-flex align-items-center gap-3">
+                    <div class="weather-widget" onclick="requestLocation()">
+                        <i class="fas fa-map-marker-alt text-success me-1"></i>
+                        <span class="me-2 location-text">Meerut</span>
+                        <span class="weather-divider">|</span>
+                        <i class="fas fa-cloud-sun text-warning me-1"></i>
+                        <span class="weather-temp">24°C</span>
+                    </div>
+
+                    <div class="dropdown lang-dropdown">
+                        <a class="dropdown-toggle text-decoration-none text-dark fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1 text-success"></i> EN
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Hindi (हिंदी)</a></li>
+                            <li><a class="dropdown-item" href="#">Punjabi (ਪੰਜਾਬੀ)</a></li>
+                            <li><a class="dropdown-item" href="#">Tamil (தமிழ்)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-expand-lg p-0">
+                
+                <a class="navbar-brand d-lg-none" href="#home">
+                    <div class="brand-logo-wrapper">
+                        <img src="logo3.0.png" alt="Krishi Sahayak" class="brand-logo-img">
+                    </div>
+                </a>
+
+                <div class="weather-widget mobile-header-widget d-flex d-lg-none mx-auto" onclick="requestLocation()">
+                    <i class="fas fa-map-marker-alt text-success"></i>
+                    <span class="location-text mx-1">Meerut</span>
+                    <span class="weather-divider">|</span>
+                    <i class="fas fa-cloud-sun text-warning ms-1"></i>
+                    <span class="weather-temp ms-1">24°C</span>
+                </div>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-                    <ul class="navbar-nav align-items-center">
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
-                        <li class="nav-item">
-                            <a href="#contact" class="btn btn-quote">Get A Quote</a>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item nav-btn-group align-items-center w-100">
+                            
+                            
+
+                            <a href="#" class="nav-link btn-login-nav" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="fas fa-user me-1"></i> Login
+                            </a>
+                            <div class="dropdown lang-dropdown d-lg-none w-100 text-end border-bottom pb-2 mb-2">
+                                <a class="dropdown-toggle text-decoration-none text-dark fw-bold d-block w-100 text-end pe-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-globe me-1 text-success"></i>EN
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end shadow border-0 w-100 text-center">
+                                    <li><a class="dropdown-item" href="#">English</a></li>
+                                    <li><a class="dropdown-item" href="#">Hindi (हिंदी)</a></li>
+                                    <li><a class="dropdown-item" href="#">Punjabi (ਪੰਜਾਬੀ)</a></li>
+                                    <li><a class="dropdown-item" href="#">Tamil (தமிழ்)</a></li>
+                                </ul>
+                            </div>
+
+                            <a href="#contact" class="btn btn-quote">
+                                Get A Quote
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -59,57 +123,32 @@
 
                 <div class="services-track" id="sliderTrack">
                     <div class="service-card">
-                        <div>
-                            <i class="fas fa-seedling service-icon"></i>
-                            <h4>Crop Recommendation</h4>
-                            <p>Get AI-powered advice on the best crops to grow based on soil health and season.</p>
-                        </div>
+                        <div><i class="fas fa-seedling service-icon"></i><h4>Crop Recommendation</h4><p>Get AI-powered advice on the best crops to grow based on soil health and season.</p></div>
                         <a href="#" class="btn-read-more">Read More</a>
                     </div>
                     <div class="service-card">
-                        <div>
-                            <i class="fas fa-flask service-icon"></i>
-                            <h4>Fertilizer Recommendation</h4>
-                            <p>Optimize yield with precise fertilizer dosage and nutrient management plans.</p>
-                        </div>
+                        <div><i class="fas fa-flask service-icon"></i><h4>Fertilizer Recommendation</h4><p>Optimize yield with precise fertilizer dosage and nutrient management plans.</p></div>
                         <a href="#" class="btn-read-more">Read More</a>
                     </div>
                     <div class="service-card">
-                        <div>
-                            <i class="fas fa-bug service-icon"></i>
-                            <h4>Disease Detection</h4>
-                            <p>Upload leaf photos to instantly identify plant diseases and get cure suggestions.</p>
-                        </div>
+                        <div><i class="fas fa-bug service-icon"></i><h4>Disease Detection</h4><p>Upload leaf photos to instantly identify plant diseases and get cure suggestions.</p></div>
                         <a href="#" class="btn-read-more">Read More</a>
                     </div>
                     <div class="service-card">
-                        <div>
-                            <i class="fas fa-cloud-sun-rain service-icon"></i>
-                            <h4>Weather Forecasting</h4>
-                            <p>Real-time weather updates and alerts to plan your farming activities better.</p>
-                        </div>
+                        <div><i class="fas fa-cloud-sun-rain service-icon"></i><h4>Weather Forecasting</h4><p>Real-time weather updates and alerts to plan your farming activities better.</p></div>
                         <a href="#" class="btn-read-more">Read More</a>
                     </div>
                     <div class="service-card">
-                        <div>
-                            <i class="fas fa-robot service-icon"></i>
-                            <h4>Multilingual Chatbot</h4>
-                            <p>Chat with our AI assistant in your local language to solve farming queries instantly.</p>
-                        </div>
+                        <div><i class="fas fa-robot service-icon"></i><h4>Multilingual Chatbot</h4><p>Chat with our AI assistant in your local language to solve farming queries instantly.</p></div>
                         <a href="#" class="btn-read-more">Read More</a>
                     </div>
                     <div class="service-card">
-                        <div>
-                            <i class="fas fa-users service-icon"></i>
-                            <h4>Blog Community</h4>
-                            <p>Connect with other farmers, share success stories, and learn from experts.</p>
-                        </div>
+                        <div><i class="fas fa-users service-icon"></i><h4>Blog Community</h4><p>Connect with other farmers, share success stories, and learn from experts.</p></div>
                         <a href="#" class="btn-read-more">Read More</a>
                     </div>
                 </div>
                 
-                <div class="slider-dots" id="sliderDots">
-                    </div>
+                <div class="slider-dots" id="sliderDots"></div>
             </div>
         </div>
     </div>
@@ -140,8 +179,7 @@
                 </div>
             </div>
 
-            <div class="row g-4 align-items-start">
-                
+            <div class="row g-4 align-items-stretch">
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-card-new" data-id="post-1">
                         <div class="blog-thumb-wrapper">
@@ -151,76 +189,20 @@
                         </div>
                         <div class="blog-content">
                             <h5 class="blog-title-new">Revolutionary Smart Irrigation System Saves 60% Water</h5>
-                            <p class="blog-excerpt">Discover how AI-powered irrigation systems are transforming water management in agriculture, helping farmers reduce usage.</p>
-                            
-                            <div class="blog-tags">
-                                <span class="blog-tag green">Irrigation</span>
-                                <span class="blog-tag green">Water Conservation</span>
-                                <span class="blog-tag green">AI Tech</span>
-                            </div>
-
+                            <p class="blog-excerpt">Discover how AI-powered irrigation systems are transforming water management in agriculture.</p>
+                            <div class="blog-tags"><span class="blog-tag green">Irrigation</span><span class="blog-tag green">AI Tech</span></div>
                             <div class="blog-author-row">
                                 <div class="author-info">
                                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="author-avatar">
-                                    <div class="author-text">
-                                        <h6>Rajesh Kumar</h6>
-                                        <span>Agricultural Engineer</span>
-                                    </div>
+                                    <div class="author-text"><h6>Rajesh Kumar</h6><span>Agricultural Engineer</span></div>
                                 </div>
                                 <button class="btn-follow">Follow</button>
                             </div>
-
                             <div class="blog-footer">
                                 <div class="action-icon like-btn"><i class="far fa-heart"></i> <span class="count">42</span></div>
                                 <div class="action-icon comment-btn"><i class="far fa-comment"></i> <span class="comment-count">24</span></div>
                                 <div class="action-icon ms-auto share-btn"><i class="fas fa-share-alt"></i></div>
                             </div>
-
-                            <div class="comment-section">
-                                <div class="comments-list">
-                                    </div>
-                                <div class="comment-input-wrapper">
-                                    <input type="text" class="comment-input" placeholder="Write a comment...">
-                                    <button class="btn-post-comment">Post</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-card-new" data-id="post-2">
-                        <div class="blog-thumb-wrapper">
-                            <span class="card-badge badge-sustainable"><i class="fas fa-seedling"></i> Sustainable</span>
-                            <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=1000" alt="Organic Farming">
-                        </div>
-                        <div class="blog-content">
-                            <h5 class="blog-title-new">Organic Farming Practices for Maximum Yield</h5>
-                            <p class="blog-excerpt">Learn proven organic farming techniques that boost productivity while maintaining soil health and biodiversity.</p>
-                            
-                            <div class="blog-tags">
-                                <span class="blog-tag green">Organic</span>
-                                <span class="blog-tag green">Sustainability</span>
-                                <span class="blog-tag green">Soil Health</span>
-                            </div>
-
-                            <div class="blog-author-row">
-                                <div class="author-info">
-                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author" class="author-avatar">
-                                    <div class="author-text">
-                                        <h6>Priya Sharma</h6>
-                                        <span>Organic Expert</span>
-                                    </div>
-                                </div>
-                                <button class="btn-follow">Follow</button>
-                            </div>
-
-                            <div class="blog-footer">
-                                <div class="action-icon like-btn"><i class="far fa-heart"></i> <span class="count">31</span></div>
-                                <div class="action-icon comment-btn"><i class="far fa-comment"></i> <span class="comment-count">18</span></div>
-                                <div class="action-icon ms-auto share-btn"><i class="fas fa-share-alt"></i></div>
-                            </div>
-
                             <div class="comment-section">
                                 <div class="comments-list"></div>
                                 <div class="comment-input-wrapper">
@@ -231,7 +213,38 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-card-new" data-id="post-2">
+                        <div class="blog-thumb-wrapper">
+                            <span class="card-badge badge-sustainable"><i class="fas fa-seedling"></i> Sustainable</span>
+                            <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=1000" alt="Organic Farming">
+                        </div>
+                        <div class="blog-content">
+                            <h5 class="blog-title-new">Organic Farming Practices for Maximum Yield</h5>
+                            <p class="blog-excerpt">Learn proven organic farming techniques that boost productivity while maintaining soil health.</p>
+                            <div class="blog-tags"><span class="blog-tag green">Organic</span><span class="blog-tag green">Soil Health</span></div>
+                            <div class="blog-author-row">
+                                <div class="author-info">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author" class="author-avatar">
+                                    <div class="author-text"><h6>Priya Sharma</h6><span>Organic Expert</span></div>
+                                </div>
+                                <button class="btn-follow">Follow</button>
+                            </div>
+                            <div class="blog-footer">
+                                <div class="action-icon like-btn"><i class="far fa-heart"></i> <span class="count">31</span></div>
+                                <div class="action-icon comment-btn"><i class="far fa-comment"></i> <span class="comment-count">18</span></div>
+                                <div class="action-icon ms-auto share-btn"><i class="fas fa-share-alt"></i></div>
+                            </div>
+                            <div class="comment-section">
+                                <div class="comments-list"></div>
+                                <div class="comment-input-wrapper">
+                                    <input type="text" class="comment-input" placeholder="Write a comment...">
+                                    <button class="btn-post-comment">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-card-new" data-id="post-3">
                         <div class="blog-thumb-wrapper">
@@ -241,30 +254,19 @@
                         <div class="blog-content">
                             <h5 class="blog-title-new">AI-Powered Soil Analysis for Precision Agriculture</h5>
                             <p class="blog-excerpt">How machine learning algorithms are revolutionizing soil testing and providing farmers with precise recommendations.</p>
-                            
-                            <div class="blog-tags">
-                                <span class="blog-tag green">AI</span>
-                                <span class="blog-tag green">Soil Analysis</span>
-                                <span class="blog-tag green">Precision</span>
-                            </div>
-
+                            <div class="blog-tags"><span class="blog-tag green">AI</span><span class="blog-tag green">Precision</span></div>
                             <div class="blog-author-row">
                                 <div class="author-info">
                                     <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Author" class="author-avatar">
-                                    <div class="author-text">
-                                        <h6>Dr. Amit Patel</h6>
-                                        <span>AI Scientist</span>
-                                    </div>
+                                    <div class="author-text"><h6>Dr. Amit Patel</h6><span>AI Scientist</span></div>
                                 </div>
                                 <button class="btn-follow">Follow</button>
                             </div>
-
                             <div class="blog-footer">
                                 <div class="action-icon like-btn"><i class="far fa-heart"></i> <span class="count">56</span></div>
                                 <div class="action-icon comment-btn"><i class="far fa-comment"></i> <span class="comment-count">32</span></div>
                                 <div class="action-icon ms-auto share-btn"><i class="fas fa-share-alt"></i></div>
                             </div>
-
                             <div class="comment-section">
                                 <div class="comments-list"></div>
                                 <div class="comment-input-wrapper">
@@ -276,11 +278,208 @@
                     </div>
                 </div>
             </div>
-
             <div class="btn-see-more-container">
                 <a href="#" class="btn-see-more">See More Posts <i class="fas fa-arrow-right ms-2"></i></a>
             </div>
+        </div>
+    </section>
 
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Benefits of Joining Us</h2>
+                    <div class="section-title-underline mx-auto"></div>
+                    <p class="text-muted text-center" style="max-width: 600px; margin: 0 auto;">
+                        Join thousands of farmers who have transformed their agricultural yield and sustainability through our platform.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4 mobile-single-slide" id="benefitsTrack">
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon-box"><i class="fas fa-rupee-sign"></i></div>
+                        <h5 class="benefit-title">Fair Pricing</h5>
+                        <p class="benefit-text">Access real-time market rates to ensure you get the best price for your produce.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon-box"><i class="fas fa-flask"></i></div>
+                        <h5 class="benefit-title">Scientific Advisory</h5>
+                        <p class="benefit-text">Get 24/7 access to agricultural scientists for personalized crop advice.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon-box"><i class="fas fa-shield-alt"></i></div>
+                        <h5 class="benefit-title">Crop Protection</h5>
+                        <p class="benefit-text">Early warning systems for weather and pests to protect your harvest.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon-box"><i class="fas fa-users"></i></div>
+                        <h5 class="benefit-title">Community Power</h5>
+                        <p class="benefit-text">Connect with a network of 50,000+ farmers to share resources and tips.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots d-md-none" id="benefitsDots"></div>
+        </div>
+    </section>
+
+    <section class="community-section" id="community-features">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Community Features & Experts</h2>
+                    <div class="section-title-underline mx-auto"></div>
+                    <p class="text-muted" style="max-width: 600px; margin: 0 auto;">Connect directly with our panel of experts and experienced peers.</p>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <div class="community-feature-row">
+                        <div class="comm-icon me-3"><i class="fas fa-comments"></i></div>
+                        <div><h5 class="mb-1">Live Q&A Sessions</h5><p class="text-muted small mb-0">Join weekly live streams with experts like Dr. Amit Patel.</p></div>
+                    </div>
+                    <div class="community-feature-row">
+                        <div class="comm-icon me-3"><i class="fas fa-images"></i></div>
+                        <div><h5 class="mb-1">Photo Diagnosis Forum</h5><p class="text-muted small mb-0">Upload photos of your crops and get diagnoses.</p></div>
+                    </div>
+                    <div class="community-feature-row">
+                        <div class="comm-icon me-3"><i class="fas fa-handshake"></i></div>
+                        <div><h5 class="mb-1">Peer-to-Peer Marketplace</h5><p class="text-muted small mb-0">Buy, sell, or trade equipment and seeds.</p></div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="row g-3 mobile-single-slide" id="expertsTrack">
+                        <div class="col-md-6">
+                            <div class="expert-card">
+                                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Dr. Amit" class="expert-img">
+                                <span class="expert-role">Soil Specialist</span>
+                                <h5 class="mb-2">Dr. Amit Patel</h5>
+                                <p class="expert-desc">Ph.D. in Soil Science. 15 years experience in precision agriculture.</p>
+                                <button class="btn-expert-connect">View Profile</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="expert-card">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya" class="expert-img">
+                                <span class="expert-role">Organic Expert</span>
+                                <h5 class="mb-2">Priya Sharma</h5>
+                                <p class="expert-desc">Certified Organic Consultant helping farmers switch to chemical-free farming.</p>
+                                <button class="btn-expert-connect">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-dots d-md-none" id="expertsDots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="manual-section" id="feature-manual">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">How To Use Our Features</h2>
+                    <div class="section-title-underline mx-auto"></div>
+                    <p class="text-muted">Click on a feature box below to see the manual.</p>
+                </div>
+            </div>
+
+            <div class="manual-container">
+                <div class="row g-0">
+                    <div class="col-md-4 manual-nav-col">
+                        <div class="manual-nav-box active" onclick="showManual('crop')"><i class="fas fa-seedling"></i> <span>Crop Recommendation</span></div>
+                        <div class="manual-nav-box" onclick="showManual('fert')"><i class="fas fa-flask"></i> <span>Fertilizer Guide</span></div>
+                        <div class="manual-nav-box" onclick="showManual('disease')"><i class="fas fa-bug"></i> <span>Disease Detection</span></div>
+                        <div class="manual-nav-box" onclick="showManual('weather')"><i class="fas fa-cloud-sun"></i> <span>Weather Forecast</span></div>
+                        <div class="manual-nav-box" onclick="showManual('chat')"><i class="fas fa-robot"></i> <span>AI Chatbot</span></div>
+                    </div>
+                    <div class="col-md-8 manual-content-col">
+                        <div id="manual-crop" class="manual-pane active">
+                            <h4 class="mb-4 text-success"><i class="fas fa-seedling me-2"></i> How to use Crop Recommendation</h4>
+                            <div class="manual-step"><div class="step-num">1</div><div class="step-text"><h6>Enter Soil Details</h6><p>Input the Nitrogen (N), Phosphorous (P), and Potassium (K) values.</p></div></div>
+                            <div class="manual-step"><div class="step-num">2</div><div class="step-text"><h6>Select Location</h6><p>Choose your state and district.</p></div></div>
+                            <div class="manual-step"><div class="step-num">3</div><div class="step-text"><h6>Get Results</h6><p>Click "Predict".</p></div></div>
+                        </div>
+                        <div id="manual-fert" class="manual-pane">
+                            <h4 class="mb-4 text-success"><i class="fas fa-flask me-2"></i> How to use Fertilizer Guide</h4>
+                            <div class="manual-step"><div class="step-num">1</div><div class="step-text"><h6>Select Your Crop</h6><p>Choose the specific crop.</p></div></div>
+                            <div class="manual-step"><div class="step-num">2</div><div class="step-text"><h6>Input Soil Health</h6><p>Enter current soil nutrient levels.</p></div></div>
+                            <div class="manual-step"><div class="step-num">3</div><div class="step-text"><h6>Calculate Dosage</h6><p>The system will generate a schedule.</p></div></div>
+                        </div>
+                        <div id="manual-disease" class="manual-pane">
+                            <h4 class="mb-4 text-success"><i class="fas fa-bug me-2"></i> How to use Disease Detection</h4>
+                            <div class="manual-step"><div class="step-num">1</div><div class="step-text"><h6>Take a Photo</h6><p>Take a clear photo of the leaf.</p></div></div>
+                            <div class="manual-step"><div class="step-num">2</div><div class="step-text"><h6>Upload Image</h6><p>Click upload.</p></div></div>
+                            <div class="manual-step"><div class="step-num">3</div><div class="step-text"><h6>View Diagnosis</h6><p>View the AI diagnosis and cure.</p></div></div>
+                        </div>
+                        <div id="manual-weather" class="manual-pane">
+                            <h4 class="mb-4 text-success"><i class="fas fa-cloud-sun me-2"></i> How to use Weather Forecast</h4>
+                            <div class="manual-step"><div class="step-num">1</div><div class="step-text"><h6>Enable Location</h6><p>Allow GPS access.</p></div></div>
+                            <div class="manual-step"><div class="step-num">2</div><div class="step-text"><h6>Check Alerts</h6><p>Look for weather warnings.</p></div></div>
+                        </div>
+                        <div id="manual-chat" class="manual-pane">
+                            <h4 class="mb-4 text-success"><i class="fas fa-robot me-2"></i> How to use AI Chatbot</h4>
+                            <div class="manual-step"><div class="step-num">1</div><div class="step-text"><h6>Select Language</h6><p>Switch between languages.</p></div></div>
+                            <div class="manual-step"><div class="step-num">2</div><div class="step-text"><h6>Ask Anything</h6><p>Type your farming query.</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section" id="testimonials">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">What Farmers Say</h2>
+                    <div class="section-title-underline mx-auto"></div>
+                    <p class="text-muted">Stories of success from across the country.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4 mobile-single-slide" id="testimonialsTrack">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"KrishiSahayak helped me identify a fungus on my wheat crop early. I saved my entire harvest thanks to the quick diagnosis!"</p>
+                        <div class="user-info">
+                            <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Farmer" class="user-img">
+                            <div class="user-details"><h6>Suresh Kumar</h6><span>Punjab, India</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"The fertilizer calculator is a game changer. I used to over-fertilize, but now I save money and get better yield."</p>
+                        <div class="user-info">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Farmer" class="user-img">
+                            <div class="user-details"><h6>Anita Devi</h6><span>Madhya Pradesh, India</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="testimonial-text">"Connecting with Dr. Amit through the community feature solved my soil pH issue. Highly recommended for every farmer."</p>
+                        <div class="user-info">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Farmer" class="user-img">
+                            <div class="user-details"><h6>Ramesh Yadav</h6><span>Uttar Pradesh, India</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots d-md-none" id="testimonialsDots"></div>
         </div>
     </section>
 
@@ -293,24 +492,15 @@
                     <p class="text-muted mb-5">Have questions about our services or need farming advice? Contact us today!</p>
                     <div class="contact-icon-box">
                         <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
-                        <div>
-                            <h6 class="mb-1 text-dark fw-bold">Our Location</h6>
-                            <p class="mb-0 text-muted">123 Farm Road, Agro City</p>
-                        </div>
+                        <div><h6 class="mb-1 text-dark fw-bold">Our Location</h6><p class="mb-0 text-muted">123 Farm Road, Agro City</p></div>
                     </div>
                     <div class="contact-icon-box">
                         <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
-                        <div>
-                            <h6 class="mb-1 text-dark fw-bold">Phone Number</h6>
-                            <p class="mb-0 text-muted">+1 (555) 123-4567</p>
-                        </div>
+                        <div><h6 class="mb-1 text-dark fw-bold">Phone Number</h6><p class="mb-0 text-muted">+1 (555) 123-4567</p></div>
                     </div>
                     <div class="contact-icon-box">
                         <div class="icon-circle"><i class="far fa-envelope"></i></div>
-                        <div>
-                            <h6 class="mb-1 text-dark fw-bold">Email Address</h6>
-                            <p class="mb-0 text-muted">support@krishisahayak.com</p>
-                        </div>
+                        <div><h6 class="mb-1 text-dark fw-bold">Email Address</h6><p class="mb-0 text-muted">support@krishisahayak.com</p></div>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -330,12 +520,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <a href="#home" class="footer-brand-wrap mb-3">
-                        <span class="footer-brand-name">KrishiSahayak</span>
-                    </a>
-                    <p class="text-white-50 small pe-lg-5">
-                        Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.
-                    </p>
+                    <a href="#home" class="footer-brand-wrap mb-3"><span class="footer-brand-name">KrishiSahayak</span></a>
+                    <p class="text-white-50 small pe-lg-5">Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.</p>
                     <div class="social-links mt-4">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -343,7 +529,6 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-
                 <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-white mb-3">Quick Links</h5>
                     <ul class="list-unstyled footer-links">
@@ -354,7 +539,6 @@
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
-
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-white mb-3">Our Services</h5>
                     <ul class="list-unstyled footer-links">
@@ -365,23 +549,18 @@
                         <li><a href="#">Farming Chatbot</a></li>
                     </ul>
                 </div>
-
                 <div class="col-lg-3">
                     <h5 class="text-white mb-3">Newsletter</h5>
                     <p class="text-white-50 small">Subscribe to get the latest farming news and updates directly to your inbox.</p>
-                    
                     <form class="newsletter-form mt-3" onsubmit="event.preventDefault(); subscribeNewsletter(this);">
                         <input type="email" class="form-control newsletter-input" placeholder="Your Email" required>
                         <button class="btn newsletter-btn" type="submit"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <div class="row align-items-center">
-                    <div class="col-md-6 text-center text-md-start">
-                        <p class="mb-0 text-white-50 small">© 2025 KrishiSahayak. All Rights Reserved.</p>
-                    </div>
+                    <div class="col-md-6 text-center text-md-start"><p class="mb-0 text-white-50 small">© 2025 KrishiSahayak. All Rights Reserved.</p></div>
                     <div class="col-md-6 text-center text-md-end">
                         <a href="#" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
                         <a href="#" class="text-white-50 small text-decoration-none">Terms of Service</a>
@@ -391,8 +570,46 @@
         </div>
     </footer>
 
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title fw-bold text-dark">Welcome Back</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <form>
+              <div class="mb-3"><label class="form-label small text-muted">Email Address</label><input type="email" class="form-control" placeholder="name@example.com"></div>
+              <div class="mb-3"><label class="form-label small text-muted">Password</label><input type="password" class="form-control" placeholder="******"></div>
+              <div class="d-grid"><button type="submit" class="btn btn-hero w-100">Login</button></div>
+            </form>
+            <p class="text-center mt-3 small text-muted">Don't have an account? <a href="#" class="text-success text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header border-bottom-0">
+            <h5 class="modal-title fw-bold text-dark">Create Account</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <form>
+              <div class="mb-3"><label class="form-label small text-muted">Full Name</label><input type="text" class="form-control" placeholder="John Doe"></div>
+              <div class="mb-3"><label class="form-label small text-muted">Email Address</label><input type="email" class="form-control" placeholder="name@example.com"></div>
+              <div class="mb-3"><label class="form-label small text-muted">Password</label><input type="password" class="form-control" placeholder="Create a password"></div>
+              <div class="d-grid"><button type="submit" class="btn btn-hero w-100">Create Account</button></div>
+            </form>
+            <p class="text-center mt-3 small text-muted">Already have an account? <a href="#" class="text-success text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script src="script.js"></script>
 </body>
 </html>

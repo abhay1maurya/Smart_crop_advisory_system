@@ -1,0 +1,22 @@
+# --- Core Frameworks ---
+# Use standard FastAPI. 'all' includes email-validator, httpx, etc. which you might not need yet.
+fastapi==0.109.2
+uvicorn[standard]==0.27.1
+
+# --- Machine Learning ---
+# TensorFlow 2.10 is the last stable version with native GPU support on Windows
+# If using CPU-only, newer versions are fine, but 2.10 is safest for your setup.
+tensorflow==2.10.1
+numpy==1.24.3
+
+# --- Image Processing ---
+# Pillow is required for loading images
+pillow==10.2.0
+
+# --- HTTP / API Utils ---
+# Required by FastAPI for File Uploads
+python-multipart==0.0.9
+
+# --- Protobuf Fix ---
+# Critical for avoiding the "MessageFactory" error you saw earlier
+protobuf==3.19.6

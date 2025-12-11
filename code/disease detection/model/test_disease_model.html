@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Detector Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light p-5">
+
+<div class="card mx-auto shadow" style="max-width: 500px;">
+    <div class="card-header bg-danger text-white">
+        <h4>🚑 Plant Doctor AI</h4>
+    </div>
+    <div class="card-body text-center">
+        
+        <img id="preview" src="#" class="img-fluid rounded mb-3" style="max-height: 250px; display: none;">
+        
+        <form id="uploadForm">
+            <input type="file" id="fileInput" class="form-control mb-3" accept="image/*" required>
+            <button type="submit" class="btn btn-danger w-100">Analyze Leaf</button>
+        </form>
+
+        <div id="resultBox" class="mt-4 p-3 bg-white border rounded" style="display: none;">
+            <h5 class="text-secondary">Diagnosis:</h5>
+            <h3 id="diseaseName" class="text-danger fw-bold">--</h3>
+            <p>Confidence: <span id="confidenceScore" class="badge bg-secondary">--</span></p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    const fileInput = document.getElementById('fileInput');
+    const preview = document.getElementById('preview');
+    const resultBox = document.getElementById('resultBox');
+
+    // Show Preview
+    fileInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = 'block';
+        }
+    });
+
+    // Send to API
+    document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const file = fileInput.files[0];
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append("file", file);
+
+        try {
+            // Pointing to Port 8002
+            const response = await fetch('http://127.0.0.1:8002/predict_disease', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const data = await response.json();
+            
+            if (data.error) {
+                alert("Error: " + data.error);
+            } else {
+                document.getElementById('diseaseName').innerText = data.disease;
+                document.getElementById('confidenceScore').innerText = data.confidence;
+                resultBox.style.display = 'block';
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Failed to connect to Disease API.");
+        }
+    });
+</script>
+
+</body>
+</html>

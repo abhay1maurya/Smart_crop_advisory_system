@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5, h6 { color: var(--primary-dark); font-weight: 700; }
 
 /* --- Hero Section --- */
 .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1625246333195-58f2164181c7?q=80&w=2000&auto=format&fit=crop');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img.jpg');
     background-size: cover; background-position: center; background-attachment: fixed;
     min-height: 80vh; display: flex; align-items: center; justify-content: center;
     text-align: center; color: white; position: relative; padding-bottom: 120px; margin-top: 80px; 

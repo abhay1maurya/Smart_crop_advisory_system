@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart | Precision Crop Advisor</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #134e5e 0%, #71b280 100%); /* Deep Green Gradient */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            overflow: hidden;
+            border: none;
+        }
+
+        .header-section {
+            background: linear-gradient(to right, #11998e, #38ef7d);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+        }
+
+        .input-group-text {
+            background-color: #f0fdf4;
+            border-color: #ced4da;
+            color: #198754;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.15);
+            border-color: #198754;
+        }
+
+        .btn-predict {
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+            border: none;
+            color: white;
+            padding: 12px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-predict:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4);
+        }
+
+        /* Result Animation */
+        .result-box {
+            display: none;
+            background: #f0fdf4;
+            border: 2px solid #198754;
+            border-radius: 15px;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .loading-spinner {
+            display: none;
+        }
+    </style>
+</head>
+<body class="py-4">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            
+            <div class="card main-card">
+                <div class="header-section">
+                    <h2 class="fw-bold mb-1"><i class="fa-solid fa-wheat-awn me-2"></i>Smart Crop Advisor</h2>
+                    <p class="mb-0 opacity-90">AI-Powered Precision Agriculture</p>
+                </div>
+
+                <div class="card-body p-4 p-md-5">
+                    <form id="cropForm">
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 30px; height: 30px;">1</div>
+                            <h5 class="fw-bold text-success mb-0">Soil Analysis</h5>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-4">
+                                <label class="form-label">Nitrogen (N)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-flask"></i></span>
+                                    <input type="number" class="form-control" id="N" required placeholder="90">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">Phosphorus (P)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-flask-vial"></i></span>
+                                    <input type="number" class="form-control" id="P" required placeholder="42">
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">Potassium (K)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-atom"></i></span>
+                                    <input type="number" class="form-control" id="K" required placeholder="43">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Soil pH Level</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-droplet"></i></span>
+                                    <input type="number" step="0.1" class="form-control" id="ph" required placeholder="Example: 6.5">
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="text-muted opacity-25">
+
+                        <div class="d-flex align-items-center mb-3 mt-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 30px; height: 30px;">2</div>
+                            <h5 class="fw-bold text-primary mb-0">Weather Conditions</h5>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-4">
+                                <label class="form-label">Temp (°C)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-temperature-high"></i></span>
+                                    <input type="number" step="0.1" class="form-control" id="temperature" required placeholder="25">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Humidity (%)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-cloud-rain"></i></span>
+                                    <input type="number" step="0.1" class="form-control" id="humidity" required placeholder="80">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Rainfall (mm)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fa-solid fa-cloud-showers-heavy"></i></span>
+                                    <input type="number" step="1" class="form-control" id="rainfall" required placeholder="200">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-predict w-100 fw-bold" id="btnPredict">
+                            Predict Optimal Crop <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </button>
+
+                    </form>
+
+                    <div id="loading" class="loading-spinner text-center mt-4">
+                        <div class="spinner-border text-success" role="status" style="width: 3rem; height: 3rem;"></div>
+                        <p class="mt-2 fw-bold text-muted">AI is analyzing soil & climate data...</p>
+                    </div>
+
+                    <div id="result" class="result-box p-4 mt-4 text-center">
+                        <h6 class="text-muted text-uppercase fw-bold mb-2">Best Crop to Grow:</h6>
+                        <h1 class="display-4 fw-bold text-success mb-2" id="cropName">--</h1>
+                        <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill">
+                            <i class="fa-solid fa-circle-check me-1"></i> Confidence: <span id="confidenceScore">--</span>%
+                        </span>
+                    </div>
+                    
+                    <div id="error" class="alert alert-danger mt-4 text-center shadow-sm" style="display: none; border-radius: 10px;"></div>
+
+                </div>
+                <div class="card-footer text-center bg-light py-3">
+                    <small class="text-muted">Powered by Ensemble Machine Learning</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('cropForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // UI Handling
+        const btn = document.getElementById('btnPredict');
+        const loading = document.getElementById('loading');
+        const resultBox = document.getElementById('result');
+        const errorBox = document.getElementById('error');
+        
+        // Reset UI
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+        loading.style.display = 'block';
+        resultBox.style.display = 'none';
+        errorBox.style.display = 'none';
+
+        // 1. Gather Data
+        const formData = {
+            N: parseFloat(document.getElementById('N').value),
+            P: parseFloat(document.getElementById('P').value),
+            K: parseFloat(document.getElementById('K').value),
+            temperature: parseFloat(document.getElementById('temperature').value),
+            humidity: parseFloat(document.getElementById('humidity').value),
+            ph: parseFloat(document.getElementById('ph').value),
+            rainfall: parseFloat(document.getElementById('rainfall').value)
+        };
+
+        try {
+            // 2. Call API (Ensure your Python API is running on Port 8000)
+            const response = await fetch('http://127.0.0.1:8000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (!response.ok) throw new Error("Could not connect to AI Model");
+
+            const data = await response.json();
+
+            // 3. Show Result
+            document.getElementById('cropName').innerText = data.prediction.toUpperCase();
+            document.getElementById('confidenceScore').innerText = data.confidence.toFixed(2);
+            resultBox.style.display = 'block';
+            
+            // Scroll to result on mobile
+            resultBox.scrollIntoView({ behavior: 'smooth' });
+
+        } catch (err) {
+            errorBox.innerHTML = `<i class="fa-solid fa-triangle-exclamation me-2"></i> <strong>Error:</strong> ${err.message}. <br>Make sure the Python backend is running.`;
+            errorBox.style.display = 'block';
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = 'Predict Optimal Crop <i class="fa-solid fa-arrow-right ms-2"></i>';
+            loading.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

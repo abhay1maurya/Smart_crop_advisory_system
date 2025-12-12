@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart | AI Plant Doctor</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0fdf4; /* Light Green Tint */
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .upload-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .upload-zone {
+            border: 2px dashed #cbd5e1;
+            border-radius: 15px;
+            background-color: #f8fafc;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color: #16a34a;
+            background-color: #dcfce7;
+        }
+
+        .preview-img {
+            max-height: 300px;
+            width: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .result-card {
+            display: none;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .confidence-bar {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+
+        .treatment-box {
+            background-color: #fffbeb;
+            border-left: 5px solid #f59e0b;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fa-solid fa-leaf me-2"></i>AgriSmart
+            </a>
+            <span class="navbar-text text-white opacity-75">
+                North India Crop Advisory
+            </span>
+        </div>
+    </nav>
+
+    <div class="container pb-5">
+        <div class="row justify-content-center">
+            
+            <div class="col-lg-5 mb-4">
+                <div class="card upload-card p-4 h-100">
+                    <h4 class="fw-bold text-secondary mb-3">📸 Plant Doctor</h4>
+                    <p class="text-muted small">Upload a clear photo of a crop leaf (Potato, Tomato, Rice, or Corn) to detect diseases.</p>
+                    
+                    <form id="uploadForm">
+                        <div class="upload-zone p-5 text-center mb-3" id="dropZone">
+                            <input type="file" id="fileInput" class="position-absolute top-0 start-0 w-100 h-100 opacity-0" accept="image/*">
+                            <div id="uploadContent">
+                                <i class="fa-solid fa-cloud-arrow-up fa-3x text-success mb-3"></i>
+                                <h6 class="fw-bold">Drag & Drop or Click</h6>
+                                <p class="text-muted small mb-0">Supports JPG, PNG</p>
+                            </div>
+                            <img id="preview" class="preview-img mt-2 shadow-sm">
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2 fw-bold shadow-sm" id="analyzeBtn" disabled>
+                            <i class="fa-solid fa-microscope me-2"></i> Analyze Leaf
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                
+                <div id="loading" class="text-center mt-5" style="display: none;">
+                    <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status"></div>
+                    <p class="mt-3 text-muted fw-bold">AI is examining the leaf...</p>
+                </div>
+
+                <div class="card upload-card p-4 result-card" id="resultCard">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold text-secondary mb-0">Diagnosis Report</h5>
+                        <span class="badge bg-success rounded-pill px-3">AI Analysis</span>
+                    </div>
+
+                    <h2 class="text-danger fw-bold mb-1" id="diseaseName">--</h2>
+                    <p class="text-muted" id="timestamp">Detected just now</p>
+
+                    <label class="small fw-bold text-secondary">Confidence Score</label>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="confidence-bar flex-grow-1 me-3">
+                            <div class="confidence-fill" id="confidenceBar"></div>
+                        </div>
+                        <span class="fw-bold text-dark" id="confidenceText">0%</span>
+                    </div>
+
+                    <div class="treatment-box p-3 rounded">
+                        <h6 class="fw-bold text-warning-emphasis"><i class="fa-solid fa-user-doctor me-2"></i>Recommended Action</h6>
+                        <p class="small text-muted mb-0" id="treatmentText">
+                            Please consult a local agricultural expert for specific chemical dosages.
+                        </p>
+                    </div>
+
+                    <button class="btn btn-outline-secondary w-100 mt-4" onclick="location.reload()">
+                        Analyze Another Leaf
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const dropZone = document.getElementById('dropZone');
+        const uploadContent = document.getElementById('uploadContent');
+        const preview = document.getElementById('preview');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const loading = document.getElementById('loading');
+        const resultCard = document.getElementById('resultCard');
+
+        // 1. Handle File Selection
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                    uploadContent.style.display = 'none';
+                    analyzeBtn.disabled = false; // Enable button
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // 2. Drag and Drop Effects
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            fileInput.files = e.dataTransfer.files; // Assign dropped file to input
+            const event = new Event('change');
+            fileInput.dispatchEvent(event); // Trigger change event manually
+        });
+
+        // 3. Handle API Request
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // UI States
+            analyzeBtn.disabled = true;
+            analyzeBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Analyzing...';
+            loading.style.display = 'block';
+            resultCard.style.display = 'none';
+
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            try {
+                // Call your Python API (Ensure port 8002 is running)
+                const response = await fetch('http://127.0.0.1:8002/predict_disease', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                // UI Updates
+                loading.style.display = 'none';
+                
+                if (data.error) {
+                    alert("Error: " + data.error);
+                    analyzeBtn.innerHTML = '<i class="fa-solid fa-microscope me-2"></i> Analyze Leaf';
+                    analyzeBtn.disabled = false;
+                    return;
+                }
+
+                // Populate Data
+                document.getElementById('diseaseName').innerText = data.disease.replace(/_/g, ' '); // Remove underscores
+                
+                // Animate Confidence Bar
+                const confidence = parseFloat(data.confidence);
+                document.getElementById('confidenceText').innerText = confidence.toFixed(1) + "%";
+                document.getElementById('confidenceBar').style.width = confidence + "%";
+
+                // Simple Logic for Advice (You can expand this dictionary)
+                const adviceDict = {
+                    "Healthy": "Your crop looks healthy! Keep monitoring water levels.",
+                    "Late_Blight": "Fungal infection detected. Consider using fungicides like Mancozeb or Chlorothalonil.",
+                    "Early_Blight": "Remove infected leaves immediately. Apply copper-based fungicides.",
+                    "Rust": "Avoid overhead watering. Apply sulfur-based fungicides.",
+                    "Leaf_Spot": "Ensure proper spacing between plants for air circulation."
+                };
+
+                // Find matching advice keyword
+                let advice = "Consult a local expert for specific treatment.";
+                for (const key in adviceDict) {
+                    if (data.disease.includes(key)) {
+                        advice = adviceDict[key];
+                        break;
+                    }
+                }
+                document.getElementById('treatmentText').innerText = advice;
+
+                // Show Result
+                resultCard.style.display = 'block';
+                analyzeBtn.innerHTML = '<i class="fa-solid fa-check me-2"></i> Done';
+
+            } catch (err) {
+                console.error(err);
+                alert("Failed to connect to the AI Server. Is it running?");
+                loading.style.display = 'none';
+                analyzeBtn.innerHTML = '<i class="fa-solid fa-microscope me-2"></i> Analyze Leaf';
+                analyzeBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

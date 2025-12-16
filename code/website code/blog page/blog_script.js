@@ -200,9 +200,37 @@ function initLanguageToggle() {
             
             // Close Dropdown
             langWrapper.classList.remove('active');
+
+            // Persist and translate
+            try { localStorage.setItem('site_lang', code); } catch (e) {}
+            translatePage(code);
             
             // Debug
             console.log(`Language changed to: ${code}`);
+        });
+    });
+
+    // Mobile menu language buttons
+    document.querySelectorAll('.blog-mobile-lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            // reflect in header buttons and translate
+            const activeOpt = langWrapper.querySelector(`.lang-option[data-lang="${lang}"]`);
+            if (activeOpt) activeOpt.click();
+            else {
+                try { localStorage.setItem('site_lang', lang); } catch (e) {}
+                translatePage(lang);
+            }
+
+            // Close mobile menu
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) {
+                mobileMenu.classList.remove('active');
+                mobileMenu.style.right = '-100%';
+                const mobileToggle = document.getElementById('mobileToggle');
+                if (mobileToggle) mobileToggle.querySelector('i').className = 'fas fa-bars';
+                document.body.style.overflow = '';
+            }
         });
     });
 
@@ -212,6 +240,62 @@ function initLanguageToggle() {
             langWrapper.classList.remove('active');
         }
     });
+
+    // --- Translation Module ---
+    const TRANSLATIONS = {
+        en: {
+            nav_home: 'Home', nav_blog: 'Blog', nav_contact: 'Contact Us',
+            btn_create: 'Create', btn_share_story: 'Share Your Story',
+            hero_title: 'Smart Farming <br><span class="blog-text-gradient">Insights & Knowledge</span>',
+            hero_desc: 'Discover AI-powered agricultural knowledge, expert articles, and farming success stories from across India.',
+            search_ph: 'Search articles, crops, techniques...', btn_search: '',
+            categories_title: 'Explore Categories', categories_sub: 'Browse through our curated collection of farming knowledge',
+            farmers_corner: "Farmer's Corner", farmers_corner_sub: "Real stories and tips from farmers like you.",
+            lbl_select_lang: 'Select Language'
+        },
+        hi: {
+            nav_home: 'होम', nav_blog: 'ब्लॉग', nav_contact: 'संपर्क करें',
+            btn_create: 'बनाएँ', btn_share_story: 'अपनी कहानी साझा करें',
+            hero_title: 'स्मार्ट फार्मिंग <br><span class="blog-text-gradient">जानकारी और ज्ञान</span>',
+            hero_desc: 'AI-समर्थित कृषि ज्ञान, विशेषज्ञ लेख और देशभर के किसानों की सफल कहानियाँ खोजें।',
+            search_ph: 'लेख, फसलें, तकनीकें खोजें...', btn_search: '',
+            categories_title: 'श्रेणियाँ देखें', categories_sub: 'हमारे क्यूरेट किए गए कृषि ज्ञान को ब्राउज़ करें',
+            farmers_corner: 'किसानों का कोना', farmers_corner_sub: 'किसानों से वास्तविक कहानियाँ और सुझाव।',
+            lbl_select_lang: 'भाषा चुनें'
+        },
+        pa: {
+            nav_home: 'ਹੋਮ', nav_blog: 'ਬਲੌਗ', nav_contact: 'ਸੰਪਰਕ ਕਰੋ',
+            btn_create: 'ਬਣਾਓ', btn_share_story: 'ਆਪਣੀ ਕਹਾਣੀ ਸਾਂਝੀ ਕਰੋ',
+            hero_title: 'ਸਮਾਰਟ ਫਾਰਮਿੰਗ <br><span class="blog-text-gradient">ਜਾਣਕਾਰੀਆਂ ਅਤੇ ਗਿਆਨ</span>',
+            hero_desc: 'AI-ਸਹਿਯੋਗੀ ਕਿਸਾਨੀ ਗਿਆਨ, ਵਿਸ਼ੇਸ਼ਗਿਆ ਲੇਖ ਅਤੇ ਦੇਸ਼ ਭਰ ਦੇ ਕਿਸਾਨਾਂ ਦੀਆਂ ਕਾਮਯਾਬੀ ਕਹਾਣੀਆਂ ਵੇਖੋ।',
+            search_ph: 'ਲੇਖ, ਫਸਲਾਂ, ਤਕਨੀਕਾਂ ਖੋਜੋ...', btn_search: '',
+            categories_title: 'ਸ਼੍ਰੇਣੀਆਂ ਖੋਜੋ', categories_sub: 'ਸਾਡੀ ਚੁਣੀ ਹੋਈ ਕਿਸਾਨੀ ਜਾਣਕਾਰੀ ਨੂੰ ਵੇਖੋ',
+            farmers_corner: 'ਕਿਸਾਨਾਂ ਦਾ ਕੋਨਾ', farmers_corner_sub: 'ਕਿਸਾਨਾਂ ਵੱਲੋਂ ਅਸਲੀ ਕਹਾਣੀਆਂ ਅਤੇ ਸੁਝਾਅ।',
+            lbl_select_lang: 'ਭਾਸ਼ਾ ਚੁਣੋ'
+        }
+    };
+
+    function translatePage(lang) {
+        const dict = TRANSLATIONS[lang] || TRANSLATIONS.en;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (dict[key]) {
+                if (key === 'hero_title') el.innerHTML = dict[key];
+                else el.textContent = dict[key];
+            }
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (dict[key]) el.setAttribute('placeholder', dict[key]);
+        });
+        try { localStorage.setItem('site_lang', lang); } catch (e) {}
+    }
+
+    // Initialize language from localStorage
+    const savedLang = localStorage.getItem('site_lang') || 'en';
+    const selectedOpt = langWrapper.querySelector(`.lang-option[data-lang="${savedLang}"]`);
+    if (selectedOpt) selectedOpt.click();
+    else translatePage(savedLang);
 }
 
 /* --- 5. Profile Modal --- */

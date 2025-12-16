@@ -23,14 +23,14 @@
                 </a>
 
                 <div class="blog-nav-links">
-                    <a href="index.html" class="blog-nav-link">Home</a>
-                    <a href="blog.html" class="blog-nav-link active">Blog</a>
-                    <a href="/index/#contact" class="blog-nav-link">Contact Us</a>
+                    <a href="index.html" class="blog-nav-link" data-i18n="nav_home">Home</a>
+                    <a href="blog.html" class="blog-nav-link active" data-i18n="nav_blog">Blog</a>
+                    <a href="/index/#contact" class="blog-nav-link" data-i18n="nav_contact">Contact Us</a>
                 </div>
 
                 <div class="blog-header-utilities">
                     <button class="blog-create-header-btn" id="headerCreateBtn">
-                        <i class="fas fa-plus"></i> <span>Create</span>
+                        <i class="fas fa-plus"></i> <span data-i18n="btn_create">Create</span>
                     </button>
 
                     <div class="modern-lang-wrapper" id="modernLangToggle">
@@ -56,16 +56,7 @@
                                 <span class="opt-name">Punjabi (ਪੰਜਾਬੀ)</span>
                                 <i class="fas fa-check opt-check"></i>
                             </div>
-                            <div class="lang-option" data-lang="ta" data-flag="🇮🇳">
-                                <span class="opt-flag">🇮🇳</span>
-                                <span class="opt-name">Tamil (தமிழ்)</span>
-                                <i class="fas fa-check opt-check"></i>
-                            </div>
-                            <div class="lang-option" data-lang="gu" data-flag="🇮🇳">
-                                <span class="opt-flag">🇮🇳</span>
-                                <span class="opt-name">Gujarati (ગુજરાતી)</span>
-                                <i class="fas fa-check opt-check"></i>
-                            </div>
+
                         </div>
                     </div>
 
@@ -130,12 +121,12 @@
                     </a>
 
                     <div class="blog-mobile-lang">
-                        <h4>Select Language</h4>
+                        <h4 data-i18n="lbl_select_lang">Select Language</h4>
                         <div class="blog-mobile-lang-options">
                             <button class="blog-mobile-lang-btn" data-lang="en">English</button>
                             <button class="blog-mobile-lang-btn" data-lang="hi">हिंदी</button>
                             <button class="blog-mobile-lang-btn" data-lang="pa">ਪੰਜਾਬੀ</button>
-                            <button class="blog-mobile-lang-btn" data-lang="ta">தமிழ்</button>
+
                         </div>
                     </div>
                 </div>
@@ -147,18 +138,18 @@
         <div class="blog-hero-overlay"></div>
         <div class="container">
             <div class="blog-hero-content">
-                <h1 class="blog-hero-title">
+                <h1 class="blog-hero-title" data-i18n="hero_title">
                     Smart Farming <br>
                     <span class="blog-text-gradient">Insights & Knowledge</span>
                 </h1>
 
-                <p class="blog-hero-desc">
+                <p class="blog-hero-desc" data-i18n="hero_desc">
                     Discover AI-powered agricultural knowledge, expert articles, and farming success stories from across India.
                 </p>
 
                 <div class="blog-search-box">
-                    <input type="text" placeholder="Search articles, crops, techniques...">
-                    <button class="blog-search-btn"><i class="fas fa-search"></i></button>
+                    <input type="text" placeholder="Search articles, crops, techniques..." data-i18n-placeholder="search_ph">
+                    <button class="blog-search-btn" data-i18n="btn_search"><i class="fas fa-search"></i></button>
                 </div>
             </div>
         </div>
@@ -167,9 +158,9 @@
     <section class="blog-categories-section" id="categories">
         <div class="container">
             <div class="blog-section-header">
-                <h2 class="blog-section-title">Explore Categories</h2>
+                <h2 class="blog-section-title" data-i18n="categories_title">Explore Categories</h2>
                 <div class="blog-section-underline"></div>
-                <p class="blog-section-subtitle">
+                <p class="blog-section-subtitle" data-i18n="categories_sub">
                     Browse through our curated collection of farming knowledge
                 </p>
             </div>
@@ -224,13 +215,11 @@
         <div class="container">
             <div class="blog-section-header-row">
                 <div>
-                    <h2 class="blog-section-title text-start">Farmer's Corner</h2>
-                    <p class="blog-section-subtitle text-start mb-0">Real stories and tips from farmers like you.</p>
+                    <h2 class="blog-section-title text-start" data-i18n="farmers_corner">Farmer's Corner</h2>
+                    <p class="blog-section-subtitle text-start mb-0" data-i18n="farmers_corner_sub">Real stories and tips from farmers like you.</p>
                 </div>
                 <button class="blog-create-header-btn" id="sectionCreateBtn">
-                    <i class="fas fa-plus"></i> <span>Share Your Story</span>
-                </button>
-            </div>
+                    <i class="fas fa-plus"></i> <span data-i18n="btn_share_story">Share Your Story</span>
 
             <div class="blog-posts-grid">
                 <div class="blog-post-card" data-category="success">

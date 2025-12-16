@@ -173,19 +173,24 @@ document.addEventListener('DOMContentLoaded', () => {
     allCards.forEach(card => {
         // Likes
         const likeBtn = card.querySelector('.like-btn');
-        const likeCountSpan = likeBtn.querySelector('.count'); 
-        likeBtn.addEventListener('click', function() {
-            this.classList.toggle('liked');
-            const icon = this.querySelector('i');
-            let currentCount = parseInt(likeCountSpan.innerText) || 0;
-            if (this.classList.contains('liked')) {
-                icon.classList.remove('far'); icon.classList.add('fas'); 
-                likeCountSpan.innerText = currentCount + 1;
-            } else {
-                icon.classList.remove('fas'); icon.classList.add('far'); 
-                likeCountSpan.innerText = Math.max(0, currentCount - 1);
-            }
-        });
+        if (likeBtn) {
+            const likeCountSpan = likeBtn.querySelector('.count');
+            likeBtn.addEventListener('click', function() {
+                this.classList.toggle('liked');
+                const icon = this.querySelector('i');
+                let currentCount = likeCountSpan ? (parseInt(likeCountSpan.innerText) || 0) : 0;
+
+                if (this.classList.contains('liked')) {
+                    if (icon) { icon.classList.remove('far'); icon.classList.add('fas'); }
+                    currentCount += 1;
+                } else {
+                    if (icon) { icon.classList.remove('fas'); icon.classList.add('far'); }
+                    currentCount = Math.max(0, currentCount - 1);
+                }
+
+                if (likeCountSpan) likeCountSpan.innerText = currentCount;
+            });
+        }
 
         // Comments Toggle
         const commentToggleBtn = card.querySelector('.comment-btn');
@@ -215,21 +220,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Share
         const shareBtn = card.querySelector('.share-btn');
-        shareBtn.addEventListener('click', function() {
-            alert("Link copied to clipboard!");
-        });
+        if (shareBtn) {
+            const copyToClipboard = (text) => {
+                if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+                return new Promise((resolve, reject) => {
+                    try {
+                        const ta = document.createElement('textarea');
+                        ta.value = text;
+                        ta.setAttribute('readonly', '');
+                        ta.style.position = 'absolute';
+                        ta.style.left = '-9999px';
+                        document.body.appendChild(ta);
+                        ta.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(ta);
+                        resolve();
+                    } catch (err) { reject(err); }
+                });
+            };
+
+            shareBtn.addEventListener('click', function() {
+                const url = window.location.href; // page-level copy
+                const icon = this.querySelector('i');
+                const originalClass = icon ? icon.className : null;
+
+                copyToClipboard(url).then(() => {
+                    if (icon) icon.className = 'fas fa-check';
+                    this.classList.add('share-success');
+                    this.setAttribute('title', 'Link copied!');
+                    setTimeout(() => {
+                        if (icon && originalClass) icon.className = originalClass;
+                        this.classList.remove('share-success');
+                        this.removeAttribute('title');
+                    }, 1600);
+                }).catch(err => {
+                    console.error('Copy failed', err);
+                    this.setAttribute('title', 'Copy failed');
+                    setTimeout(() => this.removeAttribute('title'), 1600);
+                });
+            });
+        }
     });
 
     /* --- Follow Button --- */
     document.querySelectorAll('.btn-follow').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            if (this.innerText === 'Follow') {
-                this.innerText = 'Following';
-                this.classList.add('following');
-            } else {
-                this.innerText = 'Follow';
-                this.classList.remove('following');
+            const txt = (this.textContent || '').trim().toLowerCase();
+            const isNowFollowing = !(txt === 'following' || txt === 'following\n' || txt === 'following ');
+            this.classList.toggle('following', isNowFollowing);
+            this.textContent = isNowFollowing ? 'Following' : 'Follow';
+            this.setAttribute('aria-pressed', isNowFollowing ? 'true' : 'false');
+
+            // Update profile 'Following' stat for immediate feedback
+            const statsItems = document.querySelectorAll('.profile-stats .stat-item');
+            for (const item of statsItems) {
+                const label = item.querySelector('.stat-label');
+                const val = item.querySelector('.stat-val');
+                if (label && val && label.textContent.trim().toLowerCase() === 'following') {
+                    let count = parseInt(val.textContent.replace(/\D/g, '')) || 0;
+                    count = isNowFollowing ? count + 1 : Math.max(0, count - 1);
+                    val.textContent = count;
+                    break;
+                }
             }
         });
     });

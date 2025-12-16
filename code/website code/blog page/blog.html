@@ -12,11 +12,9 @@
 </head>
 
 <body>
-    <!-- NEW INDEPENDENT HEADER -->
     <header class="blog-header-section">
         <div class="container">
             <nav class="blog-header-nav">
-                <!-- Logo and Brand -->
                 <a href="index.html" class="blog-header-brand">
                     <div class="blog-logo-wrapper">
                         <img src="logo6.0.png" alt="Krishi Sahayak" class="blog-header-logo">
@@ -24,68 +22,59 @@
                     <span class="blog-brand-text">KrishiSahayak</span>
                 </a>
 
-                <!-- Desktop Navigation -->
                 <div class="blog-nav-links">
                     <a href="index.html" class="blog-nav-link">Home</a>
                     <a href="blog.html" class="blog-nav-link active">Blog</a>
                     <a href="/index/#contact" class="blog-nav-link">Contact Us</a>
                 </div>
 
-                <!-- Header Utilities -->
                 <div class="blog-header-utilities">
                     <button class="blog-create-header-btn" id="headerCreateBtn">
                         <i class="fas fa-plus"></i> <span>Create</span>
                     </button>
 
-                    <div class="blog-lang-toggle" id="langToggle"></div>
-                </div>
+                    <div class="modern-lang-wrapper" id="modernLangToggle">
+                        <button class="modern-lang-btn" aria-label="Select Language">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-code">EN</span>
+                            <i class="fas fa-chevron-down lang-arrow"></i>
+                        </button>
 
-                <!-- Language Toggle -->
-                <div class="modern-lang-wrapper" id="modernLangToggle">
-                    <button class="modern-lang-btn" aria-label="Select Language">
-                        <span class="lang-flag">🇬🇧</span>
-                        <span class="lang-code">EN</span>
-                        <i class="fas fa-chevron-down lang-arrow"></i>
-                    </button>
-
-                    <div class="modern-lang-dropdown">
-                        <div class="lang-option active" data-lang="en" data-flag="🇬🇧">
-                            <span class="opt-flag">🇬🇧</span>
-                            <span class="opt-name">English</span>
-                            <i class="fas fa-check opt-check"></i>
-                        </div>
-                        <div class="lang-option" data-lang="hi" data-flag="🇮🇳">
-                            <span class="opt-flag">🇮🇳</span>
-                            <span class="opt-name">Hindi (हिंदी)</span>
-                            <i class="fas fa-check opt-check"></i>
-                        </div>
-                        <div class="lang-option" data-lang="pa" data-flag="🇮🇳">
-                            <span class="opt-flag">🇮🇳</span>
-                            <span class="opt-name">Punjabi (ਪੰਜਾਬੀ)</span>
-                            <i class="fas fa-check opt-check"></i>
-                        </div>
-                        <div class="lang-option" data-lang="ta" data-flag="🇮🇳">
-                            <span class="opt-flag">🇮🇳</span>
-                            <span class="opt-name">Tamil (தமிழ்)</span>
-                            <i class="fas fa-check opt-check"></i>
-                        </div>
-                        <div class="lang-option" data-lang="gu" data-flag="🇮🇳">
-                            <span class="opt-flag">🇮🇳</span>
-                            <span class="opt-name">Gujarati (ગુજરાતી)</span>
-                            <i class="fas fa-check opt-check"></i>
+                        <div class="modern-lang-dropdown">
+                            <div class="lang-option active" data-lang="en" data-flag="🇬🇧">
+                                <span class="opt-flag">🇬🇧</span>
+                                <span class="opt-name">English</span>
+                                <i class="fas fa-check opt-check"></i>
+                            </div>
+                            <div class="lang-option" data-lang="hi" data-flag="🇮🇳">
+                                <span class="opt-flag">🇮🇳</span>
+                                <span class="opt-name">Hindi (हिंदी)</span>
+                                <i class="fas fa-check opt-check"></i>
+                            </div>
+                            <div class="lang-option" data-lang="pa" data-flag="🇮🇳">
+                                <span class="opt-flag">🇮🇳</span>
+                                <span class="opt-name">Punjabi (ਪੰਜਾਬੀ)</span>
+                                <i class="fas fa-check opt-check"></i>
+                            </div>
+                            <div class="lang-option" data-lang="ta" data-flag="🇮🇳">
+                                <span class="opt-flag">🇮🇳</span>
+                                <span class="opt-name">Tamil (தமிழ்)</span>
+                                <i class="fas fa-check opt-check"></i>
+                            </div>
+                            <div class="lang-option" data-lang="gu" data-flag="🇮🇳">
+                                <span class="opt-flag">🇮🇳</span>
+                                <span class="opt-name">Gujarati (ગુજરાતી)</span>
+                                <i class="fas fa-check opt-check"></i>
+                            </div>
                         </div>
                     </div>
 
-
-                    <!-- Profile Icon -->
                     <div class="blog-profile-wrapper">
                         <div class="blog-profile-icon" id="profileBtn">
-                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User"
-                                class="profile-btn-img">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User" class="profile-btn-img">
                         </div>
 
                         <div class="profile-dropdown-card" id="profileDropdown">
-
                             <div class="profile-header">
                                 <div class="profile-avatar">
                                     <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User">
@@ -106,7 +95,7 @@
                                 </div>
                                 <div class="stat-item">
                                     <span class="stat-val">89</span>
-                                    <span class="stat-label">Likes</span>
+                                    <span class="stat-label">Following</span>
                                 </div>
                             </div>
 
@@ -122,14 +111,12 @@
                         </div>
                     </div>
 
-                    <!-- Mobile Menu Toggle -->
                     <button class="blog-mobile-toggle" id="mobileToggle">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </nav>
 
-            <!-- Mobile Menu -->
             <div class="blog-mobile-menu" id="mobileMenu">
                 <div class="blog-mobile-nav">
                     <a href="index.html" class="blog-mobile-link">
@@ -142,7 +129,6 @@
                         <i class="fas fa-phone"></i> Contact Us
                     </a>
 
-                    <!-- Mobile Language Selector -->
                     <div class="blog-mobile-lang">
                         <h4>Select Language</h4>
                         <div class="blog-mobile-lang-options">
@@ -157,7 +143,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="blog-hero-section">
         <div class="blog-hero-overlay"></div>
         <div class="container">
@@ -168,8 +153,7 @@
                 </h1>
 
                 <p class="blog-hero-desc">
-                    Discover AI-powered agricultural knowledge, expert articles, and farming success stories from across
-                    India.
+                    Discover AI-powered agricultural knowledge, expert articles, and farming success stories from across India.
                 </p>
 
                 <div class="blog-search-box">
@@ -180,7 +164,6 @@
         </div>
     </section>
 
-    <!-- Categories Section -->
     <section class="blog-categories-section" id="categories">
         <div class="container">
             <div class="blog-section-header">
@@ -192,58 +175,44 @@
             </div>
 
             <div class="blog-categories-container">
-                <div class="blog-category-card" onclick="filterPosts('all')">
-                    <div class="blog-category-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
+                <div class="blog-category-card active">
+                    <div class="blog-category-icon"><i class="fas fa-globe"></i></div>
                     <h5>All Topics</h5>
                     <span class="blog-category-count">45</span>
                 </div>
 
-                <div class="blog-category-card" onclick="filterPosts('crops')">
-                    <div class="blog-category-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
+                <div class="blog-category-card">
+                    <div class="blog-category-icon"><i class="fas fa-seedling"></i></div>
                     <h5>Crop Planning</h5>
                     <span class="blog-category-count">12</span>
                 </div>
 
-                <div class="blog-category-card" onclick="filterPosts('fertilizer')">
-                    <div class="blog-category-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
+                <div class="blog-category-card">
+                    <div class="blog-category-icon"><i class="fas fa-flask"></i></div>
                     <h5>Fertilizer Guide</h5>
                     <span class="blog-category-count">8</span>
                 </div>
 
-                <div class="blog-category-card" onclick="filterPosts('pests')">
-                    <div class="blog-category-icon">
-                        <i class="fas fa-bug"></i>
-                    </div>
+                <div class="blog-category-card">
+                    <div class="blog-category-icon"><i class="fas fa-bug"></i></div>
                     <h5>Pest Management</h5>
                     <span class="blog-category-count">6</span>
                 </div>
 
-                <div class="blog-category-card" onclick="filterPosts('weather')">
-                    <div class="blog-category-icon">
-                        <i class="fas fa-cloud-sun-rain"></i>
-                    </div>
+                <div class="blog-category-card">
+                    <div class="blog-category-icon"><i class="fas fa-cloud-sun-rain"></i></div>
                     <h5>Weather</h5>
                     <span class="blog-category-count">5</span>
                 </div>
 
-                <div class="blog-category-card" onclick="filterPosts('ai')">
-                    <div class="blog-category-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
+                <div class="blog-category-card">
+                    <div class="blog-category-icon"><i class="fas fa-robot"></i></div>
                     <h5>AI Technology</h5>
                     <span class="blog-category-count">7</span>
                 </div>
 
-                <div class="blog-category-card" onclick="filterPosts('success')">
-                    <div class="blog-category-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
+                <div class="blog-category-card">
+                    <div class="blog-category-icon"><i class="fas fa-trophy"></i></div>
                     <h5>Success Stories</h5>
                     <span class="blog-category-count">10</span>
                 </div>
@@ -251,227 +220,186 @@
         </div>
     </section>
 
-    <!-- Featured Posts -->
-    <section class="blog-posts-section" id="featured">
+    <section class="farmer-posts-section" id="community">
         <div class="container">
-            <div class="blog-section-header">
-                <h2 class="blog-section-title">Featured Posts</h2>
-                <div class="blog-section-underline"></div>
-                <p class="blog-section-subtitle">
-                    Most popular articles from our farming community
-                </p>
+            <div class="blog-section-header-row">
+                <div>
+                    <h2 class="blog-section-title text-start">Farmer's Corner</h2>
+                    <p class="blog-section-subtitle text-start mb-0">Real stories and tips from farmers like you.</p>
+                </div>
+                <button class="blog-create-header-btn" id="sectionCreateBtn">
+                    <i class="fas fa-plus"></i> <span>Share Your Story</span>
+                </button>
             </div>
 
-            <div class="blog-posts-grid" id="blogPostsContainer">
-                <!-- Post 1 -->
-                <div class="blog-post-card" data-category="crops">
-                    <div class="blog-post-image">
-                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1470&q=80"
-                            alt="Smart Irrigation">
-                        <span class="blog-post-tag">Irrigation</span>
-                    </div>
-                    <div class="blog-post-content">
-                        <div class="blog-post-meta">
-                            <div class="blog-post-author">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh"
-                                    class="blog-author-img">
-                                <div>
-                                    <h6>Rajesh Kumar</h6>
-                                    <span>Agricultural Engineer</span>
-                                </div>
-                            </div>
-                            <span class="blog-post-date">Oct 12, 2024</span>
-                        </div>
-                        <h3 class="blog-post-title">Revolutionary Smart Irrigation System Saves 60% Water</h3>
-                        <p class="blog-post-excerpt">Discover how AI-powered irrigation systems are transforming water
-                            management in agriculture.</p>
-                        <div class="blog-post-footer">
-                            <div class="blog-post-stats">
-                                <span><i class="fas fa-heart"></i> 42</span>
-                                <span><i class="fas fa-comment"></i> 24</span>
-                            </div>
-                            <button class="blog-read-btn">Read More <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Post 2 -->
-                <div class="blog-post-card" data-category="fertilizer">
-                    <div class="blog-post-image">
-                        <img src="https://images.unsplash.com/photo-1592982150982-6ba2e8cf6a83?auto=format&fit=crop&w=1632&q=80"
-                            alt="Organic Farming">
-                        <span class="blog-post-tag">Organic</span>
-                    </div>
-                    <div class="blog-post-content">
-                        <div class="blog-post-meta">
-                            <div class="blog-post-author">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya"
-                                    class="blog-author-img">
-                                <div>
-                                    <h6>Priya Sharma</h6>
-                                    <span>Organic Expert</span>
-                                </div>
-                            </div>
-                            <span class="blog-post-date">Oct 10, 2024</span>
-                        </div>
-                        <h3 class="blog-post-title">Organic Farming Practices for Maximum Yield</h3>
-                        <p class="blog-post-excerpt">Learn proven organic farming techniques that boost productivity
-                            while maintaining soil health.</p>
-                        <div class="blog-post-footer">
-                            <div class="blog-post-stats">
-                                <span><i class="fas fa-heart"></i> 31</span>
-                                <span><i class="fas fa-comment"></i> 18</span>
-                            </div>
-                            <button class="blog-read-btn">Read More <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Post 3 -->
-                <div class="blog-post-card" data-category="ai">
-                    <div class="blog-post-image">
-                        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1470&q=80"
-                            alt="AI Soil Analysis">
-                        <span class="blog-post-tag">AI Tech</span>
-                    </div>
-                    <div class="blog-post-content">
-                        <div class="blog-post-meta">
-                            <div class="blog-post-author">
-                                <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Amit"
-                                    class="blog-author-img">
-                                <div>
-                                    <h6>Dr. Amit Patel</h6>
-                                    <span>AI Scientist</span>
-                                </div>
-                            </div>
-                            <span class="blog-post-date">Oct 8, 2024</span>
-                        </div>
-                        <h3 class="blog-post-title">AI-Powered Soil Analysis for Precision Agriculture</h3>
-                        <p class="blog-post-excerpt">How machine learning algorithms are revolutionizing soil testing
-                            and providing precise recommendations.</p>
-                        <div class="blog-post-footer">
-                            <div class="blog-post-stats">
-                                <span><i class="fas fa-heart"></i> 56</span>
-                                <span><i class="fas fa-comment"></i> 32</span>
-                            </div>
-                            <button class="blog-read-btn">Read More <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Post 4 -->
+            <div class="blog-posts-grid">
                 <div class="blog-post-card" data-category="success">
                     <div class="blog-post-image">
-                        <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=1000"
-                            alt="Success Story">
-                        <span class="blog-post-tag">Success</span>
+                        <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=1000" alt="Success Story">
+                        <span class="blog-post-tag tag-success">Success Story</span>
                     </div>
                     <div class="blog-post-content">
                         <div class="blog-post-meta">
                             <div class="blog-post-author">
-                                <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Suresh"
-                                    class="blog-author-img">
-                                <div>
-                                    <h6>Suresh Kumar</h6>
-                                    <span>Farmer, Punjab</span>
-                                </div>
+                                <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Suresh" class="blog-author-img">
+                                <div><h6>Suresh Kumar</h6><span>Punjab</span></div>
                             </div>
-                            <span class="blog-post-date">Oct 5, 2024</span>
+                            <span class="blog-post-date">2 days ago</span>
                         </div>
                         <h3 class="blog-post-title">How I Doubled My Wheat Yield Using Smart Farming</h3>
-                        <p class="blog-post-excerpt">A real story from Punjab showing how technology transformed
-                            traditional farming.</p>
+                        <p class="blog-post-excerpt">I switched to the recommended fertilizer schedule provided by this app and saw amazing results...</p>
                         <div class="blog-post-footer">
                             <div class="blog-post-stats">
-                                <span><i class="fas fa-heart"></i> 89</span>
+                                <span><i class="far fa-heart"></i> 89</span>
                                 <span><i class="fas fa-comment"></i> 45</span>
                             </div>
-                            <button class="blog-read-btn">Read More <i class="fas fa-arrow-right"></i></button>
+                            <button class="blog-read-btn">Read Post</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Post 5 -->
+                <div class="blog-post-card" data-category="crops">
+                    <div class="blog-post-image">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1470&q=80" alt="Irrigation">
+                        <span class="blog-post-tag tag-tips">Farming Tip</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <div class="blog-post-author">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh" class="blog-author-img">
+                                <div><h6>Rajesh Kumar</h6><span>Haryana</span></div>
+                            </div>
+                            <span class="blog-post-date">5 days ago</span>
+                        </div>
+                        <h3 class="blog-post-title">My Experience with Drip Irrigation</h3>
+                        <p class="blog-post-excerpt">Installing drip irrigation saved me 40% water this summer. Here is how I set it up easily...</p>
+                        <div class="blog-post-footer">
+                            <div class="blog-post-stats">
+                                <span><i class="far fa-heart"></i> 42</span>
+                                <span><i class="fas fa-comment"></i> 12</span>
+                            </div>
+                            <button class="blog-read-btn">Read Post</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="blog-post-card" data-category="pests">
                     <div class="blog-post-image">
-                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1000"
-                            alt="Pest Control">
-                        <span class="blog-post-tag">Pest Control</span>
+                        <img src="https://images.unsplash.com/photo-1592982150982-6ba2e8cf6a83?auto=format&fit=crop&w=1632&q=80" alt="Organic">
+                        <span class="blog-post-tag tag-organic">Organic</span>
                     </div>
                     <div class="blog-post-content">
                         <div class="blog-post-meta">
                             <div class="blog-post-author">
-                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Anita"
-                                    class="blog-author-img">
-                                <div>
-                                    <h6>Anita Devi</h6>
-                                    <span>Agronomist</span>
-                                </div>
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya" class="blog-author-img">
+                                <div><h6>Priya Sharma</h6><span>Kerala</span></div>
                             </div>
-                            <span class="blog-post-date">Oct 3, 2024</span>
+                            <span class="blog-post-date">1 week ago</span>
                         </div>
-                        <h3 class="blog-post-title">Natural Pest Control Methods for Organic Farms</h3>
-                        <p class="blog-post-excerpt">Effective and chemical-free solutions to protect your crops from
-                            pests.</p>
+                        <h3 class="blog-post-title">Natural Pest Repellents That Actually Work</h3>
+                        <p class="blog-post-excerpt">Stop using chemicals! Here is a list of natural neem-based mixtures I use on my farm...</p>
                         <div class="blog-post-footer">
                             <div class="blog-post-stats">
-                                <span><i class="fas fa-heart"></i> 47</span>
-                                <span><i class="fas fa-comment"></i> 22</span>
+                                <span><i class="far fa-heart"></i> 65</span>
+                                <span><i class="fas fa-comment"></i> 28</span>
                             </div>
-                            <button class="blog-read-btn">Read More <i class="fas fa-arrow-right"></i></button>
+                            <button class="blog-read-btn">Read Post</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Post 6 -->
-                <div class="blog-post-card" data-category="weather">
-                    <div class="blog-post-image">
-                        <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=1000"
-                            alt="Weather Forecast">
-                        <span class="blog-post-tag">Weather</span>
-                    </div>
-                    <div class="blog-post-content">
-                        <div class="blog-post-meta">
-                            <div class="blog-post-author">
-                                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Ravi"
-                                    class="blog-author-img">
-                                <div>
-                                    <h6>Ravi Shankar</h6>
-                                    <span>Meteorologist</span>
-                                </div>
-                            </div>
-                            <span class="blog-post-date">Oct 1, 2024</span>
-                        </div>
-                        <h3 class="blog-post-title">Using Weather Predictions to Plan Your Farming Season</h3>
-                        <p class="blog-post-excerpt">How to interpret weather forecasts for optimal sowing and
-                            harvesting times.</p>
-                        <div class="blog-post-footer">
-                            <div class="blog-post-stats">
-                                <span><i class="fas fa-heart"></i> 38</span>
-                                <span><i class="fas fa-comment"></i> 19</span>
-                            </div>
-                            <button class="blog-read-btn">Read More <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <div class="blog-load-more-container">
-                <button class="blog-load-btn" id="loadMoreBtn">
-                    Load More Articles <i class="fas fa-arrow-down"></i>
-                </button>
+            <div class="blog-load-more-container mt-4">
+                <button class="blog-load-btn">Load More Stories <i class="fas fa-arrow-down"></i></button>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
+    <section class="expert-articles-section" id="experts">
+        <div class="container">
+            <div class="blog-section-header">
+                <h2 class="blog-section-title">Expert Insights</h2>
+                <div class="blog-section-underline"></div>
+                <p class="blog-section-subtitle">Research-backed articles from agricultural scientists.</p>
+            </div>
+
+            <div class="blog-posts-grid">
+                <div class="blog-post-card expert-card-style" data-category="ai">
+                    <div class="blog-post-image">
+                        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1470&q=80" alt="AI Soil">
+                        <span class="blog-post-tag tag-tech">Technology</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <div class="blog-post-author">
+                                <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Amit" class="blog-author-img">
+                                <div><h6>Dr. Amit Patel</h6><span>Soil Scientist, IARI</span></div>
+                            </div>
+                            <span class="blog-post-date">Oct 8, 2024</span>
+                        </div>
+                        <h3 class="blog-post-title">AI-Powered Soil Analysis: The Future</h3>
+                        <p class="blog-post-excerpt">A deep dive into how machine learning algorithms predict soil health with 99% accuracy...</p>
+                        <div class="blog-post-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                            <button class="blog-read-btn">Read Article</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-post-card expert-card-style" data-category="fertilizer">
+                    <div class="blog-post-image">
+                        <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1000" alt="Fertilizer">
+                        <span class="blog-post-tag tag-research">Research</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <div class="blog-post-author">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Anita" class="blog-author-img">
+                                <div><h6>Dr. Anita Devi</h6><span>Senior Agronomist</span></div>
+                            </div>
+                            <span class="blog-post-date">Oct 3, 2024</span>
+                        </div>
+                        <h3 class="blog-post-title">Optimizing NPK Ratios for Wheat</h3>
+                        <p class="blog-post-excerpt">New research suggests reducing Urea usage by 10% can actually increase long-term yield...</p>
+                        <div class="blog-post-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 8 min read</span>
+                            <button class="blog-read-btn">Read Article</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-post-card expert-card-style" data-category="weather">
+                    <div class="blog-post-image">
+                        <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=1000" alt="Weather">
+                        <span class="blog-post-tag tag-climate">Climate</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <div class="blog-post-author">
+                                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Ravi" class="blog-author-img">
+                                <div><h6>Ravi Shankar</h6><span>Meteorologist</span></div>
+                            </div>
+                            <span class="blog-post-date">Oct 1, 2024</span>
+                        </div>
+                        <h3 class="blog-post-title">Monsoon Prediction Models 2025</h3>
+                        <p class="blog-post-excerpt">Analyzing early satellite data to predict the rainfall patterns for the upcoming Kharif season...</p>
+                        <div class="blog-post-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 6 min read</span>
+                            <button class="blog-read-btn">Read Article</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="blog-newsletter-section">
         <div class="container">
             <div class="blog-newsletter-card">
                 <div class="blog-newsletter-content">
                     <h3>Stay Updated with Farming Insights</h3>
-                    <p>Subscribe to our newsletter and get the latest articles, crop advisories, and farming tips
-                        directly in your inbox.</p>
+                    <p>Subscribe to our newsletter and get the latest articles, crop advisories, and farming tips directly in your inbox.</p>
                 </div>
                 <form class="blog-newsletter-form">
                     <input type="email" placeholder="Your email address" required>
@@ -483,7 +411,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="blog-footer-section">
         <div class="container">
             <div class="blog-footer-grid">
@@ -493,8 +420,7 @@
                         <span class="blog-footer-brand-text">KrishiSahayak</span>
                     </a>
                     <p class="blog-footer-desc">
-                        Your trusted partner in smart agriculture. We bring technology to the fields to ensure better
-                        yield and sustainable growth for every farmer.
+                        Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.
                     </p>
                     <div class="blog-footer-socials">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -531,9 +457,7 @@
                     <p>Subscribe to get the latest farming news and updates directly to your inbox.</p>
                     <form class="blog-footer-newsletter">
                         <input type="email" placeholder="Your Email" required>
-                        <button type="submit">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -548,7 +472,6 @@
         </div>
     </footer>
 
-    <!-- Login Modal -->
     <div class="blog-modal" id="loginModal">
         <div class="blog-modal-content">
             <span class="blog-modal-close">&times;</span>
@@ -562,7 +485,6 @@
         </div>
     </div>
 
-    <!-- Signup Modal -->
     <div class="blog-modal" id="signupModal">
         <div class="blog-modal-content">
             <span class="blog-modal-close">&times;</span>
@@ -577,7 +499,6 @@
         </div>
     </div>
 
-    <!-- Article Modal -->
     <div class="blog-modal" id="articleModal">
         <div class="blog-article-modal-content">
             <span class="blog-modal-close">&times;</span>
@@ -585,75 +506,93 @@
                 <div class="blog-article-author">
                     <img src="" alt="Author" id="modalAuthorImg">
                     <div>
-                        <h4 id="modalAuthorName"></h4>
-                        <span id="modalAuthorRole"></span>
+                        <h4 id="modalAuthorName">Author Name</h4>
+                        <span id="modalAuthorRole">Role</span>
                     </div>
                 </div>
                 <button class="blog-modal-follow-btn">Follow</button>
             </div>
+
             <div class="blog-article-modal-body">
-                <h2 id="modalArticleTitle"></h2>
+                <h2 id="modalArticleTitle">Post Title</h2>
+                <img id="modalPostImage" src="" style="width:100%; border-radius:10px; margin-bottom:20px; display:none;">
                 <div id="modalArticleContent"></div>
             </div>
+
+            <div class="blog-article-modal-footer">
+                <div class="modal-interaction-bar">
+                    <button class="modal-action-btn" id="modalLikeBtn">
+                        <i class="far fa-heart"></i> <span id="modalLikeCount">0</span> Likes
+                    </button>
+                    <button class="modal-action-btn" id="modalShareBtn">
+                        <i class="fas fa-share-alt"></i> <span>Share</span>
+                    </button>
+                </div>
+
+                <div class="modal-comments-section">
+                    <h4>Comments (<span id="modalCommentCount">0</span>)</h4>
+                    <div class="modal-comment-input-wrapper">
+                        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="You" class="current-user-img">
+                        <input type="text" id="modalCommentInput" placeholder="Add a comment...">
+                        <button id="modalPostCommentBtn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <div class="modal-comments-list" id="modalCommentsList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-modal" id="createPostModal">
+        <div class="blog-modal-content blog-create-modal-content">
+            <span class="blog-modal-close" id="closeCreateModal">&times;</span>
+            <div class="blog-create-header">
+                <h3>Create New Post</h3>
+                <p>Share your farming knowledge with the community</p>
+            </div>
+            <form class="blog-create-form" id="createPostForm">
+                <div class="blog-file-upload-wrapper">
+                    <input type="file" id="postImage" accept="image/*" hidden>
+                    <label for="postImage" class="blog-file-upload-label">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Upload Cover Image</span>
+                        <small>JPG, PNG (Max 5MB)</small>
+                    </label>
+                    <div id="imagePreview" class="blog-image-preview"></div>
+                </div>
+                <div class="blog-form-group">
+                    <label>Post Title</label>
+                    <input type="text" placeholder="e.g., Best practices for Wheat irrigation..." required>
+                </div>
+                <div class="blog-form-row">
+                    <div class="blog-form-group">
+                        <label>Category</label>
+                        <select required>
+                            <option value="">Select Topic</option>
+                            <option value="crops">Crop Planning</option>
+                            <option value="fertilizer">Fertilizers</option>
+                            <option value="pests">Pest Control</option>
+                            <option value="technology">Agri-Tech</option>
+                            <option value="success">Success Story</option>
+                        </select>
+                    </div>
+                    <div class="blog-form-group">
+                        <label>Tags (comma separated)</label>
+                        <input type="text" placeholder="e.g., organic, summer, wheat">
+                    </div>
+                </div>
+                <div class="blog-form-group">
+                    <label>Content</label>
+                    <textarea rows="6" placeholder="Write your article here..." required></textarea>
+                </div>
+                <div class="blog-form-actions">
+                    <button type="button" class="blog-btn-cancel" id="cancelCreateBtn">Cancel</button>
+                    <button type="submit" class="blog-btn-publish">Publish Post</button>
+                </div>
+            </form>
         </div>
     </div>
 
     <script src="blog_script.js"></script>
 </body>
-
-<div class="blog-modal" id="createPostModal">
-    <div class="blog-modal-content blog-create-modal-content">
-        <span class="blog-modal-close" id="closeCreateModal">&times;</span>
-        <div class="blog-create-header">
-            <h3>Create New Post</h3>
-            <p>Share your farming knowledge with the community</p>
-        </div>
-
-        <form class="blog-create-form" id="createPostForm">
-            <div class="blog-file-upload-wrapper">
-                <input type="file" id="postImage" accept="image/*" hidden>
-                <label for="postImage" class="blog-file-upload-label">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <span>Upload Cover Image</span>
-                    <small>JPG, PNG (Max 5MB)</small>
-                </label>
-                <div id="imagePreview" class="blog-image-preview"></div>
-            </div>
-
-            <div class="blog-form-group">
-                <label>Post Title</label>
-                <input type="text" placeholder="e.g., Best practices for Wheat irrigation..." required>
-            </div>
-
-            <div class="blog-form-row">
-                <div class="blog-form-group">
-                    <label>Category</label>
-                    <select required>
-                        <option value="">Select Topic</option>
-                        <option value="crops">Crop Planning</option>
-                        <option value="fertilizer">Fertilizers</option>
-                        <option value="pests">Pest Control</option>
-                        <option value="technology">Agri-Tech</option>
-                        <option value="success">Success Story</option>
-                    </select>
-                </div>
-                <div class="blog-form-group">
-                    <label>Tags (comma separated)</label>
-                    <input type="text" placeholder="e.g., organic, summer, wheat">
-                </div>
-            </div>
-
-            <div class="blog-form-group">
-                <label>Content</label>
-                <textarea rows="6" placeholder="Write your article here..." required></textarea>
-            </div>
-
-            <div class="blog-form-actions">
-                <button type="button" class="blog-btn-cancel" id="cancelCreateBtn">Cancel</button>
-                <button type="submit" class="blog-btn-publish">Publish Post</button>
-            </div>
-        </form>
-    </div>
-</div>
 
 </html>

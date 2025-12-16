@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Doctor | KrishiSahayak</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="disease-style.css">
+</head>
+
+<body>
+
+    <header class="blog-header-section">
+        <div class="container">
+            <nav class="blog-header-nav">
+                <a href="index.html" class="blog-header-brand">
+                    <img src="logo6.0.png" alt="Krishi Sahayak" class="blog-header-logo">
+                    <span class="blog-brand-text">KrishiSahayak</span>
+                </a>
+
+                <div class="blog-nav-links">
+                    <a href="index.html" class="blog-nav-link">Home</a>
+                    <a href="crop.html" class="blog-nav-link">Crop Advisor</a>
+                    <a href="fertilizer.html" class="blog-nav-link">Fertilizer Guide</a>
+                    <a href="disease.html" class="blog-nav-link active">Disease Doctor</a>
+                </div>
+
+                <div class="blog-header-utilities">
+                    
+                    <div class="modern-lang-wrapper" id="modernLangToggle">
+                        <button class="modern-lang-btn">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-code">EN</span>
+                            <i class="fas fa-chevron-down lang-arrow"></i>
+                        </button>
+                        <div class="modern-lang-dropdown">
+                            <div class="lang-option active" data-lang="en" data-flag="🇬🇧">
+                                <span class="opt-flag">🇬🇧</span> <span class="opt-name">English</span>
+                            </div>
+                            <div class="lang-option" data-lang="hi" data-flag="🇮🇳">
+                                <span class="opt-flag">🇮🇳</span> <span class="opt-name">Hindi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-profile-wrapper">
+                        <div class="blog-profile-icon" id="profileBtn">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User" class="profile-btn-img">
+                        </div>
+                        <div class="profile-dropdown-card" id="profileDropdown">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User">
+                                </div>
+                                <h4 class="user-name">Amit Singh</h4>
+                                <span class="user-role">Premium Member</span>
+                            </div>
+                            <div class="profile-footer">
+                                <button class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="blog-mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="blog-mobile-menu" id="mobileMenu">
+                <div class="blog-mobile-nav">
+                    <a href="index.html" class="blog-mobile-link"><i class="fas fa-home"></i> Home</a>
+                    <a href="crop.html" class="blog-mobile-link"><i class="fas fa-leaf"></i> Crop Advisor</a>
+                    <a href="fertilizer.html" class="blog-mobile-link"><i class="fas fa-flask"></i> Fertilizer Guide</a>
+                    <a href="disease.html" class="blog-mobile-link active"><i class="fas fa-microscope"></i> Disease Doctor</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="blog-hero-section disease-hero-bg">
+        <div class="blog-hero-overlay"></div>
+        <div class="container">
+            <div class="blog-hero-content">
+                <span class="hero-badge"><i class="fas fa-camera"></i> Image Diagnosis</span>
+                <h1 class="blog-hero-title">
+                    AI Plant <span class="blog-text-gradient">Disease Doctor</span>
+                </h1>
+                <p class="blog-hero-desc">
+                    Simply take a photo of your infected crop leaf. Our AI will instantly diagnose the disease and suggest a cure.
+                </p>
+                <button class="blog-load-btn" onclick="document.getElementById('tool-section').scrollIntoView({behavior: 'smooth'})">
+                    Start Diagnosis <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="tool-section" id="tool-section">
+        <div class="container">
+            <div class="tool-card-wrapper">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3>Upload Leaf Image</h3>
+                        <p>Supported crops: Potato, Tomato, Corn, Rice</p>
+                    </div>
+
+                    <form id="diseaseForm">
+                        <div class="upload-zone" id="dropZone">
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                            <div class="upload-content" id="uploadContent">
+                                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                <h6>Drag & Drop or Click to Upload</h6>
+                                <p class="small-text">Supports JPG, PNG (Max 5MB)</p>
+                            </div>
+                            <div class="preview-container" id="previewContainer" style="display: none;">
+                                <img id="imagePreview" src="" alt="Preview">
+                                <button type="button" class="remove-img-btn" id="removeImgBtn"><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="form-submit-container">
+                            <button type="submit" class="btn-large-predict" id="analyzeBtn" disabled>
+                                <i class="fas fa-microscope"></i> <span>Analyze Leaf</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="resultBox" class="result-container" style="display: none;">
+                        <div class="result-header">
+                            <span>Diagnosis Report</span>
+                            <h5 id="resultTitle">Disease Detected</h5>
+                        </div>
+                        
+                        <div class="result-body">
+                            <h2 id="diseaseName" class="disease-title">Late Blight</h2>
+                            
+                            <div class="confidence-wrapper">
+                                <div class="confidence-info">
+                                    <span>AI Confidence</span>
+                                    <span id="confidenceValue">0%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill" id="confidenceBar" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="treatment-box">
+                                <h6><i class="fas fa-user-md"></i> Recommended Treatment</h6>
+                                <p id="treatmentAdvice">Apply a fungicide containing mancozeb or chlorothalonil. Remove infected leaves immediately to prevent spread.</p>
+                            </div>
+                        </div>
+                        <button class="blog-read-btn btn-center" id="resetToolBtn">Check Another Plant</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-categories-section">
+        <div class="container">
+            <div class="blog-section-header">
+                <h2 class="blog-section-title">How It Works</h2>
+                <div class="blog-section-underline"></div>
+                <p class="blog-section-subtitle">Diagnose your crops in seconds</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <div class="process-icon"><i class="fas fa-camera"></i></div>
+                    <h5>Take Photo</h5>
+                    <p>Capture a clear, close-up photo of the affected leaf with your phone.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <div class="process-icon"><i class="fas fa-upload"></i></div>
+                    <h5>Upload</h5>
+                    <p>Upload the image to our AI Doctor. Ensure good lighting.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <div class="process-icon"><i class="fas fa-notes-medical"></i></div>
+                    <h5>Get Cure</h5>
+                    <p>Instantly receive the disease name and chemical/organic treatment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-newsletter-section">
+        <div class="container">
+            <div class="blog-section-header">
+                <h2 class="blog-section-title">Save Your Crops Early</h2>
+                <div class="blog-section-underline"></div>
+                <p class="blog-section-subtitle">Act fast—diagnose and treat early to protect your yields</p>
+            </div>
+            <div class="blog-newsletter-card">
+                <div class="blog-newsletter-content">
+                    <div class="benefit-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+                            <div class="benefit-text">
+                                <h5>Instant Detection</h5>
+                                <p>No need to wait for a lab report. Get results in seconds.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="benefit-text">
+                                <h5>Prevent Spread</h5>
+                                <p>Early diagnosis helps you isolate and treat before the whole field is lost.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="benefit-text">
+                                <h5>Easy Access</h5>
+                                <p>Expert agricultural advice right in your pocket.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-newsletter-form crop-benefit-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1615811361269-669f05f53fdf?auto=format&fit=crop&w=800&q=80" alt="Plant Disease Check" class="crop-benefit-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="farmer-posts-section">
+        <div class="container">
+            <div class="blog-section-header">
+                <h2 class="blog-section-title">Success Stories</h2>
+                <div class="blog-section-underline"></div>
+            </div>
+            
+            <div class="blog-posts-grid">
+                <div class="blog-post-card testimonial-card">
+                    <div class="blog-post-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="blog-post-excerpt">"I noticed yellow spots on my Tomato leaves. The app identified it as Early Blight and suggested a spray. My crop was saved!"</p>
+                        <div class="blog-post-meta border-none">
+                            <div class="blog-post-author">
+                                <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Kuldeep" class="blog-author-img">
+                                <div>
+                                    <h6>Kuldeep Yadav</h6>
+                                    <span>Uttar Pradesh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-post-card testimonial-card">
+                    <div class="blog-post-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="blog-post-excerpt">"This technology is amazing. I uploaded a picture of my corn leaf, and it correctly told me it was Rust disease."</p>
+                        <div class="blog-post-meta border-none">
+                            <div class="blog-post-author">
+                                <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Sunita" class="blog-author-img">
+                                <div>
+                                    <h6>Sunita Devi</h6>
+                                    <span>Bihar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-post-card testimonial-card">
+                    <div class="blog-post-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="blog-post-excerpt">"Very helpful for Potato farming. It distinguishes between late blight and early blight accurately."</p>
+                        <div class="blog-post-meta border-none">
+                            <div class="blog-post-author">
+                                <img src="https://randomuser.me/api/portraits/men/18.jpg" alt="Rajiv" class="blog-author-img">
+                                <div>
+                                    <h6>Rajiv Kumar</h6>
+                                    <span>West Bengal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="blog-footer-section">
+        <div class="container">
+            <div class="blog-footer-grid">
+                <div class="blog-footer-col">
+                    <a href="index.html" class="blog-footer-brand">
+                        <img src="logo6.0.png" alt="KrishiSahayak" class="blog-footer-logo">
+                        <span class="blog-footer-brand-text">KrishiSahayak</span>
+                    </a>
+                    <p class="blog-footer-desc">
+                        Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.
+                    </p>
+                    <div class="blog-footer-socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="blog-footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="crop.html">Crop Advisor</a></li>
+                        <li><a href="disease.html">Disease Doctor</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="blog-footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="blog-footer-links">
+                        <li><a href="#">Crop Recommendation</a></li>
+                        <li><a href="#">Fertilizer Guide</a></li>
+                        <li><a href="#">Disease Detection</a></li>
+                        <li><a href="#">Weather Forecast</a></li>
+                        <li><a href="#">Farming Chatbot</a></li>
+                    </ul>
+                </div>
+
+                <div class="blog-footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest farming news and updates.</p>
+                    <form class="blog-footer-newsletter">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="blog-footer-bottom">
+                <p class="blog-copyright">© 2025 KrishiSahayak. All Rights Reserved.</p>
+                <div class="blog-footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="disease-script.js"></script>
+
+</body>
+</html>

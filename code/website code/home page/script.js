@@ -344,8 +344,17 @@ document.addEventListener('DOMContentLoaded', () => {
             btn_contact_us: 'Contact Us', btn_send_msg: 'Send Message',
             contact_sub: '24/7 Support', contact_section_title: 'Get In Touch',
             ph_name: 'Your Name', ph_email: 'Your Email', ph_subject: 'Subject', ph_message: 'How can we help?',
-            footer_desc: 'Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.'
+            footer_desc: 'Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.',
+            'benefits.title': 'Why use Smart Crop Advisor?',
+            'benefits.subtitle': 'Practical, science-backed advice to choose crops that maximize yield and reduce costs.',
+            'benefits.yield.title': 'Maximize Yield',
+            'benefits.yield.desc': 'Growing the right crop increases production by up to 40%.',
+            'benefits.cost.title': 'Reduce Costs',
+            'benefits.cost.desc': 'Stop wasting fertilizer on incompatible crops.',
+            'benefits.soil.title': 'Protect Soil Health',
+            'benefits.soil.desc': 'Prevent degradation with scientifically informed crop rotation.'
         },
+
         hi: {
             hero_title: 'इनोवेटिव <br><span class="text-gradient">भारतीय कृषि</span>',
             hero_desc: 'रीयल‑टाइम मौसम, मिट्टी विश्लेषण और विशेषज्ञ सलाह के साथ अपनी पैदावार अधिकतम करें।',
@@ -359,8 +368,17 @@ document.addEventListener('DOMContentLoaded', () => {
             btn_contact_us: 'संपर्क करें', btn_send_msg: 'संदेश भेजें',
             contact_sub: '24/7 सहायता', contact_section_title: 'संपर्क करें',
             ph_name: 'आपका नाम', ph_email: 'आपका ईमेल', ph_subject: 'विषय', ph_message: 'हम आपकी कैसे मदद कर सकते हैं?',
-            footer_desc: 'आपके खेतों के लिए विश्वसनीय तकनीकी साझेदार।'
+            footer_desc: 'आपके खेतों के लिए विश्वसनीय तकनीकी साझेदार।',
+            'benefits.title': 'स्मार्ट क्रॉप एडवाइजर क्यों उपयोग करें?',
+            'benefits.subtitle': 'ऐसा व्यावहारिक, वैज्ञानिक सलाह जो उपज बढ़ाए और लागत घटाए।',
+            'benefits.yield.title': 'उत्पादन बढ़ाएँ',
+            'benefits.yield.desc': 'सही फसल उगाने से उत्पादन में 40% तक वृद्धि हो सकती है।',
+            'benefits.cost.title': 'लागत कम करें',
+            'benefits.cost.desc': 'गलत फसल पर उर्वरक खर्च बंद करें।',
+            'benefits.soil.title': 'मृदा स्वास्थ्य सुरक्षित रखें',
+            'benefits.soil.desc': 'वैज्ञानिक रोटेशन से मृदा क्षय रोकें।'
         },
+
         pa: {
             hero_title: 'ਕਿਸਾਨੀ ਨੂੰ ਨਵੀਂ ਦਿਸ਼ਾ<br><span class="text-gradient">ਭਾਰਤੀ ਖੇਤੀ</span>',
             hero_desc: 'ਰੇਅਲ-ਟਾਈਮ ਮੌਸਮ ਟਰੈਕਿੰਗ, ਮਿੱਟੀ ਵਿਸ਼ਲੇਸ਼ਣ ਅਤੇ ਮਾਹਿਰ ਸਲਾਹ ਨਾਲ ਆਪਣੀ ਫਸ ਦੀ ਉਪਜ ਵਧਾਓ।',
@@ -374,7 +392,15 @@ document.addEventListener('DOMContentLoaded', () => {
             btn_contact_us: 'ਸੰਪਰਕ ਕਰੋ', btn_send_msg: 'ਸੁਨੇਹਾ ਭੇਜੋ',
             contact_sub: '24/7 ਸਹਾਇਤਾ', contact_section_title: 'ਸੰਪਰਕ ਕਰੋ',
             ph_name: 'ਤੁਹਾਡਾ ਨਾਮ', ph_email: 'ਤੁਹਾਡੀ ਈਮੇਲ', ph_subject: 'ਵਿਸ਼ਾ', ph_message: 'ਅਸੀਂ ਤੁਹਾਡੀ ਕਿਵੇਂ ਮਦਦ ਕਰ ਸਕਦੇ ਹਾਂ?',
-            footer_desc: 'ਤੁਹਾਡੇ ਖੇਤਾਂ ਵਿੱਚ ਬੇਹਤਰ ਉਪਜ ਲਈ ਭਰੋਸੇਯੋਗ ਸਹਿਯੋਗੀ।'
+            footer_desc: 'ਤੁਹਾਡੇ ਖੇਤਾਂ ਵਿੱਚ ਬੇਹਤਰ ਉਪਜ ਲਈ ਭਰੋਸੇਯੋਗ ਸਹਿਯੋਗੀ।',
+            'benefits.title': 'ਸਮਾਰਟ ਕਰਾਪ ਸਲਾਹਕਾਰ ਕਿਉਂ ਵਰਤਣਾ?',
+            'benefits.subtitle': 'ਆਮ, ਵਿਗਿਆਨ-ਆਧਾਰਤ ਸਲਾਹ ਜੋ ਪੈਦਾਵਾਰ ਵਧਾਉਂਦੀ ਅਤੇ ਲਾਗਤ ਘਟਾਉਂਦੀ ਹੈ।',
+            'benefits.yield.title': 'ਫਸਲ ਵਾਧਾ',
+            'benefits.yield.desc': 'ਸਹੀ ਫਸਲ ਨਾਲ ਉਪਜ ਵਿੱਚ 40% ਤੱਕ ਵਾਧਾ ਹੋ ਸਕਦਾ ਹੈ।',
+            'benefits.cost.title': 'ਖ਼ਰਚ ਘਟਾਓ',
+            'benefits.cost.desc': "ਗਲਤ ਫਸਲ 'ਤੇ ਉਪਜ ਤੇਖ਼ਰਚ ਬੰਦ ਕਰੋ।",
+            'benefits.soil.title': 'ਮਿੱਟੀ ਦੀ ਸਿਹਤ ਬਚਾਓ',
+            'benefits.soil.desc': 'ਵਿਗਿਆਨਕ ਫਸਲ ਰੋਟੇਸ਼ਨ ਨਾਲ ਖ਼ਰਾਬੀ ਰੋਕੋ।'
         }
     };
 

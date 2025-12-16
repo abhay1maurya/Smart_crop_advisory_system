@@ -251,7 +251,15 @@ function initLanguageToggle() {
             search_ph: 'Search articles, crops, techniques...', btn_search: '',
             categories_title: 'Explore Categories', categories_sub: 'Browse through our curated collection of farming knowledge',
             farmers_corner: "Farmer's Corner", farmers_corner_sub: "Real stories and tips from farmers like you.",
-            lbl_select_lang: 'Select Language'
+            lbl_select_lang: 'Select Language',
+            'benefits.title': 'Why use Smart Crop Advisor?',
+            'benefits.subtitle': 'Practical, science-backed advice to choose crops that maximize yield and reduce costs.',
+            'benefits.yield.title': 'Maximize Yield',
+            'benefits.yield.desc': 'Growing the right crop increases production by up to 40%.',
+            'benefits.cost.title': 'Reduce Costs',
+            'benefits.cost.desc': 'Stop wasting fertilizer on incompatible crops.',
+            'benefits.soil.title': 'Protect Soil Health',
+            'benefits.soil.desc': 'Prevent degradation with scientifically informed crop rotation.'
         },
         hi: {
             nav_home: 'होम', nav_blog: 'ब्लॉग', nav_contact: 'संपर्क करें',
@@ -261,7 +269,15 @@ function initLanguageToggle() {
             search_ph: 'लेख, फसलें, तकनीकें खोजें...', btn_search: '',
             categories_title: 'श्रेणियाँ देखें', categories_sub: 'हमारे क्यूरेट किए गए कृषि ज्ञान को ब्राउज़ करें',
             farmers_corner: 'किसानों का कोना', farmers_corner_sub: 'किसानों से वास्तविक कहानियाँ और सुझाव।',
-            lbl_select_lang: 'भाषा चुनें'
+            lbl_select_lang: 'भाषा चुनें',
+            'benefits.title': 'स्मार्ट क्रॉप एडवाइजर क्यों उपयोग करें?',
+            'benefits.subtitle': 'ऐसा व्यावहारिक, वैज्ञानिक सलाह जो उपज बढ़ाए और लागत घटाए।',
+            'benefits.yield.title': 'उत्पादन बढ़ाएँ',
+            'benefits.yield.desc': 'सही फसल उगाने से उत्पादन में 40% तक वृद्धि हो सकती है।',
+            'benefits.cost.title': 'लागत कम करें',
+            'benefits.cost.desc': 'गलत फसल पर उर्वरक खर्च बंद करें।',
+            'benefits.soil.title': 'मृदा स्वास्थ्य सुरक्षित रखें',
+            'benefits.soil.desc': 'वैज्ञानिक रोटेशन से मृदा क्षय रोकें।'
         },
         pa: {
             nav_home: 'ਹੋਮ', nav_blog: 'ਬਲੌਗ', nav_contact: 'ਸੰਪਰਕ ਕਰੋ',
@@ -271,7 +287,15 @@ function initLanguageToggle() {
             search_ph: 'ਲੇਖ, ਫਸਲਾਂ, ਤਕਨੀਕਾਂ ਖੋਜੋ...', btn_search: '',
             categories_title: 'ਸ਼੍ਰੇਣੀਆਂ ਖੋਜੋ', categories_sub: 'ਸਾਡੀ ਚੁਣੀ ਹੋਈ ਕਿਸਾਨੀ ਜਾਣਕਾਰੀ ਨੂੰ ਵੇਖੋ',
             farmers_corner: 'ਕਿਸਾਨਾਂ ਦਾ ਕੋਨਾ', farmers_corner_sub: 'ਕਿਸਾਨਾਂ ਵੱਲੋਂ ਅਸਲੀ ਕਹਾਣੀਆਂ ਅਤੇ ਸੁਝਾਅ।',
-            lbl_select_lang: 'ਭਾਸ਼ਾ ਚੁਣੋ'
+            lbl_select_lang: 'ਭਾਸ਼ਾ ਚੁਣੋ',
+            'benefits.title': 'ਸਮਾਰਟ ਕਰਾਪ ਸਲਾਹਕਾਰ ਕਿਉਂ ਵਰਤਣਾ?',
+            'benefits.subtitle': 'ਆਮ, ਵਿਗਿਆਨ-ਆਧਾਰਤ ਸਲਾਹ ਜੋ ਪੈਦਾਵਾਰ ਵਧਾਉਂਦੀ ਅਤੇ ਲਾਗਤ ਘਟਾਉਂਦੀ ਹੈ।',
+            'benefits.yield.title': 'ਫਸਲ ਵਾਧਾ',
+            'benefits.yield.desc': 'ਸਹੀ ਫਸਲ ਨਾਲ ਉਪਜ ਵਿੱਚ 40% ਤੱਕ ਵਾਧਾ ਹੋ ਸਕਦਾ ਹੈ।',
+            'benefits.cost.title': 'ਖ਼ਰਚ ਘਟਾਓ',
+            'benefits.cost.desc': "ਗਲਤ ਫਸਲ 'ਤੇ ਉਪਜ ਤੇਖ਼ਰਚ ਬੰਦ ਕਰੋ।",
+            'benefits.soil.title': 'ਮਿੱਟੀ ਦੀ ਸਿਹਤ ਬਚਾਓ',
+            'benefits.soil.desc': 'ਵਿਗਿਆਨਕ ਫਸਲ ਰੋਟੇਸ਼ਨ ਨਾਲ ਖ਼ਰਾਬੀ ਰੋਕੋ।'
         }
     };
 

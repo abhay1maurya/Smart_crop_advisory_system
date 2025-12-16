@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Crop Recommendation | KrishiSahayak</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="crop-style.css">
+</head>
+
+<body>
+
+    <header class="blog-header-section">
+        <div class="container">
+            <nav class="blog-header-nav">
+                <a href="index.html" class="blog-header-brand">
+                    <img src="logo6.0.png" alt="Krishi Sahayak" class="blog-header-logo">
+                    <span class="blog-brand-text">KrishiSahayak</span>
+                </a>
+
+                <div class="blog-nav-links">
+                    <a href="index.html" class="blog-nav-link">Home</a>
+                    <a href="crop.html" class="blog-nav-link active">Crop Recommendation</a>
+                    <a href="#contact" class="blog-nav-link">Contact Us</a>
+                </div>
+
+                <div class="blog-header-utilities">
+                    
+                    <div class="modern-lang-wrapper" id="modernLangToggle">
+                        <button class="modern-lang-btn">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-code">EN</span>
+                            <i class="fas fa-chevron-down lang-arrow"></i>
+                        </button>
+                        <div class="modern-lang-dropdown">
+                            <div class="lang-option active" data-lang="en" data-flag="🇬🇧">
+                                <span class="opt-flag">🇬🇧</span> <span class="opt-name">English</span>
+                            </div>
+                            <div class="lang-option" data-lang="hi" data-flag="🇮🇳">
+                                <span class="opt-flag">🇮🇳</span> <span class="opt-name">Hindi</span>
+                            </div>
+                            <div class="lang-option" data-lang="pa" data-flag="🇮🇳">
+                                <span class="opt-flag">🇮🇳</span> <span class="opt-name">Punjabi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-profile-wrapper">
+                        <div class="blog-profile-icon" id="profileBtn">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User" class="profile-btn-img">
+                        </div>
+                        <div class="profile-dropdown-card" id="profileDropdown">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User">
+                                </div>
+                                <h4 class="user-name">Amit Singh</h4>
+                                <span class="user-role">Premium Member</span>
+                            </div>
+                            <div class="profile-footer">
+                                <button class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="blog-mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="blog-mobile-menu" id="mobileMenu">
+                <div class="blog-mobile-nav">
+                    <a href="index.html" class="blog-mobile-link"><i class="fas fa-home"></i> Home</a>
+                    <a href="crop.html" class="blog-mobile-link active"><i class="fas fa-leaf"></i> Crop Advisor</a>
+                    <a href="#contact" class="blog-mobile-link"><i class="fas fa-phone"></i> Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="blog-hero-section crop-hero-bg">
+        <div class="blog-hero-overlay"></div>
+        <div class="container">
+            <div class="blog-hero-content">
+                <span class="hero-badge"><i class="fas fa-robot"></i> AI Powered Tool</span>
+                <h1 class="blog-hero-title">
+                    Find the <span class="blog-text-gradient">Perfect Crop</span>
+                </h1>
+                <p class="blog-hero-desc">
+                    Scientifically analyze your soil nutrients (N-P-K) and weather conditions to maximize yield and profit.
+                </p>
+                <button class="blog-load-btn" onclick="document.getElementById('tool-section').scrollIntoView({behavior: 'smooth'})">
+                    Start Analysis <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="tool-section" id="tool-section">
+        <div class="container">
+            <div class="tool-card-wrapper">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3>Enter Soil Details</h3>
+                        <p>Check your Soil Health Card for these values</p>
+                    </div>
+
+                    <form id="cropForm">
+                        <div class="crop-form-grid">
+                            <div class="blog-form-group input-wrapper">
+                                <label>Nitrogen (N)</label>
+                                <input type="number" id="valN" placeholder="e.g. 90" min="0" max="140" required>
+                                <span class="unit-tag">kg/ha</span>
+                            </div>
+                            <div class="blog-form-group input-wrapper">
+                                <label>Phosphorous (P)</label>
+                                <input type="number" id="valP" placeholder="e.g. 40" min="0" max="145" required>
+                                <span class="unit-tag">kg/ha</span>
+                            </div>
+                            <div class="blog-form-group input-wrapper">
+                                <label>Potassium (K)</label>
+                                <input type="number" id="valK" placeholder="e.g. 40" min="0" max="205" required>
+                                <span class="unit-tag">kg/ha</span>
+                            </div>
+                            
+                            <div class="blog-form-group input-wrapper">
+                                <label>Soil pH Level</label>
+                                <input type="number" step="0.1" id="valPH" placeholder="e.g. 6.5" min="0" max="14" required>
+                                <span class="unit-tag">pH</span>
+                            </div>
+                            <div class="blog-form-group input-wrapper">
+                                <label>Rainfall</label>
+                                <input type="number" id="valRain" placeholder="e.g. 200" min="0" required>
+                                <span class="unit-tag">mm</span>
+                            </div>
+                             <div class="blog-form-group input-wrapper">
+                                <label>Temperature</label>
+                                <input type="number" id="valTemp" placeholder="e.g. 25" required>
+                                <span class="unit-tag">°C</span>
+                            </div>
+                        </div>
+
+                        <div class="form-submit-container">
+                            <button type="submit" class="btn-large-predict">
+                                <i class="fas fa-search"></i> <span>Predict Best Crop</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="resultBox" class="result-container" style="display: none;">
+                        <div class="result-header">
+                            <span>Based on your data</span>
+                            <h5>Recommended Crop</h5>
+                        </div>
+                        <div class="result-body">
+                            <div class="crop-icon-wrapper"><i class="fas fa-leaf"></i></div>
+                            <h2 id="cropOutput">Rice</h2>
+                            <p class="confidence-score">96% Accuracy Score</p>
+                        </div>
+                        <button class="blog-read-btn btn-center" id="resetToolBtn">Check Another Field</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-categories-section">
+        <div class="container">
+            <div class="blog-section-header">
+                <h2 class="blog-section-title">How It Works</h2>
+                <div class="blog-section-underline"></div>
+                <p class="blog-section-subtitle">Get scientific farming advice in 3 simple steps</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <div class="process-icon"><i class="fas fa-flask"></i></div>
+                    <h5>Enter Data</h5>
+                    <p>Input N-P-K ratios and pH levels from your soil health card.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <div class="process-icon"><i class="fas fa-microchip"></i></div>
+                    <h5>AI Analysis</h5>
+                    <p>Our model compares your soil against 20+ crop requirements instantly.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <div class="process-icon"><i class="fas fa-check-circle"></i></div>
+                    <h5>Get Result</h5>
+                    <p>Instantly see the most profitable crop for your field conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-newsletter-section">
+        <div class="container">
+            <div class="blog-section-header">
+                <h2 class="blog-section-title" data-i18n="benefits.title">Why use Smart Crop Advisor?</h2>
+                <div class="blog-section-underline"></div>
+                <p class="blog-section-subtitle" data-i18n="benefits.subtitle">Practical, science-backed advice to choose crops that maximize yield and reduce costs.</p>
+            </div>
+
+            <div class="blog-newsletter-card">
+                <div class="blog-newsletter-content">
+                    <div class="benefit-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="benefit-text"><h5 data-i18n="benefits.yield.title">Maximize Yield</h5><p data-i18n="benefits.yield.desc">Growing the right crop increases production by up to 40%.</p></div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-wallet"></i></div>
+                            <div class="benefit-text"><h5 data-i18n="benefits.cost.title">Reduce Costs</h5><p data-i18n="benefits.cost.desc">Stop wasting fertilizer on incompatible crops.</p></div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon"><i class="fas fa-seedling"></i></div>
+                            <div class="benefit-text"><h5 data-i18n="benefits.soil.title">Protect Soil Health</h5><p data-i18n="benefits.soil.desc">Prevent degradation with scientifically informed crop rotation.</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-newsletter-form crop-benefit-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80" alt="Smart Farming" class="crop-benefit-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="farmer-posts-section">
+        <div class="container">
+            <div class="blog-section-header">
+                <h2 class="blog-section-title">Farmer Success Stories</h2>
+                <div class="blog-section-underline"></div>
+            </div>
+            
+            <div class="blog-posts-grid">
+                <div class="blog-post-card testimonial-card">
+                    <div class="blog-post-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="blog-post-excerpt">"I used to plant Wheat every year with low profits. This tool suggested 'Chickpea' because my nitrogen was low. My income doubled!"</p>
+                        <div class="blog-post-meta border-none">
+                            <div class="blog-post-author">
+                                <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Vijay" class="blog-author-img">
+                                <div>
+                                    <h6>Vijay Singh</h6>
+                                    <span>Rajasthan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-post-card testimonial-card">
+                    <div class="blog-post-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="blog-post-excerpt">"Very accurate. It detected my soil was too acidic for Cotton and suggested Tea instead. Saved me from a huge loss this season."</p>
+                        <div class="blog-post-meta border-none">
+                            <div class="blog-post-author">
+                                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Meera" class="blog-author-img">
+                                <div>
+                                    <h6>Meera Reddy</h6>
+                                    <span>Telangana</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-post-card testimonial-card">
+                    <div class="blog-post-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p class="blog-post-excerpt">"Simple to use. I just looked at my Soil Health Card, typed in the numbers, and got the result in seconds. Highly recommended."</p>
+                        <div class="blog-post-meta border-none">
+                            <div class="blog-post-author">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Ramesh" class="blog-author-img">
+                                <div>
+                                    <h6>Ramesh Patil</h6>
+                                    <span>Maharashtra</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="blog-footer-section">
+        <div class="container">
+            <div class="blog-footer-grid">
+                <div class="blog-footer-col">
+                    <a href="index.html" class="blog-footer-brand">
+                        <img src="logo6.0.png" alt="KrishiSahayak" class="blog-footer-logo">
+                        <span class="blog-footer-brand-text">KrishiSahayak</span>
+                    </a>
+                    <p class="blog-footer-desc">
+                        Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.
+                    </p>
+                    <div class="blog-footer-socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="blog-footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="crop.html">Crop Advisor</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="blog-footer-col">
+                    <h4>Our Services</h4>
+                    <ul class="blog-footer-links">
+                        <li><a href="#">Crop Recommendation</a></li>
+                        <li><a href="#">Fertilizer Guide</a></li>
+                        <li><a href="#">Disease Detection</a></li>
+                        <li><a href="#">Weather Forecast</a></li>
+                        <li><a href="#">Farming Chatbot</a></li>
+                    </ul>
+                </div>
+
+                <div class="blog-footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest farming news and updates.</p>
+                    <form class="blog-footer-newsletter">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="blog-footer-bottom">
+                <p class="blog-copyright">© 2025 KrishiSahayak. All Rights Reserved.</p>
+                <div class="blog-footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="crop-script.js"></script>
+
+</body>
+</html>

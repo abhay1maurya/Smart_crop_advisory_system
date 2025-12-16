@@ -122,78 +122,14 @@ a:focus, button:focus, input:focus, textarea:focus {
     padding: 6px 14px; border-radius: 20px; background: #f9f9f9;
 }
 
-/* Modern Language Selector - matched to blog page styles */
-.modern-lang-wrapper { position: relative; z-index: var(--z-dropdown); display: flex; align-items: center; }
-
-.modern-lang-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #f9f9f9;
-    border: 1px solid #eee;
-    padding: 6px 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: none;
-    font-family: inherit;
-    font-size: 13px;
-    color: var(--primary-dark);
-}
-
-.modern-lang-btn:hover {
-    background: #ffffff;
-    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
-    transform: translateY(-1px);
-    border-color: var(--primary-green);
-}
-
-.lang-flag { font-size: 1.2rem; line-height: 1; }
-.lang-code { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; }
-.lang-arrow { font-size: 0.7rem; color: var(--primary-green); transition: transform 0.3s ease; }
-
-/* Language Dropdown */
-.modern-lang-dropdown {
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    background: #ffffff;
-    min-width: 180px;
-    border-radius: 8px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    border: 1px solid rgba(0,0,0,0.04);
-    display: none;
-    overflow: hidden;
-    padding: 6px 0;
-    z-index: var(--z-dropdown);
-}
-
-.modern-lang-wrapper.open .modern-lang-dropdown,
-.modern-lang-wrapper.active .modern-lang-dropdown {
-    display: block;
-}
-
-.modern-lang-wrapper.open .lang-arrow,
-.modern-lang-wrapper.active .lang-arrow { transform: rotate(180deg); }
-
-.lang-option {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.2s;
-    color: #4b5563;
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
-.lang-option:hover { background-color: #f0fdf4; color: var(--primary-dark); }
-.lang-option.active { background-color: #f0fdf4; color: var(--primary-green); font-weight: 700; }
-.opt-flag { margin-right: 12px; font-size: 1.2rem; }
-.opt-name { flex-grow: 1; }
-.opt-check { font-size: 0.8rem; color: var(--primary-green); opacity: 0; transform: scale(0); transition: all 0.2s; }
-.lang-option.active .opt-check { opacity: 1; transform: scale(1); }
+/* Modern Language Selector styles (used in new siteLangToggle) */
+.modern-lang-wrapper { position: relative; cursor: pointer; display: inline-block; }
+.modern-lang-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 20px; background: #f9f9f9; border: 1px solid #eee; font-weight:600; }
+.modern-lang-dropdown { position: absolute; right: 0; top: calc(100% + 8px); background: white; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); display: none; min-width: 180px; z-index: 2000; overflow: hidden; }
+.modern-lang-wrapper.open .modern-lang-dropdown { display: block; }
+.lang-option { padding: 10px 12px; display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.lang-option:hover { background: #f3f6f1; }
+.lang-option.active { background: #e8f5e9; font-weight: 700; }
 
 .btn-login-nav { font-weight: 600; color: var(--primary-dark) !important; font-size: 14px; text-transform: uppercase; }
 .btn-quote {

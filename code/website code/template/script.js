@@ -50,7 +50,8 @@ function switchMastery(toolId) {
 
     // Activate button
     document.querySelectorAll('.nav-item-card').forEach(item => {
-        if(item.getAttribute('onclick').includes(toolId)) item.classList.add('active');
+        const clickAttr = item.getAttribute('onclick');
+        if (clickAttr && clickAttr.includes(toolId)) item.classList.add('active');
     });
 }
 
@@ -130,6 +131,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (menuToggle.classList.contains('show')) bsCollapse.hide();
             })
         });
+    }
+
+    // Desktop hover dropdown support (non-invasive): opens dropdowns on hover using Bootstrap API
+    try {
+        if (typeof bootstrap !== 'undefined' && window.matchMedia('(min-width: 992px)').matches) {
+            document.querySelectorAll('.navbar .dropdown').forEach(drop => {
+                const toggle = drop.querySelector('.dropdown-toggle');
+                if (!toggle) return;
+                drop.addEventListener('mouseenter', () => {
+                    const inst = bootstrap.Dropdown.getOrCreateInstance(toggle);
+                    inst.show();
+                });
+                drop.addEventListener('mouseleave', () => {
+                    const inst = bootstrap.Dropdown.getOrCreateInstance(toggle);
+                    inst.hide();
+                });
+            });
+        }
+    } catch (e) {
+        // Fail silently; do not throw if bootstrap API not available
+        console.debug('Dropdown hover support skipped:', e);
     }
 
     /* --- Sliders (Dots Logic) --- */

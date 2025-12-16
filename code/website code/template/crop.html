@@ -6,80 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Crop Recommendation | KrishiSahayak</title>
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="crop-style.css">
 </head>
 
 <body>
 
-    <header class="blog-header-section">
+    <header class="header-section">
         <div class="container">
-            <nav class="blog-header-nav">
-                <a href="index.html" class="blog-header-brand">
-                    <img src="logo6.0.png" alt="Krishi Sahayak" class="blog-header-logo">
-                    <span class="blog-brand-text">KrishiSahayak</span>
+            <nav class="navbar navbar-expand-lg p-0">
+                <a class="navbar-brand" href="index.html">
+                    <div class="brand-logo-wrapper">
+                        <img src="logo6.0.png" alt="Krishi Sahayak" class="brand-logo-img">
+                    </div> <span class="brand-text">KrishiSahayak</span>
                 </a>
 
-                <div class="blog-nav-links">
-                    <a href="index.html" class="blog-nav-link">Home</a>
-                    <a href="crop.html" class="blog-nav-link active">Crop Recommendation</a>
-                    <a href="#contact" class="blog-nav-link">Contact Us</a>
-                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                <div class="blog-header-utilities">
-                    
-                    <div class="modern-lang-wrapper" id="modernLangToggle">
-                        <button class="modern-lang-btn">
-                            <span class="lang-flag">🇬🇧</span>
-                            <span class="lang-code">EN</span>
-                            <i class="fas fa-chevron-down lang-arrow"></i>
-                        </button>
-                        <div class="modern-lang-dropdown">
-                            <div class="lang-option active" data-lang="en" data-flag="🇬🇧">
-                                <span class="opt-flag">🇬🇧</span> <span class="opt-name">English</span>
-                            </div>
-                            <div class="lang-option" data-lang="hi" data-flag="🇮🇳">
-                                <span class="opt-flag">🇮🇳</span> <span class="opt-name">Hindi</span>
-                            </div>
-                            <div class="lang-option" data-lang="pa" data-flag="🇮🇳">
-                                <span class="opt-flag">🇮🇳</span> <span class="opt-name">Punjabi</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="index.html#services" id="navServicesCrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu" aria-labelledby="navServicesCrop">
+                                <li><a class="dropdown-item" href="crop.html">Crop Recommendation</a></li>
+                                <li><a class="dropdown-item" href="fertilizer.html">Fertilizer Recommendation</a></li>
+                                <li><a class="dropdown-item" href="disease.html">Disease Detection</a></li>
+                                <li><a class="dropdown-item" href="#">Weather Advisory</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#benefits">Benefits</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#community-features">Experts</a></li>
 
-                    <div class="blog-profile-wrapper">
-                        <div class="blog-profile-icon" id="profileBtn">
-                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User" class="profile-btn-img">
-                        </div>
-                        <div class="profile-dropdown-card" id="profileDropdown">
-                            <div class="profile-header">
-                                <div class="profile-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User">
+                        <li class="nav-item nav-btn-group ms-lg-3 align-items-center">
+
+                            <div class="weather-widget me-3 d-none d-lg-flex" onclick="requestLocation()">
+                                <i class="fas fa-map-marker-alt text-success me-1"></i>
+                                <span class="me-2" id="locationText">Meerut</span>
+                                <span class="weather-divider">|</span>
+                                <i class="fas fa-cloud-sun text-warning me-1"></i>
+                                <span id="weatherTemp">24°C</span>
+                            </div>
+
+                            <div class="modern-lang-wrapper me-3" id="siteLangToggle">
+                                <button class="modern-lang-btn" aria-label="Select Language">
+                                    <span class="lang-flag">🇬🇧</span>
+                                    <span class="lang-code">EN</span>
+                                    <i class="fas fa-chevron-down lang-arrow"></i>
+                                </button>
+
+                                <div class="modern-lang-dropdown">
+                                    <div class="lang-option active" data-lang="en" data-flag="🇬🇧">
+                                        <span class="opt-flag">🇬🇧</span>
+                                        <span class="opt-name">English</span>
+                                        <i class="fas fa-check opt-check"></i>
+                                    </div>
+                                    <div class="lang-option" data-lang="hi" data-flag="🇮🇳">
+                                        <span class="opt-flag">🇮🇳</span>
+                                        <span class="opt-name">हिन्दी</span>
+                                        <i class="fas fa-check opt-check"></i>
+                                    </div>
+                                    <div class="lang-option" data-lang="pa" data-flag="🇮🇳">
+                                        <span class="opt-flag">🇮🇳</span>
+                                        <span class="opt-name">ਪੰਜਾਬੀ</span>
+                                        <i class="fas fa-check opt-check"></i>
+                                    </div>
                                 </div>
-                                <h4 class="user-name">Amit Singh</h4>
-                                <span class="user-role">Premium Member</span>
                             </div>
-                            <div class="profile-footer">
-                                <button class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <button class="blog-mobile-toggle" id="mobileToggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
+                            <a href="#" class="nav-link btn-login-nav" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">
+                                <i class="fas fa-user me-1"></i> Login
+                            </a>
+                            <a href="index.html#contact" class="btn btn-quote">CONTACT US</a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
-
-            <div class="blog-mobile-menu" id="mobileMenu">
-                <div class="blog-mobile-nav">
-                    <a href="index.html" class="blog-mobile-link"><i class="fas fa-home"></i> Home</a>
-                    <a href="crop.html" class="blog-mobile-link active"><i class="fas fa-leaf"></i> Crop Advisor</a>
-                    <a href="#contact" class="blog-mobile-link"><i class="fas fa-phone"></i> Contact Us</a>
-                </div>
-            </div>
         </div>
     </header>
 
@@ -295,18 +306,25 @@
         </div>
     </section>
 
-    <footer class="blog-footer-section">
-        <div class="container">
-            <div class="blog-footer-grid">
-                <div class="blog-footer-col">
-                    <a href="index.html" class="blog-footer-brand">
-                        <img src="logo6.0.png" alt="KrishiSahayak" class="blog-footer-logo">
-                        <span class="blog-footer-brand-text">KrishiSahayak</span>
+    <footer class="footer-section">
+        
+        <!-- <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        </div> -->
+
+        <div class="container position-relative z-2">
+            <div class="row gy-5">
+                
+                <div class="col-lg-4 col-md-12">
+                    <a href="index.html#home" class="footer-brand mb-4">
+                        <img src="logo6.0.png" alt="KrishiSahayak" class="footer-logo-img">
+                        <span class="footer-brand-text">KrishiSahayak</span>
                     </a>
-                    <p class="blog-footer-desc">
-                        Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.
-                    </p>
-                    <div class="blog-footer-socials">
+                    <p class="footer-desc pe-lg-5" data-i18n="footer_desc">Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.</p>
+                    
+                    <div class="footer-socials">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -314,48 +332,110 @@
                     </div>
                 </div>
 
-                <div class="blog-footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="blog-footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="crop.html">Crop Advisor</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                <div class="col-lg-2 col-6">
+                    <h5 class="footer-title" data-i18n="footer_quick_links">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home" data-i18n="nav_home">Home</a></li>
+                        <li><a href="index.html#about" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+                        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+                        <li><a href="index.html#benefits" data-i18n="nav_benefits">Benefits</a></li>
+                        <li><a href="index.html#community-features" data-i18n="nav_experts">Experts</a></li>
+                        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="blog-footer-col">
-                    <h4>Our Services</h4>
-                    <ul class="blog-footer-links">
-                        <li><a href="#">Crop Recommendation</a></li>
-                        <li><a href="#">Fertilizer Guide</a></li>
-                        <li><a href="#">Disease Detection</a></li>
-                        <li><a href="#">Weather Forecast</a></li>
-                        <li><a href="#">Farming Chatbot</a></li>
+                <div class="col-lg-3 col-6">
+                    <h5 class="footer-title" data-i18n="footer_our_services">Our Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="crop.html" data-i18n="tab_crop">Crop Recommendation</a></li>
+                        <li><a href="fertilizer.html" data-i18n="tab_fert">Fertilizer Recommendation</a></li>
+                        <li><a href="disease.html" data-i18n="tab_disease">Disease Detection</a></li>
+                        <li><a href="#" data-i18n="tab_weather">Weather Forecast</a></li>
+                        <li><a href="#" data-i18n="tab_chat">Farming Chatbot</a></li>
+                        <li><a href="blog.html" data-i18n="tab_chat">Strong Blog Community</a></li>
                     </ul>
                 </div>
 
-                <div class="blog-footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to get the latest farming news and updates.</p>
-                    <form class="blog-footer-newsletter">
-                        <input type="email" placeholder="Your Email" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                <div class="col-lg-3 col-md-12">
+                    <h5 class="footer-title" data-i18n="footer_newsletter">Newsletter</h5>
+                    <p class="footer-desc mb-3" data-i18n="footer_news_desc">Subscribe to get the latest farming news and updates directly to your inbox.</p>
+                    
+                    <form class="footer-newsletter-form" onsubmit="event.preventDefault(); subscribeNewsletter(this);">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
+
             </div>
 
-            <div class="blog-footer-bottom">
-                <p class="blog-copyright">© 2025 KrishiSahayak. All Rights Reserved.</p>
-                <div class="blog-footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0 small text-white-50">© 2025 KrishiSahayak. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#" class="footer-legal-link me-3">Privacy Policy</a>
+                        <a href="#" class="footer-legal-link">Terms of Service</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title fw-bold text-dark">Welcome Back</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form>
+                        <div class="mb-3"><label class="form-label small text-muted">Email Address</label><input
+                                type="email" class="form-control" placeholder="name@example.com"></div>
+                        <div class="mb-3"><label class="form-label small text-muted">Password</label><input
+                                type="password" class="form-control" placeholder="******"></div>
+                        <div class="d-grid"><button type="submit" class="btn btn-hero w-100">Login</button></div>
+                    </form>
+                    <p class="text-center mt-3 small text-muted">Don't have an account? <a href="#"
+                            class="text-success text-decoration-none fw-bold" data-bs-toggle="modal"
+                            data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title fw-bold text-dark">Create Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form>
+                        <div class="mb-3"><label class="form-label small text-muted">Full Name</label><input type="text"
+                                class="form-control" placeholder="John Doe"></div>
+                        <div class="mb-3"><label class="form-label small text-muted">Email Address</label><input
+                                type="email" class="form-control" placeholder="name@example.com"></div>
+                        <div class="mb-3"><label class="form-label small text-muted">Password</label><input
+                                type="password" class="form-control" placeholder="Create a password"></div>
+                        <div class="d-grid"><button type="submit" class="btn btn-hero w-100">Create Account</button>
+                        </div>
+                    </form>
+                    <p class="text-center mt-3 small text-muted">Already have an account? <a href="#"
+                            class="text-success text-decoration-none fw-bold" data-bs-toggle="modal"
+                            data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
     <script src="crop-script.js"></script>
 
 </body>

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* --- 1. Header Scroll Effect --- */
 function initHeader() {
-    const header = document.querySelector('.blog-header-section');
+    const header = document.querySelector('.blog-header-section') || document.querySelector('.header-section');
     if (!header) return;
     window.addEventListener('scroll', () => {
         header.style.boxShadow = window.scrollY > 50 
@@ -136,7 +136,7 @@ function initProfileDropdown() {
     const wrapper = document.querySelector('.blog-profile-wrapper');
     const btn = document.getElementById('profileBtn');
     
-    if (btn) {
+    if (btn && wrapper) {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
             wrapper.classList.toggle('active');

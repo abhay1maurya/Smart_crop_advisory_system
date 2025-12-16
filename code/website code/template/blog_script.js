@@ -112,7 +112,7 @@ function initDataModel() {
 
 /* --- 2. Header & Scroll Effect --- */
 function initHeader() {
-    const header = document.querySelector('.blog-header-section');
+    const header = document.querySelector('.blog-header-section') || document.querySelector('.header-section');
     if (!header) return;
 
     window.addEventListener('scroll', () => {
@@ -125,10 +125,13 @@ function initHeader() {
 
     // Active Link Highlighting
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.blog-nav-link').forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        if (href === currentPath || href === (currentPath === 'index.html' ? '#contact' : 'index.html#contact')) {
             link.classList.add('active');
         }
+        if (href === currentPath) link.classList.add('active');
     });
 }
 

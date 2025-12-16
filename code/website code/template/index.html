@@ -30,7 +30,15 @@
                 <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#services" id="navServices" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu" aria-labelledby="navServices">
+                                <li><a class="dropdown-item" href="crop.html">Crop Recommendation</a></li>
+                                <li><a class="dropdown-item" href="fertilizer.html">Fertilizer Recommendation</a></li>
+                                <li><a class="dropdown-item" href="disease.html">Disease Detection</a></li>
+                                <li><a class="dropdown-item" href="#">Weather Advisory</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="#benefits">Benefits</a></li>
@@ -166,7 +174,7 @@
                             <p data-i18n="serv_fert_desc">Optimize yield with precise fertilizer dosage and nutrient
                                 management plans.</p>
                         </div>
-                        <a href="#" class="btn-read-more" data-i18n="service_read_more">Read More</a>
+                        <a href="fertilizer.html" class="btn-read-more" data-i18n="service_read_more">Read More</a>
                     </div>
 
                     <div class="service-card"
@@ -177,7 +185,7 @@
                             <p data-i18n="serv_disease_desc">Upload leaf photos to instantly identify plant diseases and
                                 get cure suggestions.</p>
                         </div>
-                        <a href="#" class="btn-read-more" data-i18n="service_read_more">Read More</a>
+                        <a href="disease.html" class="btn-read-more" data-i18n="service_read_more">Read More</a>
                     </div>
 
                     <div class="service-card"
@@ -211,7 +219,7 @@
                             <p data-i18n="serv_comm_desc">Connect with other farmers, share success stories, and learn
                                 from experts.</p>
                         </div>
-                        <a href="#" class="btn-read-more" data-i18n="service_read_more">Read More</a>
+                        <a href="blog.html" class="btn-read-more" data-i18n="service_read_more">Read More</a>
                     </div>
 
                 </div>
@@ -420,7 +428,7 @@
             </div>
 
             <div class="btn-see-more-container">
-                <a href="#" class="btn-see-more">See More Posts <i class="fas fa-arrow-right ms-2"></i></a>
+                <a href="blog.html" class="btn-see-more">See More Posts <i class="fas fa-arrow-right ms-2"></i></a>
             </div>
         </div>
     </section>

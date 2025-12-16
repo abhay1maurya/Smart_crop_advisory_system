@@ -139,6 +139,28 @@ a:focus, button:focus, input:focus, textarea:focus {
 }
 .btn-quote:hover { background-color: #6aa025; color: white; }
 
+/* Services dropdown styling (keeps navbar pixel-consistent) */
+.navbar .dropdown-menu {
+    min-width: 220px; 
+    border-radius: 8px; 
+    border: 1px solid rgba(0,0,0,0.06); 
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    padding: 6px 0;
+}
+.navbar .dropdown-item { color: var(--primary-dark); font-weight: 600; padding: 8px 16px; }
+.navbar .dropdown-item:hover, .navbar .dropdown-item:focus { color: var(--primary-green); background: transparent; }
+
+/* Desktop: open dropdown on hover (keeps mobile click intact) */
+@media (min-width: 992px) {
+    .navbar .dropdown:hover > .dropdown-menu { display: block; }
+    .navbar .dropdown-toggle::after { transition: transform 0.2s ease; }
+    .navbar .dropdown:hover > .dropdown-toggle::after { transform: rotate(180deg); }
+}
+
+/* Ensure dropdown inside collapse stacks correctly on small screens */
+@media (max-width: 991px) {
+    .navbar .dropdown-menu { position: static; float: none; box-shadow: none; border: none; }
+}
 
 /* ==================== 3. HERO SECTION ==================== */
 .hero-section {

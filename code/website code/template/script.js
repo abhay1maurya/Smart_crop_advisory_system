@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             hero_title: 'Revolutionizing <br><span class="text-gradient">Indian Farming</span>',
             hero_desc: 'Maximize your yield with real-time weather tracking, soil analysis, and expert advisory—all in one smart platform.',
-            serv_crop_title: 'Crop Recommendation', serv_crop_desc: 'Get AI-powered advice on the best crops to grow based on soil health and season.',
+            serv_crop_title: 'Crop Advisory', serv_crop_desc: 'Get AI-powered advice on the best crops to grow based on soil health and season.',
             serv_fert_title: 'Fertilizer Guide', serv_fert_desc: 'Optimize yield with precise fertilizer dosage and nutrient management plans.',
             serv_disease_title: 'Disease Detection', serv_disease_desc: 'Upload leaf photos to instantly identify plant diseases and get cure suggestions.',
             serv_weather_title: 'Weather Forecast', serv_weather_desc: 'Real-time weather updates and alerts to plan your farming activities better.',

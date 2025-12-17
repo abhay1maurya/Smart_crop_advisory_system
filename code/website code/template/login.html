@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | KrishiSahayak</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-green: #7cb62f;
+            --primary-dark: #2c3e50;
+            --white: #ffffff;
+            --error-red: #e74c3c;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body {
+            background: #f4f7f0;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* --- Login Card --- */
+        .login-container {
+            background: var(--white);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            padding: 40px 30px;
+            text-align: center;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .brand-logo { width: 60px; margin-bottom: 15px; }
+        
+        h2 { color: var(--primary-dark); font-weight: 700; margin-bottom: 5px; }
+        p.subtitle { color: #666; font-size: 14px; margin-bottom: 30px; }
+
+        /* --- Inputs --- */
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label {
+            display: block; font-size: 12px; font-weight: 600; 
+            color: #666; margin-bottom: 8px; text-transform: uppercase;
+        }
+
+        .input-wrapper { position: relative; }
+        .input-wrapper i {
+            position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+            color: #aaa; transition: var(--transition);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px 12px 45px; /* Padding left for icon */
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: var(--transition);
+            background: #fafafa;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            background: var(--white);
+        }
+        input:focus + i { color: var(--primary-green); }
+
+        /* --- Buttons --- */
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary-green);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: var(--transition);
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+
+        .btn-login:hover { background: #6aa025; transform: translateY(-2px); }
+        .btn-login:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+        /* --- Links --- */
+        .forgot-pass {
+            display: block; text-align: right; font-size: 12px; 
+            color: #666; margin-bottom: 20px; text-decoration: none;
+        }
+        .forgot-pass:hover { color: var(--primary-green); text-decoration: underline; }
+
+        .divider {
+            margin: 25px 0; border-top: 1px solid #eee; position: relative;
+        }
+        .divider span {
+            position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+            background: var(--white); padding: 0 10px; color: #999; font-size: 12px;
+        }
+
+        .signup-link { font-size: 14px; color: #333; }
+        .signup-link a { 
+            color: var(--primary-green); font-weight: 600; text-decoration: none; 
+            margin-left: 5px; 
+        }
+        .signup-link a:hover { text-decoration: underline; }
+
+        /* Error Message */
+        .error-banner {
+            background: #fde8e8; color: var(--error-red); padding: 10px;
+            border-radius: 8px; font-size: 13px; margin-bottom: 20px;
+            display: none; border: 1px solid #fbd5d5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <img src="logo6.0.png" alt="Logo" class="brand-logo">
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Login to manage your farm</p>
+
+        <div class="error-banner" id="errorBanner">
+            <i class="fas fa-exclamation-circle"></i> Invalid email or password.
+        </div>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Email or Phone</label>
+                <div class="input-wrapper">
+                    <input type="text" id="loginId" placeholder="Enter your email or phone" required>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+            </div>
+
+            <a href="#" class="forgot-pass">Forgot Password?</a>
+
+            <button type="submit" class="btn-login" id="loginBtn">
+                Sign In <i class="fas fa-sign-in-alt"></i>
+            </button>
+        </form>
+
+        <div class="divider"><span>OR</span></div>
+
+        <div class="signup-link">
+            New to KrishiSahayak? 
+            <a href="signup-wizard.html">Create Account</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const loginId = document.getElementById('loginId').value;
+            const password = document.getElementById('password').value;
+            const btn = document.getElementById('loginBtn');
+            const errorBanner = document.getElementById('errorBanner');
+            
+            // Reset UI
+            errorBanner.style.display = 'none';
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Authenticating...';
+            btn.disabled = true;
+
+            // Simulate API Call
+            setTimeout(() => {
+                // Mock Logic: Fail if password is "error", else success
+                if(password === "error") {
+                    errorBanner.style.display = 'block';
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                } else {
+                    // Success
+                    // Store mock token
+                    localStorage.setItem('authToken', 'mock_token_123');
+                    localStorage.setItem('user', JSON.stringify({ name: 'Farmer User', id: loginId }));
+                    
+                    // Redirect
+                    window.location.href = 'index.html'; 
+                }
+            }, 1500);
+        });
+    </script>
+
+</body>
+</html>

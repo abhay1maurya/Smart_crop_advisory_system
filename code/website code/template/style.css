@@ -27,9 +27,9 @@ body {
 }
 
 /* FIX: Hide the Google Translate Top Bar */
-iframe.goog-te-banner-frame { display: none !important; }
+/* iframe.goog-te-banner-frame { display: none !important; }
 .goog-te-banner-frame { display: none !important; }
-body { top: 0px !important; }
+body { top: 0px !important; } */
 
 h1, h2, h3, h4, h5, h6 { color: var(--primary-dark); font-weight: 700; }
 
@@ -740,7 +740,7 @@ textarea.form-control { border-radius: 20px; }
 
 
 /* ==================== 13. GOOGLE TRANSLATE (MODERN) ==================== */
-.goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame, .goog-te-menu-value span:nth-child(3), .goog-te-menu-value span:nth-child(5), .goog-te-menu-value img { display: none !important; }
+/* .goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame, .goog-te-menu-value span:nth-child(3), .goog-te-menu-value span:nth-child(5), .goog-te-menu-value img { display: none !important; }
 .goog-te-gadget { color: transparent !important; font-size: 0 !important; }
 
 .goog-te-gadget-simple {
@@ -761,7 +761,7 @@ textarea.form-control { border-radius: 20px; }
 .goog-te-menu-value span:first-child { color: #444 !important; font-size: 13px !important; font-weight: 600 !important; }
 
 .goog-tooltip, .goog-tooltip:hover { display: none !important; }
-.goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+.goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; } */
 
 
 /* ==================== 14. MOBILE OPTIMIZATION (Consolidated) ==================== */

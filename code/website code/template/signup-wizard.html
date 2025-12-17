@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Registration | KrishiSahayak</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-green: #7cb62f;
+            --primary-dark: #2c3e50;
+            --white: #ffffff;
+            --light-gray: #f0f2f5;
+            --error-red: #e74c3c;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body {
+            background: #f4f7f0;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* --- Wizard Container --- */
+        .wizard-container {
+            background: var(--white);
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        /* --- Header & Progress --- */
+        .wizard-header {
+            background: var(--primary-green);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .brand-logo { width: 50px; margin-bottom: 10px; }
+        .wizard-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 5px; }
+        .wizard-header p { font-size: 14px; opacity: 0.9; }
+
+        /* Progress Bar */
+        .progress-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .step-indicator {
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin: 0 15px;
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .step-indicator.active {
+            background: var(--white);
+            color: var(--primary-green);
+            transform: scale(1.1);
+        }
+
+        .step-indicator.completed {
+            background: var(--primary-dark);
+            color: var(--white);
+        }
+
+        /* Connecting Line */
+        .progress-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+            z-index: 1;
+        }
+
+        /* --- Form Steps --- */
+        .form-body {
+            padding: 30px;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .step-content {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.5s ease;
+        }
+
+        .step-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h3 { color: var(--primary-dark); margin-bottom: 20px; font-size: 18px; font-weight: 600; }
+
+        /* --- Inputs --- */
+        .input-group { margin-bottom: 15px; position: relative; }
+        .input-group label {
+            display: block; font-size: 12px; font-weight: 600; 
+            color: #666; margin-bottom: 5px; text-transform: uppercase;
+        }
+        .input-group label span { color: var(--error-red); }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: var(--transition);
+            background: #fafafa;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            background: var(--white);
+        }
+
+        /* Error Message */
+        .error-msg {
+            color: var(--error-red);
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* --- Buttons --- */
+        .btn-action {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary-green);
+            color: var(--white);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: var(--transition);
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+
+        .btn-action:hover { background: #6aa025; transform: translateY(-2px); }
+        .btn-action:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+        .btn-secondary {
+            background: transparent;
+            color: #666;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+        .btn-secondary:hover { background: #f9f9f9; color: #333; }
+
+        /* --- OTP Specific --- */
+        .otp-inputs { display: flex; gap: 10px; justify-content: center; margin: 20px 0; }
+        .otp-box {
+            width: 50px; height: 50px; text-align: center;
+            font-size: 20px; font-weight: 700; letter-spacing: 2px;
+        }
+
+        .resend-link {
+            text-align: center; font-size: 13px; color: #666; display: block; margin-top: 15px;
+        }
+        .resend-link a { color: var(--primary-green); text-decoration: none; font-weight: 600; }
+
+        /* Success State */
+        .success-screen { text-align: center; padding: 40px 0; }
+        .success-icon {
+            width: 80px; height: 80px; background: #e6f4ea; 
+            border-radius: 50%; color: var(--primary-green);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 40px; margin: 0 auto 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wizard-container">
+        <div class="wizard-header">
+            <img src="logo6.0.png" alt="Logo" class="brand-logo">
+            <h2>Create Account</h2>
+            <p>Join the KrishiSahayak Community</p>
+
+            <div class="progress-wrapper">
+                <div class="progress-line"></div>
+                <div class="step-indicator active" id="dot1">1</div>
+                <div class="step-indicator" id="dot2">2</div>
+                <div class="step-indicator" id="dot3">3</div>
+            </div>
+        </div>
+
+        <div class="form-body">
+            <form id="signupWizardForm">
+                
+                <div class="step-content active" id="step1">
+                    <h3><i class="fas fa-user-circle"></i> Personal Details</h3>
+                    
+                    <div class="input-group">
+                        <label>Full Name <span>*</span></label>
+                        <input type="text" id="fullName" placeholder="Ex: Amit Singh" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Phone Number <span>*</span></label>
+                        <input type="tel" id="phoneNumber" placeholder="Ex: 9876543210" maxlength="10" pattern="[0-9]{10}" required>
+                        <small class="error-msg" id="phoneError">Please enter a valid 10-digit number</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address (Optional)</label>
+                        <input type="email" id="email" placeholder="Ex: amit@example.com">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Create Password <span>*</span></label>
+                        <input type="password" id="password" placeholder="Min 6 characters" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Confirm Password <span>*</span></label>
+                        <input type="password" id="confirmPassword" placeholder="Repeat password" required>
+                        <small class="error-msg" id="passError">Passwords do not match</small>
+                    </div>
+
+                    <button type="button" class="btn-action" onclick="validateStep1()">
+                        Next Step <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <div style="text-align: center; margin-top: 15px; font-size: 13px;">
+                        Already have an account? <a href="login.html" style="color:var(--primary-green); text-decoration:none;">Login</a>
+                    </div>
+                </div>
+
+                <div class="step-content" id="step2">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <h3><i class="fas fa-shield-alt"></i> Verify Phone</h3>
+                        <p style="font-size: 14px; color: #666;">
+                            We sent a 4-digit code to <br>
+                            <strong id="displayPhone" style="color: var(--primary-dark);">+91 XXXXX XXXXX</strong>
+                        </p>
+                    </div>
+
+                    <div class="otp-inputs">
+                        <input type="text" class="otp-box" maxlength="1" oninput="moveFocus(this, 'otp2')">
+                        <input type="text" class="otp-box" id="otp2" maxlength="1" oninput="moveFocus(this, 'otp3')">
+                        <input type="text" class="otp-box" id="otp3" maxlength="1" oninput="moveFocus(this, 'otp4')">
+                        <input type="text" class="otp-box" id="otp4" maxlength="1">
+                    </div>
+
+                    <button type="button" class="btn-action" id="verifyBtn" onclick="validateStep2()">
+                        Verify & Proceed <i class="fas fa-check-circle"></i>
+                    </button>
+                    
+                    <button type="button" class="btn-action btn-secondary" onclick="prevStep(1)">
+                        Back to Edit Details
+                    </button>
+
+                    <span class="resend-link">
+                        Didn't receive code? <a href="#">Resend SMS</a>
+                    </span>
+                </div>
+
+                <div class="step-content" id="step3">
+                    <h3><i class="fas fa-map-marker-alt"></i> Complete Profile</h3>
+
+                    <div class="input-group">
+                        <label>Preferred Language <span>*</span></label>
+                        <select id="language" required>
+                            <option value="en">English</option>
+                            <option value="hi">Hindi (हिंदी)</option>
+                            <option value="pa">Punjabi (ਪੰਜਾਬੀ)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>State <span>*</span></label>
+                        <select id="state" onchange="loadDistricts()" required>
+                            <option value="">Select State</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>District <span>*</span></label>
+                        <select id="district" onchange="loadCities()" disabled required>
+                            <option value="">Select District</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>City / Village <span>*</span></label>
+                        <select id="city" disabled required>
+                            <option value="">Select City</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-action">
+                        Complete Registration <i class="fas fa-rocket"></i>
+                    </button>
+                </div>
+
+                <div class="step-content" id="successStep">
+                    <div class="success-screen">
+                        <div class="success-icon"><i class="fas fa-check"></i></div>
+                        <h3 style="margin-bottom: 10px;">Registration Successful!</h3>
+                        <p style="color: #666; font-size: 14px;">
+                            Your account has been created. <br>Redirecting to dashboard...
+                        </p>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. State Management ---
+        let currentStep = 1;
+
+        function showStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            // Show current step
+            document.getElementById(step === 4 ? 'successStep' : 'step' + step).classList.add('active');
+
+            // Update Progress Dots
+            if(step <= 3) {
+                document.querySelectorAll('.step-indicator').forEach((el, index) => {
+                    el.classList.remove('active', 'completed');
+                    if (index + 1 === step) el.classList.add('active');
+                    if (index + 1 < step) el.classList.add('completed');
+                });
+            }
+        }
+
+        function prevStep(step) {
+            currentStep = step;
+            showStep(step);
+        }
+
+        // --- 2. Step 1 Validation (Details) ---
+        function validateStep1() {
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phoneNumber').value;
+            const pass = document.getElementById('password').value;
+            const confirmPass = document.getElementById('confirmPassword').value;
+            
+            const phoneError = document.getElementById('phoneError');
+            const passError = document.getElementById('passError');
+
+            // Reset errors
+            phoneError.style.display = 'none';
+            passError.style.display = 'none';
+
+            if(name === "" || phone === "" || pass === "") {
+                alert("Please fill all mandatory fields.");
+                return;
+            }
+
+            if(phone.length !== 10 || isNaN(phone)) {
+                phoneError.style.display = 'block';
+                return;
+            }
+
+            if(pass !== confirmPass) {
+                passError.style.display = 'block';
+                return;
+            }
+
+            // Success -> Move to Step 2
+            document.getElementById('displayPhone').innerText = "+91 " + phone;
+            
+            // Simulate sending OTP loading
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending OTP...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                currentStep = 2;
+                showStep(2);
+                alert("Mock OTP sent: 1234"); // For testing
+            }, 1000);
+        }
+
+        // --- 3. Step 2 Validation (OTP) ---
+        function validateStep2() {
+            // Combine inputs
+            const inputs = document.querySelectorAll('.otp-box');
+            let otp = '';
+            inputs.forEach(input => otp += input.value);
+
+            if(otp.length !== 4) {
+                alert("Please enter the 4-digit OTP.");
+                return;
+            }
+
+            // Mock Verify
+            const btn = document.getElementById('verifyBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                
+                // Success -> Move to Step 3
+                currentStep = 3;
+                showStep(3);
+            }, 1000);
+        }
+
+        // OTP Auto-Focus Logic
+        function moveFocus(current, nextId) {
+            if(current.value.length >= 1) {
+                document.getElementById(nextId).focus();
+            }
+        }
+
+        // --- 4. Dynamic Dropdowns (Mock Data) ---
+        const data = {
+    "Punjab": {
+        "Amritsar": ["Amritsar City", "Attari", "Beas", "Majitha", "Baba Bakala"],
+        "Ludhiana": ["Ludhiana City", "Khanna", "Jagraon", "Raikot", "Samrala", "Payal"],
+        "Jalandhar": ["Jalandhar City", "Phillaur", "Nakodar", "Adampur", "Kartarpur"],
+        "Patiala": ["Patiala City", "Rajpura", "Nabha", "Samana", "Patran"],
+        "Bathinda": ["Bathinda City", "Rampura Phul", "Talwandi Sabo", "Maur"],
+        "Mohali (SAS Nagar)": ["Mohali", "Kharar", "Zirakpur", "Derabassi", "Kurali"],
+        "Gurdaspur": ["Gurdaspur City", "Batala", "Dera Baba Nanak", "Dinanagar"],
+        "Pathankot": ["Pathankot City", "Sujanpur", "Dhar Kalan"],
+        "Hoshiarpur": ["Hoshiarpur City", "Dasuya", "Mukerian", "Garhshankar"],
+        "Ferozepur": ["Ferozepur City", "Zira", "Guruharsahai"],
+        "Fazilka": ["Fazilka City", "Abohar", "Jalalabad"],
+        "Moga": ["Moga City", "Bagha Purana", "Nihal Singh Wala"],
+        "Sangrur": ["Sangrur City", "Sunam", "Malerkotla", "Dhuri", "Lehra"],
+        "Barnala": ["Barnala City", "Tapa", "Mehal Kalan"],
+        "Kapurthala": ["Kapurthala City", "Phagwara", "Sultanpur Lodhi", "Bholath"],
+        "Tarn Taran": ["Tarn Taran City", "Patti", "Khadoor Sahib", "Bhikhiwind"],
+        "Ropar (Rupnagar)": ["Rupnagar City", "Anandpur Sahib", "Nangal", "Chamkaur Sahib"],
+        "Mansa": ["Mansa City", "Budhlada", "Sardulgarh"],
+        "Muktsar": ["Sri Muktsar Sahib", "Malout", "Gidderbaha"],
+        "Faridkot": ["Faridkot City", "Kotkapura", "Jaitu"],
+        "Fatehgarh Sahib": ["Sirhind", "Fatehgarh Sahib", "Mandi Gobindgarh", "Amloh", "Bassi Pathana"],
+        "SBS Nagar (Nawanshahr)": ["Nawanshahr", "Banga", "Balachaur"]
+    },
+    "Uttar Pradesh": {
+        "Lucknow": ["Lucknow City", "Malihabad", "Bakshi Ka Talab", "Mohanlalganj"],
+        "Varanasi": ["Varanasi City", "Sarnath", "Ramnagar", "Pindra"],
+        "Agra": ["Agra City", "Fatehpur Sikri", "Etmadpur", "Kheragarh"],
+        "Kanpur Nagar": ["Kanpur City", "Bilhaur", "Ghatampur"],
+        "Ghaziabad": ["Ghaziabad City", "Loni", "Muradnagar", "Modinagar"],
+        "Gautam Buddha Nagar": ["Noida", "Greater Noida", "Jewar", "Dadri"],
+        "Prayagraj (Allahabad)": ["Prayagraj City", "Phulpur", "Handia", "Meja", "Soraon"],
+        "Meerut": ["Meerut City", "Sardhana", "Mawana"],
+        "Gorakhpur": ["Gorakhpur City", "Sahjanwa", "Campierganj", "Bansgaon"],
+        "Ayodhya (Faizabad)": ["Ayodhya", "Faizabad City", "Rudauli", "Milkipur"],
+        "Bareilly": ["Bareilly City", "Aonla", "Baheri", "Faridpur"],
+        "Aligarh": ["Aligarh City", "Khair", "Atrauli", "Iglas"],
+        "Moradabad": ["Moradabad City", "Kanth", "Bilari", "Thakurdwara"],
+        "Saharanpur": ["Saharanpur City", "Deoband", "Nakur", "Behat"],
+        "Jhansi": ["Jhansi City", "Mauranipur", "Garautha", "Moth"],
+        "Mathura": ["Mathura City", "Vrindavan", "Goverdhan", "Chhata"],
+        "Muzaffarnagar": ["Muzaffarnagar City", "Budhana", "Khatauli"],
+        "Bulandshahr": ["Bulandshahr City", "Khurja", "Sikandrabad"],
+        "Azamgarh": ["Azamgarh City", "Lalganj", "Phulpur", "Sagri"],
+        "Bijnor": ["Bijnor City", "Najibabad", "Dhampur", "Nagina"],
+        "Jaunpur": ["Jaunpur City", "Shahganj", "Machhlishahr"],
+        "Sitapur": ["Sitapur City", "Biswan", "Laharpur", "Mahmudabad"],
+        "Mirzapur": ["Mirzapur City", "Chunar", "Lalganj"],
+        "Sonbhadra": ["Robertsganj", "Ghorawal", "Dudhi"],
+        "Unnao": ["Unnao City", "Safipur", "Purwa"],
+        "Hardoi": ["Hardoi City", "Shahabad", "Sandila"],
+        "Lakhimpur Kheri": ["Lakhimpur", "Gola Gokarannath", "Palia Kalan"]
+    },
+    "Uttarakhand": {
+        "Dehradun": ["Dehradun City", "Mussoorie", "Rishikesh", "Vikasnagar", "Chakrata", "Doiwala"],
+        "Haridwar": ["Haridwar City", "Roorkee", "Laksar", "Bhagwanpur"],
+        "Nainital": ["Nainital City", "Haldwani", "Ramnagar", "Bhimtal", "Lalkuan", "Kathgodam"],
+        "Udham Singh Nagar": ["Rudrapur", "Pantnagar", "Kashipur", "Kichha", "Sitarganj", "Bajpur", "Jaspur"],
+        "Pauri Garhwal": ["Pauri", "Srinagar", "Kotdwar", "Lansdowne", "Thalisain"],
+        "Tehri Garhwal": ["New Tehri", "Narendranagar", "Chamba", "Devprayag", "Ghansali"],
+        "Almora": ["Almora City", "Ranikhet", "Dwarahat", "Chaukhutia"],
+        "Chamoli": ["Gopeshwar", "Joshimath", "Karnaprayag", "Gairsain", "Badrinath"],
+        "Pithoragarh": ["Pithoragarh City", "Dharchula", "Munsiyari", "Didihat"],
+        "Rudraprayag": ["Rudraprayag City", "Ukhimath", "Kedarnath"],
+        "Uttarkashi": ["Uttarkashi City", "Barkot", "Chinyalisaur", "Gangotri", "Yamunotri"],
+        "Bageshwar": ["Bageshwar City", "Kapkot", "Garur"],
+        "Champawat": ["Champawat City", "Tanakpur", "Lohaghat", "Banbasa"]
+    }
+};
+
+        function loadDistricts() {
+            const stateSel = document.getElementById('state');
+            const districtSel = document.getElementById('district');
+            const citySel = document.getElementById('city');
+            
+            const selectedState = stateSel.value;
+            
+            // Reset
+            districtSel.innerHTML = '<option value="">Select District</option>';
+            citySel.innerHTML = '<option value="">Select City</option>';
+            citySel.disabled = true;
+
+            if(selectedState && data[selectedState]) {
+                const districts = Object.keys(data[selectedState]);
+                districts.forEach(d => {
+                    const opt = document.createElement('option');
+                    opt.value = d;
+                    opt.textContent = d;
+                    districtSel.appendChild(opt);
+                });
+                districtSel.disabled = false;
+            } else {
+                districtSel.disabled = true;
+            }
+        }
+
+        function loadCities() {
+            const stateSel = document.getElementById('state');
+            const districtSel = document.getElementById('district');
+            const citySel = document.getElementById('city');
+            
+            const selectedState = stateSel.value;
+            const selectedDistrict = districtSel.value;
+
+            // Reset
+            citySel.innerHTML = '<option value="">Select City</option>';
+
+            if(selectedState && selectedDistrict && data[selectedState][selectedDistrict]) {
+                const cities = data[selectedState][selectedDistrict];
+                cities.forEach(c => {
+                    const opt = document.createElement('option');
+                    opt.value = c;
+                    opt.textContent = c;
+                    citySel.appendChild(opt);
+                });
+                citySel.disabled = false;
+            } else {
+                citySel.disabled = true;
+            }
+        }
+
+        // --- 5. Final Submission ---
+        document.getElementById('signupWizardForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Collect all data
+            const formData = {
+                name: document.getElementById('fullName').value,
+                phone: document.getElementById('phoneNumber').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                language: document.getElementById('language').value,
+                state: document.getElementById('state').value,
+                district: document.getElementById('district').value,
+                city: document.getElementById('city').value
+            };
+
+            console.log("Registration Data:", formData);
+
+            // Simulate API Call
+            const btn = e.submitter;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registering...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                // Show Success Screen
+                showStep(4); // 4 = Success Screen
+                
+                // Redirect after 2 seconds
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            }, 1500);
+        });
+
+    </script>
+</body>
+</html>

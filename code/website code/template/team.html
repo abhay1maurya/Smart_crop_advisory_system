@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - KrishiSahayak</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            padding-top: var(--header-height, 80px);
+        }
+
+        /* --- Page Title Section (Blurred Background) --- */
+        .page-header {
+            position: relative; /* Anchor for the pseudo-element */
+            overflow: hidden;   /* Ensures blurred edges don't bleed out */
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 60px;
+            /* Background image removed from here and moved to ::before */
+        }
+
+        /* The blurred background layer */
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* The image and dark overlay go here now */
+            background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)), url('team_br.png');
+            background-size: cover;
+            background-position: center;
+            /* The blur effect - adjust px value for stronger/weaker blur */
+            filter: blur(3px);
+            /* Scale up slightly to hide blurred edges near the border */
+            transform: scale(1.1);
+            z-index: -1; /* Place behind the text content */
+        }
+
+        /* Ensure text container sits on top of the blurred layer */
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Added shadow for better readability against blur */
+            color:#76b900
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* --- Section Titles --- */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-heading h2 {
+            font-weight: 700;
+            color: #1a1a1a;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-heading h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-green, #76b900);
+            border-radius: 2px;
+        }
+
+        /* --- Mentor Card --- */
+        .mentor-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .mentor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .mentor-img-wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary-green, #76b900);
+            padding: 3px;
+            background: white;
+        }
+
+        .mentor-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .mentor-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .mentor-role {
+            color: var(--primary-green, #76b900);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .mentor-bio {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Team Cards (Compact) --- */
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            text-align: center;
+            padding-bottom: 20px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .team-img-wrapper {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .team-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-img {
+            transform: scale(1.1);
+        }
+
+        .team-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .team-role {
+            font-size: 0.8rem;
+            color: var(--primary-green, #76b900);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .team-desc {
+            font-size: 0.8rem;
+            color: #777;
+            padding: 0 15px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        /* --- Social Icons (Compact) --- */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-link {
+            width: 32px;
+            height: 32px;
+            background-color: #f5f5f5;
+            color: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-green, #76b900);
+            color: white;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg p-0">
+                <a class="navbar-brand" href="index.html">
+                    <div class="brand-logo-wrapper">
+                        <img src="logo6.0.png" alt="Krishi Sahayak" class="brand-logo-img">
+                    </div> <span class="brand-text">KrishiSahayak</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="index.html#services" id="navServices" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu" aria-labelledby="navServices">
+                                <li><a class="dropdown-item" href="crop.html">Crop Advisory</a></li>
+                                <li><a class="dropdown-item" href="fertilizer.html">Fertilizer Guide</a></li>
+                                <li><a class="dropdown-item" href="disease.html">Disease Detection</a></li>
+                                <li><a class="dropdown-item" href="#">Weather Advisory</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link active" style="color: var(--primary-green);" href="team.html">Team</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#benefits">Benefits</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#community-features">Experts</a></li>
+
+                        <li class="nav-item nav-btn-group ms-lg-3 align-items-center">
+
+                            <div class="weather-widget me-3 d-none d-lg-flex" onclick="requestLocation()">
+                                <i class="fas fa-map-marker-alt text-success me-1"></i>
+                                <span class="me-2" id="locationText">Meerut</span>
+                                <span class="weather-divider">|</span>
+                                <i class="fas fa-cloud-sun text-warning me-1"></i>
+                                <span id="weatherTemp">24°C</span>
+                            </div>
+
+                            <div class="modern-lang-wrapper me-3" id="siteLangToggle">
+                                <button class="modern-lang-btn" aria-label="Select Language">
+                                    <span class="lang-flag">🇬🇧</span>
+                                    <span class="lang-code">EN</span>
+                                    <i class="fas fa-chevron-down lang-arrow"></i>
+                                </button>
+
+                                <div class="modern-lang-dropdown">
+                                    <div class="lang-option active" data-lang="en" data-flag="🇬🇧">
+                                        <span class="opt-flag">🇬🇧</span>
+                                        <span class="opt-name">English</span>
+                                        <i class="fas fa-check opt-check"></i>
+                                    </div>
+                                    <div class="lang-option" data-lang="hi" data-flag="🇮🇳">
+                                        <span class="opt-flag">🇮🇳</span>
+                                        <span class="opt-name">हिन्दी</span>
+                                        <i class="fas fa-check opt-check"></i>
+                                    </div>
+                                    <div class="lang-option" data-lang="pa" data-flag="🇮🇳">
+                                        <span class="opt-flag">🇮🇳</span>
+                                        <span class="opt-name">ਪੰਜਾਬੀ</span>
+                                        <i class="fas fa-check opt-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="login.html" class="nav-link btn-login-nav">
+                                <i class="fas fa-user me-1"></i> Login
+                            </a>
+                            <a href="#contact" class="btn btn-quote">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Our Team</h1>
+            <p class="page-subtitle">The minds behind KrishiSahayak, dedicated to empowering farmers.</p>
+        </div>
+    </section>
+
+    <section class="mentor-section mb-5">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our Mentor</h2>
+            </div>
+            
+            <div class="mentor-card">
+                <div class="mentor-img-wrapper">
+                    <img src="mentor_image.png" alt="Mrs. Snehlata Singh" class="mentor-img">
+                </div>
+                <h3 class="mentor-name">Mrs. Snehlata Singh</h3>
+                <div class="mentor-role">Project Guide & Research Head</div>
+                <p class="mentor-bio">
+                    Mrs. Sneh Lata Singh is an Assistant Professor with a strong academic foundation in B.E. and M.Tech.
+Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data Mining, and Machine Learning.
+                </p>
+                <div class="social-links">
+                    <a href="mailto:mentorsnehalata@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/dr-a-p-j-akit-tanakpur-844081326/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://ittanakpur.ac.in/faculty/" class="social-link"><i class="fas fa-graduation-cap"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section py-5">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Meet The Team</h2>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="abhay_image.png" alt="Abhay Maurya" class="team-img">
+                        </div>
+                        <h4 class="team-name">Abhay Maurya</h4>
+                        <div class="team-role">ML Engineer</div>
+                        <p class="team-desc">AI integration & Frontend development.</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/abhay-maurya03/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/abhay1maurya" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="mailto:abhay.maurya0303@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="shanu_image.jpeg" alt="Riya Sharma" class="team-img">
+                        </div>
+                        <h4 class="team-name">Shanu Ahmed</h4>
+                        <div class="team-role">Backend Developer</div>
+                        <p class="team-desc">Backend development & Database management</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/shanu-ahmed/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/4hmedshanu" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="mailto:shanuahmed03@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="varun_image.jpg" alt="Vikram Singh" class="team-img">
+                        </div>
+                        <h4 class="team-name">Varun Rana</h4>
+                        <div class="team-role">Frontend Developer</div>
+                        <p class="team-desc">Frontend development & Content writer</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/varun-rana-94162336a/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="mailto:varunrana1902@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="amit_image.jpeg" alt="Anjali Gupta" class="team-img">
+                        </div>
+                        <h4 class="team-name">Amit Yadav</h4>
+                        <div class="team-role">Frontend Developer</div>
+                        <p class="team-desc">Frontend & Documentation</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/amit-yadav-020878284/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="mailto:amity3289@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            <img src="sameer_image.png" alt="Rohan Das" class="team-img">
+                        </div>
+                        <h4 class="team-name">Sameer Ahmad</h4>
+                        <div class="team-role">JS Expert</div>
+                        <p class="team-desc">Frontend (JS) development</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="mailto:rohan@example.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container position-relative z-2">
+            <div class="row gy-5">
+                
+                <div class="col-lg-4 col-md-12">
+                    <a href="index.html#home" class="footer-brand mb-4">
+                        <img src="logo6.0.png" alt="KrishiSahayak" class="footer-logo-img">
+                        <span class="footer-brand-text">KrishiSahayak</span>
+                    </a>
+                    <p class="footer-desc pe-lg-5" data-i18n="footer_desc">Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.</p>
+                    
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-6">
+                    <h5 class="footer-title" data-i18n="footer_quick_links">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home" data-i18n="nav_home">Home</a></li>
+                        <li><a href="index.html#about" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+                        <li><a href="index.html#blog" data-i18n="nav_blog">Blog</a></li>
+                        <li><a href="index.html#benefits" data-i18n="nav_benefits">Benefits</a></li>
+                        <li><a href="index.html#community-features" data-i18n="nav_experts">Experts</a></li>
+                        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <h5 class="footer-title" data-i18n="footer_our_services">Our Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="tab_crop">Crop Advisory</a></li>
+                        <li><a href="#" data-i18n="tab_fert">Fertilizer Guide</a></li>
+                        <li><a href="#" data-i18n="tab_disease">Disease Detection</a></li>
+                        <li><a href="#" data-i18n="tab_weather">Weather Forecast</a></li>
+                        <li><a href="#" data-i18n="tab_chat">Farming Chatbot</a></li>
+                        <li><a href="#" data-i18n="tab_chat">Strong Blog Community</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-12">
+                    <h5 class="footer-title" data-i18n="footer_newsletter">Newsletter</h5>
+                    <p class="footer-desc mb-3" data-i18n="footer_news_desc">Subscribe to get the latest farming news and updates directly to your inbox.</p>
+                    
+                    <form class="footer-newsletter-form" onsubmit="event.preventDefault(); subscribeNewsletter(this);">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0 small text-white-50">© 2025 KrishiSahayak. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#" class="footer-legal-link me-3">Privacy Policy</a>
+                        <a href="#" class="footer-legal-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

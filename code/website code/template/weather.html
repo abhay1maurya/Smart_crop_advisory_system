@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Advisory | KrishiSahayak</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================== GLOBAL STYLES ==================== */
+        :root {
+            --primary-green: #7cb62f;
+            --primary-dark: #333333;
+            --light-green: #f1f8e9;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --error-red: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-dark);
+            background: #f8f9fa;
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; }
+
+        /* ==================== HEADER ==================== */
+        .blog-header-section {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            position: fixed; top: 0; left: 0; width: 100%;
+            z-index: 1000; padding: 15px 0;
+        }
+
+        .blog-header-nav { display: flex; justify-content: space-between; align-items: center; }
+
+        .blog-header-brand { display: flex; align-items: center; gap: 10px; }
+        .blog-header-logo { height: 45px; width: auto; }
+        .blog-brand-text { font-family: 'Great Vibes', cursive; font-size: 28px; color: var(--primary-green); }
+
+        .blog-nav-links { display: flex; gap: 30px; }
+        .blog-nav-link {
+            color: var(--primary-dark); font-weight: 600; font-size: 15px; 
+            position: relative; transition: var(--transition);
+        }
+        .blog-nav-link:hover, .blog-nav-link.active { color: var(--primary-green); }
+
+        .blog-header-utilities { display: flex; gap: 15px; align-items: center; }
+        .blog-mobile-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+
+        /* ==================== HERO SECTION ==================== */
+        .weather-hero {
+            margin-top: 80px;
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, var(--light-green), #fff);
+            text-align: center;
+        }
+
+        .weather-title { font-size: 2.5rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px; }
+        .weather-subtitle { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto; }
+        .location-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(124, 182, 47, 0.15); color: var(--primary-green);
+            padding: 8px 16px; border-radius: 30px; font-weight: 600; margin-top: 20px;
+        }
+
+        /* ==================== WEATHER DASHBOARD ==================== */
+        .dashboard-section { padding: 40px 0 80px; flex: 1; }
+        
+        .weather-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .weather-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .card-title { font-size: 1.2rem; font-weight: 700; color: var(--primary-dark); display: flex; align-items: center; gap: 10px; }
+        .card-icon { color: var(--primary-green); }
+
+        /* Current Weather Styles */
+        .current-main { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+        .weather-icon-large { font-size: 4rem; color: var(--primary-green); }
+        .temp-large { font-size: 3.5rem; font-weight: 700; color: var(--primary-dark); }
+        .condition-text { font-size: 1.2rem; color: #666; font-weight: 500; text-transform: capitalize; }
+
+        .weather-details-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+        }
+        .detail-item { background: var(--light-green); padding: 15px; border-radius: 12px; display: flex; align-items: center; gap: 15px; }
+        .detail-icon { font-size: 1.5rem; color: var(--primary-green); }
+        .detail-info h4 { font-size: 0.9rem; color: #666; font-weight: 500; }
+        .detail-info span { font-size: 1.1rem; font-weight: 700; color: var(--primary-dark); }
+
+        /* Historical Styles */
+        .historical-stats { display: flex; flex-direction: column; gap: 20px; }
+        .stat-row { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 15px; border-bottom: 1px solid #f0f0f0;
+        }
+        .stat-row:last-child { border-bottom: none; }
+        .stat-label { font-weight: 500; color: #555; display: flex; align-items: center; gap: 10px; }
+        .stat-value { font-weight: 700; color: var(--primary-dark); font-size: 1.1rem; }
+        .date-range-badge {
+            font-size: 0.8rem; background: #eee; padding: 4px 10px; border-radius: 4px; color: #666; margin-top: 5px; display: inline-block;
+        }
+
+        /* Loading & Error States */
+        .loading-container { text-align: center; padding: 50px; grid-column: 1 / -1; }
+        .spinner {
+            width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid var(--primary-green);
+            border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 15px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .error-box {
+            background: #fde8e8; border: 1px solid #fbd5d5; color: var(--error-red);
+            padding: 20px; border-radius: 10px; text-align: center; grid-column: 1 / -1; display: none;
+        }
+        .retry-btn {
+            margin-top: 15px; padding: 10px 20px; background: var(--primary-green); color: white;
+            border: none; border-radius: 5px; cursor: pointer; font-family: inherit;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .blog-footer-section { background: #1a1a1a; color: #b0b0b0; padding: 50px 0 20px; margin-top: auto; }
+        .blog-footer-brand-text { font-family: 'Great Vibes', cursive; font-size: 24px; color: var(--primary-green); }
+        .blog-footer-bottom { border-top: 1px solid #333; margin-top: 30px; padding-top: 20px; text-align: center; font-size: 0.9rem; }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 992px) {
+            .weather-grid { grid-template-columns: 1fr; }
+            .blog-nav-links { display: none; } /* Simplified nav for mobile */
+            .blog-mobile-toggle { display: block; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="blog-header-section">
+        <div class="container">
+            <nav class="blog-header-nav">
+                <a href="index.html" class="blog-header-brand">
+                    <img src="logo6.0.png" alt="KrishiSahayak" class="blog-header-logo">
+                    <span class="blog-brand-text">KrishiSahayak</span>
+                </a>
+                <div class="blog-nav-links">
+                    <a href="index.html" class="blog-nav-link">Home</a>
+                    <a href="crop.html" class="blog-nav-link">Crop Advisor</a>
+                    <a href="weather.html" class="blog-nav-link active">Weather</a>
+                    <a href="index.html#contact" class="blog-nav-link">Contact</a>
+                </div>
+                <div class="blog-header-utilities">
+                    <button class="blog-mobile-toggle"><i class="fas fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="weather-hero">
+        <div class="container">
+            <h1 class="weather-title">Weather Advisory</h1>
+            <p class="weather-subtitle">Real-time conditions and historical climate analysis to guide your farming decisions.</p>
+            <div id="locationDisplay" class="location-badge">
+                <i class="fas fa-location-arrow"></i> Detecting Location...
+            </div>
+        </div>
+    </section>
+
+    <section class="dashboard-section">
+        <div class="container">
+            
+            <div id="errorBox" class="error-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="errorMsg">Unable to fetch weather data.</span>
+                <br>
+                <button class="retry-btn" onclick="initWeatherSystem()">Retry</button>
+            </div>
+
+            <div id="weatherGrid" class="weather-grid" style="display: none;">
+                
+                <div class="weather-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-bolt card-icon"></i> Current Conditions</h3>
+                        <span id="currentTime" style="font-size: 0.9rem; color: #888;"></span>
+                    </div>
+                    
+                    <div class="current-main">
+                        <i id="currentIcon" class="fas fa-cloud-sun weather-icon-large"></i>
+                        <div>
+                            <div class="temp-large"><span id="currentTemp">--</span>°C</div>
+                            <div class="condition-text" id="currentCondition">--</div>
+                        </div>
+                    </div>
+
+                    <div class="weather-details-grid">
+                        <div class="detail-item">
+                            <i class="fas fa-tint detail-icon"></i>
+                            <div class="detail-info">
+                                <h4>Humidity</h4>
+                                <span id="currentHumidity">--%</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-wind detail-icon"></i>
+                            <div class="detail-info">
+                                <h4>Wind Speed</h4>
+                                <span id="currentWind">-- km/h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-card">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-history card-icon"></i> 3-Month Advisory</h3>
+                        <div class="date-range-badge" id="dateRangeDisplay">Calculating...</div>
+                    </div>
+
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">
+                        Based on historical data from the last 90 days. Use this to plan irrigation and fertilization.
+                    </p>
+
+                    <div class="historical-stats">
+                        <div class="stat-row">
+                            <div class="stat-label"><i class="fas fa-cloud-rain" style="color: #3498db;"></i> Avg. Monthly Rainfall</div>
+                            <div class="stat-value" id="avgRain">-- mm</div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-label"><i class="fas fa-thermometer-half" style="color: #e67e22;"></i> Avg. Temperature</div>
+                            <div class="stat-value" id="avgTemp">-- °C</div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-label"><i class="fas fa-water" style="color: #9b59b6;"></i> Avg. Humidity</div>
+                            <div class="stat-value" id="avgHumidity">-- %</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="loadingBox" class="loading-container">
+                <div class="spinner"></div>
+                <p>Analyzing Satellite Data...</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="blog-footer-section">
+        <div class="container">
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <a href="#" class="blog-footer-brand-text">KrishiSahayak</a>
+                <p style="margin-top: 10px;">Empowering Farmers with Technology</p>
+            </div>
+            <div class="blog-footer-bottom">
+                <p>© 2025 KrishiSahayak. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', initWeatherSystem);
+
+        function initWeatherSystem() {
+            const loadingBox = document.getElementById('loadingBox');
+            const weatherGrid = document.getElementById('weatherGrid');
+            const errorBox = document.getElementById('errorBox');
+            
+            loadingBox.style.display = 'block';
+            weatherGrid.style.display = 'none';
+            errorBox.style.display = 'none';
+
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(
+                    position => fetchWeatherData(position.coords.latitude, position.coords.longitude),
+                    error => showError("Location permission denied. Please allow location access to see weather data.")
+                );
+            } else {
+                showError("Geolocation is not supported by your browser.");
+            }
+        }
+
+        async function fetchWeatherData(lat, lon) {
+            try {
+                updateLocationName(lat, lon);
+                
+                // 1. Fetch Current Weather (Open-Meteo free API)
+                const currentUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m`;
+                const currentRes = await fetch(currentUrl);
+                const currentData = await currentRes.json();
+
+                // 2. Fetch Historical Data (Last 3 months / 90 days)
+                const endDate = new Date();
+                endDate.setDate(endDate.getDate() - 1); // Yesterday
+                const startDate = new Date();
+                startDate.setDate(startDate.getDate() - 91); // 90 days ago
+
+                const formatDate = (date) => date.toISOString().split('T')[0];
+                const historyUrl = `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${formatDate(startDate)}&end_date=${formatDate(endDate)}&daily=temperature_2m_mean,relative_humidity_2m_mean,precipitation_sum&timezone=auto`;
+                
+                const historyRes = await fetch(historyUrl);
+                const historyData = await historyRes.json();
+
+                // 3. Update UI
+                updateCurrentUI(currentData.current);
+                updateHistoricalUI(historyData.daily, startDate, endDate);
+
+                // Show Dashboard
+                document.getElementById('loadingBox').style.display = 'none';
+                document.getElementById('weatherGrid').style.display = 'grid';
+
+            } catch (err) {
+                console.error(err);
+                showError("Failed to connect to weather satellites. Please check your internet.");
+            }
+        }
+
+        function updateLocationName(lat, lon) {
+            // Reverse Geocoding is optional/complex without key, showing coords or generic text
+            document.getElementById('locationDisplay').innerHTML = `<i class="fas fa-map-marker-alt"></i> Lat: ${lat.toFixed(2)}, Lon: ${lon.toFixed(2)}`;
+            
+            const now = new Date();
+            document.getElementById('currentTime').innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function updateCurrentUI(data) {
+            document.getElementById('currentTemp').innerText = Math.round(data.temperature_2m);
+            document.getElementById('currentHumidity').innerText = data.relative_humidity_2m + '%';
+            document.getElementById('currentWind').innerText = data.wind_speed_10m + ' km/h';
+            
+            const code = data.weather_code;
+            const weatherInfo = getWeatherCodeInfo(code);
+            
+            document.getElementById('currentCondition').innerText = weatherInfo.text;
+            document.getElementById('currentIcon').className = `fas ${weatherInfo.icon} weather-icon-large`;
+        }
+
+        function updateHistoricalUI(daily, start, end) {
+            // Calculate Averages
+            const tempSum = daily.temperature_2m_mean.reduce((a, b) => a + b, 0);
+            const humidSum = daily.relative_humidity_2m_mean.reduce((a, b) => a + b, 0);
+            const precipSum = daily.precipitation_sum.reduce((a, b) => a + b, 0);
+            const count = daily.time.length;
+
+            const avgTemp = (tempSum / count).toFixed(1);
+            const avgHumid = Math.round(humidSum / count);
+            
+            // Average Monthly Rainfall (Total Rain / 3 months)
+            const avgMonthlyRain = (precipSum / 3).toFixed(1);
+
+            document.getElementById('avgTemp').innerText = avgTemp + ' °C';
+            document.getElementById('avgHumidity').innerText = avgHumid + ' %';
+            document.getElementById('avgRain').innerText = avgMonthlyRain + ' mm';
+
+            // Format Date Range
+            const options = { month: 'short', day: 'numeric' };
+            document.getElementById('dateRangeDisplay').innerText = 
+                `${start.toLocaleDateString('en-US', options)} - ${end.toLocaleDateString('en-US', options)}`;
+        }
+
+        function showError(msg) {
+            document.getElementById('loadingBox').style.display = 'none';
+            document.getElementById('errorBox').style.display = 'block';
+            document.getElementById('errorMsg').innerText = msg;
+        }
+
+        // Helper: WMO Weather Code Mapper
+        function getWeatherCodeInfo(code) {
+            const map = {
+                0: { text: "Clear Sky", icon: "fa-sun" },
+                1: { text: "Mainly Clear", icon: "fa-cloud-sun" },
+                2: { text: "Partly Cloudy", icon: "fa-cloud" },
+                3: { text: "Overcast", icon: "fa-cloud" },
+                45: { text: "Foggy", icon: "fa-smog" },
+                48: { text: "Rime Fog", icon: "fa-smog" },
+                51: { text: "Light Drizzle", icon: "fa-cloud-rain" },
+                53: { text: "Moderate Drizzle", icon: "fa-cloud-rain" },
+                55: { text: "Dense Drizzle", icon: "fa-cloud-showers-heavy" },
+                61: { text: "Slight Rain", icon: "fa-cloud-rain" },
+                63: { text: "Moderate Rain", icon: "fa-cloud-showers-heavy" },
+                65: { text: "Heavy Rain", icon: "fa-cloud-showers-heavy" },
+                80: { text: "Light Showers", icon: "fa-cloud-rain" },
+                81: { text: "Moderate Showers", icon: "fa-cloud-showers-heavy" },
+                82: { text: "Violent Showers", icon: "fa-poo-storm" },
+                95: { text: "Thunderstorm", icon: "fa-bolt" },
+                96: { text: "Thunderstorm + Hail", icon: "fa-bolt" },
+                99: { text: "Thunderstorm + Heavy Hail", icon: "fa-bolt" }
+            };
+            return map[code] || { text: "Unknown", icon: "fa-cloud" };
+        }
+    </script>
+</body>
+</html>

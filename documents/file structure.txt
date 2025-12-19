@@ -1,0 +1,109 @@
+Smart_Crop_Advisory_System/
+│
+├── 📄 README.md                    
+├── 📄 .gitignore  
+├── 📄 LICENSE                 
+│
+├── 📂 backend/ # [BODY] Spring Boot Backend
+│ ├── 📄 mvnw
+│ ├── 📄 mvnw.cmd
+│ ├── 📄 pom.xml
+│ │
+│ └── 📂 src/
+│ ├── 📂 main/
+│ │ ├── 📂 java/com/scas/
+│ │ │ ├── 📄 scasApplication.java
+│ │ │
+│ │ │ ├── 📂 config/ # Security, CORS, RestTemplate
+│ │ │ │ ├── SecurityConfig.java
+│ │ │ │ ├── CorsConfig.java
+│ │ │ │ └── RestClientConfig.java
+│ │ │
+│ │ │ ├── 📂 controller/ # REST APIs
+│ │ │ │ ├── CropController.java
+│ │ │ │ ├── DiseaseController.java
+│ │ │ │ ├── FertilizerController.java
+│ │ │ │ └── WeatherController.java
+| | |  | |___ blogcontroller.java
+|  | | | |___ maincontroller.java
+│ │ │
+│ │ │ ├── 📂 service/ # Business Logic
+│ │ │ │ ├── CropService.java
+│ │ │ │ ├── DiseaseService.java
+│ │ │ │ ├── FertilizerService.java
+│ │ │ │ ├── WeatherService.java
+│ │ │ │ └── MlGatewayService.java 
+│ │ │  | |__ blogservice.java
+│ │ │ ├── 📂 dto/ # Request/Response Objects
+│ │ │ │ ├── CropRequestDTO.java
+│ │ │ │ ├── CropResponseDTO.java
+│ │ │ │ └── DiseaseResultDTO.java
+│ │ │
+│ │ │ ├── 📂 model/ # JPA Entities
+│ │ │ │ ├── User.java
+│ │ │ │ ├── Farm.java
+│ │ │ │ └── Crop.java
+│ │ │
+│ │ │ ├── 📂 repository/ # Database Layer
+│ │ │ │ ├── UserRepository.java
+│ │ │ │ ├── FarmRepository.java
+│ │ │ │ └── CropRepository.java
+│ │ │
+│ │ │ ├── 📂 exception/ # Global Exception Handling
+│ │ │ │ ├── GlobalExceptionHandler.java
+│ │ │ │ └── ApiError.java
+│ │ │
+│ │ │ └── 📂 util/ # Helpers & Constants
+│ │ │ ├── ApiConstants.java
+│ │ │ └── FileUtils.java
+│ │ │
+│ │ └── 📂 resources/
+│ │ ├── 📄 application.yml # Cleaner than properties
+│ │ ├── 📄 logback-spring.xml
+│ │ └── 📂 static/ # Optional frontend hosting
+│ │
+│ └── 📂 test/
+│ └── 📂 java/com/agrismart/
+│ └── scasApplicationTests.java
+├── 📂 ml_services/                 
+│   ├── 📂 models/                  
+│   │   ├── 📄 final_disease_model.h5         
+│   │   ├── 📄 class_indices.json            
+│   │   ├── 📄 crop_recommendation.pkl        
+│   │   └── 📄 fertilizer.pkl 
+│   │   └── 📄 scaler.pkl
+│   │	└── 📄 label_encoder.pkl		
+│   │   └── 📄 feature_order.pkl
+│   │   └── 📄 best_disease_model.keras
+│   ├── 📂 notebooks/               # Jupyter Notebooks for EDA & Training
+│   │   ├── 📄 1_Crop_EDA_Training.ipynb
+│   │   ├── 📄 2_Fertilizer_EDA.ipynb
+│   │   └── 📄 3_Disease_MobileNetV2.ipynb
+│   │   └── 📄 EDA_fertilizer_data.ipynb
+│   │   └── 📄 EDA_crop_data.ipynb
+│   ├── 📄 disease_api.py           
+│   ├── 📄 crop_api.py              
+│   └── 📄 requirements.txt
+│   └── 📄 fertilizer_api.py    
+│
+├── 📂 frontend/                    
+│   ├── 📂 assets/                  
+│   │   ├── 📄 logo.png
+│   │   └── 📄 hero_bg.jpg
+│   ├── 📂 static
+│   ├── 📄 index.html               
+│   ├── 📄 disease.html             
+│   ├── 📄 fertilizer.html          
+│   └── 📄 weather.html             
+│   └── 📄 blog.html
+│   └── 📄 crop.html
+|   └── 📄 login.html
+└── 📂 data/                        
+|   ├── 📄 Crop_recommendation.csv
+|    ├── 📄 Fertilizer_prediction.csv
+|   └── 📂 Plant_Disease_Dataset/   
+└── 📂 docs/ # Architecture & API Docs
+    ├── system_architecture.png
+    ├── flow_diagram.png
+    └── er_diagram.png
+    └── synopsis.pdf

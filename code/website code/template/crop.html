@@ -10,8 +10,246 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="crop-style.css">
+    <style>
+        /* ==================== 1. GLOBAL & VARIABLES (from style.css) ==================== */
+        :root {
+            --primary-green: #7cb62f;
+            --primary-dark: #333333;
+            --accent-orange: #ff9800;
+            --header-height: 80px; 
+            /* Added from crop-style for consistency */
+            --light-green: #f1f8e9;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #666666;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 10px 30px rgba(124, 182, 47, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #666;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: white; 
+            padding-top: var(--header-height);
+            position: relative;
+            top: 0 !important; 
+        }
+
+        h1, h2, h3, h4, h5, h6 { color: var(--primary-dark); font-weight: 700; }
+        .limit-width { max-width: 600px; margin: 0 auto; }
+        a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid rgba(124, 182, 47, 0.3); outline-offset: 2px; }
+
+        /* Buttons */
+        .btn-orange {
+            background-color: var(--accent-orange); color: white; padding: 12px 30px;
+            border-radius: 30px; font-weight: 600; border: none; text-decoration: none;
+            display: inline-block; transition: transform 0.1s;
+        }
+        .btn-orange:hover { color: white; background-color: #e68a00; }
+        
+        .btn-quote {
+            background-color: var(--primary-green); color: white; font-weight: 600; 
+            padding: 10px 20px; border-radius: 4px; text-transform: uppercase; font-size: 12px; 
+            border: none; text-decoration: none; transition: 0.2s; white-space: nowrap;
+        }
+        .btn-quote:hover { background-color: #6aa025; color: white; }
+
+        /* ==================== 2. HEADER (from index.html) ==================== */
+        .header-section {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            height: var(--header-height);
+            display: flex; align-items: center;
+        }
+        .navbar { width: 100%; }
+        .navbar-brand { padding: 0; display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .brand-logo-img { height: 40px; width: auto; display: block; }
+        .brand-text { font-family: 'Great Vibes', cursive; font-size: 26px; color: var(--primary-green); font-weight: 500; line-height: 1; margin: 0; white-space: nowrap; }
+        
+        .navbar-nav { gap: 5px; }
+        .navbar-nav .nav-link { color: var(--primary-dark); font-weight: 700; padding: 8px 12px !important; font-size: 14px; transition: color 0.18s ease; letter-spacing: 0.5px; white-space: nowrap; }
+        .navbar-nav .nav-link:hover { color: var(--primary-green); }
+        .nav-btn-group { display: flex; align-items: center; gap: 15px; }
+
+        /* Header Widgets */
+        .weather-widget {
+            display: flex; align-items: center; background: #f8f9fa; border: 1px solid #eee; 
+            padding: 6px 14px; border-radius: 30px; font-size: 13px; font-weight: 600; 
+            color: var(--primary-dark); white-space: nowrap; cursor: pointer; transition: all 0.2s;
+        }
+        .weather-widget:hover { background: #e9ecef; border-color: var(--primary-green); }
+
+        .modern-lang-wrapper { position: relative; cursor: pointer; display: inline-block; }
+        .modern-lang-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 20px; background: #f9f9f9; border: 1px solid #eee; font-weight:600; }
+        .modern-lang-dropdown { position: absolute; right: 0; top: calc(100% + 8px); background: white; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); display: none; min-width: 180px; z-index: 2000; overflow: hidden; }
+        .modern-lang-wrapper.open .modern-lang-dropdown { display: block; }
+        .lang-option { padding: 10px 12px; display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+        .lang-option:hover { background: #f3f6f1; }
+        .lang-option.active { background: #e8f5e9; font-weight: 700; }
+
+        .btn-login-nav { font-weight: 600; color: var(--primary-dark) !important; font-size: 14px; text-transform: uppercase; }
+        
+        .navbar .dropdown-menu { min-width: 220px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 8px 30px rgba(0,0,0,0.08); padding: 6px 0; }
+        .navbar .dropdown-item { color: var(--primary-dark); font-weight: 600; padding: 8px 16px; }
+        .navbar .dropdown-item:hover, .navbar .dropdown-item:focus { color: var(--primary-green); background: transparent; }
+
+        /* ==================== 3. CROP PAGE SPECIFIC (from crop-style.css) ==================== */
+        
+        /* Hero Section */
+        .blog-hero-section.crop-hero-bg {
+            position: relative; margin-top:10px;
+            background: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            min-height: 90vh; display: flex; align-items: center; padding: 60px 0; background-size: cover;
+        }
+        .blog-hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(10, 30, 10, 0.85), rgba(10, 30, 10, 0.6)); }
+        .blog-hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; margin: 0 auto; color: white; }
+        .hero-badge {
+            background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px;
+            font-size: 14px; font-weight: 600; margin-bottom: 15px; display: inline-block;
+            backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);
+        }
+        .blog-hero-title { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; color:white; }
+        .blog-text-gradient { background: linear-gradient(90deg, #7cb62f, #aeea00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .blog-load-btn {
+            margin-top: 30px; background: var(--primary-green); color: white; border: none;
+            padding: 15px 40px; border-radius: 50px; font-size: 16px; font-weight: 600;
+            cursor: pointer; transition: var(--transition);
+        }
+        .blog-load-btn:hover { background: #6aa025; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(124,182,47,0.4); }
+
+        /* Tool Section */
+        .tool-section { padding: 60px 0; background: #f4f6f0; }
+        .tool-card-wrapper { max-width: 900px; margin: 0 auto; }
+        .tool-card { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.02); }
+        .tool-header { text-align: center; margin-bottom: 30px; }
+        .tool-header h3 { font-size: 28px; color: var(--primary-dark); margin-bottom: 5px; }
+        
+        .crop-form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 30px; }
+        .blog-form-group.input-wrapper { position: relative; }
+        .blog-form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px; text-transform: uppercase; }
+        .blog-form-group input {
+            width: 100%; padding: 12px 15px; padding-right: 60px;
+            border: 2px solid #eee; border-radius: 10px; font-size: 16px; transition: 0.3s;
+        }
+        .blog-form-group input:focus { border-color: var(--primary-green); outline: none; }
+        .unit-tag {
+            position: absolute; right: 15px; top: 38px; color: #999; font-size: 12px;
+            font-weight: 600; background: #eee; padding: 2px 6px; border-radius: 4px;
+        }
+
+        .btn-large-predict {
+            width: 100%; background: var(--primary-dark); color: white;
+            padding: 18px; border-radius: 12px; border: none; font-size: 18px; font-weight: 600;
+            cursor: pointer; transition: 0.3s; display: flex; justify-content: center; align-items: center; gap: 10px;
+        }
+        .btn-large-predict:hover { background: var(--primary-green); box-shadow: 0 10px 25px rgba(124,182,47,0.3); }
+
+        /* Result Box */
+        .result-container {
+            margin-top: 30px; padding: 30px; background: #f0fdf4;
+            border: 2px dashed var(--primary-green); border-radius: 15px;
+            text-align: center; animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .result-header span { font-size: 12px; text-transform: uppercase; color: #666; letter-spacing: 1px; }
+        .result-header h5 { font-size: 18px; color: var(--primary-dark); margin-bottom: 15px; }
+        .result-body { margin: 20px 0; }
+        .crop-icon-wrapper {
+            width: 80px; height: 80px; background: white; border-radius: 50%;
+            margin: 0 auto 15px; display: flex; align-items: center; justify-content: center;
+            font-size: 40px; color: var(--primary-green); box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .result-body h2 { font-size: 42px; color: var(--primary-green); margin-bottom: 5px; }
+        .confidence-score { color: #2ecc71; font-weight: 600; font-size: 14px; background: rgba(46, 204, 113, 0.1); display: inline-block; padding: 4px 12px; border-radius: 20px; }
+        .btn-center { margin: 0 auto; display: block; background: white; color: var(--dark-gray); border: 1px solid #ccc; padding: 10px 20px; border-radius: 50px; }
+        .btn-center:hover { background: #eee; color: #333; }
+
+        /* Process & Benefits Sections */
+        .blog-categories-section, .blog-newsletter-section, .farmer-posts-section { padding: 80px 0; }
+        .blog-section-header { text-align: center; margin-bottom: 50px; }
+        .blog-section-title { font-size: 2.5rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 10px; }
+        .blog-section-underline { width: 60px; height: 4px; background: var(--primary-green); margin: 0 auto 20px; border-radius: 2px; position: relative; }
+        .blog-section-underline::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 30px; height: 2px; background: rgba(124, 182, 47, 0.4); border-radius: 2px; }
+        .blog-section-subtitle { color: var(--dark-gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .process-card { text-align: center; padding: 30px; background: white; border-radius: 20px; box-shadow: var(--shadow); border: 1px solid #f0f0f0; position: relative; overflow: hidden; }
+        .process-number { position: absolute; top: -10px; right: -10px; width: 60px; height: 60px; background: var(--light-green); border-radius: 50%; color: var(--primary-green); font-size: 24px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+        .process-icon { font-size: 40px; color: var(--primary-green); margin-bottom: 20px; }
+        .process-card h5 { font-size: 20px; margin-bottom: 10px; }
+
+        .blog-newsletter-card { background: linear-gradient(180deg, #ffffff, #fbfff0); border-radius: 20px; padding: 36px; display: flex; gap: 30px; align-items: center; box-shadow: 0 18px 50px rgba(27, 38, 18, 0.12); }
+        .blog-newsletter-content { flex: 1; }
+        .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 18px; }
+        .benefit-item { gap: 16px; align-items: flex-start; background: #ffffff; padding: 18px; border-radius: 12px; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.04); transition: transform 0.3s; }
+        .benefit-item:hover { transform: translateY(-6px); }
+        .benefit-icon { width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(180deg, var(--primary-green), #5a9c1f); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .benefit-text h5 { margin: 0; font-size: 16px; font-weight: 700; color: var(--primary-dark); }
+        .benefit-text p { margin: 6px 0 0; color: var(--dark-gray); font-size: 14px; line-height: 1.5; }
+        .crop-benefit-img-wrapper { flex: 1; border-radius: 15px; overflow: hidden; }
+        .crop-benefit-img { width: 100%; border-radius: 12px; display: block; }
+
+        /* Farmer Stories */
+        .blog-posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        .blog-post-card { background: white; border-radius: 20px; padding: 25px; box-shadow: var(--shadow); }
+        .quote-icon { font-size: 30px; color: #ddd; margin-bottom: 15px; }
+        .blog-post-excerpt { color: #555; font-style: italic; margin-bottom: 20px; }
+        .blog-post-author { display: flex; align-items: center; gap: 10px; }
+        .blog-author-img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; }
+        .blog-post-author h6 { font-size: 16px; margin: 0; }
+        .blog-post-author span { font-size: 12px; color: #777; }
+
+        /* ==================== 4. FOOTER (from index.html) ==================== */
+        .footer-section { background-color: #1a1a1a; color: #e0e0e0; position: relative; padding-top: 15px; margin-top: 50px; }
+        .footer-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-bottom: 20px; }
+        .footer-logo-img { height: 45px; width: auto; border-radius: 50%; }
+        .footer-brand-text { font-family: 'Great Vibes', cursive; font-size: 28px; color: var(--primary-green); font-weight: 400; }
+        .footer-desc { font-size: 14px; line-height: 1.7; color: #bbb; margin-bottom: 25px; }
+        .footer-socials { display: flex; gap: 10px; }
+        .footer-socials a { width: 40px; height: 40px; background: rgba(255,255,255,0.05); color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
+        .footer-socials a:hover { background: var(--primary-green); border-color: var(--primary-green); transform: translateY(-3px); }
+        .footer-title { color: white; font-size: 18px; font-weight: 700; margin-bottom: 25px; position: relative; display: inline-block; }
+        .footer-title::after { content: ""; position: absolute; left: 0; bottom: -8px; width: 40px; height: 3px; background-color: var(--primary-green); border-radius: 2px; }
+        .footer-links { list-style: none; padding: 0; margin: 0; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #bbb; text-decoration: none; font-size: 14px; transition: all 0.3s ease; display: inline-flex; align-items: center; }
+        .footer-links a::before { content: "\f105"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 8px; font-size: 12px; color: var(--primary-green); opacity: 0; transform: translateX(-10px); transition: all 0.3s ease; }
+        .footer-links a:hover { color: white; padding-left: 5px; }
+        .footer-links a:hover::before { opacity: 1; transform: translateX(0); }
+        .footer-newsletter-form { position: relative; margin-top: 20px; }
+        .footer-newsletter-form .form-control { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 12px 20px; padding-right: 50px; color: white; font-size: 14px; }
+        .footer-newsletter-form .form-control:focus { background: rgba(255,255,255,0.1); border-color: var(--primary-green); box-shadow: none; }
+        .newsletter-btn { position: absolute; right: 5px; top: 5px; width: 38px; height: 38px; border-radius: 50%; background: var(--primary-green); border: none; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; }
+        .newsletter-btn:hover { background: white; color: var(--primary-green); transform: scale(1.1); }
+        .footer-bottom { margin-top: 60px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-legal-link { color: #888; font-size: 13px; text-decoration: none; transition: color 0.2s; }
+        .footer-legal-link:hover { color: var(--primary-green); }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            :root { --header-height: 64px; }
+            body { padding-top: 64px; }
+            .header-section { height: auto; min-height: var(--header-height); }
+            .navbar-collapse { position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-top: 1px solid #f0f0f0; z-index: 999; max-height: calc(100vh - var(--header-height)); overflow-y: auto; }
+            .nav-btn-group { flex-direction: column; align-items: stretch; width: 100%; gap: 15px; margin-left: 0 !important; padding-bottom: 20px; }
+            .crop-form-grid { grid-template-columns: 1fr; }
+            .blog-newsletter-card { flex-direction: column; }
+            .process-grid { grid-template-columns: 1fr; }
+            .blog-hero-title { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 
 <body>
@@ -33,10 +271,10 @@
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="index.html#services" id="navServicesCrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                            <ul class="dropdown-menu" aria-labelledby="navServicesCrop">
-                                <li><a class="dropdown-item" href="crop.html">Crop Recommendation</a></li>
-                                <li><a class="dropdown-item" href="fertilizer.html">Fertilizer Recommendation</a></li>
+                            <a class="nav-link dropdown-toggle" href="index.html#services" id="navServices" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu" aria-labelledby="navServices">
+                                <li><a class="dropdown-item" href="crop.html">Crop Advisory</a></li>
+                                <li><a class="dropdown-item" href="fertilizer.html">Fertilizer Guide</a></li>
                                 <li><a class="dropdown-item" href="disease.html">Disease Detection</a></li>
                                 <li><a class="dropdown-item" href="weather.html">Weather Advisory</a></li>
                             </ul>
@@ -82,7 +320,7 @@
                                 </div>
                             </div>
 
-                            <a href="login.html" class="nav-link btn-login-nav">
+                            <a href="#" class="nav-link btn-login-nav" data-bs-toggle="modal" data-bs-target="#loginModal">
                                 <i class="fas fa-user me-1"></i> Login
                             </a>
                             <a href="index.html#contact" class="btn btn-quote">CONTACT US</a>
@@ -116,51 +354,70 @@
             <div class="tool-card-wrapper">
                 <div class="tool-card">
                     <div class="tool-header">
-                        <h3>Enter Soil Details</h3>
-                        <p>Check your Soil Health Card for these values</p>
+                        <h3>Enter Soil & Weather Details</h3>
+                        <p>Check your Soil Health Card for accurate N-P-K and pH values.</p>
                     </div>
 
                     <form id="cropForm">
                         <div class="crop-form-grid">
+                            
+                            <div class="col-span-full mb-2" style="grid-column: 1 / -1;">
+                                <h6 class="text-success fw-bold"><i class="fas fa-flask me-2"></i>Soil Analysis</h6>
+                            </div>
+
                             <div class="blog-form-group input-wrapper">
                                 <label>Nitrogen (N)</label>
-                                <input type="number" id="valN" placeholder="e.g. 90" min="0" max="140" required>
+                                <input type="number" id="N" placeholder="e.g. 90" min="0" max="140" required>
                                 <span class="unit-tag">kg/ha</span>
                             </div>
                             <div class="blog-form-group input-wrapper">
                                 <label>Phosphorous (P)</label>
-                                <input type="number" id="valP" placeholder="e.g. 40" min="0" max="145" required>
+                                <input type="number" id="P" placeholder="e.g. 40" min="0" max="145" required>
                                 <span class="unit-tag">kg/ha</span>
                             </div>
                             <div class="blog-form-group input-wrapper">
                                 <label>Potassium (K)</label>
-                                <input type="number" id="valK" placeholder="e.g. 40" min="0" max="205" required>
+                                <input type="number" id="K" placeholder="e.g. 40" min="0" max="205" required>
                                 <span class="unit-tag">kg/ha</span>
                             </div>
-                            
                             <div class="blog-form-group input-wrapper">
                                 <label>Soil pH Level</label>
-                                <input type="number" step="0.1" id="valPH" placeholder="e.g. 6.5" min="0" max="14" required>
+                                <input type="number" step="0.1" id="ph" placeholder="e.g. 6.5" min="0" max="14" required>
                                 <span class="unit-tag">pH</span>
                             </div>
+
+                            <div class="col-span-full mt-3 mb-2" style="grid-column: 1 / -1;">
+                                <h6 class="text-primary fw-bold"><i class="fas fa-cloud-sun me-2"></i>Weather Conditions</h6>
+                            </div>
+
                             <div class="blog-form-group input-wrapper">
-                                <label>Rainfall</label>
-                                <input type="number" id="valRain" placeholder="e.g. 200" min="0" required>
-                                <span class="unit-tag">mm</span>
+                                <label>Temperature</label>
+                                <input type="number" step="0.1" id="temperature" placeholder="e.g. 25" required>
+                                <span class="unit-tag">°C</span>
+                            </div>
+                            <div class="blog-form-group input-wrapper">
+                                <label>Humidity</label>
+                                <input type="number" step="0.1" id="humidity" placeholder="e.g. 80" min="0" max="100" required>
+                                <span class="unit-tag">%</span>
                             </div>
                              <div class="blog-form-group input-wrapper">
-                                <label>Temperature</label>
-                                <input type="number" id="valTemp" placeholder="e.g. 25" required>
-                                <span class="unit-tag">°C</span>
+                                <label>Rainfall</label>
+                                <input type="number" step="1" id="rainfall" placeholder="e.g. 200" min="0" required>
+                                <span class="unit-tag">mm</span>
                             </div>
                         </div>
 
-                        <div class="form-submit-container">
-                            <button type="submit" class="btn-large-predict">
+                        <div class="form-submit-container mt-4">
+                            <button type="submit" class="btn-large-predict" id="btnPredict">
                                 <i class="fas fa-search"></i> <span>Predict Best Crop</span>
                             </button>
                         </div>
                     </form>
+
+                    <div id="loading" class="text-center mt-4" style="display: none;">
+                        <div class="spinner-border text-success" role="status"></div>
+                        <p class="mt-2 text-muted fw-bold">Analyzing soil & climate data...</p>
+                    </div>
 
                     <div id="resultBox" class="result-container" style="display: none;">
                         <div class="result-header">
@@ -169,11 +426,13 @@
                         </div>
                         <div class="result-body">
                             <div class="crop-icon-wrapper"><i class="fas fa-leaf"></i></div>
-                            <h2 id="cropOutput">Rice</h2>
-                            <p class="confidence-score">96% Accuracy Score</p>
+                            <h2 id="cropOutput">--</h2>
+                            <p class="confidence-score"><span id="confidenceScore">--</span>% Accuracy Score</p>
                         </div>
-                        <button class="blog-read-btn btn-center" id="resetToolBtn">Check Another Field</button>
+                        <button class="btn-center" id="resetToolBtn" onclick="location.reload()">Check Another Field</button>
                     </div>
+                    
+                    <div id="error" class="alert alert-danger mt-4 text-center" style="display: none;"></div>
 
                 </div>
             </div>
@@ -239,7 +498,7 @@
                     </div>
                 </div>
 
-                <div class="blog-newsletter-form crop-benefit-img-wrapper">
+                <div class="crop-benefit-img-wrapper">
                     <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=600&q=80" alt="Smart Farming" class="crop-benefit-img">
                 </div>
             </div>
@@ -306,13 +565,6 @@
     </section>
 
     <footer class="footer-section">
-        
-        <!-- <div class="footer-wave">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-            </svg>
-        </div> -->
-
         <div class="container position-relative z-2">
             <div class="row gy-5">
                 
@@ -347,10 +599,10 @@
                 <div class="col-lg-3 col-6">
                     <h5 class="footer-title" data-i18n="footer_our_services">Our Services</h5>
                     <ul class="footer-links">
-                        <li><a href="crop.html" data-i18n="tab_crop">Crop Recommendation</a></li>
-                        <li><a href="fertilizer.html" data-i18n="tab_fert">Fertilizer Recommendation</a></li>
+                        <li><a href="crop.html" data-i18n="tab_crop">Crop Advisory</a></li>
+                        <li><a href="fertilizer.html" data-i18n="tab_fert">Fertilizer Guide</a></li>
                         <li><a href="disease.html" data-i18n="tab_disease">Disease Detection</a></li>
-                        <li><a href="#" data-i18n="tab_weather">Weather Forecast</a></li>
+                        <li><a href="weather.html" data-i18n="tab_weather">Weather Forecast</a></li>
                         <li><a href="#" data-i18n="tab_chat">Farming Chatbot</a></li>
                         <li><a href="blog.html" data-i18n="tab_chat">Strong Blog Community</a></li>
                     </ul>
@@ -393,15 +645,11 @@
                 </div>
                 <div class="modal-body p-4">
                     <form>
-                        <div class="mb-3"><label class="form-label small text-muted">Email Address</label><input
-                                type="email" class="form-control" placeholder="name@example.com"></div>
-                        <div class="mb-3"><label class="form-label small text-muted">Password</label><input
-                                type="password" class="form-control" placeholder="******"></div>
+                        <div class="mb-3"><label class="form-label small text-muted">Email Address</label><input type="email" class="form-control" placeholder="name@example.com"></div>
+                        <div class="mb-3"><label class="form-label small text-muted">Password</label><input type="password" class="form-control" placeholder="******"></div>
                         <div class="d-grid"><button type="submit" class="btn btn-hero w-100">Login</button></div>
                     </form>
-                    <p class="text-center mt-3 small text-muted">Don't have an account? <a href="#"
-                            class="text-success text-decoration-none fw-bold" data-bs-toggle="modal"
-                            data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a></p>
+                    <p class="text-center mt-3 small text-muted">Don't have an account? <a href="#" class="text-success text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a></p>
                 </div>
             </div>
         </div>
@@ -416,26 +664,212 @@
                 </div>
                 <div class="modal-body p-4">
                     <form>
-                        <div class="mb-3"><label class="form-label small text-muted">Full Name</label><input type="text"
-                                class="form-control" placeholder="John Doe"></div>
-                        <div class="mb-3"><label class="form-label small text-muted">Email Address</label><input
-                                type="email" class="form-control" placeholder="name@example.com"></div>
-                        <div class="mb-3"><label class="form-label small text-muted">Password</label><input
-                                type="password" class="form-control" placeholder="Create a password"></div>
-                        <div class="d-grid"><button type="submit" class="btn btn-hero w-100">Create Account</button>
-                        </div>
+                        <div class="mb-3"><label class="form-label small text-muted">Full Name</label><input type="text" class="form-control" placeholder="John Doe"></div>
+                        <div class="mb-3"><label class="form-label small text-muted">Email Address</label><input type="email" class="form-control" placeholder="name@example.com"></div>
+                        <div class="mb-3"><label class="form-label small text-muted">Password</label><input type="password" class="form-control" placeholder="Create a password"></div>
+                        <div class="d-grid"><button type="submit" class="btn btn-hero w-100">Create Account</button></div>
                     </form>
-                    <p class="text-center mt-3 small text-muted">Already have an account? <a href="#"
-                            class="text-success text-decoration-none fw-bold" data-bs-toggle="modal"
-                            data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
+                    <p class="text-center mt-3 small text-muted">Already have an account? <a href="#" class="text-success text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script src="crop-script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('KrishiSahayak Crop Tool UI Loaded...');
+            
+            // Initialize Header & Logic
+            initHeader();
+            initSiteLanguage();
+        });
+
+        // --- Header Scroll Effect ---
+        function initHeader() {
+            const header = document.querySelector('.header-section');
+            if (!header) return;
+            window.addEventListener('scroll', () => {
+                header.style.boxShadow = window.scrollY > 50 
+                    ? '0 4px 15px rgba(0, 0, 0, 0.1)' 
+                    : '0 2px 15px rgba(0, 0, 0, 0.05)';
+            });
+        }
+
+        // --- Location Logic ---
+        function requestLocation() {
+            const locText = document.getElementById('locationText');
+            if (navigator.geolocation) {
+                locText.innerText = "Locating...";
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        // Mocking reverse geocoding for UI demo
+                        document.getElementById('locationText').innerText = "Meerut";
+                        document.getElementById('weatherTemp').innerText = "28°C"; 
+                        alert(`Success! Location detected.`);
+                    },
+                    (error) => {
+                        locText.innerText = "Error";
+                        alert("Location access denied or failed.");
+                    }
+                );
+            } else {
+                alert("Geolocation is not supported.");
+            }
+        }
+
+        // --- Language Toggle Logic ---
+        function initSiteLanguage() {
+            const wrapper = document.getElementById('siteLangToggle');
+            if (!wrapper) return;
+            
+            const btn = wrapper.querySelector('.modern-lang-btn');
+            
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                wrapper.classList.toggle('open');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!wrapper.contains(e.target)) wrapper.classList.remove('open');
+            });
+
+            const TRANSLATIONS = {
+                en: {
+                    'benefits.title': 'Why use Smart Crop Advisor?',
+                    'benefits.subtitle': 'Practical, science-backed advice to choose crops that maximize yield and reduce costs.',
+                    'benefits.yield.title': 'Maximize Yield',
+                    'benefits.yield.desc': 'Growing the right crop increases production by up to 40%.',
+                    'benefits.cost.title': 'Reduce Costs',
+                    'benefits.cost.desc': 'Stop wasting fertilizer on incompatible crops.',
+                    'benefits.soil.title': 'Protect Soil Health',
+                    'benefits.soil.desc': 'Prevent degradation with scientifically informed crop rotation.'
+                },
+                hi: {
+                    'benefits.title': 'स्मार्ट क्रॉप एडवाइजर क्यों उपयोग करें?',
+                    'benefits.subtitle': 'ऐसा व्यावहारिक, वैज्ञानिक सलाह जो उपज बढ़ाए और लागत घटाए।',
+                    'benefits.yield.title': 'उत्पादन बढ़ाएँ',
+                    'benefits.yield.desc': 'सही फसल उगाने से उत्पादन में 40% तक वृद्धि हो सकती है।',
+                    'benefits.cost.title': 'लागत कम करें',
+                    'benefits.cost.desc': 'गलत फसल पर उर्वरक खर्च बंद करें।',
+                    'benefits.soil.title': 'मृदा स्वास्थ्य सुरक्षित रखें',
+                    'benefits.soil.desc': 'वैज्ञानिक रोटेशन से मृदा क्षय रोकें।'
+                },
+                pa: {
+                    'benefits.title': 'ਸਮਾਰਟ ਕਰਾਪ ਸਲਾਹਕਾਰ ਕਿਉਂ ਵਰਤਣਾ?',
+                    'benefits.subtitle': 'ਆਮ, ਵਿਗਿਆਨ-ਆਧਾਰਤ ਸਲਾਹ ਜੋ ਪੈਦਾਵਾਰ ਵਧਾਉਂਦੀ ਅਤੇ ਲਾਗਤ ਘਟਾਉਂਦੀ ਹੈ।',
+                    'benefits.yield.title': 'ਫਸਲ ਵਾਧਾ',
+                    'benefits.yield.desc': 'ਸਹੀ ਫਸਲ ਨਾਲ ਉਪਜ ਵਿੱਚ 40% ਤੱਕ ਵਾਧਾ ਹੋ ਸਕਦਾ ਹੈ।',
+                    'benefits.cost.title': 'ਖ਼ਰਚ ਘਟਾਓ',
+                    'benefits.cost.desc': 'ਗਲਤ ਫਸਲ \'ਤੇ ਉਪਜ ਤੇਖ਼ਰਚ ਬੰਦ ਕਰੋ।',
+                    'benefits.soil.title': 'ਮਿੱਟੀ ਦੀ ਸਿਹਤ ਬਚਾਓ',
+                    'benefits.soil.desc': 'ਵਿਗਿਆਨਕ ਫਸਲ ਰੋਟੇਸ਼ਨ ਨਾਲ ਖ਼ਰਾਬੀ ਰੋਕੋ।'
+                }
+            };
+
+            function translatePage(lang) {
+                const dict = TRANSLATIONS[lang] || TRANSLATIONS.en;
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (dict[key]) el.textContent = dict[key];
+                });
+            }
+
+            wrapper.querySelectorAll('.lang-option').forEach(opt => {
+                opt.addEventListener('click', () => {
+                    const flag = opt.getAttribute('data-flag');
+                    const lang = opt.getAttribute('data-lang');
+                    
+                    btn.querySelector('.lang-flag').textContent = flag;
+                    btn.querySelector('.lang-code').textContent = lang.toUpperCase();
+                    wrapper.classList.remove('open');
+
+                    translatePage(lang);
+                });
+            });
+        }
+
+        // --- Newsletter Logic ---
+        function subscribeNewsletter(form) {
+            const btn = form.querySelector('.newsletter-btn');
+            const icon = btn.querySelector('i');
+            const input = form.querySelector('input');
+            
+            icon.classList.remove('fa-paper-plane');
+            icon.classList.add('fa-spinner', 'fa-spin');
+            
+            setTimeout(() => {
+                icon.classList.remove('fa-spinner', 'fa-spin');
+                icon.classList.add('fa-check');
+                input.value = '';
+                input.placeholder = 'Thanks for subscribing!';
+                setTimeout(() => {
+                    icon.classList.remove('fa-check');
+                    icon.classList.add('fa-paper-plane');
+                    input.placeholder = 'Your Email';
+                }, 3000);
+            }, 1500);
+        }
+
+        // --- REAL API PREDICTION LOGIC ---
+        document.getElementById('cropForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // UI Handling
+            const btn = document.getElementById('btnPredict');
+            const loading = document.getElementById('loading');
+            const resultBox = document.getElementById('resultBox');
+            const errorBox = document.getElementById('error');
+            
+            // Reset UI
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            loading.style.display = 'block';
+            resultBox.style.display = 'none';
+            errorBox.style.display = 'none';
+
+            // 1. Gather Data
+            const formData = {
+                N: parseFloat(document.getElementById('N').value),
+                P: parseFloat(document.getElementById('P').value),
+                K: parseFloat(document.getElementById('K').value),
+                temperature: parseFloat(document.getElementById('temperature').value),
+                humidity: parseFloat(document.getElementById('humidity').value),
+                ph: parseFloat(document.getElementById('ph').value),
+                rainfall: parseFloat(document.getElementById('rainfall').value)
+            };
+
+            try {
+                // 2. Call API (Ensure your Spring Boot backend is running on Port 8080)
+                const response = await fetch('http://127.0.0.1:8080/api/crop/predict', { 
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) throw new Error("Could not connect to AI Model");
+
+                const data = await response.json();
+
+                // 3. Show Result
+                document.getElementById('cropOutput').innerText = data.prediction.toUpperCase();
+                document.getElementById('confidenceScore').innerText = data.confidence.toFixed(2);
+                resultBox.style.display = 'block';
+                
+                // Scroll to result
+                resultBox.scrollIntoView({ behavior: 'smooth' });
+
+            } catch (err) {
+                errorBox.innerHTML = `<i class="fas fa-exclamation-triangle me-2"></i> <strong>Error:</strong> ${err.message}. <br>Make sure the backend is running.`;
+                errorBox.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-search"></i> <span>Predict Best Crop</span>';
+                loading.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>

@@ -169,20 +169,127 @@
     <header class="blog-header-section">
         <div class="container">
             <nav class="blog-header-nav">
-                <a href="index.html" class="blog-header-brand">
-                    <img src="logo6.0.png" alt="KrishiSahayak" class="blog-header-logo">
+                <a href="/" class="blog-header-brand">
+                    <div class="blog-logo-wrapper">
+                        <img src="img/logo6.0.png" alt="Krishi Sahayak" class="blog-header-logo">
+                    </div>
                     <span class="blog-brand-text">KrishiSahayak</span>
                 </a>
+
                 <div class="blog-nav-links">
-                    <a href="index.html" class="blog-nav-link">Home</a>
-                    <a href="crop.html" class="blog-nav-link">Crop Advisor</a>
-                    <a href="weather.html" class="blog-nav-link active">Weather</a>
-                    <a href="index.html#contact" class="blog-nav-link">Contact</a>
+                    <a href="/" class="blog-nav-link" data-i18n="nav_home">Home</a>
+                    <a href="blog.html" class="blog-nav-link active" data-i18n="nav_blog">Blog</a>
+                    <a href="/index/#contact" class="blog-nav-link" data-i18n="nav_contact">Contact Us</a>
                 </div>
+
                 <div class="blog-header-utilities">
-                    <button class="blog-mobile-toggle"><i class="fas fa-bars"></i></button>
+                    <button class="blog-create-header-btn" id="headerCreateBtn">
+                        <i class="fas fa-plus"></i> <span data-i18n="btn_create">Create</span>
+                    </button>
+
+                    <div class="modern-lang-wrapper" id="modernLangToggle">
+                        <button class="modern-lang-btn" aria-label="Select Language">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-code">EN</span>
+                            <i class="fas fa-chevron-down lang-arrow"></i>
+                        </button>
+
+                        <div class="modern-lang-dropdown">
+                            <div class="lang-option active" data-lang="en" data-flag="🇬🇧">
+                                <span class="opt-flag">🇬🇧</span>
+                                <span class="opt-name">English</span>
+                                <i class="fas fa-check opt-check"></i>
+                            </div>
+                            <div class="lang-option" data-lang="hi" data-flag="🇮🇳">
+                                <span class="opt-flag">🇮🇳</span>
+                                <span class="opt-name">Hindi (हिंदी)</span>
+                                <i class="fas fa-check opt-check"></i>
+                            </div>
+                            <div class="lang-option" data-lang="pa" data-flag="🇮🇳">
+                                <span class="opt-flag">🇮🇳</span>
+                                <span class="opt-name">Punjabi (ਪੰਜਾਬੀ)</span>
+                                <i class="fas fa-check opt-check"></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="blog-profile-wrapper">
+                        <div class="blog-profile-icon" id="profileBtn">
+                            <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="User" class="profile-btn-img">
+                        </div>
+
+                        <div class="profile-dropdown-card" id="profileDropdown">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="User">
+                                    <button class="edit-avatar-btn"><i class="fas fa-camera"></i></button>
+                                </div>
+                                <h4 class="user-name" ><span th:text="${userdetail.name}"></span> </h4>
+                                <span class="user-role">
+                                					<span th:switch="${userdetail.role}">
+													<span th:case="'USER'">Farmer</span>
+													<span th:case="'ADMIN'">Admin</span>
+													<span th:case="*">Normal Farmer</span>
+								</span>
+                            </div>
+
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <span class="stat-val">12</span>
+                                    <span class="stat-label">Posts</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">450</span>
+                                    <span class="stat-label">Followers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">89</span>
+                                    <span class="stat-label">Following</span>
+                                </div>
+                            </div>
+
+                            <ul class="profile-menu">
+                                <li><a href="#"><i class="fas fa-user-edit"></i> Edit Profile</a></li>
+                                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><a href="#"><i class="fas fa-question-circle"></i> Help & Support</a></li>
+                            </ul>
+
+                            <div class="profile-footer">
+                                <a href="/logout"><button class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="blog-mobile-toggle" id="mobileToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
             </nav>
+
+            <div class="blog-mobile-menu" id="mobileMenu">
+                <div class="blog-mobile-nav">
+                    <a href="/" class="blog-mobile-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="blog.html" class="blog-mobile-link active">
+                        <i class="fas fa-blog"></i> Blog
+                    </a>
+                    <a href="#contact" class="blog-mobile-link">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+
+                    <div class="blog-mobile-lang">
+                        <h4 data-i18n="lbl_select_lang">Select Language</h4>
+                        <div class="blog-mobile-lang-options">
+                            <button class="blog-mobile-lang-btn" data-lang="en">English</button>
+                            <button class="blog-mobile-lang-btn" data-lang="hi">हिंदी</button>
+                            <button class="blog-mobile-lang-btn" data-lang="pa">ਪੰਜਾਬੀ</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 

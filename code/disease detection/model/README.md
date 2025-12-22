@@ -1,159 +1,120 @@
+🌿 Plant Disease Detection Service
+Smart Crop Advisory System (Krishi Sahayak)
 
+📌 Overview
+The Plant Disease Detection Service is a deep learning–based microservice developed as part of the Smart Crop Advisory System (Krishi Sahayak).
+This service uses a Convolutional Neural Network (CNN) built on MobileNetV2 architecture to identify plant diseases from uploaded leaf images.
+It is implemented using FastAPI and exposes a REST API for real‑time disease prediction.
 
-# Smart Crop Advisory System 🌱
+🧠 Model Description
+Architecture: MobileNetV2 (Transfer Learning)
 
-![Project Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Backend](https://img.shields.io/badge/Backend-Java%20Spring%20Boot-red)
-![ML Engine](https://img.shields.io/badge/ML%20Engine-Python%20FastAPI-blue)
-![Frontend](https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JS-orange)
+Input Size: 224 × 224 × 3 (RGB image)
 
-An advanced, data-driven agricultural advisory platform designed for farmers in North India. This system integrates **Ensemble Machine Learning** for crop/fertilizer recommendations and **Deep Learning (CNNs)** for plant disease diagnosis into a unified, accessible web interface.
+Output: Disease class with confidence score
 
+Training Framework: TensorFlow / Keras
 
-## 🚀 Features
+Model Type: Image Classification (Multi‑class)
 
-### 1. Smart Crop Recommendation
-* **Input:** Soil parameters (N, P, K, pH) and climatic conditions (Temperature, Humidity, Rainfall).
-* **Logic:** Uses a **Voting Ensemble Classifier** (Random Forest + XGBoost + KNN) to predict the most viable crop.
-* **Accuracy:** ~95% on Indian datasets.
+The model is trained separately and only the trained weights (.h5) are loaded at runtime to ensure faster startup and modular deployment.
 
-### 2. Fertilizer Optimization
-* **Input:** Soil nutrient data and specific crop type.
-* **Logic:** A **Hybrid Model** combining ML classification with a Rule-Based Logic Layer.
-* **Output:** Translates complex chemical deficiencies into actionable advice (e.g., *"Apply 50kg Urea per acre"*).
+📂 Project Files
+plant_disease_detection/
+│
+├── disease_api.py              # FastAPI service for disease prediction
+├── final_disease_model.h5      # Trained CNN model weights
+├── class_indices.json          # Mapping of class index to disease name
+├── plant_disease_model.ipynb   # Model training notebook
+└── README.md                   # Project documentation
+⚙️ Technology Stack
+Backend API: FastAPI
 
-### 3. Visual Disease Detection
-* **Input:** Image upload of a plant leaf.
-* **Technology:** **MobileNetV2 (Transfer Learning)** trained on the PlantVillage dataset.
-* **Capability:** Detects 33+ diseases across crops like Potato, Tomato, Rice, and Corn.
+Deep Learning: TensorFlow, Keras
 
----
+Model Architecture: MobileNetV2
 
-## 🏗️ System Architecture
+Image Processing: Pillow (PIL), NumPy
 
-The project follows a **Microservices Architecture** to ensure scalability and fault tolerance.
+Server: Uvicorn
 
+Language: Python 3.8+
 
+🚀 How the System Works
+User uploads a plant leaf image.
 
-[Image of System Architecture Diagram]
+Image is resized to 224×224 and preprocessed.
 
+CNN model predicts disease class probabilities.
 
-* **Frontend (User Interface):** Lightweight HTML5/CSS3/JavaScript (PWA-ready).
-* **Orchestration Layer (Backend):** Java **Spring Boot** handles user management, history tracking, and routing.
-* **Intelligence Layer (Microservices):**
-    * **Service A (Port 8000):** Crop Prediction API (Scikit-learn).
-    * **Service B (Port 8001):** Fertilizer Logic API.
-    * **Service C (Port 8002):** Disease Detection API (TensorFlow/Keras).
+The system returns:
 
----
+Predicted disease name
 
-## 🛠️ Tech Stack
+Confidence score
 
-| Component | Technology | Version |
-| :--- | :--- | :--- |
-| **Frontend** | HTML5, CSS3, JavaScript, Bootstrap | 5.3 |
-| **Backend Core** | Java, Spring Boot | 3.x |
-| **ML Services** | Python, FastAPI, Uvicorn | 3.10 |
-| **ML Libraries** | Scikit-Learn, Pandas, NumPy | Latest |
-| **Deep Learning** | TensorFlow, Keras, Pillow | 2.10.1 |
-| **Database** | MySQL / H2 (Configurable) | 8.0 |
+Uploaded filename
 
----
+🔌 API Endpoint
+POST /predict_disease
+📥 Request
+Content‑Type: multipart/form-data
 
-## ⚙️ Installation & Setup
+Parameter: file (leaf image)
 
-### Prerequisites
-* **Java JDK 17+** installed.
-* **Anaconda** or **Miniconda** installed (Critical for TensorFlow compatibility).
-* **Git** installed.
+📤 Response (JSON)
+{
+  "disease": "Tomato___Late_Blight",
+  "confidence": "89.05%",
+  "filename": "leaf.jpg"
+}
+▶️ How to Run the Service
+1️⃣ Install Dependencies
+pip install fastapi uvicorn tensorflow pillow numpy
+2️⃣ Ensure Required Files Exist
+final_disease_model.h5
 
-### Step 1: Clone the Repository
-```bash
-git clone [https://github.com/yourusername/smart-crop-advisory.git](https://github.com/yourusername/smart-crop-advisory.git)
-cd smart-crop-advisory
-Step 2: Setup Python Microservices (The Brain)
-Note: We use Python 3.10 to avoid TensorFlow version conflicts.
+class_indices.json
 
-Create Environment:
-
-Bash
-
-conda create -n scas_env python=3.10 -y
-conda activate scas_env
-Install Dependencies: Navigate to the ml_services folder (or where your requirements.txt is):
-
-Bash
-
-pip install -r requirements.txt
-(Ensure tensorflow==2.10.1 and protobuf==3.19.6 are specified to prevent crashes).
-
-Launch ML Services: You need to run the API scripts. It is best to run them in separate terminals or use a runner script.
-
-Bash
-
-# Terminal 1 - Disease API
+3️⃣ Start the API Server
 python disease_api.py
+The service will start at:
 
-# Terminal 2 - Crop/Fertilizer API
-python crop_api.py
-Verify they are running on localhost:8000 and localhost:8002.
+http://127.0.0.1:8002
+Swagger API Docs:
 
-Step 3: Setup Java Spring Boot (The Body)
-Open the project in IntelliJ IDEA or Eclipse.
+http://127.0.0.1:8002/docs
+🔐 Security & Usage Notes
+The service allows CORS access for frontend integration.
 
-Update application.properties with your database credentials (if using MySQL).
+Uploaded images are processed temporarily and not stored permanently.
 
-Run Application.java.
+This module is designed for academic and research purposes only.
 
-The server should start on localhost:8080.
+Predictions are advisory, not guaranteed outcomes.
 
-🖥️ Usage
-Open your browser and go to http://localhost:8080 (or open index.html directly if testing frontend only).
+🎯 Integration in Krishi Sahayak
+This service integrates with:
 
-Crop Tool: Enter soil N-P-K values to see what to grow.
+Spring Boot Backend (via REST calls)
 
-Fertilizer Tool: Select your soil type and crop to get dosage advice.
+Web Frontend (image upload interface)
 
-Doctor Tool: Upload a leaf image. The system will resize it to 224x224, send it to the Python API, and return the disease diagnosis.
+Farmer Advisory Dashboard
 
-📂 Project Structure
-Plaintext
+It supports early disease detection to:
 
-smart-crop-advisory/
-├── backend-java/           # Spring Boot Application
-│   ├── src/main/java/      # Controllers, Services, Models
-│   └── src/main/resources/ # Application properties
-├── ml-services/            # Python Microservices
-│   ├── models/             # Saved .h5 and .pkl files
-│   ├── crop_api.py         # FastAPI for Text Data
-│   ├── disease_api.py      # FastAPI for Image Data
-│   ├── requirements.txt    # Python dependencies
-│   └── class_indices.json  # Class labels for disease model
-└── frontend/               # Web Interface
-    ├── css/                # Stylesheets
-    ├── js/                 # API connection logic
-    └── images/             # Assets
-🔬 Research Basis
-This project is grounded in contemporary research (2023-2025):
+Reduce crop loss
 
-Ensemble Learning: Validated by Pawan et al. (2024) for superior accuracy over single decision trees.
+Minimize pesticide misuse
 
-Hybrid Fertilizer Logic: Implements the "Logic Translation Layer" proposed by Mamatha & Nayak (2024).
+Improve decision‑making
 
-Visual AI: Uses Transfer Learning (MobileNetV2) as recommended by Chaudhary (2023) for North Indian crops.
+📌 Future Enhancements
+Add support for more crop varieties
 
-Web Architecture: Adopts a PWA approach over Native Apps based on accessibility studies by Murad (2025).
+Deploy on cloud (Docker / AWS / GCP)
 
-🤝 Contributing
-Fork the Project
+Add multi‑language disease descriptions
 
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-
-Push to the Branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-📜 License
-Distributed under the MIT License. See LICENSE for more information.
+Improve accuracy with larger datasets

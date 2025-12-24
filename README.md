@@ -1,8 +1,6 @@
 
 
----
 
-```markdown
 # 🌾 Smart Crop Advisory System (Krishi Sahayak)
 
 > **An AI‑based Decision Support System for Sustainable Agriculture**

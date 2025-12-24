@@ -1,124 +1,169 @@
+🌾 Crop Recommendation Model
+Smart Crop Advisory System (SCAS – Krishi Sahayak)
+Module Type: Machine Learning (Tabular Data)
+Purpose: Recommend the most suitable crop based on soil nutrients and weather conditions
+Scope: Academic / College Project Only
 
-# 🌾 Smart Crop Advisory System (SCAS) - North India Edition
+📌 Module Overview
+The Crop Recommendation Model is a core component of the Smart Crop Advisory System.
+It analyzes soil nutrient values (N, P, K, pH) along with weather parameters to recommend the best crop for cultivation.
 
-**An Advanced Machine Learning System for Precision Agriculture**
+The model is designed specifically for North Indian agro‑climatic conditions, including regions such as:
 
-This project utilizes a **Stacking Ensemble Architecture** (Random Forest, XGBoost, KNN) to recommend the optimal crop for a specific soil and climate profile. Unlike basic models, this system employs **biological feature engineering** (Nutrient Ratios, Aridity Indices) to achieve superior accuracy (~92%) across 80 different crops relevant to North India (Punjab, UP, Uttarakhand).
+Uttar Pradesh
 
----
+Punjab
 
-## ⚠️ Important: Model Weights Download
-**The trained model file (`crop_model_final.pkl`) is approximately 3GB and is too large for GitHub.**
+Uttarakhand
 
-You must download the model artifacts from the link below and place them in the root directory of this project before running the code.
+Instead of relying on a single algorithm, this module uses a Stacking Ensemble Learning approach to improve accuracy and robustness.
 
-👉 **[DOWNLOAD MODEL FILES FROM GOOGLE DRIVE HERE]** *(https://drive.google.com/drive/folders/1b207FouxGG8C_SIUUtqrKEZw9FU3pMJW?usp=sharing)*
+🧠 Machine Learning Architecture
+🔹 Problem Type
+Supervised Multiclass Classification
 
-**Required Files to Download:**
-1. `crop_model_final.pkl` (The Stacking Ensemble)
-2. `scaler_final.pkl` (StandardScaler)
-3. `label_encoder_final.pkl` (LabelEncoder)
-4. `feature_order.pkl` (Column Verification)
+Output: Crop Name (Label)
 
----
+🔹 Algorithms Used
+The final model is a Stacking Ensemble, consisting of:
 
-## 🚀 Key Features
+Role	Algorithm	Purpose
+Base Learner	Random Forest	Handles non‑linear soil–crop relationships
+Base Learner	XGBoost	Improves accuracy through gradient boosting
+Base Learner	K‑Nearest Neighbors (KNN)	Captures local soil similarity patterns
+Meta‑Learner	Logistic Regression	Learns how much to trust each base model
+This architecture reduces overfitting and improves generalization.
 
-* **Region Specific:** Tailored for North Indian climates (Rice-Wheat cycles, Sugarcane, Hills of Uttarakhand).
-* **Advanced Architecture:** Uses `StackingClassifier` to combine the strengths of:
-    * **Random Forest:** For robust decision boundaries.
-    * **XGBoost:** For gradient boosting performance on tabular data.
-    * **KNN:** For capturing local similarity clusters (essential for rare fruits).
-    * **Logistic Regression (Meta-Learner):** "The Manager" that learns which model to trust.
-* **Bio-Feature Engineering:** Calculates `N_ratio`, `P_ratio`, `Water_Stress_Index`, and `Aridity_Index` to simulate biological growth triggers.
-* **Robust Preprocessing:** Includes noise injection for data augmentation and strict order enforcement for deployment safety.
+📥 Input Features
+The model accepts 7 numerical input features:
 
----
+Feature	Description	Unit
+N	Nitrogen content	kg/ha
+P	Phosphorus content	kg/ha
+K	Potassium content	kg/ha
+Temperature	Average temperature	°C
+Humidity	Relative humidity	%
+pH	Soil pH value	pH
+Rainfall	Annual rainfall	mm
+📌 Important:
 
-## 🛠️ Project Structure
+N, P, K values must be entered in kg/ha (as per soil test report)
 
-```bash
-├── crop_data_final_data.csv       # Raw Dataset
-├── north_india_crops_augmented.csv # Augmented & Cleaned Dataset
-├── model_training.ipynb           # Main Jupyter Notebook (Training Pipeline)
-├── app.py                         # (Optional) Streamlit Web Interface
-├── requirements.txt               # Python Dependencies
-├── README.md                      # Documentation
-│
-└── [Artifacts - Downloaded from Drive]
-    ├── crop_model_final.pkl
-    ├── scaler_final.pkl
-    ├── label_encoder_final.pkl
-    └── feature_order.pkl
-````
+Other parameters use standard units
 
------
+⚙️ Feature Engineering
+The model does not use raw values alone.
+It derives biologically meaningful indicators to improve predictions.
 
-## ⚙️ Feature Engineering Logic
+1️⃣ Nutrient Ratios
+Plants respond to nutrient balance rather than absolute quantity.
 
-This model does not just look at raw N, P, K. It calculates biological interaction terms:
+N_ratio = N / (N + P + K)
+P_ratio = P / (N + P + K)
+K_ratio = K / (N + P + K)
+2️⃣ Aridity Index
+Represents water availability relative to temperature.
 
-1.  **Nutrient Ratios:** Plants respond to the *balance* of nutrients, not just the raw amount.
-      * `N_ratio = N / (N + P + K)`
-      * `P_ratio = P / (N + P + K)`
-2.  **Aridity Index:** A proxy for water availability versus evaporation.
-      * `Aridity = Rainfall / (Temperature + 1e-5)`
-3.  **Water Stress:** High heat combined with low humidity causes rapid transpiration stress.
-      * `Stress = Temperature * (100 - Humidity)`
+Aridity_Index = Rainfall / (Temperature + ε)
+3️⃣ Water Stress Index
+High temperature with low humidity causes crop stress.
 
------
+Water_Stress = Temperature × (100 − Humidity)
+These engineered features significantly increase model accuracy.
 
-## 💻 Installation & Usage
+🛠️ Preprocessing Pipeline
+Missing value handling (dataset assumed clean)
 
-### 1\. Setup Environment
+Feature scaling using StandardScaler
 
-```bash
-# Clone the repository
-git clone [https://github.com/yourusername/smart-crop-advisor.git](https://github.com/yourusername/smart-crop-advisor.git)
-cd smart-crop-advisor
+Label encoding for crop names
 
-# Install dependencies
+Strict feature order validation during deployment
+
+All preprocessing steps used during training are reused during prediction.
+
+📂 Files Used in This Module
+File	Description
+model_training.ipynb	Jupyter notebook used for training
+crop_model_final.pkl	Trained stacking model
+scaler_final.pkl	StandardScaler
+label_encoder_final.pkl	Crop label encoder
+feature_order.pkl	Feature order verification
+crop_api.py	FastAPI backend for predictions
+🔌 API Integration (FastAPI)
+The crop model is exposed via FastAPI for frontend integration.
+
+Start the API
+uvicorn crop_api:app --reload
+Purpose of crop_api.py
+Accepts user input from frontend
+
+Applies preprocessing & feature engineering
+
+Loads trained model and artifacts
+
+Returns predicted crop as JSON response
+
+💻 Environment Setup
+✅ Supported Python Version
+Python 3.9 – 3.11
+
+❌ Python 3.14 is NOT supported
+
+Virtual Environment (Recommended)
+python -m venv venv
+source venv/bin/activate   # Linux / Mac
+venv\Scripts\activate      # Windows
+
 pip install -r requirements.txt
-```
+Alternative
+Model training notebooks can be executed in Google Colab or Jupyter Notebook
 
-### 2\. Verify Model
+📊 Model Performance
+Metric	Value
+Accuracy	~91–92%
+Number of Crops	80
+Validation	Stratified K‑Fold Cross Validation
+Dataset Type	Clean benchmark dataset
+⚠️ Accuracy may reduce with noisy real‑world soil data.
 
-Ensure you have downloaded the `.pkl` files from the Google Drive link above.
+🧪 How to Use the Model
+Obtain soil data from:
 
-### 3\. Run Prediction (Script)
+Soil Health Card
 
-You can use the python script to make a prediction:
+Agricultural lab report
 
-```python
-import joblib
-import pandas as pd
-import numpy as np
+Enter values in the frontend:
 
-# Load Artifacts
-model = joblib.load('crop_model_final.pkl')
-scaler = joblib.load('scaler_final.pkl')
-encoder = joblib.load('label_encoder_final.pkl')
-cols = joblib.load('feature_order.pkl')
+N, P, K → kg/ha
 
-# Input Data (Example: Rice Conditions)
-# N, P, K, Temp, Humidity, pH, Rain
-raw_input = [80, 40, 40, 25, 80, 7, 200]
+Other values → default units
 
-# ... (Apply Feature Engineering Logic Here) ...
-# See 'model_training.ipynb' for the exact transformation code.
-```
+Submit input → receive recommended crop
 
------
+⚠️ Limitations
+Trained on structured datasets (controlled conditions)
 
-## 📊 Performance
+Does not account for:
 
-  * **Accuracy:** \~91-92% on Test Set
-  * **Classes:** 80 Unique Crops
-  * **Evaluation:** Validated using Stratified K-Fold Cross Validation.
+Crop growth stage
 
------
+Market prices
 
-## 📝 License
+Farmer financial constraints
 
-This project is licensed under the MIT License.
+The model provides decision support, not guaranteed outcomes.
 
+📜 Disclaimer
+This module is copyrighted
+
+Intended only for college / academic use
+
+Not approved for commercial deployment
+
+Recommendations are advisory only
+
+📝 License
+Academic Use License
+Free to use for learning, demos, and project evaluation.

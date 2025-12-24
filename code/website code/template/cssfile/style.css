@@ -22,14 +22,10 @@ body {
     background-color: white; 
     padding-top: var(--header-height);
     position: relative;
-    /* FIX: Force Google Translate bar to not push body down */
+
     top: 0 !important; 
 }
 
-/* FIX: Hide the Google Translate Top Bar */
-/* iframe.goog-te-banner-frame { display: none !important; }
-.goog-te-banner-frame { display: none !important; }
-body { top: 0px !important; } */
 
 h1, h2, h3, h4, h5, h6 { color: var(--primary-dark); font-weight: 700; }
 
@@ -164,7 +160,7 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 /* ==================== 3. HERO SECTION ==================== */
 .hero-section {
-    background: url('img.jpg') no-repeat center center/cover;
+    
     background-color: #0b3b09; /* Fallback */
     position: relative; min-height: calc(100vh - var(--header-height));
     display: flex; align-items: center; justify-content: center;
@@ -739,29 +735,8 @@ textarea.form-control { border-radius: 20px; }
 .footer-legal-link:hover { color: var(--primary-green); }
 
 
-/* ==================== 13. GOOGLE TRANSLATE (MODERN) ==================== */
-/* .goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame, .goog-te-menu-value span:nth-child(3), .goog-te-menu-value span:nth-child(5), .goog-te-menu-value img { display: none !important; }
-.goog-te-gadget { color: transparent !important; font-size: 0 !important; }
 
-.goog-te-gadget-simple {
-    background-color: #ffffff !important; border: 1px solid rgba(0,0,0,0.08) !important; padding: 8px 16px !important;
-    border-radius: 50px !important; font-size: 13px !important; line-height: 20px !important; display: flex !important;
-    align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.3s ease !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 140px;
-}
-.goog-te-gadget-simple:hover {
-    border-color: var(--primary-green) !important; box-shadow: 0 4px 12px rgba(124, 182, 47, 0.15) !important;
-    transform: translateY(-1px);
-}
-.goog-te-gadget-simple::before { content: "\f0ac"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 10px; color: var(--primary-green); font-size: 14px; }
-.goog-te-gadget-simple::after { content: "\f107"; font-family: "Font Awesome 6 Free"; font-weight: 900; margin-left: 10px; color: #bbb; font-size: 12px; transition: transform 0.3s; }
-.goog-te-gadget-simple:hover::after { color: var(--primary-green); transform: rotate(180deg); }
 
-.goog-te-menu-value { color: #444 !important; font-family: 'Poppins', sans-serif !important; font-weight: 600 !important; margin: 0 !important; text-transform: capitalize; }
-.goog-te-menu-value span:first-child { color: #444 !important; font-size: 13px !important; font-weight: 600 !important; }
-
-.goog-tooltip, .goog-tooltip:hover { display: none !important; }
-.goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; } */
 
 
 /* ==================== 14. MOBILE OPTIMIZATION (Consolidated) ==================== */

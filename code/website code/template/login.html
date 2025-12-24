@@ -65,7 +65,7 @@
 
         .input-wrapper { position: relative; }
         .input-wrapper i {
-            position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+            position: absolute; left: 5px; top: 50%; transform: translateY(-50%);
             color: #aaa; transition: var(--transition);
         }
 
@@ -85,6 +85,28 @@
             background: var(--white);
         }
         input:focus + i { color: var(--primary-green); }
+
+        /* --- Toggle Password Button --- */
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 16px;
+            transition: var(--transition);
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .toggle-password:hover {
+            color: var(--primary-green);
+        }
 
         /* --- Buttons --- */
         .btn-login {
@@ -133,12 +155,44 @@
             border-radius: 8px; font-size: 13px; margin-bottom: 20px;
             display: none; border: 1px solid #fbd5d5;
         }
+
+        /* --- Back Button --- */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(124, 182, 47, 0.1);
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(124, 182, 47, 0.15);
+        }
+
+        .back-button:hover {
+            background: var(--primary-green);
+            color: var(--white);
+            transform: translateX(-5px);
+            box-shadow: 0 6px 20px rgba(124, 182, 47, 0.3);
+        }
     </style>
 </head>
 <body>
 
+    <a href="/" class="back-button" title="Back to Home">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
     <div class="login-container">
-        <img src="logo6.0.png" alt="Logo" class="brand-logo">
+        <img src="/img/logo6.0.png" alt="Logo" class="brand-logo">
         <h2>Welcome Back</h2>
         <p class="subtitle">Login to manage your farm</p>
 
@@ -146,72 +200,67 @@
             <i class="fas fa-exclamation-circle"></i> Invalid email or password.
         </div>
 
-        <form id="loginForm">
-            <div class="input-group">
-                <label>Email or Phone</label>
-                <div class="input-wrapper">
-                    <input type="text" id="loginId" placeholder="Enter your email or phone" required>
-                    <i class="fas fa-user"></i>
-                </div>
-            </div>
+        <form id="loginForm" action="/login" method="post">
 
-            <div class="input-group">
-                <label>Password</label>
-                <div class="input-wrapper">
-                    <input type="password" id="password" placeholder="Enter your password" required>
-                    <i class="fas fa-lock"></i>
-                </div>
-            </div>
+    <div class="input-group">
+        <label>Email or Phone</label>
+        <div class="input-wrapper">
+            <input type="text"
+                   id="loginId"
+                   name="username"
+                   placeholder="Enter your email or phone"
+                   required>
+            <i class="fas fa-user"></i>
+        </div>
+    </div>
 
-            <a href="#" class="forgot-pass">Forgot Password?</a>
-
-            <button type="submit" class="btn-login" id="loginBtn">
-                Sign In <i class="fas fa-sign-in-alt"></i>
+    <div class="input-group">
+        <label>Password</label>
+        <div class="input-wrapper">
+            <input type="password"
+                   id="password"
+                   name="password"
+                   placeholder="Enter your password"
+                   required>
+            <i class="fas fa-lock"></i>
+            <button type="button" class="toggle-password" id="togglePassword" onclick="togglePasswordVisibility()">
+                <i class="fas fa-eye"></i>
             </button>
-        </form>
+        </div>
+    </div>
+
+    <a href="#" class="forgot-pass">Forgot Password?</a>
+
+    <button type="submit" class="btn-login">
+        Sign In <i class="fas fa-sign-in-alt"></i>
+    </button>
+
+</form>
 
         <div class="divider"><span>OR</span></div>
 
         <div class="signup-link">
             New to KrishiSahayak? 
-            <a href="signup-wizard.html">Create Account</a>
+            <a href="signup">Create Account</a>
         </div>
     </div>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const loginId = document.getElementById('loginId').value;
-            const password = document.getElementById('password').value;
-            const btn = document.getElementById('loginBtn');
-            const errorBanner = document.getElementById('errorBanner');
-            
-            // Reset UI
-            errorBanner.style.display = 'none';
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Authenticating...';
-            btn.disabled = true;
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const toggleButton = document.getElementById('togglePassword');
+            const icon = toggleButton.querySelector('i');
 
-            // Simulate API Call
-            setTimeout(() => {
-                // Mock Logic: Fail if password is "error", else success
-                if(password === "error") {
-                    errorBanner.style.display = 'block';
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                } else {
-                    // Success
-                    // Store mock token
-                    localStorage.setItem('authToken', 'mock_token_123');
-                    localStorage.setItem('user', JSON.stringify({ name: 'Farmer User', id: loginId }));
-                    
-                    // Redirect
-                    window.location.href = 'index.html'; 
-                }
-            }, 1500);
-        });
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
     </script>
-
 </body>
 </html>

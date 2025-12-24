@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Farmer Registration | KrishiSahayak</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;font-family:Poppins;margin:0;padding:0}
+
+/* 🌄 BACKGROUND IMAGE */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;
+}
+
+/* WIZARD CARD */
+.wizard-container{
+    width:100%;
+    max-width:480px;
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+    overflow:hidden;
+}
+
+/* HEADER */
+.wizard-header{
+    background:#7cb62f;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+}
+
+/* STEPS */
+.progress-wrapper{
+    display:flex;
+    justify-content:center;
+    margin-top:15px;
+}
+.step-indicator{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    background:rgba(255,255,255,.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    margin:0 10px;
+}
+.step-indicator.active{
+    background:#fff;
+    color:#7cb62f;
+}
+.step-indicator.completed{
+    background:#2c3e50;
+    color:#fff;
+}
+
+/* BODY */
+.form-body{
+    padding:25px;
+}
+.step-content{
+    display:none;
+}
+.step-content.active{
+    display:block;
+}
+
+input, select{
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    border-radius:8px;
+    border:1px solid #ddd;
+}
+
+/* Password input wrapper for toggle button */
+.password-wrapper {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.password-wrapper input {
+    margin-bottom: 0;
+    padding-right: 45px;
+}
+
+.toggle-password-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.toggle-password-btn:hover {
+    color: #7cb62f;
+}
+
+/* BUTTONS */
+.btn-action{
+    width:100%;
+    padding:14px;
+    background:#7cb62f;
+    border:none;
+    color:#fff;
+    font-size:16px;
+    border-radius:10px;
+    cursor:pointer;
+}
+.btn-action:hover{
+    background:#689e29;
+}
+.btn-secondary{
+    margin-top:10px;
+    background:#f0f0f0;
+    color:#333;
+}
+
+/* OTP */
+.otp-inputs{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+.otp-box{
+    width:45px;
+    height:45px;
+    font-size:20px;
+    text-align:center;
+}
+
+/* --- Back Button --- */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(124, 182, 47, 0.1);
+    border: 2px solid #7cb62f;
+    color: #7cb62f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 182, 47, 0.15);
+}
+
+.back-button:hover {
+    background: #7cb62f;
+    color: #fff;
+    transform: translateX(-5px);
+    box-shadow: 0 6px 20px rgba(124, 182, 47, 0.3);
+}
+
+/* MOBILE */
+@media(max-width:520px){
+    .wizard-container{
+        margin:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<a href="/" class="back-button" title="Back to Home">
+    <i class="fas fa-arrow-left"></i>
+</a>
+
+<div class="wizard-container">
+
+<div class="wizard-header">
+<h2>Create Account</h2>
+<p>Join the KrishiSahayak Community</p>
+
+<div class="progress-wrapper">
+<div class="step-indicator active">1</div>
+<div class="step-indicator">2</div>
+<div class="step-indicator">3</div>
+</div>
+</div>
+
+<div class="form-body">
+
+<!-- STEP 1 -->
+<form id="step1Form">
+<div class="step-content active" id="step1">
+
+<h3><i class="fas fa-user-circle"></i> Personal Details</h3>
+
+<input name="name" placeholder="Full Name">
+<input name="phone" placeholder="Phone Number" maxlength="10">
+<input name="email" placeholder="Email">
+
+<div class="password-wrapper">
+    <input name="passwordHash" type="password" placeholder="Password" id="password1">
+    <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('password1')">
+        <i class="fas fa-eye"></i>
+    </button>
+</div>
+
+<div class="password-wrapper">
+    <input type="password" placeholder="Confirm Password" id="password2">
+    <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility('password2')">
+        <i class="fas fa-eye"></i>
+    </button>
+</div>
+
+<button type="button" class="btn-action" onclick="submitStep1(this)">
+Next Step <i class="fas fa-arrow-right"></i>
+</button>
+
+</div>
+</form>
+
+<!-- STEP 2 & 3 -->
+<form id="formStep2" action="sussregister" method="post">
+
+<!-- STEP 2 -->
+<div class="step-content" id="step2">
+<h3><i class="fas fa-shield-alt"></i> Verify Phone</h3>
+
+<div class="otp-inputs">
+<input class="otp-box" maxlength="1">
+<input class="otp-box" maxlength="1">
+<input class="otp-box" maxlength="1">
+<input class="otp-box" maxlength="1">
+</div>
+<input type="hidden" name="userId" id="hiddenUserId">
+
+<button type="button" class="btn-action" onclick="validateStep2()">
+Verify & Proceed
+</button>
+
+<button type="button" class="btn-action btn-secondary" onclick="showStep(1)">
+Back
+</button>
+</div>
+
+<!-- STEP 3 -->
+<div class="step-content" id="step3">
+<h3><i class="fas fa-map-marker-alt"></i> Complete Profile</h3>
+
+<select name="language">
+<option value="">Preferred Language</option>
+<option value="en">English</option>
+<option value="hi">Hindi</option>
+<option value="pb">Punjabi</option>
+</select>
+
+<select name="state" id="stateSelect" onchange="updateDistricts()">
+<option value="">Select State</option>
+<option value="punjab">Punjab</option>
+<option value="uttar_pradesh">Uttar Pradesh</option>
+<option value="uttarakhand">Uttarakhand</option>
+</select>
+
+<select name="district" id="districtSelect">
+<option value="">Select District</option>
+</select>
+
+<button type="submit" class="btn-action">
+Complete Registration <i class="fas fa-rocket"></i>
+</button>
+</div>
+
+</form>
+
+</div>
+</div>
+
+		<script>
+								// Store the userId globally once received from Step 1
+				let currentUserId = null;
+
+				/**
+				 * Toggle password visibility with eye icon
+				 */
+				function togglePasswordVisibility(elementId) {
+					const passwordInput = document.getElementById(elementId);
+					const button = passwordInput.nextElementSibling;
+					const icon = button.querySelector('i');
+
+					if (passwordInput.type === 'password') {
+						passwordInput.type = 'text';
+						icon.classList.remove('fa-eye');
+						icon.classList.add('fa-eye-slash');
+					} else {
+						passwordInput.type = 'password';
+						icon.classList.remove('fa-eye-slash');
+						icon.classList.add('fa-eye');
+					}
+				}
+				
+				/**
+				 * Manages the visual transition between wizard steps
+				 */
+				function showStep(stepNumber) {
+				    // 1. Toggle Step Content
+				    document.querySelectorAll('.step-content').forEach(step => {
+				        step.classList.remove('active');
+				    });
+				    document.getElementById('step' + stepNumber).classList.add('active');
+				
+				    // 2. Update Progress Indicators
+				    document.querySelectorAll('.step-indicator').forEach((ind, index) => {
+				        const stepIdx = index + 1;
+				        ind.classList.remove('active', 'completed');
+				
+				        if (stepIdx < stepNumber) {
+				            ind.classList.add('completed');
+				            ind.innerHTML = '<i class="fas fa-check"></i>'; // Add checkmark to finished steps
+				        } else if (stepIdx === stepNumber) {
+				            ind.classList.add('active');
+				            ind.innerText = stepIdx;
+				        } else {
+				            ind.innerText = stepIdx;
+				        }
+				    });
+				}
+				
+				/**
+				 * Step 1: Submits personal info and triggers OTP email
+				 */
+				function submitStep1(btn) {
+				    const form = document.getElementById("step1Form");
+				    const formData = new FormData(form);
+				
+				    // Basic UI Feedback
+				    btn.disabled = true;
+				    const originalText = btn.innerHTML;
+				    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+				
+				    fetch("/generatedOtp", {
+				        method: "POST",
+				        body: formData
+				    })
+				    .then(res => res.json())
+				    .then(data => {
+				        if (data.status === "OTP_SENT") {
+				            currentUserId = data.userid; // Store the ID for subsequent steps
+				            showStep(2);
+				        } else {
+				            alert(data.status === "EMAIL_NULL" ? "Please provide a valid email." : "Error: " + data.message);
+				        }
+				    })
+				    .catch(() => alert("Server connection failed."))
+				    .finally(() => {
+				        btn.disabled = false;
+				        btn.innerHTML = originalText;
+				    });
+				}
+				
+				/**
+				 * Step 2: Validates the OTP digits
+				 */
+				function validateStep2() {
+				    const otpBoxes = document.querySelectorAll('.otp-box');
+				    let otpValue = "";
+				    otpBoxes.forEach(input => otpValue += input.value);
+				
+				    if (otpValue.length < 4) {
+				        alert("Please enter the full 4-digit OTP.");
+				        return;
+				    }
+				
+				    // Pass userid and the typed otp as request parameters
+				    fetch(`/verifyOtp?userid=${currentUserId}&userotp=${otpValue}`, {
+				        method: "POST"
+				    })
+				    .then(res => res.json())
+				    .then(data => {
+				        if (data.status === "VERIFIED") {
+				            // Set the ID in the hidden field so Step 3 form knows which user to update
+				            document.getElementById('hiddenUserId').value = currentUserId;
+				            showStep(3);
+				        } else {
+				            alert("Invalid OTP. Please check your email.");
+				            otpBoxes.forEach(input => input.value = ""); // Reset boxes
+				            otpBoxes[0].focus();
+				        }
+				    })
+				    .catch(() => alert("Verification failed. Server error."));
+				}
+				
+				/**
+				 * Auto-focus utility for OTP boxes
+				 */
+				document.querySelectorAll('.otp-box').forEach((box, index, boxes) => {
+				    box.addEventListener('input', () => {
+				        if (box.value && index < boxes.length - 1) boxes[index + 1].focus();
+				    });
+				    // Allow backspace to move focus back
+				    box.addEventListener('keydown', (e) => {
+				        if (e.key === 'Backspace' && !box.value && index > 0) boxes[index - 1].focus();
+				    });
+				});
+				
+				/**
+				 * District data for each state
+				 */
+				const stateDistricts = {
+				    punjab: [
+				        "Amritsar",
+				        "Barnala",
+				        "Bathinda",
+				        "Faridkot",
+				        "Fatehgarh Sahib",
+				        "Fazilka",
+				        "Firozpur",
+				        "Gurdaspur",
+				        "Hoshiarpur",
+				        "Jalandhar",
+				        "Kapurthala",
+				        "Ludhiana",
+				        "Mansa",
+				        "Moga",
+				        "Mohali",
+				        "Muktsar",
+				        "Pathankot",
+				        "Patiala",
+				        "Rupnagar",
+				        "Sangrur",
+				        "Tarn Taran"
+				    ],
+				    uttar_pradesh: [
+				    	  "Agra",
+				    	  "Aligarh",
+				    	  "Ambedkar Nagar",
+				    	  "Amethi",
+				    	  "Amroha",
+				    	  "Auraiya",
+				    	  "Ayodhya",
+				    	  "Azamgarh",
+				    	  "Baghpat",
+				    	  "Bahraich",
+				    	  "Ballia",
+				    	  "Balrampur",
+				    	  "Banda",
+				    	  "Barabanki",
+				    	  "Bareilly",
+				    	  "Basti",
+				    	  "Bhadohi",
+				    	  "Bijnor",
+				    	  "Budaun",
+				    	  "Bulandshahr",
+				    	  "Chandauli",
+				    	  "Chitrakoot",
+				    	  "Deoria",
+				    	  "Etah",
+				    	  "Etawah",
+				    	  "Farrukhabad",
+				    	  "Fatehpur",
+				    	  "Firozabad",
+				    	  "Gautam Buddha Nagar",
+				    	  "Ghaziabad",
+				    	  "Ghazipur",
+				    	  "Gonda",
+				    	  "Gorakhpur",
+				    	  "Hamirpur",
+				    	  "Hapur",
+				    	  "Hardoi",
+				    	  "Hathras",
+				    	  "Jalaun",
+				    	  "Jaunpur",
+				    	  "Jhansi",
+				    	  "Kannauj",
+				    	  "Kanpur Dehat",
+				    	  "Kanpur Nagar",
+				    	  "Kasganj",
+				    	  "Kaushambi",
+				    	  "Kheri",
+				    	  "Kushinagar",
+				    	  "Lalitpur",
+				    	  "Lucknow",
+				    	  "Maharajganj",
+				    	  "Mahoba",
+				    	  "Mainpuri",
+				    	  "Mathura",
+				    	  "Mau",
+				    	  "Meerut",
+				    	  "Mirzapur",
+				    	  "Moradabad",
+				    	  "Muzaffarnagar",
+				    	  "Pilibhit",
+				    	  "Pratapgarh",
+				    	  "Prayagraj",
+				    	  "Raebareli",
+				    	  "Rampur",
+				    	  "Saharanpur",
+				    	  "Sambhal",
+				    	  "Sant Kabir Nagar",
+				    	  "Shahjahanpur",
+				    	  "Shamli",
+				    	  "Shravasti",
+				    	  "Siddharthnagar",
+				    	  "Sitapur",
+				    	  "Sonbhadra",
+				    	  "Sultanpur",
+				    	  "Unnao",
+				    	  "Varanasi"
+				    	],
+				    uttarakhand: [
+				        "Almora",
+				        "Bageshwar",
+				        "Chamoli",
+				        "Champawat",
+				        "Dehradun",
+				        "Hardwar",
+				        "Nainital",
+				        "Pauri",
+				        "Pithoragarh",
+				        "Rudraprayag",
+				        "Tehri",
+				        "Udham Singh Nagar",
+				        "Uttarkashi"
+				    ]
+				};
+				
+				/**
+				 * Updates the district dropdown based on selected state
+				 */
+				function updateDistricts() {
+                    const stateSelect = document.getElementById('stateSelect');
+                    const districtSelect = document.getElementById('districtSelect');
+                    const selectedState = stateSelect.value;
+                
+                    // Clear existing options
+                    districtSelect.innerHTML = '<option value="">Select District</option>';
+                
+                    // Populate districts based on selected state
+                    if (selectedState && stateDistricts[selectedState]) {
+                        const districts = stateDistricts[selectedState];
+                        districts.forEach(district => {
+                            const option = document.createElement('option');
+                            option.value = district.toLowerCase().replace(/ /g, '_');
+                            option.textContent = district;
+                            districtSelect.appendChild(option);
+                        });
+                    }
+                }
+                
+                // --- Final submit: AJAX post, popup on success, then redirect to login ---
+                const finalForm = document.getElementById('formStep2');
+                if (finalForm) {
+                    finalForm.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const form = e.target;
+
+                        // Basic client-side validation
+                        const userId = document.getElementById('hiddenUserId')?.value;
+                        const lang = form.querySelector('select[name="language"]').value;
+                        const state = form.querySelector('select[name="state"]').value;
+                        const district = form.querySelector('select[name="district"]').value;
+
+                        if (!userId) {
+                            alert('Please verify OTP before completing registration.');
+                            showStep(2);
+                            return;
+                        }
+                        if (!lang) {
+                            alert('Please select your preferred language.');
+                            return;
+                        }
+                        if (!state) {
+                            alert('Please select your state.');
+                            return;
+                        }
+                        if (!district) {
+                            alert('Please select your district.');
+                            return;
+                        }
+
+                        const submitBtn = form.querySelector('button[type="submit"]');
+                        const originalText = submitBtn ? submitBtn.innerHTML : '';
+                        if (submitBtn) {
+                            submitBtn.disabled = true;
+                            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Completing...';
+                        }
+
+                        try {
+                            const res = await fetch('/sussregister', {
+                                method: 'POST',
+                                body: new FormData(form)
+                            });
+
+                            if (res.ok) {
+                                alert('Registration successful! Redirecting to login...');
+                                window.location.href = '/login';
+                            } else {
+                                const text = await res.text();
+                                alert('Registration failed. Please try again.\n' + (text || ''));
+                            }
+                        } catch (err) {
+                            alert('Network error while completing registration. Please try again.');
+                        } finally {
+                            if (submitBtn) {
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = originalText;
+                            }
+                        }
+                    });
+                }
+                
+                
+        </script>
+
+
+</body>
+</html>

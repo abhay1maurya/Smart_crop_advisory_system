@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Disease Doctor | KrishiSahayak</title>
+    <title>Plant Disease Detector | KrishiSahayak</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -104,11 +104,12 @@
         
         /* Hero Section */
         .blog-hero-section.disease-hero-bg {
+            position: relative;
             margin-top: 10px;
             background: url('https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=1920&auto=format&fit=crop&q=80') no-repeat center center/cover;
-            min-height: 80vh; display: flex; align-items: center; padding: 60px 0;
+            min-height: 95vh; display: flex; align-items: center; padding: 60px 0;
         }
-        /* .blog-hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(20, 30, 20, 0.85), rgba(20, 30, 20, 0.5)); } */
+        .blog-hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(10, 30, 10, 0.85), rgba(10, 30, 10, 0.6)); }
         .blog-hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; margin: 0 auto; color: white; }
         .hero-badge { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600; margin-bottom: 15px; display: inline-block; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); }
         .blog-hero-title { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; color:white; }
@@ -135,11 +136,32 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            min-height: 300px; /* Ensure drop zone has height */
+            min-height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+        }
+
+        .upload-zone input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        #uploadContent {
+            pointer-events: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .upload-zone.dragover #uploadContent {
+            opacity: 0.5;
         }
 
         .upload-zone:hover, .upload-zone.dragover {
@@ -276,9 +298,9 @@
     <header class="header-section">
         <div class="container">
             <nav class="navbar navbar-expand-lg p-0">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     <div class="brand-logo-wrapper">
-                        <img src="logo6.0.png" alt="Krishi Sahayak" class="brand-logo-img">
+                        <img src="img/logo6.0.png" alt="Krishi Sahayak" class="brand-logo-img">
                     </div> <span class="brand-text">KrishiSahayak</span>
                 </a>
 
@@ -288,20 +310,20 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                     <ul class="navbar-nav align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="index.html#services" id="navServices" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <a class="nav-link dropdown-toggle" href="/#services" id="navServices" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
                             <ul class="dropdown-menu" aria-labelledby="navServices">
-                                <li><a class="dropdown-item" href="crop.html">Crop Advisory</a></li>
-                                <li><a class="dropdown-item" href="fertilizer.html">Fertilizer Guide</a></li>
-                                <li><a class="dropdown-item" href="disease.html">Disease Detection</a></li>
-                                <li><a class="dropdown-item" href="weather.html">Weather Advisory</a></li>
+                                <li><a class="dropdown-item" href="crop">Crop Advisory</a></li>
+                                <li><a class="dropdown-item" href="fertilizer">Fertilizer Guide</a></li>
+                                <li><a class="dropdown-item" href="disease">Disease Detection</a></li>
+                                <li><a class="dropdown-item" href="weather">Weather Advisory</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#benefits">Benefits</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#community-features">Experts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blogpage">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#benefits">Benefits</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#community-features">Experts</a></li>
 
                         <li class="nav-item nav-btn-group ms-lg-3 align-items-center">
                             
@@ -313,7 +335,7 @@
                                 <span id="weatherTemp">24°C</span>
                             </div>
 
-                            <div class="modern-lang-wrapper me-3" id="siteLangToggle">
+                            <!-- <div class="modern-lang-wrapper me-3" id="siteLangToggle">
                                 <button class="modern-lang-btn" aria-label="Select Language">
                                     <span class="lang-flag">🇬🇧</span>
                                     <span class="lang-code">EN</span>
@@ -325,12 +347,12 @@
                                     <div class="lang-option" data-lang="hi" data-flag="🇮🇳"><span class="opt-flag">🇮🇳</span><span class="opt-name">हिन्दी</span></div>
                                     <div class="lang-option" data-lang="pa" data-flag="🇮🇳"><span class="opt-flag">🇮🇳</span><span class="opt-name">ਪੰਜਾਬੀ</span></div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <a href="login.html" class="nav-link btn-login-nav">
-                                <i class="fas fa-user me-1"></i> Login
+                            <a href="/logout" class="nav-link btn-login-nav">
+                                <i class="fas fa-user me-1"></i> Logout
                             </a>
-                            <a href="index.html#contact" class="btn btn-quote">CONTACT US</a>
+                            <a href="/#contact" class="btn btn-quote">CONTACT US</a>
                         </li>
                     </ul>
                 </div>
@@ -344,10 +366,10 @@
             <div class="blog-hero-content">
                 <span class="hero-badge"><i class="fas fa-camera"></i> Image Diagnosis</span>
                 <h1 class="blog-hero-title">
-                    AI Plant <span class="blog-text-gradient">Disease Doctor</span>
+                    AI Plant <span class="blog-text-gradient">Disease Detector</span>
                 </h1>
                 <p class="blog-hero-desc">
-                    Simply take a photo of your infected crop leaf. Our AI will instantly diagnose the disease and suggest a cure.
+                    Simply take a photo of your infected crop leaf. Our AI will instantly detect the disease and give the name of the disease.
                 </p>
                 <button class="blog-load-btn" onclick="document.getElementById('tool-section').scrollIntoView({behavior: 'smooth'})">
                     Start Diagnosis <i class="fas fa-arrow-down"></i>
@@ -362,12 +384,12 @@
                 
                 <div class="col-lg-5 mb-4">
                     <div class="card upload-card p-4 h-100">
-                        <h4 class="fw-bold text-secondary mb-3">📸 Plant Doctor</h4>
+                        <h4 class="fw-bold text-secondary mb-3">📸 Plant Disease Detector</h4>
                         <p class="text-muted small">Upload a clear photo of a crop leaf (Potato, Tomato, Rice, or Corn) to detect diseases.</p>
                         
                         <form id="uploadForm">
-                            <div class="upload-zone p-5 text-center mb-3" id="dropZone">
-                                <input type="file" id="fileInput" class="position-absolute top-0 start-0 w-100 h-100 opacity-0" accept="image/*">
+                            <div class="upload-zone mb-3" id="dropZone">
+                                <input type="file" id="fileInput" accept="image/*">
                                 
                                 <div id="uploadContent">
                                     <i class="fa-solid fa-cloud-arrow-up fa-3x text-success mb-3"></i>
@@ -450,7 +472,7 @@
                 <div class="process-card">
                     <div class="process-number">3</div>
                     <div class="process-icon"><i class="fas fa-notes-medical"></i></div>
-                    <h5>Get Cure</h5>
+                    <h5>Get Disease Name</h5>
                     <p>Instantly receive the disease name and chemical/organic treatment.</p>
                 </div>
             </div>
@@ -560,8 +582,8 @@
         <div class="container position-relative z-2">
             <div class="row gy-5">
                 <div class="col-lg-4 col-md-12">
-                    <a href="index.html" class="footer-brand mb-4">
-                        <img src="logo6.0.png" alt="KrishiSahayak" class="footer-logo-img">
+                    <a href="/" class="footer-brand mb-4">
+                        <img src="img/logo6.0.png" alt="KrishiSahayak" class="footer-logo-img">
                         <span class="footer-brand-text">KrishiSahayak</span>
                     </a>
                     <p class="footer-desc pe-lg-5" data-i18n="footer_desc">Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.</p>
@@ -575,24 +597,24 @@
                 <div class="col-lg-2 col-6">
                     <h5 class="footer-title" data-i18n="footer_quick_links">Quick Links</h5>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
-                        <li><a href="index.html#benefits" data-i18n="nav_benefits">Benefits</a></li>
-                        <li><a href="index.html#community-features" data-i18n="nav_experts">Experts</a></li>
-                        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="/#home" data-i18n="nav_home">Home</a></li>
+                        <li><a href="/#about" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="/#services" data-i18n="nav_services">Services</a></li>
+                        <li><a href="/#blog" data-i18n="nav_blog">Blog</a></li>
+                        <li><a href="/#benefits" data-i18n="nav_benefits">Benefits</a></li>
+                        <li><a href="/#community-features" data-i18n="nav_experts">Experts</a></li>
+                        <li><a href="/#contact" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-6">
                     <h5 class="footer-title" data-i18n="footer_our_services">Our Services</h5>
                     <ul class="footer-links">
-                        <li><a href="crop.html" data-i18n="tab_crop">Crop Recommendation</a></li>
-                        <li><a href="fertilizer.html" data-i18n="tab_fert">Fertilizer Recommendation</a></li>
-                        <li><a href="disease.html" data-i18n="tab_disease">Disease Detection</a></li>
-                        <li><a href="weather.html" data-i18n="tab_weather">Weather Advisory</a></li>
-                        <li><a href="#" data-i18n="tab_chat">Farming Chatbot</a></li>
-                        <li><a href="blog.html" data-i18n="tab_chat">Strong Blog Community</a></li>
+                        <li><a href="/#services" data-i18n="tab_crop">Crop Advisory</a></li>
+                        <li><a href="/#services" data-i18n="tab_fert">Fertilizer Guide</a></li>
+                        <li><a href="/#services" data-i18n="tab_disease">Disease Detection</a></li>
+                        <li><a href="/#services" data-i18n="tab_weather">Weather Forecast</a></li>
+                        <li><a href="/#services" data-i18n="tab_chat">Farming Chatbot</a></li>
+                        <li><a href="/#services" data-i18n="tab_chat">Strong Blog Community</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-12">
@@ -610,8 +632,8 @@
                         <p class="mb-0 small text-white-50">© 2025 KrishiSahayak. All Rights Reserved.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <a href="#" class="footer-legal-link me-3">Privacy Policy</a>
-                        <a href="#" class="footer-legal-link">Terms of Service</a>
+                        <a href="term" class="footer-legal-link me-3">Privacy Policy</a>
+                        <a href="term" class="footer-legal-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
@@ -631,7 +653,7 @@
                         <div class="mb-3"><label class="form-label small text-muted">Password</label><input type="password" class="form-control" placeholder="******"></div>
                         <div class="d-grid"><button type="submit" class="btn btn-hero w-100">Login</button></div>
                     </form>
-                    <p class="text-center mt-3 small text-muted">Don't have an account? <a href="#" class="text-success text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a></p>
+                    <p class="text-center mt-3 small text-muted">Don't have an account? <a href="signup" class="text-success text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a></p>
                 </div>
             </div>
         </div>
@@ -658,7 +680,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="jsfile/script.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -699,52 +721,93 @@
         }
 
         // ==================== DISEASE DETECTION LOGIC ====================
-        const fileInput = document.getElementById('fileInput');
+        
+        // ==================== FILE UPLOAD & PREVIEW LOGIC ====================
         const dropZone = document.getElementById('dropZone');
-        const uploadContent = document.getElementById('uploadContent');
+        const fileInput = document.getElementById('fileInput');
         const preview = document.getElementById('preview');
+        const uploadContent = document.getElementById('uploadContent');
         const analyzeBtn = document.getElementById('analyzeBtn');
-        const loading = document.getElementById('loading');
-        const resultCard = document.getElementById('resultCard');
 
-        // 1. File Selection Handling
-        fileInput.addEventListener('change', function() {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                    uploadContent.style.display = 'none';
-                    analyzeBtn.disabled = false; // Enable button
-                }
-                reader.readAsDataURL(file);
+        // Click to upload
+        dropZone.addEventListener('click', (e) => {
+            // Prevent if clicking on the file input itself
+            if (e.target !== fileInput) {
+                fileInput.click();
             }
         });
 
-        // 2. Drag & Drop Handling
+        // File selected via input
+        fileInput.addEventListener('change', handleFileSelect);
+
+        // Drag and drop events
         dropZone.addEventListener('dragover', (e) => {
             e.preventDefault();
+            e.stopPropagation();
             dropZone.classList.add('dragover');
         });
 
-        dropZone.addEventListener('dragleave', () => {
+        dropZone.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             dropZone.classList.remove('dragover');
         });
 
         dropZone.addEventListener('drop', (e) => {
             e.preventDefault();
+            e.stopPropagation();
             dropZone.classList.remove('dragover');
-            fileInput.files = e.dataTransfer.files; // Assign dropped file to input
-            const event = new Event('change');
-            fileInput.dispatchEvent(event); // Trigger change event manually
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                handleFileSelect();
+            }
         });
 
-        // 3. API CALL LOGIC
+        // Handle file selection and preview
+        function handleFileSelect() {
+            const file = fileInput.files[0];
+            
+            if (!file) return;
+            
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                alert('Please select an image file (JPG, PNG)');
+                fileInput.value = '';
+                return;
+            }
+            
+            console.log('File selected:', file.name);  // Debug log
+            
+            // Show preview
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                uploadContent.style.display = 'none';
+                analyzeBtn.disabled = false;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // ==================== FORM SUBMISSION ====================
         document.getElementById('uploadForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // UI States
+            // UI Elements
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            const loading = document.getElementById('loading');
+            const resultCard = document.getElementById('resultCard');
+            const fileInput = document.getElementById('fileInput');
+
+            // Validate file exists
+            if (!fileInput.files || !fileInput.files[0]) {
+                alert('Please select an image first!');
+                return;
+            }
+
+            // Reset UI
             analyzeBtn.disabled = true;
             analyzeBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i> Analyzing...';
             loading.style.display = 'block';
@@ -753,41 +816,54 @@
             const formData = new FormData();
             formData.append("file", fileInput.files[0]);
 
+            console.log('Sending image to disease API...');  // Debug log
+
             try {
-                // Call Python API (Port 8002)
                 const response = await fetch('http://127.0.0.1:8002/predict_disease', {
                     method: 'POST',
                     body: formData
                 });
 
+                console.log('Response status:', response.status);  // Debug log
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                }
+
                 const data = await response.json();
+                console.log('API Response:', data);  // Debug log
 
-                // Handle Error from API
-                if (data.error) throw new Error(data.error);
+                if (data.error) {
+                    throw new Error(data.error);
+                }
 
-                // Update Results
-                loading.style.display = 'none';
+                // Populate disease name
+                document.getElementById('diseaseName').innerText = data.disease.replace(/_/g, ' ');
                 
-                // Populate Data
-                document.getElementById('diseaseName').innerText = data.disease.replace(/_/g, ' '); 
-                document.getElementById('timestamp').innerText = "Detected just now";
-                
-                // Animate Confidence Bar
+                // Animate confidence bar
                 const confidence = parseFloat(data.confidence);
                 document.getElementById('confidenceText').innerText = confidence.toFixed(1) + "%";
-                document.getElementById('confidenceBar').style.width = confidence + "%";
+                
+                // Animate the confidence bar fill
+                setTimeout(() => {
+                    document.getElementById('confidenceBar').style.width = confidence + "%";
+                }, 100);
 
-                // Simple Logic for Advice
+                // Treatment advice
                 const adviceDict = {
-                    "Healthy": "Your crop looks healthy! Keep monitoring water levels.",
-                    "Late_Blight": "Fungal infection detected. Consider using fungicides like Mancozeb or Chlorothalonil.",
-                    "Early_Blight": "Remove infected leaves immediately. Apply copper-based fungicides.",
-                    "Rust": "Avoid overhead watering. Apply sulfur-based fungicides.",
-                    "Leaf_Spot": "Ensure proper spacing between plants for air circulation."
+                    "Healthy": "Your crop looks healthy! Keep monitoring water levels and continue good farming practices.",
+                    "Late_Blight": "Fungal infection detected. Consider using fungicides like Mancozeb or Chlorothalonil. Remove affected plants immediately.",
+                    "Early_Blight": "Remove infected leaves immediately. Apply copper-based fungicides. Ensure proper spacing for air circulation.",
+                    "Rust": "Avoid overhead watering. Apply sulfur-based fungicides. Remove infected leaves to prevent spread.",
+                    "Leaf_Spot": "Ensure proper spacing between plants for air circulation. Use appropriate fungicides as recommended.",
+                    "Septoria": "Remove affected leaves. Apply fungicides and avoid overhead irrigation.",
+                    "Bacterial_Spot": "Use copper-based bactericides. Remove infected plant parts and practice crop rotation.",
+                    "Yellow_Leaf_Curl": "Control whitefly populations. Remove infected plants to prevent virus spread.",
+                    "Mosaic": "Remove infected plants immediately. Control aphid populations to prevent virus transmission.",
+                    "Blight": "Apply appropriate fungicides. Ensure good drainage and avoid overhead watering."
                 };
 
-                // Find matching advice keyword
-                let advice = "Consult a local expert for specific treatment.";
+                let advice = "Consult a local agricultural expert for specific treatment recommendations and chemical dosages.";
                 for (const key in adviceDict) {
                     if (data.disease.includes(key)) {
                         advice = adviceDict[key];
@@ -796,18 +872,23 @@
                 }
                 document.getElementById('treatmentText').innerText = advice;
 
-                // Show Result
+                // Show result
                 resultCard.style.display = 'block';
-                analyzeBtn.innerHTML = '<i class="fa-solid fa-check me-2"></i> Done';
+                resultCard.scrollIntoView({ behavior: 'smooth' });
+                analyzeBtn.innerHTML = '<i class="fa-solid fa-check me-2"></i> Analysis Complete';
 
             } catch (err) {
-                console.error(err);
-                alert("Failed to connect to the AI Server. Is it running?");
-                loading.style.display = 'none';
+                console.error('Error:', err);  // Debug log
+                alert(`Error: ${err.message}\n\nPlease ensure:\n1. disease_api.py is running on port 8002\n2. The image file is valid\n3. Your internet connection is stable`);
                 analyzeBtn.innerHTML = '<i class="fa-solid fa-microscope me-2"></i> Analyze Leaf';
+            } finally {
                 analyzeBtn.disabled = false;
+                loading.style.display = 'none';
             }
         });
+
+
+
     </script>
 
 </body>

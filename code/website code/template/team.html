@@ -11,7 +11,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cssfile/style.css">
 
     <style>
         body {
@@ -40,7 +40,7 @@
             width: 100%;
             height: 100%;
             /* The image and dark overlay go here now */
-            background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)), url('team_br.png');
+            background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)), url('img/team_br.png');
             background-size: cover;
             background-position: center;
             /* The blur effect - adjust px value for stronger/weaker blur */
@@ -252,9 +252,9 @@
     <header class="header-section">
         <div class="container">
             <nav class="navbar navbar-expand-lg p-0">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     <div class="brand-logo-wrapper">
-                        <img src="logo6.0.png" alt="Krishi Sahayak" class="brand-logo-img">
+                        <img src="img/logo6.0.png" alt="Krishi Sahayak" class="brand-logo-img">
                     </div> <span class="brand-text">KrishiSahayak</span>
                 </a>
 
@@ -264,23 +264,23 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                     <ul class="navbar-nav align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#home">Home</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="index.html#services" id="navServices" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <a class="nav-link dropdown-toggle" href="/#services" id="navServices" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
                             <ul class="dropdown-menu" aria-labelledby="navServices">
-                                <li><a class="dropdown-item" href="crop.html">Crop Advisory</a></li>
-                                <li><a class="dropdown-item" href="fertilizer.html">Fertilizer Guide</a></li>
-                                <li><a class="dropdown-item" href="disease.html">Disease Detection</a></li>
-                                <li><a class="dropdown-item" href="#">Weather Advisory</a></li>
+                                <li><a class="dropdown-item" href="crop">Crop Advisory</a></li>
+                                <li><a class="dropdown-item" href="fertilizer">Fertilizer Guide</a></li>
+                                <li><a class="dropdown-item" href="disease">Disease Detection</a></li>
+                                <li><a class="dropdown-item" href="weather">Weather Advisory</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
                         
-                        <li class="nav-item"><a class="nav-link active" style="color: var(--primary-green);" href="team.html">Team</a></li>
+                        <li class="nav-item"><a class="nav-link active" style="color: var(--primary-green);" href="team">Team</a></li>
                         
-                        <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#benefits">Benefits</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#community-features">Experts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#benefits">Benefits</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#community-features">Experts</a></li>
 
                         <li class="nav-item nav-btn-group ms-lg-3 align-items-center">
 
@@ -292,7 +292,7 @@
                                 <span id="weatherTemp">24°C</span>
                             </div>
 
-                            <div class="modern-lang-wrapper me-3" id="siteLangToggle">
+                            <!-- <div class="modern-lang-wrapper me-3" id="siteLangToggle">
                                 <button class="modern-lang-btn" aria-label="Select Language">
                                     <span class="lang-flag">🇬🇧</span>
                                     <span class="lang-code">EN</span>
@@ -316,9 +316,9 @@
                                         <i class="fas fa-check opt-check"></i>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <a href="login.html" class="nav-link btn-login-nav">
+                            <a href="login" class="nav-link btn-login-nav">
                                 <i class="fas fa-user me-1"></i> Login
                             </a>
                             <a href="#contact" class="btn btn-quote">CONTACT US</a>
@@ -344,10 +344,10 @@
             
             <div class="mentor-card">
                 <div class="mentor-img-wrapper">
-                    <img src="mentor_image.png" alt="Mrs. Snehlata Singh" class="mentor-img">
+                    <img src="img/mentor_image.png" alt="Mrs. Sneh lata Singh" class="mentor-img">
                 </div>
-                <h3 class="mentor-name">Mrs. Snehlata Singh</h3>
-                <div class="mentor-role">Project Guide & Research Head</div>
+                <h3 class="mentor-name">Mrs. Sneh Lata Singh</h3>
+                <div class="mentor-role">Project Mentor</div>
                 <p class="mentor-bio">
                     Mrs. Sneh Lata Singh is an Assistant Professor with a strong academic foundation in B.E. and M.Tech.
 Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data Mining, and Machine Learning.
@@ -372,7 +372,7 @@ Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data 
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="abhay_image.png" alt="Abhay Maurya" class="team-img">
+                            <img src="img/abhay_image.png" alt="Abhay Maurya" class="team-img">
                         </div>
                         <h4 class="team-name">Abhay Maurya</h4>
                         <div class="team-role">ML Engineer</div>
@@ -388,7 +388,7 @@ Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data 
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="shanu_image.jpeg" alt="Riya Sharma" class="team-img">
+                            <img src="img/shanu_image.jpeg" alt="Riya Sharma" class="team-img">
                         </div>
                         <h4 class="team-name">Shanu Ahmed</h4>
                         <div class="team-role">Backend Developer</div>
@@ -404,7 +404,7 @@ Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data 
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="varun_image.jpg" alt="Vikram Singh" class="team-img">
+                            <img src="img/varun_image.jpg" alt="Vikram Singh" class="team-img">
                         </div>
                         <h4 class="team-name">Varun Rana</h4>
                         <div class="team-role">Frontend Developer</div>
@@ -420,7 +420,7 @@ Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data 
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="amit_image.jpeg" alt="Anjali Gupta" class="team-img">
+                            <img src="img/amit_image.jpeg" alt="Anjali Gupta" class="team-img">
                         </div>
                         <h4 class="team-name">Amit Yadav</h4>
                         <div class="team-role">Frontend Developer</div>
@@ -436,15 +436,15 @@ Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data 
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="sameer_image.png" alt="Rohan Das" class="team-img">
+                            <img src="img/sameer_image.png" alt="Rohan Das" class="team-img">
                         </div>
-                        <h4 class="team-name">Sameer Ahmad</h4>
+                        <h4 class="team-name">Samir Ahmad</h4>
                         <div class="team-role">JS Expert</div>
                         <p class="team-desc">Frontend (JS) development</p>
                         <div class="social-links">
                             <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                            <a href="mailto:rohan@example.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:azharahmad5310@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
@@ -458,8 +458,8 @@ Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data 
             <div class="row gy-5">
                 
                 <div class="col-lg-4 col-md-12">
-                    <a href="index.html#home" class="footer-brand mb-4">
-                        <img src="logo6.0.png" alt="KrishiSahayak" class="footer-logo-img">
+                    <a href="/#home" class="footer-brand mb-4">
+                        <img src="img/logo6.0.png" alt="KrishiSahayak" class="footer-logo-img">
                         <span class="footer-brand-text">KrishiSahayak</span>
                     </a>
                     <p class="footer-desc pe-lg-5" data-i18n="footer_desc">Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.</p>
@@ -475,25 +475,25 @@ Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data 
                 <div class="col-lg-2 col-6">
                     <h5 class="footer-title" data-i18n="footer_quick_links">Quick Links</h5>
                     <ul class="footer-links">
-                        <li><a href="index.html#home" data-i18n="nav_home">Home</a></li>
-                        <li><a href="index.html#about" data-i18n="nav_about">About Us</a></li>
-                        <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
-                        <li><a href="index.html#blog" data-i18n="nav_blog">Blog</a></li>
-                        <li><a href="index.html#benefits" data-i18n="nav_benefits">Benefits</a></li>
-                        <li><a href="index.html#community-features" data-i18n="nav_experts">Experts</a></li>
-                        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="/#home" data-i18n="nav_home">Home</a></li>
+                        <li><a href="/#about" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="/#services" data-i18n="nav_services">Services</a></li>
+                        <li><a href="/#blog" data-i18n="nav_blog">Blog</a></li>
+                        <li><a href="/#benefits" data-i18n="nav_benefits">Benefits</a></li>
+                        <li><a href="/#community-features" data-i18n="nav_experts">Experts</a></li>
+                        <li><a href="/#contact" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-6">
                     <h5 class="footer-title" data-i18n="footer_our_services">Our Services</h5>
                     <ul class="footer-links">
-                        <li><a href="#" data-i18n="tab_crop">Crop Advisory</a></li>
-                        <li><a href="#" data-i18n="tab_fert">Fertilizer Guide</a></li>
-                        <li><a href="#" data-i18n="tab_disease">Disease Detection</a></li>
-                        <li><a href="#" data-i18n="tab_weather">Weather Forecast</a></li>
-                        <li><a href="#" data-i18n="tab_chat">Farming Chatbot</a></li>
-                        <li><a href="#" data-i18n="tab_chat">Strong Blog Community</a></li>
+                        <li><a href="/#services" data-i18n="tab_crop">Crop Advisory</a></li>
+                        <li><a href="/#services" data-i18n="tab_fert">Fertilizer Guide</a></li>
+                        <li><a href="/#services" data-i18n="tab_disease">Disease Detection</a></li>
+                        <li><a href="/#services" data-i18n="tab_weather">Weather Forecast</a></li>
+                        <li><a href="/#services" data-i18n="tab_chat">Farming Chatbot</a></li>
+                        <li><a href="/#services" data-i18n="tab_chat">Strong Blog Community</a></li>
                     </ul>
                 </div>
 
@@ -517,8 +517,8 @@ Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data 
                         <p class="mb-0 small text-white-50">© 2025 KrishiSahayak. All Rights Reserved.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <a href="#" class="footer-legal-link me-3">Privacy Policy</a>
-                        <a href="#" class="footer-legal-link">Terms of Service</a>
+                        <a href="term" class="footer-legal-link me-3">Privacy Policy</a>
+                        <a href="term" class="footer-legal-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
@@ -527,6 +527,6 @@ Her expertise spans Computer Networks, Operating Systems, Compiler Design, Data 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <script src="script.js"></script>
+    <script src="jsfile/script.js"></script>
 </body>
 </html>

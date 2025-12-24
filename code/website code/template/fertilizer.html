@@ -268,9 +268,9 @@
     <header class="header-section">
         <div class="container">
             <nav class="navbar navbar-expand-lg p-0">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     <div class="brand-logo-wrapper">
-                        <img src="logo6.0.png" alt="Krishi Sahayak" class="brand-logo-img">
+                        <img src="img/logo6.0.png" alt="Krishi Sahayak" class="brand-logo-img">
                     </div> <span class="brand-text">KrishiSahayak</span>
                 </a>
 
@@ -280,20 +280,20 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="mainNav">
                     <ul class="navbar-nav align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="index.html#services" id="navServicesFert" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <a class="nav-link dropdown-toggle" href="/#services" id="navServicesFert" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
                             <ul class="dropdown-menu" aria-labelledby="navServicesFert">
-                                <li><a class="dropdown-item" href="crop.html">Crop Advisory</a></li>
-                                <li><a class="dropdown-item" href="fertilizer.html">Fertilizer Guide</a></li>
-                                <li><a class="dropdown-item" href="disease.html">Disease Detection</a></li>
-                                <li><a class="dropdown-item" href="weather.html">Weather Advisory</a></li>
+                                <li><a class="dropdown-item" href="crop">Crop Advisory</a></li>
+                                <li><a class="dropdown-item" href="fertilizer">Fertilizer Guide</a></li>
+                                <li><a class="dropdown-item" href="disease">Disease Detection</a></li>
+                                <li><a class="dropdown-item" href="weather">Weather Advisory</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#benefits">Benefits</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#community-features">Experts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blogpage">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#benefits">Benefits</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#community-features">Experts</a></li>
 
                         <li class="nav-item nav-btn-group ms-lg-3 align-items-center">
                             
@@ -305,7 +305,7 @@
                                 <span id="weatherTemp">24°C</span>
                             </div>
 
-                            <div class="modern-lang-wrapper me-3" id="siteLangToggle">
+                           <!--  <div class="modern-lang-wrapper me-3" id="siteLangToggle">
                                 <button class="modern-lang-btn" aria-label="Select Language">
                                     <span class="lang-flag">🇬🇧</span>
                                     <span class="lang-code">EN</span>
@@ -317,12 +317,12 @@
                                     <div class="lang-option" data-lang="hi" data-flag="🇮🇳"><span class="opt-flag">🇮🇳</span><span class="opt-name">हिन्दी</span></div>
                                     <div class="lang-option" data-lang="pa" data-flag="🇮🇳"><span class="opt-flag">🇮🇳</span><span class="opt-name">ਪੰਜਾਬੀ</span></div>
                                 </div>
-                            </div>
+                            </div> -->
 
-                            <a href="#" class="nav-link btn-login-nav" data-bs-toggle="modal" data-bs-target="#loginModal">
-                                <i class="fas fa-user me-1"></i> Login
+                            <a href="/logout" class="nav-link btn-login-nav" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="fas fa-user me-1"></i> Logout
                             </a>
-                            <a href="index.html#contact" class="btn btn-quote">CONTACT US</a>
+                            <a href="/#contact" class="btn btn-quote">CONTACT US</a>
                         </li>
                     </ul>
                 </div>
@@ -481,7 +481,6 @@
                             <div class="crop-icon-wrapper"><i class="fas fa-prescription-bottle-alt"></i></div>
                             <h2 id="recName">--</h2>
                             <p class="result-reason" id="recReason">--</p>
-                            <p class="confidence-score">Confidence: <span id="confScore">--</span></p>
                         </div>
                         <button class="blog-read-btn btn-center" id="resetToolBtn" onclick="location.reload()">Analyze Another Field</button>
                     </div>
@@ -628,8 +627,8 @@
             <div class="row gy-5">
                 
                 <div class="col-lg-4 col-md-12">
-                    <a href="index.html#home" class="footer-brand mb-4">
-                        <img src="logo6.0.png" alt="KrishiSahayak" class="footer-logo-img">
+                    <a href="/#home" class="footer-brand mb-4">
+                        <img src="img/logo6.0.png" alt="KrishiSahayak" class="footer-logo-img">
                         <span class="footer-brand-text">KrishiSahayak</span>
                     </a>
                     <p class="footer-desc pe-lg-5" data-i18n="footer_desc">Your trusted partner in smart agriculture. We bring technology to the fields to ensure better yield and sustainable growth for every farmer.</p>
@@ -645,25 +644,25 @@
                 <div class="col-lg-2 col-6">
                     <h5 class="footer-title" data-i18n="footer_quick_links">Quick Links</h5>
                     <ul class="footer-links">
-                        <li><a href="index.html#home" data-i18n="nav_home">Home</a></li>
-                        <li><a href="index.html#about" data-i18n="nav_about">About Us</a></li>
-                        <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
-                        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
-                        <li><a href="index.html#benefits" data-i18n="nav_benefits">Benefits</a></li>
-                        <li><a href="index.html#community-features" data-i18n="nav_experts">Experts</a></li>
-                        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+                        <li><a href="/#home" data-i18n="nav_home">Home</a></li>
+                        <li><a href="/#about" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="/#services" data-i18n="nav_services">Services</a></li>
+                        <li><a href="/#blog" data-i18n="nav_blog">Blog</a></li>
+                        <li><a href="/#benefits" data-i18n="nav_benefits">Benefits</a></li>
+                        <li><a href="/#community-features" data-i18n="nav_experts">Experts</a></li>
+                        <li><a href="/#contact" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-6">
                     <h5 class="footer-title" data-i18n="footer_our_services">Our Services</h5>
                     <ul class="footer-links">
-                        <li><a href="crop.html" data-i18n="tab_crop">Crop Advisory</a></li>
-                        <li><a href="fertilizer.html" data-i18n="tab_fert">Fertilizer Guide</a></li>
-                        <li><a href="disease.html" data-i18n="tab_disease">Disease Detection</a></li>
-                        <li><a href="weather.html" data-i18n="tab_weather">Weather Forecast</a></li>
-                        <li><a href="#" data-i18n="tab_chat">Farming Chatbot</a></li>
-                        <li><a href="blog.html" data-i18n="tab_chat">Strong Blog Community</a></li>
+                        <li><a href="/#services" data-i18n="tab_crop">Crop Advisory</a></li>
+                        <li><a href="/#services" data-i18n="tab_fert">Fertilizer Guide</a></li>
+                        <li><a href="/#services" data-i18n="tab_disease">Disease Detection</a></li>
+                        <li><a href="/#services" data-i18n="tab_weather">Weather Forecast</a></li>
+                        <li><a href="/#services" data-i18n="tab_chat">Farming Chatbot</a></li>
+                        <li><a href="/#services" data-i18n="tab_chat">Strong Blog Community</a></li>
                     </ul>
                 </div>
 
@@ -687,8 +686,8 @@
                         <p class="mb-0 small text-white-50">© 2025 KrishiSahayak. All Rights Reserved.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <a href="#" class="footer-legal-link me-3">Privacy Policy</a>
-                        <a href="#" class="footer-legal-link">Terms of Service</a>
+                        <a href="term" class="footer-legal-link me-3">Privacy Policy</a>
+                        <a href="term" class="footer-legal-link">Terms of Service</a>
                     </div>
                 </div>
             </div>
@@ -708,7 +707,7 @@
                         <div class="mb-3"><label class="form-label small text-muted">Password</label><input type="password" class="form-control" placeholder="******"></div>
                         <div class="d-grid"><button type="submit" class="btn btn-hero w-100">Login</button></div>
                     </form>
-                    <p class="text-center mt-3 small text-muted">Don't have an account? <a href="#" class="text-success text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a></p>
+                    <p class="text-center mt-3 small text-muted">Don't have an account? <a href="signup" class="text-success text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</a></p>
                 </div>
             </div>
         </div>
@@ -728,7 +727,7 @@
                         <div class="mb-3"><label class="form-label small text-muted">Password</label><input type="password" class="form-control" placeholder="Create a password"></div>
                         <div class="d-grid"><button type="submit" class="btn btn-hero w-100">Create Account</button></div>
                     </form>
-                    <p class="text-center mt-3 small text-muted">Already have an account? <a href="#" class="text-success text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
+                    <p class="text-center mt-3 small text-muted">Already have an account? <a href="login" class="text-success text-decoration-none fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login</a></p>
                 </div>
             </div>
         </div>
@@ -828,66 +827,73 @@
         }
 
         // --- REAL API PREDICTION LOGIC ---
-        document.getElementById('fertForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // UI Handling
-            const btn = document.getElementById('btnPredict');
-            const loading = document.getElementById('loading');
-            const resultBox = document.getElementById('resultBox');
-            const errorBox = document.getElementById('error');
-            
-            // Reset UI
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-            loading.style.display = 'block';
-            resultBox.style.display = 'none';
-            errorBox.style.display = 'none';
-
-            // 1. Gather Data (Matches updated inputs & Python API Schema)
-            const formData = {
-                Crop_Type: document.getElementById('Crop_Type').value,
-                Soil_Type: document.getElementById('Soil_Type').value,
-                Nitrogen: parseFloat(document.getElementById('Nitrogen').value),
-                Phosphorous: parseFloat(document.getElementById('Phosphorous').value),
-                Potassium: parseFloat(document.getElementById('Potassium').value),
-                Carbon: parseFloat(document.getElementById('Carbon').value),
-                Temperature: parseFloat(document.getElementById('Temperature').value),
-                Humidity: parseFloat(document.getElementById('Humidity').value),
-                Moisture: parseFloat(document.getElementById('Moisture').value),
-                Rainfall: parseFloat(document.getElementById('Rainfall').value),
-                PH: parseFloat(document.getElementById('PH').value)
-            };
-
-            try {
-                // 2. Call API (Port 8001)
-                const response = await fetch('http://127.0.0.1:8001/predict_fertilizer', { 
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
-
-                if (!response.ok) throw new Error("Could not connect to Fertilizer AI");
-
-                const data = await response.json();
-
-                // 3. Show Result
-                document.getElementById('recName').innerText = data.recommendation;
-                document.getElementById('recReason').innerText = data.reason || "Optimal choice for these conditions.";
-                document.getElementById('confScore').innerText = (data.confidence || 95) + '%';
+        // Replace duplicated/buggy handlers with a single clean handler that doesn't show confidence
+        (function attachFertFormHandler(){
+            const form = document.getElementById('fertForm');
+            if (!form) return;
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
                 
-                resultBox.style.display = 'block';
-                resultBox.scrollIntoView({ behavior: 'smooth' });
+                // UI Elements
+                const btn = document.getElementById('btnPredict');
+                const loading = document.getElementById('loading');
+                const resultBox = document.getElementById('resultBox');
+                const errorBox = document.getElementById('error');
+                
+                // Reset UI
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                loading.style.display = 'block';
+                resultBox.style.display = 'none';
+                errorBox.style.display = 'none';
 
-            } catch (err) {
-                errorBox.innerHTML = `<i class="fas fa-exclamation-triangle me-2"></i> <strong>Error:</strong> ${err.message}. <br>Make sure the Fertilizer API is running on Port 8001.`;
-                errorBox.style.display = 'block';
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-search"></i> <span>Get Fertilizer Recommendation</span>';
-                loading.style.display = 'none';
-            }
-        });
+                // Collect Form Data
+                const formData = {
+                    Temperature: parseFloat(document.getElementById('Temperature').value),
+                    Humidity: parseFloat(document.getElementById('Humidity').value),
+                    Moisture: parseFloat(document.getElementById('Moisture').value),
+                    Rainfall: parseFloat(document.getElementById('Rainfall').value),
+                    PH: parseFloat(document.getElementById('PH').value),
+                    Soil_Type: document.getElementById('Soil_Type').value,
+                    Crop_Type: document.getElementById('Crop_Type').value,
+                    Nitrogen: parseFloat(document.getElementById('Nitrogen').value),
+                    Potassium: parseFloat(document.getElementById('Potassium').value),
+                    Phosphorous: parseFloat(document.getElementById('Phosphorous').value),
+                    Carbon: parseFloat(document.getElementById('Carbon').value)
+                };
+
+                try {
+                    const response = await fetch('http://127.0.0.1:8001/predict_fertilizer', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+
+                    if (data.error) throw new Error(data.error);
+
+                    // Update UI with Result (no confidence)
+                    document.getElementById('recName').innerText = data.recommendation || '--';
+                    document.getElementById('recReason').innerText = data.reason || '';
+                    
+                    resultBox.style.display = 'block';
+                    resultBox.scrollIntoView({ behavior: 'smooth' });
+
+                } catch (err) {
+                    errorBox.innerHTML = `<i class=\"fas fa-exclamation-triangle me-2\"></i> <strong>Error:</strong> ${err.message}`;
+                    errorBox.style.display = 'block';
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-search"></i> <span>Get Fertilizer Recommendation</span>';
+                    loading.style.display = 'none';
+                }
+            });
+        })();
     </script>
 
 </body>

@@ -47,6 +47,188 @@ body {
     padding: 0 20px;
 }
 
+/* ==================== HEADER & NAVIGATION ==================== */
+.blog-header-section {
+    background: var(--white);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-header);
+    padding: 15px 0;
+}
+
+.blog-header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Brand */
+.blog-header-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 5px;
+}
+
+.blog-header-logo {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.blog-brand-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 28px;
+    color: var(--primary-green);
+    font-weight: 500;
+    line-height: 1;
+}
+
+/* Desktop Nav Links */
+.blog-nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.blog-nav-link {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: var(--transition);
+    position: relative;
+    padding: 5px 0;
+}
+
+.blog-nav-link:hover,
+.blog-nav-link.active {
+    color: var(--primary-green);
+}
+
+.blog-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-green);
+}
+
+/* Header Utilities (Right Side) */
+.blog-header-utilities {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+}
+
+/* 1. Create Post Button */
+.blog-create-header-btn {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 0 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(124, 182, 47, 0.2);
+    white-space: nowrap;
+}
+
+.blog-create-header-btn:hover {
+    background: #6aa025;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(124, 182, 47, 0.3);
+}
+
+/* 2. Language Toggle */
+.modern-lang-wrapper {
+    position: relative;
+    z-index: var(--z-dropdown);
+    display: flex;
+    align-items: center;
+}
+
+.modern-lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 6px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--primary-dark);
+} 
+
+.modern-lang-btn:hover {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+    transform: translateY(-1px);
+    border-color: var(--primary-green);
+}
+
+.lang-flag { font-size: 1.2rem; line-height: 1; }
+.lang-code { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; }
+.lang-arrow { font-size: 0.7rem; color: var(--primary-green); transition: transform 0.3s ease; }
+
+/* Language Dropdown */
+.modern-lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #ffffff;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.04);
+    display: none;
+    overflow: hidden;
+    padding: 6px 0;
+    z-index: var(--z-dropdown);
+}
+
+.modern-lang-wrapper.active .modern-lang-dropdown {
+    display: block;
+}
+
+.modern-lang-wrapper.active .lang-arrow { transform: rotate(180deg); }
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: #4b5563;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.lang-option:hover { background-color: #f0fdf4; color: var(--primary-dark); }
+.lang-option.active { background-color: #f0fdf4; color: var(--primary-green); font-weight: 700; }
+.opt-flag { margin-right: 12px; font-size: 1.2rem; }
+.opt-name { flex-grow: 1; }
+.opt-check { font-size: 0.8rem; color: var(--primary-green); opacity: 0; transform: scale(0); transition: all 0.2s; }
+.lang-option.active .opt-check { opacity: 1; transform: scale(1); }
 
 /* 3. Profile Dropdown */
 .blog-profile-wrapper {
@@ -120,6 +302,22 @@ body {
     margin: 0 auto 10px;
 }
 
+
+.avatar-letter {
+    width: 80px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: #fff;
+    font-size: 36px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
 .profile-avatar img {
     width: 100%;
     height: 100%;
@@ -133,15 +331,12 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
-    background: var(--accent-orange);
-    color: white;
+    background: #fff;
     border: none;
-    width: 26px;
-    height: 26px;
     border-radius: 50%;
+    padding: 6px;
     cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .user-name { margin: 0; font-size: 18px; font-weight: 700; }
@@ -227,9 +422,9 @@ body {
 
 /* ==================== HERO SECTION ==================== */
 .blog-hero-section {
-    margin-top: 80px;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('br_blog.jpeg') no-repeat center center/cover;
-    min-height: 60vh;
+    margin-top: 50px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/br_blog.jpeg') no-repeat center center/cover;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     padding: 80px 0;
@@ -447,6 +642,18 @@ body {
 }
 
 /* Common Post Card */
+
+/* Sirf Farmer's Corner ke cards hide hon */
+.farmer-posts-section .blog-post-card {
+    display: none;
+}
+
+/* Expert Insights hamesha visible */
+.expert-articles-section .blog-post-card {
+    display: block;
+}
+
+
 .blog-post-card {
     background: var(--white);
     border-radius: 20px;
@@ -572,7 +779,7 @@ body {
 /* ==================== NEWSLETTER SECTION ==================== */
 .blog-newsletter-section {
     padding: 60px 0;
-    background: white;
+    background: linear-gradient(135deg, var(--primary-green), #5a9c1f);
 }
 
 .blog-newsletter-card {

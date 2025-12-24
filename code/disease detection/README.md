@@ -1,194 +1,196 @@
-🌿 Plant Disease Detection Model
-Smart Crop Advisory System (SCAS – Krishi Sahayak)
-Module Type: Deep Learning (Image Classification)
-Purpose: Detect plant diseases from leaf images
-Scope: Academic / College Project Only
 
-📌 Module Overview
-The Plant Disease Detection Model is a deep learning–based module developed as part of the Smart Crop Advisory System (Krishi Sahayak).
-It identifies crop diseases from uploaded plant leaf images using a Convolutional Neural Network (CNN).
+# 🌿 Smart Crop Advisory System (SCAS) - Module: Plant Disease Detection
 
-The model enables early disease detection, helping farmers:
+> **Part of the Krishi Sahayak Ecosystem** > *An AI-powered Microservice for Early Plant Disease Diagnosis using Computer Vision.*
 
-Take preventive action
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Deep Learning](https://img.shields.io/badge/Model-MobileNetV2-orange)
+![Framework](https://img.shields.io/badge/Framework-TensorFlow%20%7C%20Keras-red)
+![Backend](https://img.shields.io/badge/API-FastAPI-green)
+![Status](https://img.shields.io/badge/Status-Academic%20Prototype-lightgrey)
 
-Reduce crop loss
+## 📌 Module Overview
 
-Minimize excessive pesticide usage
+The **Plant Disease Detection Model** is the "vision" component of the Krishi Sahayak system. It leverages **Deep Learning (CNNs)** to identify crop diseases solely from leaf images.
 
-This module is deployed as a FastAPI microservice for real‑time image‑based prediction.
+By automating visual diagnosis, this module helps farmers:
+* 🕵️ **Detect infections early** before they spread.
+* 📉 **Reduce crop loss** by timely intervention.
+* 🧪 **Minimize chemical usage** by targeting specific diseases rather than spraying generic pesticides.
 
-🧠 Model Description
-🔹 Model Architecture
-Architecture: MobileNetV2 (Transfer Learning)
+This module is deployed as a standalone **FastAPI Microservice**, allowing real-time image prediction via a REST API.
 
-Framework: TensorFlow + Keras
+---
 
-Input Size: 224 × 224 × 3 (RGB)
+## 🧠 Model Architecture 
 
-Output: Disease class + confidence score
+[Leaf Image]
+     ↓
+[Preprocessing + Augmentation]
+     ↓
+[MobileNetV2 CNN]
+     ↓
+[Global Avg Pooling]
+     ↓
+[Dense + Dropout]
+     ↓
+[Softmax Output]
 
-Classes: 34 plant disease categories
 
-Model Type: Multi‑class Image Classification
 
-Only the trained model weights (.h5) are loaded at runtime to ensure fast API startup and modular deployment.
+We utilize **Transfer Learning** to achieve high accuracy with moderate computational resources.
 
-📊 Dataset Information
-Dataset Source: Kaggle (Plant disease datasets)
+| Component | Specification |
+| :--- | :--- |
+| **Architecture** | **MobileNetV2** (Pre-trained on ImageNet) |
+| **Input Shape** | 224 × 224 × 3 (RGB) |
+| **Model Type** | Multi-class Image Classifier |
+| **Output** | Disease Class Name + Confidence Probability |
+| **Optimization** | Categorical Cross-Entropy Loss / Adam Optimizer |
 
-Total Classes: 34
+> **Why MobileNetV2?** It is a lightweight CNN architecture optimized for speed and low latency, making it ideal for deployment on web servers or mobile devices without requiring heavy GPU inference.
 
-Dataset Size: ~11 GB (limited for deep CNN training)
+---
 
-Training Platform: Kaggle Notebook (GPU enabled)
+## 📊 Dataset & Training Details
 
-⚠️ Important Limitation:
-The dataset is relatively small for a CNN with 34 classes.
-Better accuracy can be achieved with more images per class.
+* **Source:** Public Plant Disease Datasets (Kaggle). 
+* **Classes:** **34 distinct categories** (Healthy & Diseased leaves).
+* **Training Environment:** GPU-accelerated Kaggle Notebooks.
 
-⚙️ Training Details
-Parameter	Value
-Training Device	GPU (Kaggle)
-Epochs	15
-Training Time	~1 hour
-Optimizer	Adam
-Loss Function	Categorical Cross‑Entropy
-Accuracy Achieved	~83%
-📌 With more training data and epochs, accuracy can be improved further.
+**Training Metrics:**
+| Parameter | Value |
+| :--- | :--- |
+| **Epochs** | 15 |
+| **Accuracy** | ~83% (Validation) |
+| **Training Time** | ~1 Hour (on GPU) |
 
-🛠️ Project Structure
-plant_disease_detection/
+> **⚠️ Note on Performance:** The dataset size (~11GB raw) limits deep training on standard machines. Accuracy can be significantly improved by increasing the dataset size and training epochs.
+
+---
+DataSet: https://drive.google.com/drive/folders/1N62yK1BmaAkNnU68XRdbwdqv2Gs_RQsj?usp=drive_link
+## 🛠️ Project Structure
+
+```text
+📂 plant_disease_detection/
 │
-├── disease_api.py               # FastAPI service for disease prediction
-├── final_disease_model.h5       # Trained CNN model weights
-├── class_indices.json           # Class index → disease name mapping
-├── plant_disease_model.ipynb    # Training notebook
-├── requirements.txt             # Python dependencies
-└── README_DISEASE_MODEL.md      # Documentation
-📌 Dataset Drive Link:
-(To be added separately in Google Drive due to large size)
+├── 📄 disease_api.py           # FastAPI Microservice (Entry Point)
+├── 📄 final_disease_model.h5   # The Trained CNN Weights (Binary)
+├── 📄 class_indices.json       # Dictionary mapping ID (0) -> Label (Apple_Scab)
+├── 📄 requirements.txt         # Python Dependencies
+├── 📄 plant_disease_model.ipynb # Jupyter Notebook used for Training
+└── 📄 README.md                # Documentation
 
-💻 Environment Setup (IMPORTANT)
-✅ Python & Environment
-Python Version: 3.10
+```
 
-Environment Type: Conda (Recommended for TensorFlow stability)
+---
 
-Create Conda Environment
+## 💻 Environment Setup (Critical)
+
+Due to TensorFlow version compatibility, we **strongly recommend** using Conda.
+
+### 1. Create Environment
+
+**Required Python Version:** 3.10
+
+```bash
+# Create a fresh Conda environment
 conda create -n plant_disease_env python=3.10 -y
+
+# Activate the environment
 conda activate plant_disease_env
-Install Dependencies
-pip install -r requirements.txt
-Or manually:
 
-pip install fastapi uvicorn tensorflow pillow numpy
-🚀 How the System Works
-User uploads a plant leaf image
+```
 
-Image is resized to 224 × 224
+### 2. Install Dependencies
 
-Image is preprocessed and normalized
+```bash
+# Install required libraries
+pip install fastapi uvicorn tensorflow pillow numpy python-multipart
 
-CNN model predicts class probabilities
+```
 
-System returns:
+---
 
-Disease name
+## ▶️ Running the Service
 
-Confidence score
+1. Ensure `final_disease_model.h5` and `class_indices.json` are in the root folder.
+2. Start the FastAPI server:
 
-Uploaded filename
+```bash
+python disease_api.py
 
-🔌 API Details
-Endpoint
-POST /predict_disease
-Request
-Content‑Type: multipart/form‑data
+```
 
-Parameter: file (leaf image)
+* **Server URL:** `http://127.0.0.1:8002`
+* **Swagger Docs:** `http://127.0.0.1:8002/docs` (Test the API here)
 
-Response (JSON)
+---
+
+## 🔌 API Documentation
+
+### **Predict Disease**
+
+Endpoint to upload an image and get a diagnosis.
+
+* **URL:** `/predict_disease`
+* **Method:** `POST`
+* **Content-Type:** `multipart/form-data`
+
+**Request:**
+
+* `file`: The image file (JPG/PNG).
+
+**Response (JSON):**
+
+```json
 {
   "disease": "Tomato___Late_Blight",
   "confidence": "89.05%",
-  "filename": "leaf.jpg"
+  "filename": "uploaded_leaf.jpg"
 }
-▶️ Running the Service
-Ensure Required Files Exist
-final_disease_model.h5
 
-class_indices.json
+```
 
-Start the API Server
-python disease_api.py
-API URL:
-http://127.0.0.1:8002
+---
 
-Swagger Docs:
-http://127.0.0.1:8002/docs
+## 🚀 How It Works (Pipeline)
 
-🔐 Security & Usage Notes
-CORS enabled for frontend integration
+1. **Upload:** User uploads a leaf image via the frontend.
+2. **Preprocessing:**
+* Image is resized to **224x224** pixels.
+* Pixel values are normalized to the **[-1, 1]** range (MobileNet requirement).
 
-Uploaded images are processed temporarily
 
-Images are not stored permanently
+3. **Inference:** The CNN model calculates probability scores for all 34 classes.
+4. **Result:** The class with the highest probability is returned, formatted with a confidence percentage.
 
-No user data is saved
+---
 
-⚠️ Predictions are advisory only and not guaranteed.
+## ⚠️ Limitations & Future Enhancements
 
-🔗 Integration in Krishi Sahayak
-This module integrates with:
+### Current Limitations
 
-Spring Boot backend (REST API)
+* **Background Noise:** The model performs best on images with simple backgrounds. Field photos with complex backgrounds may reduce accuracy.
+* **Lighting:** Poor lighting or blurry images can lead to misclassification.
 
-Web frontend (image upload UI)
+### Future Roadmap
 
-Farmer advisory dashboard
+* [ ] Integration with cloud storage (AWS S3) for image logging.
+* [ ] Adding severity detection (Mild vs Severe infection).
+* [ ] Expanding dataset to 50+ classes including regional crops.
 
-It supports:
+---
 
-Early disease identification
+## 📜 Disclaimer & License
 
-Risk reduction
+* **Academic Use Only:** This module is developed strictly for educational purposes and college project evaluations.
+* **Advisory Nature:** Results are based on probabilities. Always verify with an agricultural expert before applying chemical treatments.
+* **License:** Free for academic and learning use.
 
-Better crop management decisions
+---
 
-⚠️ Limitations
-Limited dataset size for 34 classes
+<p align="center">
+<b>Krishi Sahayak</b> | AI for a Greener Tomorrow
+</p>
 
-Performance may drop on:
-
-Blurry images
-
-Poor lighting
-
-Field background noise
-
-📌 More training data = better accuracy.
-
-📌 Future Enhancements
-Add more crop varieties & diseases
-
-Increase dataset size
-
-Cloud deployment (Docker / AWS / GCP)
-
-Multi‑language disease explanations
-
-Severity level prediction
-
-📜 Disclaimer
-This module is copyrighted
-
-Developed only for college / academic use
-
-Not approved for commercial deployment
-
-Results are decision support, not guarantees
-
-📝 License
-Academic Use License
-Free to use for learning, demos, and project evaluation.

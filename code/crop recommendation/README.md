@@ -5,7 +5,7 @@ Here is a significantly improved, professional-grade `README.md`. I have added *
 
 > **Part of the Krishi Sahayak Ecosystem** > *An AI‑driven approach to precision agriculture using Stacking Ensemble Learning.*
 
-![Python](https://img.shields.io/badge/Python-3.9%20|%203.10%20|%203.11-blue)
+![Python](https://img.shields.io/badge/Python-3.14%20-blue)
 ![ML](https://img.shields.io/badge/Machine%20Learning-Stacking%20Ensemble-orange)
 ![FastAPI](https://img.shields.io/badge/Backend-FastAPI-green)
 ![Status](https://img.shields.io/badge/Status-Academic%20Prototype-lightgrey)
@@ -82,11 +82,11 @@ $$Stress = Temperature \times (100 - Humidity)$$
 ├── 📄 model_training.ipynb     # Jupyter Notebook for EDA & Training
 ├── 📄 requirements.txt         # Python Dependencies
 │
-├── 📂 artifacts/               # Serialized Objects
-│   ├── 📄 crop_model_final.pkl     # The Trained Stacking Model
-│   ├── 📄 scaler_final.pkl         # StandardScaler (for normalization)
-│   ├── 📄 label_encoder_final.pkl  # Decodes 0,1,2 -> "Rice", "Maize"
-│   └── 📄 feature_order.pkl        # Ensures input columns match training order
+├── # Serialized Objects
+├── 📄 crop_model_final.pkl     # The Trained Stacking Model
+├── 📄 scaler_final.pkl         # StandardScaler (for normalization)
+├── 📄 label_encoder_final.pkl  # Decodes 0,1,2 -> "Rice", "Maize"
+└── 📄 feature_order.pkl        # Ensures input columns match training order
 
 ```
 
@@ -96,9 +96,9 @@ $$Stress = Temperature \times (100 - Humidity)$$
 
 ### 1. Environment Setup
 
-**Supported Python:** 3.9 – 3.11
+**Supported Python:** 3.14
 
-*(Note: Python 3.12+ / 3.14 is currently not supported due to library dependencies)*
+
 
 ```bash
 # Create Virtual Environment
@@ -121,6 +121,8 @@ The model is served via FastAPI. Run the following command:
 
 ```bash
 uvicorn crop_api:app --reload
+or
+python crop_api.py
 
 ```
 
@@ -130,8 +132,8 @@ uvicorn crop_api:app --reload
 
 ## 📊 Model Performance
 
-* **Accuracy:** ~91–92% (on Validation Set)
-* **Classes:** 22 Unique Crops
+* **Accuracy:** ~93% (on Validation Set)
+* **Classes:** 80 Unique Crops
 * **Validation Method:** Stratified K-Fold Cross Validation
 * **Dataset:** Precision Agriculture Benchmark Dataset (Clean)
 
@@ -151,6 +153,3 @@ uvicorn crop_api:app --reload
 <b>Krishi Sahayak</b> | Smart Farming for a Better Future
 </p>
 
-```
-
-```

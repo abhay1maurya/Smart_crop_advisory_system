@@ -5,7 +5,7 @@
 
 > **An AI‑based Decision Support System for Sustainable Agriculture**
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![Python](https://img.shields.io/badge/Python-3.14%2|%203.10%20B-blue)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7+-green)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.95+-teal)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.12-orange)
@@ -96,7 +96,7 @@ The models were trained using public agricultural datasets sourced from Kaggle a
 Follow these steps to run the project locally.
 
 ### Prerequisites
-* Python 3.9+
+* Python 3.10 | 3.14
 * Java JDK 17+ (for Spring Boot)
 * MySQL Server
 
@@ -160,7 +160,3 @@ Open your browser and navigate to: `http://localhost:8080`
 <p align="center">
 Made with ❤️ for the Farming Community
 </p>
-
-```
-
-```

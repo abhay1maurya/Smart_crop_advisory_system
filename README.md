@@ -5,7 +5,7 @@
 
 > **An AI‑based Decision Support System for Sustainable Agriculture**
 
-![Python](https://img.shields.io/badge/Python-3.14%2|%203.10%20B-blue)
+![Python](https://img.shields.io/badge/Python-3.14%|%203.10%20B-blue)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.7+-green)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.95+-teal)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.12-orange)

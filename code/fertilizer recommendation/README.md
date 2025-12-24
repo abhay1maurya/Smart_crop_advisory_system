@@ -1,6 +1,4 @@
-Here is the professional `README.md` for your **Fertilizer Recommendation Module**. I have structured it to highlight the unique **Ensemble Architecture** and the **Logic Layer** which differentiates this from basic models.
 
-```markdown
 # 🧪 Smart Crop Advisory System (SCAS) - Module: Fertilizer Recommendation
 
 > **Part of the Krishi Sahayak Ecosystem** > *An Intelligent Nutrient Management System using Ensemble Machine Learning.*

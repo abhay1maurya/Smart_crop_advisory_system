@@ -68,7 +68,7 @@ We utilize **Transfer Learning** to achieve high accuracy with moderate computat
 > **⚠️ Note on Performance:** The dataset size (~11GB raw) limits deep training on standard machines. Accuracy can be significantly improved by increasing the dataset size and training epochs.
 
 ---
-DataSet: https://drive.google.com/drive/folders/1N62yK1BmaAkNnU68XRdbwdqv2Gs_RQsj?usp=drive_link
+DataSet: https://www.kaggle.com/datasets/abhaymaurya03/plant-disease-detection
 ## 🛠️ Project Structure
 
 ```text

@@ -1,0 +1,1246 @@
+.gitattributes
+.gitignore
+.metadata/.bak_0.log
+.metadata/.bak_1.log
+.metadata/.bak_2.log
+.metadata/.bak_3.log
+.metadata/.lock
+.metadata/.lock_info
+.metadata/.log
+.metadata/.mylyn/repositories.xml.zip
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_0.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_1.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_10.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_11.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_12.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_13.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_14.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_2.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_3.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_4.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_5.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_6.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_7.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_8.java
+.metadata/.plugins/org.brainwy.liclipsetext.editor/ctags_gen/ctags_generation_temp_9.java
+.metadata/.plugins/org.eclipse.buildship.core/gradle/versions.json
+.metadata/.plugins/org.eclipse.core.resources/.history/0/a0d06d1cb5da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/0/c0dd70f4a2da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/10/50e34e61aeda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/12/40368e04eadd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/12/50fe09fef1dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/12/80732a536bdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/12/c0393358fadd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/12/c0fa5598b6da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/13/104af2271ddb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/13/70fe1fbe80db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/13/c0a3432399db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/14/505e1dc677db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/14/9053c08cacda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/14/905624b96ddb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/15/e0e0bb916edb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/16/304563bcefdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/17/b075ed3b06db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/17/c0e408f26edb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/18/805fc22dcedd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/19/10c0ff3ad4dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/1b/50a24a934fde00101c57b3d85db65b6b
+.metadata/.plugins/org.eclipse.core.resources/.history/1b/902af1ab59de00101e74e27713342472
+.metadata/.plugins/org.eclipse.core.resources/.history/1b/d032741587db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/1c/4028a2fb8fdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/1c/c05ead3abdda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/1e/b03baf7ceadd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/1e/f02b8eb577db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/2/d069fa8e14db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/2/f08609cca9da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/20/00795ebb76db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/20/109035bb7ddb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/20/d093aed9eddd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/20/d0aae8c032de001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/21/c06f1f1e4bdc001016efc689b345b9ad
+.metadata/.plugins/org.eclipse.core.resources/.history/21/e0ca6c1104db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/22/80c12488a3da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/22/b04f6a99d1dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/23/c060b5f213db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/24/6080f6a019db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/24/80a05a918edb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/26/e04892c92cde001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/28/9070ba31a0da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/28/d058f9a014db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/29/30d7d32d06db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/29/f097551d0adb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/2a/30f5498790db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/2b/8087ce3447de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/2b/c068c51dd3dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/2c/403b343736dc0010149ba2a5d1be36e8
+.metadata/.plugins/org.eclipse.core.resources/.history/2c/e0567150f0dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/2d/6046c880eadd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/2d/d05e085113db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/2d/e012e36f39de00101d2e9dd6c42c8531
+.metadata/.plugins/org.eclipse.core.resources/.history/2e/105517b3b2da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/2e/e08a257694db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/2f/10a0b8e86cdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/2f/502ed26409db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/3/0017965849dc001016efc689b345b9ad
+.metadata/.plugins/org.eclipse.core.resources/.history/3/4004e32831dc0010149ba2a5d1be36e8
+.metadata/.plugins/org.eclipse.core.resources/.history/3/403fd4d3bada001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/3/70a5971f1adb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/31/00f3372beddd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/31/9041abea1adb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/31/f0e7a811a0da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/34/d043015806db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/35/50663d2fd7db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/35/c0221221d3dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/35/f0647e878bdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/36/30c00ecef3dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/36/50b4b5f608db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/36/50e6a26149de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/36/80e80e82bbda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/36/e0509dd749dc001016efc689b345b9ad
+.metadata/.plugins/org.eclipse.core.resources/.history/36/f0dca36035de00101d2e9dd6c42c8531
+.metadata/.plugins/org.eclipse.core.resources/.history/38/30fdc266fbdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/38/40f463a6d9db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/39/c06a806d39de00101d2e9dd6c42c8531
+.metadata/.plugins/org.eclipse.core.resources/.history/39/e083e4b346de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/3b/70f6e86806db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/3b/80e1ea8fcbdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/3c/80d1f88df7dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/3d/20160a5501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/3d/50e056b176db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/4/60ef1c1407db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/40/3093291c4bdc001016efc689b345b9ad
+.metadata/.plugins/org.eclipse.core.resources/.history/40/c0144ec9fcdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/42/402d75daefdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/42/a058836c71db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/42/f0f8cd0932de001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/43/a0c9b6b4e6dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/43/e014c0bf28de001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/45/d055728935de00101d2e9dd6c42c8531
+.metadata/.plugins/org.eclipse.core.resources/.history/47/70f0c49dd2db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/48/80fd069ad4dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/49/20160d33ffdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/49/9045065501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/49/d0a99fb503db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/4a/d0b29148e6dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/4a/f0991f5501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/4b/108e8549f9dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/4b/20813fe273db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/4e/2080a2f96ddb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/4f/10cc7f0848de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/4f/2001edc080db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/5/305e1d26eadd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/5/a0348c02fedd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/51/806117071edb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/53/4020da3447de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/53/50bbe34cd7db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/53/d0f736d008db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/53/f0861f37d7db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/54/70af19d68bdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/54/f0591bd6f8dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/55/b0a41bb1eadd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/56/20fe78c903db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/57/30f3096392db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/57/70b2682b5ade00101e74e27713342472
+.metadata/.plugins/org.eclipse.core.resources/.history/57/c0bb648d6edb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/59/4003d73e15db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/59/e02546e7d0db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/5a/008872576cdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/5a/f0281d5501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/5b/00a2d43447de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/5b/70d986f9ecdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/5c/00ecd77381db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/5c/104bf4e8d0db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/5d/40475aa1b6dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/5d/80199b57bada001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/5e/5073544bd8db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/5e/90e8c368d2db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/5e/f0e2bc3e33de001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/61/0078a6396bdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/63/3095519b7fdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/64/c029245af9dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/64/d07a9aea5ede00101e74e27713342472
+.metadata/.plugins/org.eclipse.core.resources/.history/65/50212f8db4da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/65/50df296449de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/67/d0756d4912db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/69/409be09e72db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/69/a0d2ae7a8bdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/6a/90204a405dde00101e74e27713342472
+.metadata/.plugins/org.eclipse.core.resources/.history/6b/109570e77fdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/6b/10de063d8cdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/6c/20300bd894db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/6d/80fa44a44adc001016efc689b345b9ad
+.metadata/.plugins/org.eclipse.core.resources/.history/6e/10c31ad85ede00101e74e27713342472
+.metadata/.plugins/org.eclipse.core.resources/.history/6e/d07e4ee27fdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/6f/9011fd29b7dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/7/d04d7249f1dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/70/202babe149dc001016efc689b345b9ad
+.metadata/.plugins/org.eclipse.core.resources/.history/70/40a404ffecdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/70/60fe171006db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/71/00ca1ae9eddd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/71/90cf12f1abda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/72/70cd9e3948dc001016efc689b345b9ad
+.metadata/.plugins/org.eclipse.core.resources/.history/72/9022b7a603db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/73/d03da7c2fddd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/74/0076fe3172db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/75/90c67229f1dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/75/c0aa4f573ddc0010149ba2a5d1be36e8
+.metadata/.plugins/org.eclipse.core.resources/.history/77/608cebac75db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/77/80d5892a78db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/7a/b050265501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/7b/30b096aa44de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/7b/508e4ae5d0dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/7c/309f5d4ed9db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/7c/a058eff319db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/7d/1084fa371bdb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/7d/5032875aeedd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/7e/f01d154a06db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/8/101f1f94fcdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/8/20b564f3e8dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/8/e037db0f45de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/81/5070ac68cfdb00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/82/b0de8cebbcda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/82/b0e2a9bf94db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/83/00bdcdf0bbda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/83/b01959c839de00101d2e9dd6c42c8531
+.metadata/.plugins/org.eclipse.core.resources/.history/85/2010220d78db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/85/20928ba2f4dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/86/4065fd47eadd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/86/50618e5501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/86/b0509bbce5dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/87/605f169848de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/88/70623cd809db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/8b/10bfaaf094db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/8c/002919d5f4dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/8d/604657471adb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/8d/90105a23cbdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/8e/b019dc08d3db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/8f/b062bcf1f0dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/8f/b0d28ea606db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/9/40b49aaeecdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/90/102a605d08db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/91/3066cd2193db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/91/b0b1a09012db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/92/10dda9fc07db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/92/806a00b780db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/92/c0f48c5cebdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/93/20c9aff937de00101d2e9dd6c42c8531
+.metadata/.plugins/org.eclipse.core.resources/.history/94/60416ac5bbda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/96/40ee0fa38cdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/97/20f1d70739de00101d2e9dd6c42c8531
+.metadata/.plugins/org.eclipse.core.resources/.history/97/503cdbff06db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/97/50ed83492ede001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/97/c02ad6fd49dc001016efc689b345b9ad
+.metadata/.plugins/org.eclipse.core.resources/.history/98/102ba7f5e8dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/98/60e9c36f8cdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/98/f0c4f96ee4dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/99/b0d0b51faada001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/99/e01a5436ebdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/9a/b098d7affadd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/9c/207b1f6deedd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/9c/5021c3e5bdda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/9c/90446a269bda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/9d/405cd82493db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/9e/3052d6714bde00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/9e/601776d9bbda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/9e/d0ff015501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/9f/90e42a5501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/a/b0c1285501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/a0/30686a340adb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/a0/40df7928ffdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/a1/c01e9b0eeddd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/a1/c08355d549dc001016efc689b345b9ad
+.metadata/.plugins/org.eclipse.core.resources/.history/a2/307187a5eddd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/a3/609637be86db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/a4/90904c1082db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/a5/40dd4ad7ccdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/a6/30d48d4771db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/a6/a0bcfe55f1dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/a7/1068bc16e9dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/a7/40922f962dde001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/a9/000ad5e913db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/a9/108a1746f1dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/aa/d0e1b4191bdb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/ab/30ae45bf8adb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/ab/50fa20ea38de00101d2e9dd6c42c8531
+.metadata/.plugins/org.eclipse.core.resources/.history/ab/602141e804db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/ab/c0f2e335d1dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/ac/c08e91c97ddb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/ad/10bfc904bdda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/ae/205c9fd9eedd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/ae/50010294d4dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/af/70d3e84beedd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b/100ff2d680db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/b/10b5c6a483db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/b/4082e34dffdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b0/f028361ef4dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b2/80d9425c45de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/b2/d00399a27cdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/b2/d0219baae8dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b2/e00f5632b7dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b2/f00f6325aada001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/b3/402ebfbb84db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/b3/70578b04e7dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b3/e01a7bf68ddb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/b4/704066a8e8dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b4/70f7f637d5dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b4/b0f5e9b271db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/b4/d049f2adeddd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b5/20df2e4e2bde001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/b6/d0d7c16dfddd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b7/1072670aebdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/b7/e0a9e8faabda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/b8/b0a65cb2a9da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/b9/c01c391908db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/ba/006cf890eedd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/ba/309dc9742dde001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/ba/30eb2a4a4bdc001016efc689b345b9ad
+.metadata/.plugins/org.eclipse.core.resources/.history/ba/70262fa477db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/ba/a04d2b5b95db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/bb/5003bc18a1da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/bc/7067767c34dc0010149ba2a5d1be36e8
+.metadata/.plugins/org.eclipse.core.resources/.history/bd/204822baeadd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/bd/c006245501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/be/d02857fcbdda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/c/70bbba2dbada001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/c/a061e8ac81db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/c/e0566d8599db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/c1/c078e3131bdb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/c1/e0a682c1f0dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/c2/a05e3ccc4ade00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/c2/c00b896448de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/c3/000b3daf08db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/c3/002f816e72db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/c3/902ad9034cde00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/c3/a02a3e0894db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/c4/20a133ec4dde00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/c4/60927b2599db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/c4/705b59988ddb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/c4/e04c9ce2d0db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/c6/30e3e2542fde001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/c7/909005c6e8dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/c7/b0a9622b33de001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/c9/40d979977fdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/c9/6025eaaf80db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/c9/b043b52905db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/c9/b0f598a644de00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/ca/20df66e8f4dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/cb/602fe98907db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/cb/e09bec1af7dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/cc/a0c7d2a402db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/cd/d0bc215501db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/cf/10a898e35ede00101e74e27713342472
+.metadata/.plugins/org.eclipse.core.resources/.history/d0/0038dd8893db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/d0/10b3f27399db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/d0/704143d732dc0010149ba2a5d1be36e8
+.metadata/.plugins/org.eclipse.core.resources/.history/d1/103e6eaf11db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/d2/b02789261edb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/d4/40b6861b08db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/d5/2023831a6fdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/d5/a05a2a6ccbdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/d6/e0ff2dc9cbdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/d7/60f35d7238de00101d2e9dd6c42c8531
+.metadata/.plugins/org.eclipse.core.resources/.history/d8/20dc812313db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/d9/201ba52a77db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/d9/3046a3fef3dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/d9/40c9bc20f3dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/d9/c0371e6593db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/db/601d899d79db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/db/80303f02a5da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/db/e027ce9ee7dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/dc/105fb7316bdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/dd/30c6a91987db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/dd/b085d89032dc0010149ba2a5d1be36e8
+.metadata/.plugins/org.eclipse.core.resources/.history/de/201b1e924dde00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/e/8052f3f5b7da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/e/f09d0596bdda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/e0/30b987318fdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/e0/8023c19672db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/e1/90821b2e8adb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/e1/b0d7026ca5da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/e2/10fae87737de00101d2e9dd6c42c8531
+.metadata/.plugins/org.eclipse.core.resources/.history/e2/90117790efdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/e2/90c13f1ea1da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/e2/b0c116954dde00101a4bbe2417bff953
+.metadata/.plugins/org.eclipse.core.resources/.history/e3/006484435dde00101e74e27713342472
+.metadata/.plugins/org.eclipse.core.resources/.history/e3/a02187981edb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/e4/2091e8c2cfdb00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/e4/7012faf488db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/e5/1006bca4d8db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/e5/20d64c3e8ddb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/e5/606e042c06db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/e6/c05e195509db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/e7/60f5f0486bdb00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/e7/70cf06a884db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/e7/b0f8cbc433dc0010149ba2a5d1be36e8
+.metadata/.plugins/org.eclipse.core.resources/.history/e8/204c627d86db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/e9/d05f67f702db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/ea/d0c23653ccdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/eb/009182f4a2da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/ec/20f4b050d0db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/ed/20906ea1d5db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/ed/f056b96cd8db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/ee/201a6cbbd2dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/ee/d00c7b51cedb00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/ee/e0b17d3c81db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/ef/0000cc1fd7db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/f/b0e5d24f0bdb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/f0/c0f5d0ae97db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/f0/f07f09540adb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/f1/80c9797995db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/f1/d0f9bf6ef0dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/f2/808f64885ade00101e74e27713342472
+.metadata/.plugins/org.eclipse.core.resources/.history/f3/604234aab6da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/f4/2075d8dd81db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/f4/303311efabda001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/f4/80562cef12db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/f4/80be83085ade00101e74e27713342472
+.metadata/.plugins/org.eclipse.core.resources/.history/f5/00a6e4012ade001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/f6/600c04b813db00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/f6/e01c56bc1ddb00101398a992cf4da5de
+.metadata/.plugins/org.eclipse.core.resources/.history/f7/e0773b75b6da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/f8/30baf09ea9da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/f8/8006b641b6dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/f9/505f3e58e4dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/f9/60272390fedd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/fc/7009306ad7db00101429b31f0afb65d0
+.metadata/.plugins/org.eclipse.core.resources/.history/fd/3097ea83f9dd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/fe/10a9f5ca71db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/fe/208c83c573db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.history/ff/00979978b6da001017d7a9d9e0d863b3
+.metadata/.plugins/org.eclipse.core.resources/.history/ff/70ac40432ade001016b3e94297b8d7bc
+.metadata/.plugins/org.eclipse.core.resources/.history/ff/b050456afcdd001019f7e46f3bdfa2be
+.metadata/.plugins/org.eclipse.core.resources/.history/ff/d09b799381db00101614aea67d144134
+.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.location
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/.indexes/af/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/.indexes/e4/b9/22/81/61/3/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/.indexes/e4/b9/22/81/61/61/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/.indexes/e4/b9/22/81/61/bf/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/.indexes/e4/b9/22/81/61/c2/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/.indexes/e4/b9/22/81/61/c9/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/.indexes/e4/b9/22/81/61/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/.indexes/e4/b9/db/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/.indexes/properties.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/.markers
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_backend/org.eclipse.jdt.core/state.dat
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/af/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/22/81/61/1d/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/22/81/61/4a/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/22/81/61/95/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/22/81/61/c2/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/22/81/61/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/db/39/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/db/92/bb/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/db/92/c3/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/db/92/c4/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/db/92/ff/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/e4/b9/db/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/history.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.indexes/properties.index
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/.markers
+.metadata/.plugins/org.eclipse.core.resources/.projects/Smart_crop_advisory_system_Frouent/org.eclipse.jdt.core/state.dat
+.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version
+.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
+.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version
+.metadata/.plugins/org.eclipse.core.resources/.root/35.tree
+.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+.metadata/.plugins/org.eclipse.core.runtime/.settings/Docker.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.brainwy.liclipsetext.editor.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ant.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.variables.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.debug.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.dltk.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.egit.core.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.epp.mpc.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.debug.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.junit.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jsch.core.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jst.j2ee.webservice.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.m2e.apt.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.m2e.discovery.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.context.core.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.java.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.monitor.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.tasks.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.pde.api.tools.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.php.core.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.php.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.browser.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.console.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.editors.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.navigator.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.wst.jsdt.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.wst.sse.ui.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.wst.ws.service.policy.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.springframework.ide.eclipse.boot.dash.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.springframework.ide.eclipse.boot.launch.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.springframework.ide.eclipse.boot.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.springframework.ide.eclipse.imports.prefs
+.metadata/.plugins/org.eclipse.core.runtime/.settings/org.springsource.ide.eclipse.commons.ui.prefs
+.metadata/.plugins/org.eclipse.debug.core/.launches/Smart_crop_advisory_backend - SmartCropAdvisoryBackendApplication.launch
+.metadata/.plugins/org.eclipse.debug.core/.launches/Smart_crop_advisory_system_Frouent - SmartCropAdvisorySystemFrouentApplication.launch
+.metadata/.plugins/org.eclipse.debug.core/.launches/shanu.launch
+.metadata/.plugins/org.eclipse.debug.ui/dialog_settings.xml
+.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml
+.metadata/.plugins/org.eclipse.dltk.core.index.lucene/index/.properties
+.metadata/.plugins/org.eclipse.dltk.core/Containers.dat
+.metadata/.plugins/org.eclipse.dltk.ui/OpenTypeHistoryorg_eclipse_php_core_PHPNature.xml
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.project
+.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.settings/org.eclipse.core.resources.prefs
+.metadata/.plugins/org.eclipse.epp.mpc.ui/dialog_settings.xml
+.metadata/.plugins/org.eclipse.jdt.core/1005211945.index
+.metadata/.plugins/org.eclipse.jdt.core/1025794526.index
+.metadata/.plugins/org.eclipse.jdt.core/1041638532.index
+.metadata/.plugins/org.eclipse.jdt.core/1047025319.index
+.metadata/.plugins/org.eclipse.jdt.core/1084430175.index
+.metadata/.plugins/org.eclipse.jdt.core/1142041113.index
+.metadata/.plugins/org.eclipse.jdt.core/1151706022.index
+.metadata/.plugins/org.eclipse.jdt.core/1162747224.index
+.metadata/.plugins/org.eclipse.jdt.core/1165534632.index
+.metadata/.plugins/org.eclipse.jdt.core/1170646777.index
+.metadata/.plugins/org.eclipse.jdt.core/1193568410.index
+.metadata/.plugins/org.eclipse.jdt.core/1199503618.index
+.metadata/.plugins/org.eclipse.jdt.core/121012293.index
+.metadata/.plugins/org.eclipse.jdt.core/1222029931.index
+.metadata/.plugins/org.eclipse.jdt.core/1240098185.index
+.metadata/.plugins/org.eclipse.jdt.core/1248763500.index
+.metadata/.plugins/org.eclipse.jdt.core/1256923193.index
+.metadata/.plugins/org.eclipse.jdt.core/1280878494.index
+.metadata/.plugins/org.eclipse.jdt.core/1282540582.index
+.metadata/.plugins/org.eclipse.jdt.core/1302173726.index
+.metadata/.plugins/org.eclipse.jdt.core/1305623654.index
+.metadata/.plugins/org.eclipse.jdt.core/1326734457.index
+.metadata/.plugins/org.eclipse.jdt.core/135321504.index
+.metadata/.plugins/org.eclipse.jdt.core/1372260994.index
+.metadata/.plugins/org.eclipse.jdt.core/1374643807.index
+.metadata/.plugins/org.eclipse.jdt.core/1427776487.index
+.metadata/.plugins/org.eclipse.jdt.core/1438712362.index
+.metadata/.plugins/org.eclipse.jdt.core/1503127233.index
+.metadata/.plugins/org.eclipse.jdt.core/1510703388.index
+.metadata/.plugins/org.eclipse.jdt.core/1517986737.index
+.metadata/.plugins/org.eclipse.jdt.core/1522176858.index
+.metadata/.plugins/org.eclipse.jdt.core/1552818336.index
+.metadata/.plugins/org.eclipse.jdt.core/1578147242.index
+.metadata/.plugins/org.eclipse.jdt.core/1587108851.index
+.metadata/.plugins/org.eclipse.jdt.core/1594994652.index
+.metadata/.plugins/org.eclipse.jdt.core/1608437303.index
+.metadata/.plugins/org.eclipse.jdt.core/1646359474.index
+.metadata/.plugins/org.eclipse.jdt.core/1680886797.index
+.metadata/.plugins/org.eclipse.jdt.core/1718568951.index
+.metadata/.plugins/org.eclipse.jdt.core/172267957.index
+.metadata/.plugins/org.eclipse.jdt.core/1731147970.index
+.metadata/.plugins/org.eclipse.jdt.core/1732073345.index
+.metadata/.plugins/org.eclipse.jdt.core/1735573497.index
+.metadata/.plugins/org.eclipse.jdt.core/1761019974.index
+.metadata/.plugins/org.eclipse.jdt.core/1784972640.index
+.metadata/.plugins/org.eclipse.jdt.core/1815467496.index
+.metadata/.plugins/org.eclipse.jdt.core/1827721435.index
+.metadata/.plugins/org.eclipse.jdt.core/1828036299.index
+.metadata/.plugins/org.eclipse.jdt.core/1833154520.index
+.metadata/.plugins/org.eclipse.jdt.core/1863922130.index
+.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
+.metadata/.plugins/org.eclipse.jdt.core/1905311339.index
+.metadata/.plugins/org.eclipse.jdt.core/1924759558.index
+.metadata/.plugins/org.eclipse.jdt.core/1951910672.index
+.metadata/.plugins/org.eclipse.jdt.core/1965651379.index
+.metadata/.plugins/org.eclipse.jdt.core/19809820.index
+.metadata/.plugins/org.eclipse.jdt.core/1986940051.index
+.metadata/.plugins/org.eclipse.jdt.core/1994241846.index
+.metadata/.plugins/org.eclipse.jdt.core/2011321944.index
+.metadata/.plugins/org.eclipse.jdt.core/2096517108.index
+.metadata/.plugins/org.eclipse.jdt.core/2100758708.index
+.metadata/.plugins/org.eclipse.jdt.core/2131394875.index
+.metadata/.plugins/org.eclipse.jdt.core/2143525157.index
+.metadata/.plugins/org.eclipse.jdt.core/2159293049.index
+.metadata/.plugins/org.eclipse.jdt.core/2169133371.index
+.metadata/.plugins/org.eclipse.jdt.core/2175619668.index
+.metadata/.plugins/org.eclipse.jdt.core/2261603705.index
+.metadata/.plugins/org.eclipse.jdt.core/2284976695.index
+.metadata/.plugins/org.eclipse.jdt.core/2311414588.index
+.metadata/.plugins/org.eclipse.jdt.core/2328219553.index
+.metadata/.plugins/org.eclipse.jdt.core/2347571444.index
+.metadata/.plugins/org.eclipse.jdt.core/2399070188.index
+.metadata/.plugins/org.eclipse.jdt.core/2399850297.index
+.metadata/.plugins/org.eclipse.jdt.core/240854684.index
+.metadata/.plugins/org.eclipse.jdt.core/2413334966.index
+.metadata/.plugins/org.eclipse.jdt.core/2428625935.index
+.metadata/.plugins/org.eclipse.jdt.core/2429647151.index
+.metadata/.plugins/org.eclipse.jdt.core/2430596091.index
+.metadata/.plugins/org.eclipse.jdt.core/2432302495.index
+.metadata/.plugins/org.eclipse.jdt.core/2470870889.index
+.metadata/.plugins/org.eclipse.jdt.core/2482139051.index
+.metadata/.plugins/org.eclipse.jdt.core/2495208145.index
+.metadata/.plugins/org.eclipse.jdt.core/2516234883.index
+.metadata/.plugins/org.eclipse.jdt.core/2536665524.index
+.metadata/.plugins/org.eclipse.jdt.core/2541198174.index
+.metadata/.plugins/org.eclipse.jdt.core/2555982098.index
+.metadata/.plugins/org.eclipse.jdt.core/2560320407.index
+.metadata/.plugins/org.eclipse.jdt.core/2618794525.index
+.metadata/.plugins/org.eclipse.jdt.core/2625218929.index
+.metadata/.plugins/org.eclipse.jdt.core/2628182097.index
+.metadata/.plugins/org.eclipse.jdt.core/2630375648.index
+.metadata/.plugins/org.eclipse.jdt.core/2651252961.index
+.metadata/.plugins/org.eclipse.jdt.core/2720727394.index
+.metadata/.plugins/org.eclipse.jdt.core/2732734299.index
+.metadata/.plugins/org.eclipse.jdt.core/2739579872.index
+.metadata/.plugins/org.eclipse.jdt.core/2750591814.index
+.metadata/.plugins/org.eclipse.jdt.core/2754637472.index
+.metadata/.plugins/org.eclipse.jdt.core/2757702402.index
+.metadata/.plugins/org.eclipse.jdt.core/2759301738.index
+.metadata/.plugins/org.eclipse.jdt.core/2798605420.index
+.metadata/.plugins/org.eclipse.jdt.core/2801932589.index
+.metadata/.plugins/org.eclipse.jdt.core/2828415535.index
+.metadata/.plugins/org.eclipse.jdt.core/2874009798.index
+.metadata/.plugins/org.eclipse.jdt.core/2884625155.index
+.metadata/.plugins/org.eclipse.jdt.core/2889108209.index
+.metadata/.plugins/org.eclipse.jdt.core/2904468290.index
+.metadata/.plugins/org.eclipse.jdt.core/2911685752.index
+.metadata/.plugins/org.eclipse.jdt.core/2930237575.index
+.metadata/.plugins/org.eclipse.jdt.core/2946973941.index
+.metadata/.plugins/org.eclipse.jdt.core/2970758301.index
+.metadata/.plugins/org.eclipse.jdt.core/2972433902.index
+.metadata/.plugins/org.eclipse.jdt.core/299648654.index
+.metadata/.plugins/org.eclipse.jdt.core/3075485606.index
+.metadata/.plugins/org.eclipse.jdt.core/3080674548.index
+.metadata/.plugins/org.eclipse.jdt.core/309437861.index
+.metadata/.plugins/org.eclipse.jdt.core/3115959501.index
+.metadata/.plugins/org.eclipse.jdt.core/3118298484.index
+.metadata/.plugins/org.eclipse.jdt.core/3126746519.index
+.metadata/.plugins/org.eclipse.jdt.core/3137282075.index
+.metadata/.plugins/org.eclipse.jdt.core/3147851278.index
+.metadata/.plugins/org.eclipse.jdt.core/3159541407.index
+.metadata/.plugins/org.eclipse.jdt.core/3170098637.index
+.metadata/.plugins/org.eclipse.jdt.core/318288432.index
+.metadata/.plugins/org.eclipse.jdt.core/31854853.index
+.metadata/.plugins/org.eclipse.jdt.core/3187944676.index
+.metadata/.plugins/org.eclipse.jdt.core/3203040154.index
+.metadata/.plugins/org.eclipse.jdt.core/3205789974.index
+.metadata/.plugins/org.eclipse.jdt.core/3225868464.index
+.metadata/.plugins/org.eclipse.jdt.core/3238794613.index
+.metadata/.plugins/org.eclipse.jdt.core/3316584587.index
+.metadata/.plugins/org.eclipse.jdt.core/3323116363.index
+.metadata/.plugins/org.eclipse.jdt.core/333601362.index
+.metadata/.plugins/org.eclipse.jdt.core/3342773959.index
+.metadata/.plugins/org.eclipse.jdt.core/3370712219.index
+.metadata/.plugins/org.eclipse.jdt.core/3380157402.index
+.metadata/.plugins/org.eclipse.jdt.core/3391004309.index
+.metadata/.plugins/org.eclipse.jdt.core/3394092345.index
+.metadata/.plugins/org.eclipse.jdt.core/3400700297.index
+.metadata/.plugins/org.eclipse.jdt.core/3407479557.index
+.metadata/.plugins/org.eclipse.jdt.core/3412440063.index
+.metadata/.plugins/org.eclipse.jdt.core/3419236357.index
+.metadata/.plugins/org.eclipse.jdt.core/3421133488.index
+.metadata/.plugins/org.eclipse.jdt.core/3421673308.index
+.metadata/.plugins/org.eclipse.jdt.core/3433971188.index
+.metadata/.plugins/org.eclipse.jdt.core/3450227698.index
+.metadata/.plugins/org.eclipse.jdt.core/3457325607.index
+.metadata/.plugins/org.eclipse.jdt.core/3477416600.index
+.metadata/.plugins/org.eclipse.jdt.core/3499498260.index
+.metadata/.plugins/org.eclipse.jdt.core/3531917806.index
+.metadata/.plugins/org.eclipse.jdt.core/3603702067.index
+.metadata/.plugins/org.eclipse.jdt.core/3637014093.index
+.metadata/.plugins/org.eclipse.jdt.core/3650685522.index
+.metadata/.plugins/org.eclipse.jdt.core/365970891.index
+.metadata/.plugins/org.eclipse.jdt.core/3669430.index
+.metadata/.plugins/org.eclipse.jdt.core/3675834742.index
+.metadata/.plugins/org.eclipse.jdt.core/3719219197.index
+.metadata/.plugins/org.eclipse.jdt.core/372236246.index
+.metadata/.plugins/org.eclipse.jdt.core/3732441863.index
+.metadata/.plugins/org.eclipse.jdt.core/3749672110.index
+.metadata/.plugins/org.eclipse.jdt.core/3753985206.index
+.metadata/.plugins/org.eclipse.jdt.core/3756250350.index
+.metadata/.plugins/org.eclipse.jdt.core/3763528962.index
+.metadata/.plugins/org.eclipse.jdt.core/3771995056.index
+.metadata/.plugins/org.eclipse.jdt.core/3781429976.index
+.metadata/.plugins/org.eclipse.jdt.core/3788656349.index
+.metadata/.plugins/org.eclipse.jdt.core/3800892128.index
+.metadata/.plugins/org.eclipse.jdt.core/3807212062.index
+.metadata/.plugins/org.eclipse.jdt.core/382412798.index
+.metadata/.plugins/org.eclipse.jdt.core/3834496249.index
+.metadata/.plugins/org.eclipse.jdt.core/384030961.index
+.metadata/.plugins/org.eclipse.jdt.core/3900995971.index
+.metadata/.plugins/org.eclipse.jdt.core/391709165.index
+.metadata/.plugins/org.eclipse.jdt.core/3953790280.index
+.metadata/.plugins/org.eclipse.jdt.core/3982743266.index
+.metadata/.plugins/org.eclipse.jdt.core/3997058165.index
+.metadata/.plugins/org.eclipse.jdt.core/4038513409.index
+.metadata/.plugins/org.eclipse.jdt.core/4061806656.index
+.metadata/.plugins/org.eclipse.jdt.core/4069744642.index
+.metadata/.plugins/org.eclipse.jdt.core/4088880944.index
+.metadata/.plugins/org.eclipse.jdt.core/4096260126.index
+.metadata/.plugins/org.eclipse.jdt.core/4099765090.index
+.metadata/.plugins/org.eclipse.jdt.core/4123642595.index
+.metadata/.plugins/org.eclipse.jdt.core/413478510.index
+.metadata/.plugins/org.eclipse.jdt.core/4142492754.index
+.metadata/.plugins/org.eclipse.jdt.core/4156652579.index
+.metadata/.plugins/org.eclipse.jdt.core/4160845272.index
+.metadata/.plugins/org.eclipse.jdt.core/417232750.index
+.metadata/.plugins/org.eclipse.jdt.core/4179972895.index
+.metadata/.plugins/org.eclipse.jdt.core/4212089333.index
+.metadata/.plugins/org.eclipse.jdt.core/421389694.index
+.metadata/.plugins/org.eclipse.jdt.core/4219989930.index
+.metadata/.plugins/org.eclipse.jdt.core/4265220460.index
+.metadata/.plugins/org.eclipse.jdt.core/4278821132.index
+.metadata/.plugins/org.eclipse.jdt.core/4286982772.index
+.metadata/.plugins/org.eclipse.jdt.core/4293377645.index
+.metadata/.plugins/org.eclipse.jdt.core/478857625.index
+.metadata/.plugins/org.eclipse.jdt.core/479464666.index
+.metadata/.plugins/org.eclipse.jdt.core/479740512.index
+.metadata/.plugins/org.eclipse.jdt.core/490335198.index
+.metadata/.plugins/org.eclipse.jdt.core/561926648.index
+.metadata/.plugins/org.eclipse.jdt.core/595739994.index
+.metadata/.plugins/org.eclipse.jdt.core/600723481.index
+.metadata/.plugins/org.eclipse.jdt.core/619171862.index
+.metadata/.plugins/org.eclipse.jdt.core/632095749.index
+.metadata/.plugins/org.eclipse.jdt.core/674306866.index
+.metadata/.plugins/org.eclipse.jdt.core/685352097.index
+.metadata/.plugins/org.eclipse.jdt.core/693277709.index
+.metadata/.plugins/org.eclipse.jdt.core/699288996.index
+.metadata/.plugins/org.eclipse.jdt.core/70370961.index
+.metadata/.plugins/org.eclipse.jdt.core/731439290.index
+.metadata/.plugins/org.eclipse.jdt.core/734196855.index
+.metadata/.plugins/org.eclipse.jdt.core/752614378.index
+.metadata/.plugins/org.eclipse.jdt.core/775394498.index
+.metadata/.plugins/org.eclipse.jdt.core/78758924.index
+.metadata/.plugins/org.eclipse.jdt.core/796274797.index
+.metadata/.plugins/org.eclipse.jdt.core/830423863.index
+.metadata/.plugins/org.eclipse.jdt.core/83698039.index
+.metadata/.plugins/org.eclipse.jdt.core/863021220.index
+.metadata/.plugins/org.eclipse.jdt.core/865039299.index
+.metadata/.plugins/org.eclipse.jdt.core/871649335.index
+.metadata/.plugins/org.eclipse.jdt.core/892879462.index
+.metadata/.plugins/org.eclipse.jdt.core/897184870.index
+.metadata/.plugins/org.eclipse.jdt.core/950357768.index
+.metadata/.plugins/org.eclipse.jdt.core/962143044.index
+.metadata/.plugins/org.eclipse.jdt.core/973215088.index
+.metadata/.plugins/org.eclipse.jdt.core/994318429.index
+.metadata/.plugins/org.eclipse.jdt.core/assumedExternalFilesCache
+.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache
+.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
+.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt
+.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache
+.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
+.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat
+.metadata/.plugins/org.eclipse.jdt.launching/.install.xml
+.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml
+.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml
+.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml
+.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml
+.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/.workspace/2025/12/49/refactorings.history
+.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/.workspace/2025/12/49/refactorings.index
+.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/.workspace/2025/12/50/refactorings.history
+.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/.workspace/2025/12/50/refactorings.index
+.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/.workspace/2025/12/51/refactorings.history
+.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/.workspace/2025/12/51/refactorings.index
+.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/Smart_crop_advisory_system_Frouent/2025/12/51/refactorings.history
+.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/Smart_crop_advisory_system_Frouent/2025/12/51/refactorings.index
+.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/Springaiproject/2025/12/49/refactorings.history
+.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/Springaiproject/2025/12/49/refactorings.index
+.metadata/.plugins/org.eclipse.ltk.ui.refactoring/dialog_settings.xml
+.metadata/.plugins/org.eclipse.m2e.core.ui/dialog_settings.xml
+.metadata/.plugins/org.eclipse.m2e.core/Smart_crop_advisory_backend.lifecyclemapping
+.metadata/.plugins/org.eclipse.m2e.core/Smart_crop_advisory_system_Frouent.lifecyclemapping
+.metadata/.plugins/org.eclipse.m2e.core/archetypesInfo.xml
+.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser
+.metadata/.plugins/org.eclipse.m2e.core/workspacestate.properties
+.metadata/.plugins/org.eclipse.m2e.jdt/Smart_crop_advisory_backend.container
+.metadata/.plugins/org.eclipse.m2e.jdt/Smart_crop_advisory_system_Frouent.container
+.metadata/.plugins/org.eclipse.m2e.logback/0.log
+.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.0.20241001-1350.xml
+.metadata/.plugins/org.eclipse.mylyn.github.ui/avatars.ser
+.metadata/.plugins/org.eclipse.oomph.setup/workspace.setup
+.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties
+.metadata/.plugins/org.eclipse.rse.core/.log
+.metadata/.plugins/org.eclipse.rse.core/initializerMarks/org.eclipse.rse.internal.core.RSELocalConnectionInitializer.mark
+.metadata/.plugins/org.eclipse.swt/EBWebView/AutoLaunchProtocolsComponent/1.0.0.10/manifest.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/AutoLaunchProtocolsComponent/1.0.0.10/protocols.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/BrowserMetrics-spare.pma
+.metadata/.plugins/org.eclipse.swt/EBWebView/CertificateRevocation/6498.2025.9.4/crl-set
+.metadata/.plugins/org.eclipse.swt/EBWebView/CertificateRevocation/6498.2025.9.4/manifest.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/Crashpad/metadata
+.metadata/.plugins/org.eclipse.swt/EBWebView/Crashpad/settings.dat
+.metadata/.plugins/org.eclipse.swt/EBWebView/Crashpad/throttle_store.dat
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/AutofillAiModelCache/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/AutofillAiModelCache/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/AutofillAiModelCache/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/AutofillStrikeDatabase/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/AutofillStrikeDatabase/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/AutofillStrikeDatabase/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/BookmarkMergedSurfaceOrdering
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/BrowsingTopicsSiteData
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/BrowsingTopicsSiteData-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/BrowsingTopicsState
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/BudgetDatabase/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/BudgetDatabase/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/BudgetDatabase/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/Cache_Data/data_0
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/Cache_Data/data_1
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/Cache_Data/data_2
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/Cache_Data/data_3
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/Cache_Data/f_000002
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/Cache_Data/f_00001e
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/Cache_Data/f_00001f
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/Cache_Data/index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/No_Vary_Search/journal.baj
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Cache/No_Vary_Search/snapshot.baf
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/ClientCertificates/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/ClientCertificates/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/ClientCertificates/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Code Cache/js/ca4476001c08c94c_0
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Code Cache/js/index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Code Cache/js/index-dir/the-real-index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Code Cache/wasm/index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Code Cache/wasm/index-dir/the-real-index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DIPS
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DashTrackerDatabase
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DashTrackerDatabase-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DawnGraphiteCache/data_0
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DawnGraphiteCache/data_1
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DawnGraphiteCache/data_2
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DawnGraphiteCache/data_3
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DawnGraphiteCache/index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DawnWebGPUCache/data_0
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DawnWebGPUCache/data_1
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DawnWebGPUCache/data_2
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DawnWebGPUCache/data_3
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/DawnWebGPUCache/index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/EdgeJourneys/EdgeJourneys.db
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension Rules/000003.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension Rules/CURRENT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension Rules/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension Rules/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension Rules/MANIFEST-000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension Scripts/000003.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension Scripts/CURRENT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension Scripts/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension Scripts/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension Scripts/MANIFEST-000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension State/000003.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension State/CURRENT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension State/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension State/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension State/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Extension State/MANIFEST-000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/ExtensionActivityComp
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/ExtensionActivityEdge
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/ExtensionActivityEdge-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Favicons
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Favicons-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Feature Engagement Tracker/AvailabilityDB/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Feature Engagement Tracker/AvailabilityDB/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Feature Engagement Tracker/AvailabilityDB/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Feature Engagement Tracker/EventDB/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Feature Engagement Tracker/EventDB/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Feature Engagement Tracker/EventDB/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/GPUCache/data_0
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/GPUCache/data_1
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/GPUCache/data_2
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/GPUCache/data_3
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/GPUCache/index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/History
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/History-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Local Storage/leveldb/000003.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Local Storage/leveldb/CURRENT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Local Storage/leveldb/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Local Storage/leveldb/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Local Storage/leveldb/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Local Storage/leveldb/MANIFEST-000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Login Data
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Login Data For Account
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Login Data For Account-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Login Data-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network Action Predictor
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network Action Predictor-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/Cookies
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/Cookies-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/Network Persistent State
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/NetworkDataMigrated
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/Reporting and NEL
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/Reporting and NEL-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/SCT Auditing Pending Reports
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/Sdch Dictionaries
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/TransportSecurity
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/Trust Tokens
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Network/Trust Tokens-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/PersistentOriginTrials/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/PersistentOriginTrials/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/PersistentOriginTrials/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Preferences
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/PreferredApps
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/README
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Safe Browsing Network/NetworkDataMigrated
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Safe Browsing Network/Safe Browsing Cookies
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Safe Browsing Network/Safe Browsing Cookies-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Secure Preferences
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/ServerCertificate
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/ServerCertificate-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Session Storage/000003.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Session Storage/CURRENT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Session Storage/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Session Storage/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Session Storage/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Session Storage/MANIFEST-000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Shared Dictionary/cache/index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Shared Dictionary/cache/index-dir/the-real-index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Shared Dictionary/db
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Shared Dictionary/db-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/SharedStorage
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Site Characteristics Database/000003.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Site Characteristics Database/CURRENT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Site Characteristics Database/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Site Characteristics Database/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Site Characteristics Database/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Site Characteristics Database/MANIFEST-000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Sync Data/LevelDB/000003.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Sync Data/LevelDB/CURRENT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Sync Data/LevelDB/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Sync Data/LevelDB/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Sync Data/LevelDB/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Sync Data/LevelDB/MANIFEST-000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Top Sites
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Top Sites-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Vpn Tokens
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Vpn Tokens-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Web Data
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/Web Data-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/commerce_subscription_db/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/commerce_subscription_db/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/commerce_subscription_db/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/discount_infos_db/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/discount_infos_db/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/discount_infos_db/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/discounts_db/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/discounts_db/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/discounts_db/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/favorites_diagnostic.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/heavy_ad_intervention_opt_out.db
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/heavy_ad_intervention_opt_out.db-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/optimization_guide_hint_cache_store/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/optimization_guide_hint_cache_store/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/optimization_guide_hint_cache_store/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/parcel_tracking_db/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/parcel_tracking_db/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/parcel_tracking_db/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/000003.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/CURRENT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/MANIFEST-000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/metadata/000003.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/metadata/CURRENT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/metadata/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/metadata/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/metadata/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Default/shared_proto_db/metadata/MANIFEST-000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/Domain Actions/3.0.0.16/domain_actions.dll
+.metadata/.plugins/org.eclipse.swt/EBWebView/Domain Actions/3.0.0.16/manifest.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/GrShaderCache/data_0
+.metadata/.plugins/org.eclipse.swt/EBWebView/GrShaderCache/data_1
+.metadata/.plugins/org.eclipse.swt/EBWebView/GrShaderCache/data_2
+.metadata/.plugins/org.eclipse.swt/EBWebView/GrShaderCache/data_3
+.metadata/.plugins/org.eclipse.swt/EBWebView/GrShaderCache/f_000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/GrShaderCache/f_000002
+.metadata/.plugins/org.eclipse.swt/EBWebView/GrShaderCache/f_000003
+.metadata/.plugins/org.eclipse.swt/EBWebView/GrShaderCache/index
+.metadata/.plugins/org.eclipse.swt/EBWebView/GraphiteDawnCache/data_0
+.metadata/.plugins/org.eclipse.swt/EBWebView/GraphiteDawnCache/data_1
+.metadata/.plugins/org.eclipse.swt/EBWebView/GraphiteDawnCache/data_2
+.metadata/.plugins/org.eclipse.swt/EBWebView/GraphiteDawnCache/data_3
+.metadata/.plugins/org.eclipse.swt/EBWebView/GraphiteDawnCache/index
+.metadata/.plugins/org.eclipse.swt/EBWebView/Last Version
+.metadata/.plugins/org.eclipse.swt/EBWebView/Local State
+.metadata/.plugins/org.eclipse.swt/EBWebView/OriginTrials/0.0.1.7/manifest.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/PKIMetadata/28.0.0.1/crs.pb
+.metadata/.plugins/org.eclipse.swt/EBWebView/PKIMetadata/28.0.0.1/ct_config.pb
+.metadata/.plugins/org.eclipse.swt/EBWebView/PKIMetadata/28.0.0.1/kp_pinslist.pb
+.metadata/.plugins/org.eclipse.swt/EBWebView/PKIMetadata/28.0.0.1/manifest.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/RevisitationBloomfilter
+.metadata/.plugins/org.eclipse.swt/EBWebView/ShaderCache/data_0
+.metadata/.plugins/org.eclipse.swt/EBWebView/ShaderCache/data_1
+.metadata/.plugins/org.eclipse.swt/EBWebView/ShaderCache/data_2
+.metadata/.plugins/org.eclipse.swt/EBWebView/ShaderCache/data_3
+.metadata/.plugins/org.eclipse.swt/EBWebView/ShaderCache/index
+.metadata/.plugins/org.eclipse.swt/EBWebView/SmartScreen/RemoteData/customSettings
+.metadata/.plugins/org.eclipse.swt/EBWebView/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14
+.metadata/.plugins/org.eclipse.swt/EBWebView/SmartScreen/RemoteData/edgeSettings
+.metadata/.plugins/org.eclipse.swt/EBWebView/SmartScreen/RemoteData/edgeSettings_2.0-a82cb2897a8bf9445d68dcc2be05af89ad4b2fda1fddb2952693be7cd5353ad3
+.metadata/.plugins/org.eclipse.swt/EBWebView/SmartScreen/RemoteData/topTraffic
+.metadata/.plugins/org.eclipse.swt/EBWebView/SmartScreen/RemoteData/topTraffic_638004170464094982
+.metadata/.plugins/org.eclipse.swt/EBWebView/SmartScreen/local/downloadCache
+.metadata/.plugins/org.eclipse.swt/EBWebView/SmartScreen/local/downloadCache_
+.metadata/.plugins/org.eclipse.swt/EBWebView/SmartScreen/local/uriCache
+.metadata/.plugins/org.eclipse.swt/EBWebView/SmartScreen/local/uriCache_
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/AutofillStrikeDatabase/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/AutofillStrikeDatabase/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/AutofillStrikeDatabase/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Favicons
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Favicons-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/History
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/History-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Login Data
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Login Data For Account
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Login Data For Account-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Login Data-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Preferences
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Secure Preferences
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Sync Data/LevelDB/000003.log
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Sync Data/LevelDB/CURRENT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Sync Data/LevelDB/LOCK
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Sync Data/LevelDB/LOG
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Sync Data/LevelDB/LOG.old
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Sync Data/LevelDB/MANIFEST-000001
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Top Sites
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Top Sites-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Web Data
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Default/Web Data-journal
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Last Version
+.metadata/.plugins/org.eclipse.swt/EBWebView/Snapshots/142.0.3595.94/Local State
+.metadata/.plugins/org.eclipse.swt/EBWebView/Speech Recognition/1.15.0.1/Microsoft.CognitiveServices.Speech.core.dll
+.metadata/.plugins/org.eclipse.swt/EBWebView/Speech Recognition/1.15.0.1/manifest.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Indexed Rules/37/10.34.0.81/LICENSE
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Indexed Rules/37/10.34.0.81/Ruleset Data
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/Filtering Rules
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/Filtering Rules-AA
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/Filtering Rules-CA
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/LICENSE
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/Part-DE
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/Part-ES
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/Part-FR
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/Part-IT
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/Part-NL
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/Part-RU
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/Part-ZH
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/adblock_snippet.js
+.metadata/.plugins/org.eclipse.swt/EBWebView/Subresource Filter/Unindexed Rules/10.34.0.81/manifest.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/TrustTokenKeyCommitments/2025.9.29.1/LICENSE
+.metadata/.plugins/org.eclipse.swt/EBWebView/TrustTokenKeyCommitments/2025.9.29.1/_metadata/verified_contents.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/TrustTokenKeyCommitments/2025.9.29.1/keys.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/TrustTokenKeyCommitments/2025.9.29.1/manifest.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/Variations
+.metadata/.plugins/org.eclipse.swt/EBWebView/WidevineCdm/4.10.2934.0/LICENSE
+.metadata/.plugins/org.eclipse.swt/EBWebView/WidevineCdm/4.10.2934.0/_metadata/verified_contents.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/WidevineCdm/4.10.2934.0/_platform_specific/win_x64/widevinecdm.dll
+.metadata/.plugins/org.eclipse.swt/EBWebView/WidevineCdm/4.10.2934.0/_platform_specific/win_x64/widevinecdm.dll.sig
+.metadata/.plugins/org.eclipse.swt/EBWebView/WidevineCdm/4.10.2934.0/manifest.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/000ac7dc9366969db9d1e41810a3a27c747a7623535d856eecc2de86cfed80c7
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/00af3f07b5abb71f6d30337e1eef62fa280f06ef19485c0cf6b72171f92ccc0a
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/2d2f683649600db91050fb41cd9ffea403ae024de38a0647b18e7f6106f6c55d
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/68f081c49007522ff83daeee4add34836f1ec4f3b187f4f7419665f08525e588
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/89f43cb3df807293de2772d5f01ac2fc1482b38ccc8fdaee859b80642b7a0487
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/95fd9d48e4fc245a3f3a99a3a16ecd1355050ba3f4afc555f19a97c7f9b49677
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/a81d1959892ae4180554347df1b97834abba2e1a5e6b9aeba000ecea26eabecc
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/bcb93cba8636743d1fbd32be3bd8ce8ff602323895bf4d136c26b9bc64b0a6a4
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/e899d913c256495c8952316ef2b48210ee2867659f6336478e2085d90462d294
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/fa29a6d5775ff340900a65b39b02fc8b4b77d403c048d8debf22f2f5d09c61a0
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/fbb2c0f4fad3b34b3ac7116d98f83638cf6f55a47992026a7abf944a759aa0ea
+.metadata/.plugins/org.eclipse.swt/EBWebView/component_crx_cache/metadata.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/extensions_crx_cache/metadata.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/_metadata/verified_contents.json
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-af.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-as.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-be.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-bg.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-bn.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-cs.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-cu.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-cy.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-da.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-de-1901.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-de-1996.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-de-ch-1901.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-el.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-en-gb.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-en-us.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-es.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-et.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-eu.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-fr.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-ga.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-gl.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-gu.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-hi.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-hr.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-hu.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-hy.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-it.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-ka.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-kn.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-la.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-lt.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-lv.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-ml.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-mn-cyrl.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-mr.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-mul-ethi.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-nb.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-nl.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-nn.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-or.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-pa.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-pt.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-ru.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-sk.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-sl.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-sq.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-sv.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-ta.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-te.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-tk.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-uk.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/hyph-und-ethi.hyb
+.metadata/.plugins/org.eclipse.swt/EBWebView/hyphen-data/120.0.6050.0/manifest.json
+.metadata/.plugins/org.eclipse.tips.ide/dialog_settings.xml
+.metadata/.plugins/org.eclipse.tm.terminal.view.ui/.executables/data.properties
+.metadata/.plugins/org.eclipse.ui.editors/dialog_settings.xml
+.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml
+.metadata/.plugins/org.eclipse.ui.intro/introstate
+.metadata/.plugins/org.eclipse.ui.workbench.texteditor/dialog_settings.xml
+.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml
+.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml
+.metadata/.plugins/org.eclipse.wildwebdeveloper.xml/system-catalog.xml
+.metadata/.plugins/org.eclipse.wst.jsdt.core/externalLibsTimeStamps
+.metadata/.plugins/org.eclipse.wst.jsdt.core/libraries/baseBrowserLibrary.js
+.metadata/.plugins/org.eclipse.wst.jsdt.core/libraries/browserWindow.js
+.metadata/.plugins/org.eclipse.wst.jsdt.core/libraries/dom5.js
+.metadata/.plugins/org.eclipse.wst.jsdt.core/libraries/system.js
+.metadata/.plugins/org.eclipse.wst.jsdt.core/libraries/xhr.js
+.metadata/.plugins/org.eclipse.wst.jsdt.core/variablesAndContainers.dat
+.metadata/.plugins/org.eclipse.wst.jsdt.ui/OpenTypeHistory.xml
+.metadata/.plugins/org.eclipse.wst.jsdt.ui/QualifiedTypeNameHistory.xml
+.metadata/.plugins/org.eclipse.wst.sse.core/task-tags.properties
+.metadata/.plugins/org.eclipse.xtend.ide/dialog_settings.xml
+.metadata/.plugins/org.eclipse.xtend.ide/resource.change.registry
+.metadata/.plugins/org.eclipse.xtext.builder/builder.state
+.metadata/version.ini
+LICENSE
+SCAS DATA/crop_recommendation_data/crop_recommendation_dataset.csv
+SCAS DATA/fertilizer_recommendation_data/fertlizer_recommendation_dataset.csv
+Smart_crop_advisory_backend/.gitattributes
+Smart_crop_advisory_backend/.gitignore
+Smart_crop_advisory_backend/.mvn/wrapper/maven-wrapper.properties
+Smart_crop_advisory_backend/backend_sql.sql
+Smart_crop_advisory_backend/mvnw
+Smart_crop_advisory_backend/mvnw.cmd
+Smart_crop_advisory_backend/pom.xml
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/AiServices/chatcClientservices.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/ConfigSecurity/BasicauthConfigSecurity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/ConfigSecurity/CustomUserDetailsService.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Controllers/ChatController.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Controllers/Usercontroller.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Controllers/WhatsAppAlert.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Controllers/blogController.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/DTO/BlogPostDTO.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/DTO/UserEntityDTO.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/AlertEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/BlogCommentEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/BlogPostEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/ChatbotConversationEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/CropRecommendationEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/FertilizerEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/FertilizerRecommendationEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/PestReportEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/SessionEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/SoilReportEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/UserEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Entity/WeatherHistoryEntity.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Repository/BlogCommentRepository.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Repository/BlogReailCommentRepositoy.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/Repository/UserRepository.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/SmartCropAdvisoryBackendApplication.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/WebConfig.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/entityServices/BlogServices.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/entityServices/UserServices.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/entityServices/WhatsAppService.java
+Smart_crop_advisory_backend/src/main/java/com/example_Backend/entityServices/WhatsAppServiceTwilio.java
+Smart_crop_advisory_backend/src/main/resources/application.properties
+Smart_crop_advisory_backend/src/test/java/com/example_Backend/SmartCropAdvisoryBackendApplicationTests.java
+Smart_crop_advisory_system_Frouent/.gitattributes
+Smart_crop_advisory_system_Frouent/.gitignore
+Smart_crop_advisory_system_Frouent/.mvn/wrapper/maven-wrapper.properties
+Smart_crop_advisory_system_Frouent/mvnw
+Smart_crop_advisory_system_Frouent/mvnw.cmd
+Smart_crop_advisory_system_Frouent/pom.xml
+Smart_crop_advisory_system_Frouent/src/main/java/com/example_Backend/ConfigSecurity/CustumUserDetailServices.java
+Smart_crop_advisory_system_Frouent/src/main/java/com/example_Backend/ConfigSecurity/WebSecurity.java
+Smart_crop_advisory_system_Frouent/src/main/java/com/example_Backend/SmartCropAdvisorySystemFrouentApplication.java
+Smart_crop_advisory_system_Frouent/src/main/java/com/example_Backend/endpoint/Blogcontroller.java
+Smart_crop_advisory_system_Frouent/src/main/java/com/example_Backend/endpoint/Weathercontroller.java
+Smart_crop_advisory_system_Frouent/src/main/java/com/example_Backend/endpoint/maincontroller.java
+Smart_crop_advisory_system_Frouent/src/main/java/com/example_Backend/entity/BlogPostEntity.java
+Smart_crop_advisory_system_Frouent/src/main/java/com/example_Backend/entity/UserEntity.java
+Smart_crop_advisory_system_Frouent/src/main/java/com/example_Backend/repository/EmailService.java
+Smart_crop_advisory_system_Frouent/src/main/java/com/example_Backend/repository/FeignClientconfig.java
+Smart_crop_advisory_system_Frouent/src/main/resources/application.properties
+Smart_crop_advisory_system_Frouent/src/main/resources/static/cssfile/blog_style.css
+Smart_crop_advisory_system_Frouent/src/main/resources/static/cssfile/style.css
+Smart_crop_advisory_system_Frouent/src/main/resources/static/gif/bot.mp4
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/abhay_image.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/amit_image.jpeg
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/b1.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/b2.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/blog_sr.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/bot.jpeg
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/br_blog.jpeg
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/chatbot_sr.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/crop_sr.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/disease_sr.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/fert_sr.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/img.jpg
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/logo6.0.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/mentor_image.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/sameer_image.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/shanu_image.jpeg
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/team_br.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/varun_image.jpg
+Smart_crop_advisory_system_Frouent/src/main/resources/static/img/weather_sr.png
+Smart_crop_advisory_system_Frouent/src/main/resources/static/jsfile/blog_script.js
+Smart_crop_advisory_system_Frouent/src/main/resources/static/jsfile/multilingualchatbot.js
+Smart_crop_advisory_system_Frouent/src/main/resources/static/jsfile/script.js
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/blog.html
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/crop.html
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/disease.html
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/fertilizer.html
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/index.html
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/login.html
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/multilingualchatbot.html
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/signup.html
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/team.html
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/term.html
+Smart_crop_advisory_system_Frouent/src/main/resources/templates/weather.html
+Smart_crop_advisory_system_Frouent/src/test/java/com/example_Backend/SmartCropAdvisorySystemFrouentApplicationTests.java
+scas ML models/EDA/EDA_crop_data.ipynb
+scas ML models/EDA/EDA_fertilizer_data.ipynb
+scas ML models/crop recommendation/README.md
+scas ML models/crop recommendation/crop_api.py
+scas ML models/crop recommendation/crop_model_final.pkl
+scas ML models/crop recommendation/feature_order.pkl
+scas ML models/crop recommendation/index_crop.html
+scas ML models/crop recommendation/label_encoder_final.pkl
+scas ML models/crop recommendation/model 5.0.ipynb
+scas ML models/crop recommendation/requirements.txt
+scas ML models/crop recommendation/scaler_final.pkl
+scas ML models/disease detection/README.md
+scas ML models/disease detection/best_disease_model.keras
+scas ML models/disease detection/class_indices.json
+scas ML models/disease detection/disease_api.py
+scas ML models/disease detection/final_disease_model.h5
+scas ML models/disease detection/index_disease.html
+scas ML models/disease detection/plant_disease_model_notebook.ipynb
+scas ML models/disease detection/requirements.txt
+scas ML models/fertilizer recommendation/README.md
+scas ML models/fertilizer recommendation/fert_model_3.1.ipynb
+scas ML models/fertilizer recommendation/fertilizer_api.py
+scas ML models/fertilizer recommendation/fertilizer_model_final.pkl
+scas ML models/fertilizer recommendation/index_fertilizer.html
+scas ML models/fertilizer recommendation/requirements.txt
